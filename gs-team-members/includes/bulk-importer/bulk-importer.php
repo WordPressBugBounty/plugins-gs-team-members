@@ -27,7 +27,7 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
             $builder = plugin()->builder;
 
             add_submenu_page(
-                'edit.php?post_type=gs_team', 'Bulk Import', 'Bulk Import', 'manage_options', 'gs-team-shortcode#/bulk-import', array( $builder, 'view' )
+                'edit.php?post_type=gs_team', 'Bulk Import', 'Bulk Import', 'publish_pages', 'gs-team-shortcode#/bulk-import', array( $builder, 'view' )
             );
 
         }

@@ -141,11 +141,11 @@ if ( ! class_exists( 'Builder' ) ) {
         public function register_sub_menu() {
 
             add_submenu_page( 
-                'edit.php?post_type=gs_team', 'Team Shortcode', 'Team Shortcode', 'manage_options', 'gs-team-shortcode', array( $this, 'view' )
+                'edit.php?post_type=gs_team', 'Team Shortcode', 'Team Shortcode', 'publish_pages', 'gs-team-shortcode', array( $this, 'view' )
             );
 
             add_submenu_page( 
-                'edit.php?post_type=gs_team', 'Preference', 'Preference', 'manage_options', 'gs-team-shortcode#/preferences', array( $this, 'view' )
+                'edit.php?post_type=gs_team', 'Preference', 'Preference', 'publish_pages', 'gs-team-shortcode#/preferences', array( $this, 'view' )
             );
 
             do_action( 'gs_after_shortcode_submenu' );
@@ -328,7 +328,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function _update_shortcode( $shortcode_id, $nonce, $fields, $is_ajax ) {
 
-            if ( ! wp_verify_nonce( $nonce, '_gsteam_admin_nonce_gs_') || ! current_user_can( 'manage_options' ) ) {
+            if ( ! wp_verify_nonce( $nonce, '_gsteam_admin_nonce_gs_') || ! current_user_can( 'publish_pages' ) ) {
                 if ( $is_ajax ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
                 return false;
             }
@@ -422,7 +422,7 @@ if ( ! class_exists( 'Builder' ) ) {
         public function create_shortcode() {
 
             // validate nonce && check permission
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
 
             $shortcode_settings  = !empty( $_POST['shortcode_settings'] ) ? $_POST['shortcode_settings'] : '';
             $shortcode_name  = !empty( $_POST['shortcode_name'] ) ? $_POST['shortcode_name'] : __( 'Undefined', 'gsteam' );
@@ -463,7 +463,7 @@ if ( ! class_exists( 'Builder' ) ) {
         public function clone_shortcode() {
 
             // validate nonce && check permission
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
 
             $clone_id  = !empty( $_POST['clone_id']) ? $_POST['clone_id'] : '';
 
@@ -530,7 +530,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function delete_shortcodes() {
 
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') )
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') )
                 wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
     
             $ids = isset( $_POST['ids'] ) ? (array) $_POST['ids'] : null;
@@ -568,7 +568,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function temp_save_shortcode_settings() {
 
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') )
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') )
                 wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
             
             $temp_key = isset( $_POST['temp_key'] ) ? $_POST['temp_key'] : null;

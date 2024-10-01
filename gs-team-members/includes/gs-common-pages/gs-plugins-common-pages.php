@@ -43,17 +43,17 @@ if ( ! class_exists( 'GS_Plugins_Common_Pages' ) ) {
         public function admin_menu() {
 			
 			// Help Page
-			add_submenu_page( $this->data['parent_slug'], $this->data['help_page_title'],  __('Help & Usage'), 'manage_options', $this->data['help_page_slug'], array( $this, 'display_help_page' ) );
+			add_submenu_page( $this->data['parent_slug'], $this->data['help_page_title'],  __('Help & Usage'), 'publish_pages', $this->data['help_page_slug'], array( $this, 'display_help_page' ) );
 
         }
 		
         public function admin_menu_2() {
 
             // Pro Plugins
-			add_submenu_page( $this->data['parent_slug'], $this->data['pro_page_title'], __('GS Plugins Pro'), 'manage_options', $this->data['pro_page_slug'], array( $this, 'display_pro_plugins' ) );
+			add_submenu_page( $this->data['parent_slug'], $this->data['pro_page_title'], __('GS Plugins Pro'), 'publish_pages', $this->data['pro_page_slug'], array( $this, 'display_pro_plugins' ) );
             
 			// Free Plugins
-			add_submenu_page( $this->data['parent_slug'], $this->data['lite_page_title'], __('GS Plugins Lite'), 'manage_options', $this->data['lite_page_slug'], array( $this, 'display_free_plugins' ) );
+			add_submenu_page( $this->data['parent_slug'], $this->data['lite_page_title'], __('GS Plugins Lite'), 'publish_pages', $this->data['lite_page_slug'], array( $this, 'display_free_plugins' ) );
 
         }
         

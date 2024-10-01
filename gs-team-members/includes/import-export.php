@@ -536,7 +536,7 @@ class Import_Export {
             'edit.php?post_type=gs_team',
             'Import & Export',
             'Import & Export',
-            'manage_options',
+            'publish_pages',
             'gs-team-shortcode#/import-export',
             array($builder, 'view')
         );

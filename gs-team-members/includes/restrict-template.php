@@ -2,7 +2,7 @@
 
 if ( in_array($initial_theme, $free_themes) ) return;
 
-if ( $is_preview || current_user_can('editor') || current_user_can('administrator') ) {
+if ( $is_preview || current_user_can('publish_pages') ) {
 
     ?>
     

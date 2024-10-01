@@ -28,8 +28,8 @@ class Hooks {
     }
 
     function register_sub_menu() {
-        add_submenu_page( 
-            'edit.php?post_type=gs_team', 'Taxonomies', 'Taxonomies', 'manage_options', 'gs-team-shortcode#/taxonomies', array( plugin()->builder, 'view' )
+        add_submenu_page(
+            'edit.php?post_type=gs_team', 'Taxonomies', 'Taxonomies', 'publish_pages', 'gs-team-shortcode#/taxonomies', array( plugin()->builder, 'view' )
         );
     }
 

@@ -243,7 +243,7 @@ class Sortable {
 			'edit.php?post_type=gs_team',
 			'Sort Order',
 			'Sort Order',
-			'manage_options',
+			'publish_pages',
 			'sort_gs_team',
 			[$this, 'gs_team_sortable_callback']
 		);

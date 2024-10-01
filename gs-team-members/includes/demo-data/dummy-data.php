@@ -91,7 +91,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             $builder = plugin()->builder;
 
             add_submenu_page( 
-                'edit.php?post_type=gs_team', 'Install Demo', 'Install Demo', 'manage_options', 'gs-team-shortcode#/demo-data', array( $builder, 'view' )
+                'edit.php?post_type=gs_team', 'Install Demo', 'Install Demo', 'publish_pages', 'gs-team-shortcode#/demo-data', array( $builder, 'view' )
             );
 
         }
@@ -156,7 +156,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         public function import_all_data() {
 
             // Validate nonce && check permission
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
 
             $response = [
                 'team' => $this->_import_team_data( false ),
@@ -172,7 +172,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         public function remove_all_data() {
 
             // Validate nonce && check permission
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
 
             $response = [
                 'team' => $this->_remove_team_data( false ),
@@ -188,7 +188,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         public function import_team_data() {
 
             // Validate nonce && check permission
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
 
             // Start importing
             $this->_import_team_data();
@@ -198,7 +198,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         public function remove_team_data() {
 
             // Validate nonce && check permission
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
 
             // Remove team data
             $this->_remove_team_data();
@@ -208,7 +208,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         public function import_shortcode_data() {
 
             // Validate nonce && check permission
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
 
             // Start importing
             $this->_import_shortcode_data();
@@ -218,7 +218,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         public function remove_shortcode_data() {
 
             // Validate nonce && check permission
-            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+            if ( !check_admin_referer('_gsteam_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
 
             // Remove team data
             $this->_remove_shortcode_data();

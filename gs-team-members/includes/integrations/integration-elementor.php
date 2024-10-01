@@ -220,7 +220,7 @@ function load_elementor_widget_class() {
             $shortcode_id = $this->get_settings_for_display( 'gs_team_shortcode' );
 
             if ( empty($shortcode_id) ) {
-                if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) {
+                if ( is_user_logged_in() && current_user_can( 'publish_pages' ) ) {
                     printf( '<div class="gsteam-elementor-no-shortcode" style="padding:20px;background:rgba(115, 113, 124, 0.3);color:#1a1828;font-size:18px;border-radius:4px;font-weight:500;">%s</div>', __('GS Team Members: Please select a shortcode', 'gsteam') );
                 }
             } else {
