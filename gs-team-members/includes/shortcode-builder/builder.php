@@ -2108,7 +2108,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'specialty_tax_archive_slug' => 'gs-team-specialty',
 
                 // Extra One Taxonomy
-                'enable_extra_one_tax' => 'on',
+                'enable_extra_one_tax' => 'off',
                 'extra_one_tax_label' => __('Extra 1', 'gsteam'),
                 'extra_one_tax_plural_label' => __('Extra 1', 'gsteam'),
                 'enable_extra_one_tax_archive' => 'on',
@@ -2152,6 +2152,10 @@ if ( ! class_exists( 'Builder' ) ) {
             $options = array_merge($defaults, $options);
 
             if ( str_contains($option, '_label') && ( getoption('gs_member_enable_multilingual', 'off') == 'on' ) ) {
+                return $defaults[$option];
+            }
+
+            if ( str_contains($option, '_label') && empty($options[$option]) ) {
                 return $defaults[$option];
             }
 
@@ -2409,22 +2413,31 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function _get_taxonomy_settings( $is_ajax ) {
 
-            $options = (array) get_option( $this->taxonomy_option_name, [] );
-
-            if ( empty($options) ) {
-                $options = $this->get_taxonomy_default_settings();
-                update_option( $this->taxonomy_option_name, $options, 'yes' );
-            }
+            $settings = (array) get_option( $this->taxonomy_option_name, [] );
+            $settings = $this->validate_taxonomy_settings( $settings );
 
             if ( $is_ajax ) {
-                wp_send_json_success( $options );
+                wp_send_json_success( $settings );
             }
 
-            return $options;
+            return $settings;
 
         }
 
         public function validate_taxonomy_settings( $settings ) {
+
+            $defaults = $this->get_taxonomy_default_settings();
+
+            if ( empty($settings) ) {
+                $settings = $defaults;
+            } else {
+                foreach ( $settings as $setting_key => $setting_val ) {
+                    if ( str_contains($setting_key, '_label') && empty($setting_val) ) {
+                        $settings[$setting_key] = $defaults[$setting_key];
+                    }
+                }
+            }
+            
             return array_map( 'sanitize_text_field', $settings );
         }
 

@@ -4,6 +4,8 @@ namespace GSTEAM;
 
 $single_page_style = getoption( 'single_page_style', 'default' );
 
+$single_page_style = apply_filters( 'gs_team_single_page_style', $single_page_style );
+
 if ( ! gtm_fs()->is_paying_or_trial() ) {
 	$single_page_style = 'default';
 }

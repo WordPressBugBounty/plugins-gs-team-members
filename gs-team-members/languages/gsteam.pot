@@ -1915,7 +1915,7 @@ msgstr ""
 msgid " (New - Pro)"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1420, ../includes/shortcode-builder/builder.php:1460, ../includes/shortcode-builder/builder.php:1491, ../includes/shortcode-builder/builder.php:1522, ../includes/shortcode-builder/builder.php:1567, ../includes/shortcode-builder/builder.php:1605, ../includes/shortcode-builder/builder.php:1648, ../includes/shortcode-builder/builder.php:2269
+#: ../includes/shortcode-builder/builder.php:1420, ../includes/shortcode-builder/builder.php:1460, ../includes/shortcode-builder/builder.php:1491, ../includes/shortcode-builder/builder.php:1522, ../includes/shortcode-builder/builder.php:1567, ../includes/shortcode-builder/builder.php:1605, ../includes/shortcode-builder/builder.php:1648, ../includes/shortcode-builder/builder.php:2273
 msgid "Default"
 msgstr ""
 
@@ -1935,23 +1935,23 @@ msgstr ""
 msgid "Custom URL"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1464, ../includes/shortcode-builder/builder.php:1495, ../includes/shortcode-builder/builder.php:1526, ../includes/shortcode-builder/builder.php:1571, ../includes/shortcode-builder/builder.php:1609, ../includes/shortcode-builder/builder.php:1652, ../includes/shortcode-builder/builder.php:2273
+#: ../includes/shortcode-builder/builder.php:1464, ../includes/shortcode-builder/builder.php:1495, ../includes/shortcode-builder/builder.php:1526, ../includes/shortcode-builder/builder.php:1571, ../includes/shortcode-builder/builder.php:1609, ../includes/shortcode-builder/builder.php:1652, ../includes/shortcode-builder/builder.php:2277
 msgid "Style One"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1468, ../includes/shortcode-builder/builder.php:1499, ../includes/shortcode-builder/builder.php:1530, ../includes/shortcode-builder/builder.php:1575, ../includes/shortcode-builder/builder.php:1613, ../includes/shortcode-builder/builder.php:1656, ../includes/shortcode-builder/builder.php:2277
+#: ../includes/shortcode-builder/builder.php:1468, ../includes/shortcode-builder/builder.php:1499, ../includes/shortcode-builder/builder.php:1530, ../includes/shortcode-builder/builder.php:1575, ../includes/shortcode-builder/builder.php:1613, ../includes/shortcode-builder/builder.php:1656, ../includes/shortcode-builder/builder.php:2281
 msgid "Style Two"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1472, ../includes/shortcode-builder/builder.php:1503, ../includes/shortcode-builder/builder.php:1534, ../includes/shortcode-builder/builder.php:1579, ../includes/shortcode-builder/builder.php:1617, ../includes/shortcode-builder/builder.php:1660, ../includes/shortcode-builder/builder.php:2281
+#: ../includes/shortcode-builder/builder.php:1472, ../includes/shortcode-builder/builder.php:1503, ../includes/shortcode-builder/builder.php:1534, ../includes/shortcode-builder/builder.php:1579, ../includes/shortcode-builder/builder.php:1617, ../includes/shortcode-builder/builder.php:1660, ../includes/shortcode-builder/builder.php:2285
 msgid "Style Three"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1538, ../includes/shortcode-builder/builder.php:1583, ../includes/shortcode-builder/builder.php:1621, ../includes/shortcode-builder/builder.php:1664, ../includes/shortcode-builder/builder.php:2285
+#: ../includes/shortcode-builder/builder.php:1538, ../includes/shortcode-builder/builder.php:1583, ../includes/shortcode-builder/builder.php:1621, ../includes/shortcode-builder/builder.php:1664, ../includes/shortcode-builder/builder.php:2289
 msgid "Style Four"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1542, ../includes/shortcode-builder/builder.php:1587, ../includes/shortcode-builder/builder.php:1625, ../includes/shortcode-builder/builder.php:1668, ../includes/shortcode-builder/builder.php:2289
+#: ../includes/shortcode-builder/builder.php:1542, ../includes/shortcode-builder/builder.php:1587, ../includes/shortcode-builder/builder.php:1625, ../includes/shortcode-builder/builder.php:1668, ../includes/shortcode-builder/builder.php:2293
 msgid "Style Five"
 msgstr ""
 
@@ -2107,95 +2107,95 @@ msgstr ""
 msgid "Extra 5"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2166
+#: ../includes/shortcode-builder/builder.php:2170
 msgid "1 Column"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2170
+#: ../includes/shortcode-builder/builder.php:2174
 msgid "2 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2174
+#: ../includes/shortcode-builder/builder.php:2178
 msgid "3 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2178
+#: ../includes/shortcode-builder/builder.php:2182
 msgid "4 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2182
+#: ../includes/shortcode-builder/builder.php:2186
 msgid "5 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2186
+#: ../includes/shortcode-builder/builder.php:2190
 msgid "6 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2197
+#: ../includes/shortcode-builder/builder.php:2201
 msgid "After Skills"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2201
+#: ../includes/shortcode-builder/builder.php:2205
 msgid "After Description"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2205
+#: ../includes/shortcode-builder/builder.php:2209
 msgid "After Meta Details"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2216, ../includes/shortcode-builder/builder.php:2326
+#: ../includes/shortcode-builder/builder.php:2220, ../includes/shortcode-builder/builder.php:2330
 msgid "None"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2220
+#: ../includes/shortcode-builder/builder.php:2224
 msgid "Blur"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2224
+#: ../includes/shortcode-builder/builder.php:2228
 msgid "Brightness"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2228
+#: ../includes/shortcode-builder/builder.php:2232
 msgid "Contrast"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2232
+#: ../includes/shortcode-builder/builder.php:2236
 msgid "Grayscale"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2236
+#: ../includes/shortcode-builder/builder.php:2240
 msgid "Hue Rotate"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2240
+#: ../includes/shortcode-builder/builder.php:2244
 msgid "Invert"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2244
+#: ../includes/shortcode-builder/builder.php:2248
 msgid "Opacity"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2248
+#: ../includes/shortcode-builder/builder.php:2252
 msgid "Saturate"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2252
+#: ../includes/shortcode-builder/builder.php:2256
 msgid "Sepia"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2373
+#: ../includes/shortcode-builder/builder.php:2377
 msgid "Preference saved"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2382
+#: ../includes/shortcode-builder/builder.php:2386
 msgid "No preference provided"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2448
+#: ../includes/shortcode-builder/builder.php:2461
 msgid "Taxonomy settings saved"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2456
+#: ../includes/shortcode-builder/builder.php:2469
 msgid "No settings provided"
 msgstr ""
 
