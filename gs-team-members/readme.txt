@@ -4,10 +4,10 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 6.6
 Requires PHP: 5.6
-Stable tag: 2.5.4
+Stable tag: 2.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery, wp team, team grid, team carousel, team carousel wordpress plugin, team slider, team slider wordpress plugin, team free
+Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
 
 WordPress Team Plugin - Perfect for team gallery, team slider, team grid and provides a customizable and flexible way to showcase your team.
 
@@ -750,6 +750,10 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.5.5 - Oct 24, 2024 =
+* [Fixed]: Horizontal Theme Columns Issue with Filter.
+* [Updated]: Freemius SDK 2.9.0
+
 = Version 2.5.4 - Oct 20, 2024 =
 * [Added]: Filter hook for customizing single page styles.
 * [Added]: Lazy loading support for carousel images, optimized for the *Hub WordPress Theme*.
@@ -1377,6 +1381,10 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade notice ==
+= Version 2.5.5 - Oct 24, 2024 =
+* [Fixed]: Horizontal Theme Columns Issue with Filter.
+* [Updated]: Freemius SDK 2.9.0
+
 = Version 2.5.4 - Oct 20, 2024 =
 * [Added]: Filter hook for customizing single page styles.
 * [Added]: Lazy loading support for carousel images, optimized for the *Hub WordPress Theme*.
