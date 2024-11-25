@@ -2018,11 +2018,50 @@ if ( ! class_exists( 'Builder' ) ) {
             ];
         }
 
+        public function get_translation($translation_name) {
+
+            $translations = $this->get_shortcode_default_translations();
+        
+            if ( ! array_key_exists( $translation_name, $translations ) ) return '';
+
+            $prefs = $this->_get_shortcode_pref( false );
+
+            if ( $prefs['gs_member_enable_multilingual'] === 'on' ) return $translations[$translation_name];
+        
+            return $prefs[ $translation_name ];
+        }
+
+        public function get_shortcode_default_translations() {
+            $translations = [
+                'gs_teamfliter_designation' => __('Show All Designation', 'gsteam'),
+                'gs_teamfliter_name' => __('Search By Name', 'gsteam'),
+                'gs_teamfliter_company' => __('Search By Company', 'gsteam'),
+                'gs_teamfliter_zip' => __('Search By Zip', 'gsteam'),
+                'gs_teamfliter_tag' => __('Search By Tag', 'gsteam'),
+                'gs_teamcom_meta' => __('Company', 'gsteam'),
+                'gs_teamadd_meta' => __('Address', 'gsteam'),
+                'gs_teamlandphone_meta' => __('Land Phone', 'gsteam'),
+                'gs_teamcellPhone_meta' => __('Cell Phone', 'gsteam'),
+                'gs_teamemail_meta' => __('Email', 'gsteam'),
+                'gs_team_zipcode_meta' => __('Zip Code', 'gsteam'),
+                'gs_team_follow_me_on' => __('Follow Me On', 'gsteam'),
+                'gs_team_skills' => __('Skills', 'gsteam'),
+                'gs_team_read_on' => __('Read On', 'gsteam'),
+                'gs_team_more' => __('More', 'gsteam'),
+                'gs_team_vcard_txt' => __('Download vCard', 'gsteam'),
+                'gs_team_reset_filters_txt' => __('Reset Filters', 'gsteam'),
+                'gs_team_prev_txt' => __('Prev', 'gsteam'),
+                'gs_team_next_txt' => __('Next', 'gsteam')
+            ];
+
+            return $translations;
+        }
+
         public function get_shortcode_default_prefs() {
-            return [
+            $prefs = [
                 'gs_member_nxt_prev'            => 'off',
                 'single_page_style'             => 'default',
-                'single_link_type'             => 'single_page',
+                'single_link_type'              => 'single_page',
                 'gs_member_search_all_fields'   => 'off',
                 'gs_member_enable_multilingual' => 'off',
                 'gs_teammembers_slug'           => 'team-members',
@@ -2038,27 +2077,14 @@ if ( ! class_exists( 'Builder' ) ) {
 
                 'lazy_load_class'               => 'skip-lazy',
                 'acf_fields_position'           => 'after_skills',
-                'gs_teamfliter_designation'     => get_translation('gs_teamfliter_designation'),
-                'gs_teamfliter_name'            => get_translation('gs_teamfliter_name'),
-                'gs_teamfliter_company'         => get_translation('gs_teamfliter_company'),
-                'gs_teamfliter_zip'             => get_translation('gs_teamfliter_zip'),
-                'gs_teamfliter_tag'             => get_translation('gs_teamfliter_tag'),
-                'gs_teamcom_meta'               => get_translation('gs_teamcom_meta'),
-                'gs_teamadd_meta'               => get_translation('gs_teamadd_meta'),
-                'gs_teamlandphone_meta'         => get_translation('gs_teamlandphone_meta'),
-                'gs_teamcellPhone_meta'         => get_translation('gs_teamcellPhone_meta'),
-                'gs_teamemail_meta'             => get_translation('gs_teamemail_meta'),
-                'gs_team_zipcode_meta'          => get_translation('gs_team_zipcode_meta'),
-                'gs_team_follow_me_on'          => get_translation('gs_team_follow_me_on'),
-                'gs_team_next_txt'              => get_translation('gs_team_next_txt'),
-                'gs_team_prev_txt'              => get_translation('gs_team_prev_txt'),
-                'gs_team_skills'                => get_translation('gs_team_skills'),
-                'gs_team_read_on'               => get_translation('gs_team_read_on'),
-                'gs_team_more'                  => get_translation('gs_team_more'),
-                'gs_team_vcard_txt'             => get_translation('gs_team_vcard_txt'),
-                'gs_team_reset_filters_txt'     => get_translation('gs_team_reset_filters_txt'),
                 'gs_team_custom_css'            => ''
             ];
+
+            $translations = $this->get_shortcode_default_translations();
+
+            $prefs = array_merge( $prefs, $translations );
+
+            return $prefs;
         }
 
         public function get_taxonomy_default_settings() {
@@ -2392,19 +2418,14 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function _get_shortcode_pref( $is_ajax ) {
 
-            $pref = get_option( $this->option_name );
-
-            if ( empty($pref) ) {
-                $pref = $this->get_shortcode_default_prefs();
-                $this->_save_shortcode_pref( $pref, false );
-            }
+            $pref = (array) get_option( $this->option_name, [] );
+            $pref = shortcode_atts( $this->get_shortcode_default_prefs(), $pref );
 
             if ( $is_ajax ) {
                 wp_send_json_success( $pref );
             }
 
             return $pref;
-
         }
 
         public function get_shortcode_pref() {

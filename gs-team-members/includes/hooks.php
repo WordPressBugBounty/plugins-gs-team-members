@@ -16,7 +16,7 @@ class Hooks {
         add_action( 'init', [ $this, 'plugin_update_version' ], 0 );
         add_action( 'plugins_loaded', [ $this, 'plugin_loaded' ] );
         add_action( 'init', [ $this, 'GS_flush_rewrite_rules' ] );
-        add_filter( 'excerpt_length', [ $this, 'excerpt_length' ] );
+        add_filter( 'excerpt_length', [ $this, 'excerpt_length' ], 99999 );
         add_action( 'plugins_loaded', [ $this, 'i18n'] );
         add_filter( 'jetpack_content_options_featured_image_exclude_cpt', [$this, 'jetpack__featured_image_exclude_cpt']);
         add_action( 'admin_menu', array( $this, 'register_sub_menu') );

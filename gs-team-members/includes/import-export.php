@@ -509,7 +509,7 @@ class Import_Export {
     public function export__settings($json_data = []) {
 
         // Add Shortcodes Data to the zip file
-        $json_data['settings'] = get_option('gs_team_shortcode_prefs');
+        $json_data['settings'] = plugin()->builder->_get_shortcode_pref( false );
 
         // Return the generated data
         return $json_data;

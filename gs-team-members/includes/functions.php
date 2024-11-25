@@ -70,34 +70,7 @@ function get_query($atts) {
 }
 
 function get_translation($translation_name) {
-
-    $translations = [
-        'gs_teamfliter_designation' => __('Show All Designation', 'gsteam'),
-        'gs_teamfliter_name' => __('Search By Name', 'gsteam'),
-        'gs_teamfliter_company' => __('Search By Company', 'gsteam'),
-        'gs_teamfliter_zip' => __('Search By Zip', 'gsteam'),
-        'gs_teamfliter_tag' => __('Search By Tag', 'gsteam'),
-        'gs_teamcom_meta' => __('Company', 'gsteam'),
-        'gs_teamadd_meta' => __('Address', 'gsteam'),
-        'gs_teamlandphone_meta' => __('Land Phone', 'gsteam'),
-        'gs_teamcellPhone_meta' => __('Cell Phone', 'gsteam'),
-        'gs_teamemail_meta' => __('Email', 'gsteam'),
-        'gs_team_zipcode_meta' => __('Zip Code', 'gsteam'),
-        'gs_team_follow_me_on' => __('Follow Me On', 'gsteam'),
-        'gs_team_skills' => __('Skills', 'gsteam'),
-        'gs_team_read_on' => __('Read On', 'gsteam'),
-        'gs_team_more' => __('More', 'gsteam'),
-        'gs_team_vcard_txt' => __('Download vCard', 'gsteam'),
-        'gs_team_reset_filters_txt' => __('Reset Filters', 'gsteam'),
-        'gs_team_prev_txt' => __('Prev', 'gsteam'),
-        'gs_team_next_txt' => __('Next', 'gsteam'),
-    ];
-
-    if (!array_key_exists($translation_name, $translations)) return '';
-
-    if (getoption('gs_member_enable_multilingual', 'off') == 'on') return $translations[$translation_name];
-
-    return getoption($translation_name, $translations[$translation_name]);
+    return plugin()->builder->get_translation($translation_name);
 }
 
 function member_description($shortcode_id, $max_length = 100, $echo = false, $is_excerpt = true, $has_link = true, $link_type = 'single_page') {
@@ -376,11 +349,8 @@ function member_name($shortcode_id, $echo = false, $has_link = true, $link_type 
 }
 
 function getoption($option, $default = '') {
-    $options = (array) get_option('gs_team_shortcode_prefs', []);
-    // $defaults = plugin()->builder->get_shortcode_default_prefs();
-    // $options = array_merge($options, $defaults);
-    if ( isset($options[$option]) ) return $options[$option];
-    return $default;
+    $prefs = plugin()->builder->_get_shortcode_pref( false );
+    return isset($prefs[$option]) ? $prefs[$option] : $default;
 }
 
 function member_secondary_thumbnail($size, $echo = false) {
