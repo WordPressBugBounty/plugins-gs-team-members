@@ -158,43 +158,25 @@ class Shortcode {
 			'order'          => sanitize_text_field( $order ),
 			'orderby'        => sanitize_text_field( $orderby ),
 			'posts_per_page' => (int) $num,
-			'paged'          => (int) $gs_tm_paged
+			'paged'          => (int) $gs_tm_paged,
+			'tax_query' 	=> [],
 		];
 	
-		$publicTerms   = Builder::get_team_terms( 'gs_team_group', true );
-		$includedTerms = string_to_array( $group );
-		$excludedTerms = string_to_array( $exclude_group );
-	
-		if ( $includedTerms !== $excludedTerms ) {
-			if ( empty( $excludedTerms ) && ! empty( $includedTerms ) ) {
-				$categoryIn = $includedTerms;
-			}
-	
-			if ( empty( $includedTerms ) && ! empty( $excludedTerms ) ) {
-				$categoryIn = array_diff( $publicTerms, $excludedTerms );
-			}
-		
-			if ( ! empty( $includedTerms ) && ! empty( $excludedTerms ) ) {
-				$categoryIn = array_diff( $includedTerms, $excludedTerms );
-			}
-	
-			$categoryIn = ! empty( $categoryIn ) ? $categoryIn : [];
-	
+		if ( !empty($group) ) {
 			$args['tax_query'][] = [
 				'taxonomy' => 'gs_team_group',
-				'field'    => 'id',
-				'terms'    => $categoryIn,
-				'operator' => 'IN',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $group ),
 			];
-		} else {
-			if ( ! empty( $includedTerms ) && ! empty( $excludedTerms ) ) {
-				$args['tax_query'][] = [
-					'taxonomy' => 'gs_team_group',
-					'field'    => 'id',
-					'terms'    => [],
-					'operator' => 'IN',
-				];
-			}
+		}
+	
+		if ( !empty($exclude_group) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_team_group',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_group ),
+				'operator' => 'NOT IN',
+			];
 		}
 	
 		if ( !empty($location) ) {
