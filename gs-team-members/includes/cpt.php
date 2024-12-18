@@ -41,7 +41,8 @@ class Cpt {
 			'not_found_in_trash' => __( 'No Teams found in Trash.', 'gsteam' ),
 		);
 
-		$gs_teammembers_slug  = getoption('gs_teammembers_slug', 'team-members');
+		$gs_teammembers_slug = getoption('gs_teammembers_slug', 'team-members');
+		$replace_custom_slug = getoption('replace_custom_slug', 'off') === 'off';
 
 		$args = array(
 			'labels'             => $labels,
@@ -50,7 +51,7 @@ class Cpt {
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => $gs_teammembers_slug ),
+			'rewrite'            => array( 'slug' => $gs_teammembers_slug, 'with_front' => $replace_custom_slug ),
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'hierarchical'       => false,

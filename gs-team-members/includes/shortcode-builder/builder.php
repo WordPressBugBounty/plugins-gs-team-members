@@ -638,6 +638,8 @@ if ( ! class_exists( 'Builder' ) ) {
                 'save-settings' => __('Save Settings', 'gsteam'),
                 'team-members-slug' => __('Team Members Slug', 'gsteam'),
                 'team-members-slug-details' => __('Customize Team Members Post Type Slug, by default it is set to team-members', 'gsteam'),
+                'replace-custom-slug' => __('Ignore Base Permalink Prefix', 'gsteam'),
+                'replace-custom-slug-details' => __('Enable this option to use a custom structure without the base prefix.', 'gsteam'),
 
                 'archive-page-slug' => __('Archive Page Slug', 'gsteam'),
                 'archive-page-slug-details' => __('Set Custom Archive Page Slug, now it is set to', 'gsteam') . ' ' . get_post_type_archive_link( 'gs_team' ),
@@ -2065,6 +2067,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_member_search_all_fields'   => 'off',
                 'gs_member_enable_multilingual' => 'off',
                 'gs_teammembers_slug'           => 'team-members',
+                'replace_custom_slug'           => 'off',
                 'archive_page_slug'             => '',
                 'archive_page_title'            => '',
                 'disable_google_fonts'          => 'off',
