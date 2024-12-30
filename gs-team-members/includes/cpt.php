@@ -12,8 +12,8 @@ class Cpt {
 	// Constructor
 	public function __construct() {
 
-		add_action( 'init', [ $this, 'register' ] );	
-		add_action( 'init', [ $this, 'register_taxonomies' ], 0 );
+		add_action( 'init', [ $this, 'register' ] );
+		add_action( 'init', [ $this, 'register_taxonomies' ] );
 		add_action( 'after_setup_theme', [ $this, 'theme_support' ] );
 
 		if ( ! gtm_fs()->is_paying_or_trial() ) {
@@ -41,8 +41,8 @@ class Cpt {
 			'not_found_in_trash' => __( 'No Teams found in Trash.', 'gsteam' ),
 		);
 
-		$gs_teammembers_slug = getoption('gs_teammembers_slug', 'team-members');
-		$replace_custom_slug = getoption('replace_custom_slug', 'off') === 'off';
+		$gs_teammembers_slug = getoption( 'gs_teammembers_slug', 'team-members' );
+		$replace_custom_slug = getoption( 'replace_custom_slug', 'off' ) === 'off';
 
 		$args = array(
 			'labels'             => $labels,
@@ -58,7 +58,7 @@ class Cpt {
 			'menu_position'      => GSTEAM_MENU_POSITION,
 			'menu_icon'          => GSTEAM_PLUGIN_URI . '/assets/img/icon.svg',
 			'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-			'wpml_cf_fields'        => true,
+			'wpml_cf_fields'     => true,
 			'show_in_wpml_language_switcher' => true
 		);
 
@@ -257,7 +257,6 @@ class Cpt {
 	}
 
 	// Register Gender Taxonomy For Team
-
 	function gender() {
 
 		if ( plugin()->builder->get_tax_option('enable_gender_tax') !== 'on' ) return;
@@ -301,7 +300,6 @@ class Cpt {
 	}
 
 	// Register Specialty Taxonomy For Team
-
 	function specialty() {
 
 		if ( plugin()->builder->get_tax_option('enable_specialty_tax') !== 'on' ) return;
@@ -561,12 +559,6 @@ class Cpt {
 
 	// Add theme support for Featured Images
 	function theme_support() {
-		// Add theme support for Featured Images
-		add_theme_support( 'post-thumbnails', array( 'gs_team' ) );
-		add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
-		add_theme_support( 'post-thumbnails', array( 'page' ) ); // Add it for pages
-		add_theme_support( 'post-thumbnails', array( 'product' ) ); // Add it for products
-		add_theme_support( 'post-thumbnails' );
 		// Add Shortcode support in text widget
 		add_filter( 'widget_text', 'do_shortcode' );
 	}

@@ -79,7 +79,7 @@ msgstr ""
 msgid "No Teams found in Trash."
 msgstr ""
 
-#: ../includes/cpt.php:109, ../includes/cpt.php:152, ../includes/cpt.php:195, ../includes/cpt.php:238, ../includes/cpt.php:282, ../includes/cpt.php:326, ../includes/cpt.php:369, ../includes/cpt.php:412, ../includes/cpt.php:455, ../includes/cpt.php:498, ../includes/cpt.php:541
+#: ../includes/cpt.php:109, ../includes/cpt.php:152, ../includes/cpt.php:195, ../includes/cpt.php:238, ../includes/cpt.php:281, ../includes/cpt.php:324, ../includes/cpt.php:367, ../includes/cpt.php:410, ../includes/cpt.php:453, ../includes/cpt.php:496, ../includes/cpt.php:539
 msgid "Not Found"
 msgstr ""
 
@@ -91,31 +91,31 @@ msgstr ""
 msgid "Recommended image size 400px X 400px for perfect view on various devices."
 msgstr ""
 
-#: ../includes/import-export.php:30, ../includes/import-export.php:38
+#: ../includes/import-export.php:28, ../includes/import-export.php:36
 msgid "No export data provided"
 msgstr ""
 
-#: ../includes/import-export.php:88
+#: ../includes/import-export.php:86
 msgid "Invalid file type"
 msgstr ""
 
-#: ../includes/import-export.php:108, ../includes/import-export.php:105
+#: ../includes/import-export.php:106, ../includes/import-export.php:103
 msgid "File upload failed"
 msgstr ""
 
-#: ../includes/import-export.php:120
+#: ../includes/import-export.php:118
 msgid "No import file provided"
 msgstr ""
 
-#: ../includes/import-export.php:127
+#: ../includes/import-export.php:125
 msgid "Invalid file"
 msgstr ""
 
-#: ../includes/import-export.php:134
+#: ../includes/import-export.php:132
 msgid "Invalid file content"
 msgstr ""
 
-#: ../includes/import-export.php:143
+#: ../includes/import-export.php:141
 msgid "Data imported successfully"
 msgstr ""
 
@@ -295,7 +295,7 @@ msgstr ""
 msgid "All Groups"
 msgstr ""
 
-#: ../includes/bulk-importer/bulk-importer.php:194, ../includes/bulk-importer/bulk-importer.php:199
+#: ../includes/bulk-importer/bulk-importer.php:211, ../includes/bulk-importer/bulk-importer.php:216
 msgid "File is not valid"
 msgstr ""
 

@@ -67,12 +67,29 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
 
             $tax_input = [];
 
-            if ( !empty($row['group']) )        $tax_input['gs_team_group']        = $this->get_row_term_ids( $row['group'], 'gs_team_group' );
-            if ( !empty($row['tag']) )          $tax_input['gs_team_tag']          = $this->get_row_term_ids( $row['tag'], 'gs_team_tag' );
-            if ( !empty($row['languages']) )    $tax_input['gs_team_language']     = $this->get_row_term_ids( $row['languages'], 'gs_team_language' );
-            if ( !empty($row['location']) )     $tax_input['gs_team_location']     = $this->get_row_term_ids( $row['location'], 'gs_team_location' );
-            if ( !empty($row['gender']) )       $tax_input['gs_team_gender']       = $this->get_row_term_ids( $row['gender'], 'gs_team_gender' );
-            if ( !empty($row['specialty']) )    $tax_input['gs_team_specialty']    = $this->get_row_term_ids( $row['specialty'], 'gs_team_specialty' );
+            if ( !empty($row['group']) && taxonomy_exists('gs_team_group') ) {
+                $tax_input['gs_team_group'] = $this->get_row_term_ids( $row['group'], 'gs_team_group' );
+            }
+
+            if ( !empty($row['tag']) && taxonomy_exists('gs_team_tag') ) {
+                $tax_input['gs_team_tag'] = $this->get_row_term_ids( $row['tag'], 'gs_team_tag' );
+            }
+
+            if ( !empty($row['languages']) && taxonomy_exists('gs_team_language') ) {
+                $tax_input['gs_team_language'] = $this->get_row_term_ids( $row['languages'], 'gs_team_language' );
+            }
+
+            if ( !empty($row['location']) && taxonomy_exists('gs_team_location') ) {
+                $tax_input['gs_team_location'] = $this->get_row_term_ids( $row['location'], 'gs_team_location' );
+            }
+
+            if ( !empty($row['gender']) && taxonomy_exists('gs_team_gender') ) {
+                $tax_input['gs_team_gender'] = $this->get_row_term_ids( $row['gender'], 'gs_team_gender' );
+            }
+
+            if ( !empty($row['specialty']) && taxonomy_exists('gs_team_specialty') ) {
+                $tax_input['gs_team_specialty'] = $this->get_row_term_ids( $row['specialty'], 'gs_team_specialty' );
+            }
 
             return $tax_input;
 

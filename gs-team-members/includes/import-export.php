@@ -11,11 +11,9 @@ class Import_Export {
 
     private $zip_instance;
     private $zip_file;
-    private $is_pro;
     private $upload_dir;
 
     public function __construct() {
-        $this->is_pro = gtm_fs()->is_paying_or_trial();
         add_action('wp_ajax_gsteam_export_data', array($this, 'gsteam_export_data'));
         add_action('wp_ajax_gsteam_import_data', array($this, 'gsteam_import_data'));
         add_action('gs_after_shortcode_submenu', array($this, 'register_sub_menu'));
@@ -150,6 +148,11 @@ class Import_Export {
             plugin()->builder->_save_shortcode_pref($json_data['settings'], false);
         }
 
+        // Import the Settings Data
+        if (!empty($json_data['taxonomy_settings'])) {
+            plugin()->builder->_save_taxonomy_settings($json_data['taxonomy_settings'], false);
+        }
+
         // Import the Attachments Data
         if (!empty($json_data['attachments'])) {
             $this->import__attachments($json_data['attachments']);
@@ -157,6 +160,7 @@ class Import_Export {
 
         // Import the Terms Data
         if (!empty($json_data['terms'])) {
+            plugin()->cpt->register_taxonomies();
             $this->import__terms($json_data['terms']);
         }
 
@@ -172,6 +176,7 @@ class Import_Export {
 
     }
 
+    // Test Purpose
     public function delete__team_data() {
 
         // Delete All the Posts
@@ -316,6 +321,12 @@ class Import_Export {
             $post['meta_input'] = $meta_input;
 
             foreach ($post['tax_input'] as $taxonomy => $terms) {
+                
+                if ( ! taxonomy_exists( $taxonomy ) ) {
+                    unset($post['tax_input'][$taxonomy]);
+                    continue;
+                }
+
                 foreach ($terms as $key => $term) {
                     $term_id = (int) $this->get_imported_term_id($term);
                     if ($term_id) {
@@ -324,7 +335,9 @@ class Import_Export {
                         unset($terms[$key]);
                     }
                 }
+
                 $post['tax_input'][$taxonomy] = $terms;
+
             }
 
             wp_insert_post($post);
@@ -367,6 +380,12 @@ class Import_Export {
             $shortcode_settings['language']      = $this->replace_with_imported_terms($shortcode_settings['language']);
             $shortcode_settings['specialty']     = $this->replace_with_imported_terms($shortcode_settings['specialty']);
             $shortcode_settings['gender']        = $this->replace_with_imported_terms($shortcode_settings['gender']);
+
+            $shortcode_settings['include_extra_one']    = $this->replace_with_imported_terms($shortcode_settings['include_extra_one']);
+            $shortcode_settings['include_extra_two']    = $this->replace_with_imported_terms($shortcode_settings['include_extra_two']);
+            $shortcode_settings['include_extra_three']  = $this->replace_with_imported_terms($shortcode_settings['include_extra_three']);
+            $shortcode_settings['include_extra_four']   = $this->replace_with_imported_terms($shortcode_settings['include_extra_four']);
+            $shortcode_settings['include_extra_five']   = $this->replace_with_imported_terms($shortcode_settings['include_extra_five']);
 
             // Set the new shortcode settings
             $shortcode['shortcode_settings'] = json_encode($shortcode_settings);
@@ -424,9 +443,11 @@ class Import_Export {
 
     public function export__team_members($json_data = []) {
 
-        $json_data['posts']       = [];
-        $json_data['attachments'] = [];
-        $json_data['terms']       = [];
+        $json_data['taxonomy_settings'] = plugin()->builder->_get_taxonomy_settings( false );
+
+        $json_data['posts']             = [];
+        $json_data['attachments']       = [];
+        $json_data['terms']             = [];
 
         $posts = get_posts([
             'posts_per_page'    => -1,
@@ -542,13 +563,11 @@ class Import_Export {
         );
     }
 
-    public function get_taxonomy_list($restrict = false) {
+    public function get_taxonomy_list() {
 
-        if ($restrict && !$this->is_pro) {
-            return ['gs_team_group', 'gs_team_tag'];
-        }
+        $taxonomies = ['gs_team_group', 'gs_team_tag', 'gs_team_language', 'gs_team_location', 'gs_team_gender', 'gs_team_specialty', 'gs_team_extra_one', 'gs_team_extra_two', 'gs_team_extra_three', 'gs_team_extra_four', 'gs_team_extra_five'];
 
-        return ['gs_team_group', 'gs_team_tag', 'gs_team_language', 'gs_team_location', 'gs_team_gender', 'gs_team_specialty'];
+        return array_filter( $taxonomies, 'taxonomy_exists' );
     }
 
     public function get_shortcode_list() {

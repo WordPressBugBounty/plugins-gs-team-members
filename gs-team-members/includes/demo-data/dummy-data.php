@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( ! class_exists( 'Dummy_Data' ) ) {
 
-    final class Dummy_Data {   
+    final class Dummy_Data {
 
         public function __construct() {
 
@@ -90,19 +90,20 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
             $builder = plugin()->builder;
 
-            add_submenu_page( 
+            add_submenu_page(
                 'edit.php?post_type=gs_team', 'Install Demo', 'Install Demo', 'publish_pages', 'gs-team-shortcode#/demo-data', array( $builder, 'view' )
             );
 
         }
 
         public function get_taxonomy_list() {
-            return ['gs_team_group', 'gs_team_language', 'gs_team_location', 'gs_team_gender', 'gs_team_specialty'];
+            $taxonomies = ['gs_team_group', 'gs_team_tag', 'gs_team_language', 'gs_team_location', 'gs_team_gender', 'gs_team_specialty'];
+            return array_filter( $taxonomies, 'taxonomy_exists' );
         }
 
         public function remove_dummy_indicator( $post_id ) {
 
-            if ( empty( get_post_meta($post_id, 'gsteam-demo_data', true) ) ) return;
+            if ( empty( get_post_meta( $post_id, 'gsteam-demo_data', true ) ) ) return;
             
             $taxonomies = $this->get_taxonomy_list();
 
@@ -117,7 +118,6 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 foreach( $dummy_terms as $term_id ) {
                     delete_term_meta( $term_id, 'gsteam-demo_data', 1 );
                 }
-                delete_transient( 'gsteam_dummy_terms' );
             }
 
             // Remove dummy indicator from attachments
@@ -372,11 +372,13 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
             if ( empty($tax_inputs) ) return $tax_inputs;
 
-            foreach( $tax_inputs as $tax_input => $tax_params ) {
-                $tax_inputs[$tax_input] = $this->get_taxonomy_ids_by_slugs( $tax_input, $tax_params );
+            $_tax_inputs = [];
+
+            foreach( $tax_inputs as $taxonomy => $tax_params ) {
+                if ( taxonomy_exists( $taxonomy ) ) $_tax_inputs[$taxonomy] = $this->get_taxonomy_ids_by_slugs( $taxonomy, $tax_params );
             }
 
-            return $tax_inputs;
+            return $_tax_inputs;
         }
 
         public function get_meta_inputs( $meta_inputs = [] ) {
@@ -1010,15 +1012,9 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 wp_delete_term( $term['term_id'], $term['taxonomy'] );
             }
 
-            delete_transient( 'gsteam_dummy_terms' );
-
         }
 
         public function get_dummy_terms() {
-
-            $terms = get_transient( 'gsteam_dummy_terms' );
-
-            if ( false !== $terms ) return $terms;
 
             $taxonomies = $this->get_taxonomy_list();
 
@@ -1028,17 +1024,10 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 'meta_key' => 'gsteam-demo_data',
                 'meta_value' => 1,
             ));
-
-            $terms = json_decode( json_encode( $terms ), true ); // Object to Array
             
-            if ( is_wp_error($terms) || empty($terms) ) {
-                delete_transient( 'gsteam_dummy_terms' );
-                return [];
-            }
+            if ( is_wp_error($terms) || empty($terms) ) return [];
 
-            set_transient( 'gsteam_dummy_terms', $terms, 3 * MINUTE_IN_SECONDS );
-
-            return $terms;
+            return json_decode( json_encode( $terms ), true ); // Object to Array
 
         }
 
