@@ -104,12 +104,12 @@ class Meta_Fields {
 
 				<div class="form-group">
 					<label for="gsEmCC"><?php _e('CC', 'gsteam'); ?></label>
-					<input type="text" id="gsEmCC" class="form-control" name="gs_cc" placeholder="<?php esc_attr_e( 'Enter CC emails, separated by commas' ); ?>" value="<?php echo isset($gs_cc) ? esc_attr($gs_cc) : ''; ?>">
+					<input type="text" id="gsEmCC" class="form-control" name="gs_cc" placeholder="<?php esc_attr_e( 'Enter CC emails, separated by semicolon. ex: email1@gmail.com; email2@gmail.com' ); ?>" value="<?php echo isset($gs_cc) ? esc_attr($gs_cc) : ''; ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="gsEmBCC"><?php _e('BCC', 'gsteam'); ?></label>
-					<input type="text" id="gsEmBCC" class="form-control" name="gs_bcc" placeholder="<?php esc_attr_e( 'Enter BCC emails, separated by commas' ); ?>" value="<?php echo isset($gs_bcc) ? esc_attr($gs_bcc) : ''; ?>">
+					<input type="text" id="gsEmBCC" class="form-control" name="gs_bcc" placeholder="<?php esc_attr_e( 'Enter BCC emails, separated by semicolon. ex: email1@gmail.com; email2@gmail.com' ); ?>" value="<?php echo isset($gs_bcc) ? esc_attr($gs_bcc) : ''; ?>">
 				</div>
 
 				<div class="form-group">

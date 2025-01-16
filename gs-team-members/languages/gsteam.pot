@@ -1,4 +1,4 @@
-# Copyright (C) 2024 GS_Team
+# Copyright (C) 2025 GS_Team
 # This file is distributed under the same license as the GS_Team package.
 msgid ""
 msgstr ""
@@ -295,7 +295,7 @@ msgstr ""
 msgid "All Groups"
 msgstr ""
 
-#: ../includes/bulk-importer/bulk-importer.php:211, ../includes/bulk-importer/bulk-importer.php:216
+#: ../includes/bulk-importer/bulk-importer.php:233, ../includes/bulk-importer/bulk-importer.php:238
 msgid "File is not valid"
 msgstr ""
 

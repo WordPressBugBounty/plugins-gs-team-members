@@ -91,8 +91,27 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
                 $tax_input['gs_team_specialty'] = $this->get_row_term_ids( $row['specialty'], 'gs_team_specialty' );
             }
 
-            return $tax_input;
+            if ( !empty($row['extra_one']) && taxonomy_exists('gs_team_extra_one') ) {
+                $tax_input['gs_team_extra_one'] = $this->get_row_term_ids( $row['extra_one'], 'gs_team_extra_one' );
+            }
 
+            if ( !empty($row['extra_two']) && taxonomy_exists('gs_team_extra_two') ) {
+                $tax_input['gs_team_extra_two'] = $this->get_row_term_ids( $row['extra_two'], 'gs_team_extra_two' );
+            }
+
+            if ( !empty($row['extra_three']) && taxonomy_exists('gs_team_extra_three') ) {
+                $tax_input['gs_team_extra_three'] = $this->get_row_term_ids( $row['extra_three'], 'gs_team_extra_three' );
+            }
+
+            if ( !empty($row['extra_four']) && taxonomy_exists('gs_team_extra_four') ) {
+                $tax_input['gs_team_extra_four'] = $this->get_row_term_ids( $row['extra_four'], 'gs_team_extra_four' );
+            }
+
+            if ( !empty($row['extra_five']) && taxonomy_exists('gs_team_extra_five') ) {
+                $tax_input['gs_team_extra_five'] = $this->get_row_term_ids( $row['extra_five'], 'gs_team_extra_five' );
+            }
+
+            return $tax_input;
         }
 
         public function get_row_meta_input( $row ) {
@@ -107,12 +126,15 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
             if ( !empty($row['land_phone']) )       $meta_input['_gs_land']             = sanitize_text_field( $row['land_phone'] );
             if ( !empty($row['cell_phone']) )       $meta_input['_gs_cell']             = sanitize_text_field( $row['cell_phone'] );
             if ( !empty($row['email']) )            $meta_input['_gs_email']            = sanitize_email( $row['email'] );
+            if ( !empty($row['cc']) )               $meta_input['_gs_cc']               = sanitize_text_field( $row['cc'] );
+            if ( !empty($row['bcc']) )              $meta_input['_gs_bcc']              = sanitize_text_field( $row['bcc'] );
             if ( !empty($row['address']) )          $meta_input['_gs_address']          = sanitize_text_field( $row['address'] );
-            if ( !empty($row['zip_code']) )         $meta_input['_gs_zip_code']         = sanitize_text_field( $row['zip_code'] );
             if ( !empty($row['ribbon']) )           $meta_input['_gs_ribon']            = sanitize_text_field( $row['ribbon'] );
+            if ( !empty($row['zip_code']) )         $meta_input['_gs_zip_code']         = sanitize_text_field( $row['zip_code'] );
+            if ( !empty($row['vcard']) )            $meta_input['_gs_vcard']            = esc_url_raw( $row['vcard'] );
+            if ( !empty($row['custom_page_link']) ) $meta_input['_gs_custom_page']      = esc_url_raw( $row['custom_page_link'] );
             if ( !empty($row['socials']) )          $meta_input['gs_social']            = (array) $row['socials'];
             if ( !empty($row['skills']) )           $meta_input['gs_skill']             = (array) $row['skills'];
-            if ( !empty($row['vcard']) )            $meta_input['gs_vcard']             = esc_url_raw( $row['vcard'] );
 
             return $meta_input;
 
@@ -208,12 +230,12 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
 
                 $header_row = array_map( [ $this, 'clean' ], $header_row );
 
-                if ( count($header_row) != 22 ) return new \WP_Error('file_not_valid', __('File is not valid', 'gsteam') );
+                if ( count($header_row) != 30 ) return new \WP_Error('file_not_valid', __('File is not valid', 'gsteam') );
         
                 // Read file
                 while ( ( $csv_data = fgetcsv($csv_file) ) !== false ) {
 
-                    if ( count($csv_data) != 22 ) return new \WP_Error('file_not_valid', __('File is not valid', 'gsteam') );
+                    if ( count($csv_data) != 30 ) return new \WP_Error('file_not_valid', __('File is not valid', 'gsteam') );
 
                     $csv_data = array_map( function( $column ) {
                         return _wp_json_convert_string( trim($column) );
@@ -231,14 +253,19 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
 
         public function map_row_data( $data ) {
 
-            $data['languages']  = $this->parse_to_array( $data['languages'] );
-            $data['location']   = $this->parse_to_array( $data['location'] );
-            $data['gender']     = $this->parse_to_array( $data['gender'] );
-            $data['specialty']  = $this->parse_to_array( $data['specialty'] );
-            $data['group']      = $this->parse_to_array( $data['group'] );
-            $data['tag']        = $this->parse_to_array( $data['tag'] );
-            $data['socials']    = $this->parse_to_array_deep( $data['socials'], ['icon', 'link'] );
-            $data['skills']     = $this->parse_to_array_deep( $data['skills'], ['skill', 'percent'] );
+            $data['languages']    = $this->parse_to_array( $data['languages'] );
+            $data['location']     = $this->parse_to_array( $data['location'] );
+            $data['gender']       = $this->parse_to_array( $data['gender'] );
+            $data['specialty']    = $this->parse_to_array( $data['specialty'] );
+            $data['group']        = $this->parse_to_array( $data['group'] );
+            $data['tag']          = $this->parse_to_array( $data['tag'] );
+            $data['extra_one']    = $this->parse_to_array( $data['extra_one'] );
+            $data['extra_two']    = $this->parse_to_array( $data['extra_two'] );
+            $data['extra_three']  = $this->parse_to_array( $data['extra_three'] );
+            $data['extra_four']   = $this->parse_to_array( $data['extra_four'] );
+            $data['extra_five']   = $this->parse_to_array( $data['extra_five'] );
+            $data['socials']      = $this->parse_to_array_deep( $data['socials'], ['icon', 'link'] );
+            $data['skills']       = $this->parse_to_array_deep( $data['skills'], ['skill', 'percent'] );
 
             return $data;
 
