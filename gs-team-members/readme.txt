@@ -1,10 +1,10 @@
 ﻿=== Team Members - A WordPress Team Plugin with Gallery, Grid, Carousel, Slider, Table, List, and More ===
-Contributors: gsplugins, itszaman, samdani, itsariful, devshakhawat, freemius
+Contributors: gsplugins, itszaman, samdani, itsariful, freemius
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 2.6.0
+Stable tag: 2.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -750,6 +750,9 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.6.1 - Feb 10, 2025 =
+* [Updated]: Freemius SDK 2.11.0
+
 = Version 2.6.0 - Jan 16, 2025 =
 * [Added]: Support For New Fields ( CC, BCC, Custom Page Link, Extra One, Extra Two, Extra Three, Extra Four, Extra Five ) In Bulk Import.
 
@@ -1401,6 +1404,9 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade notice ==
+= Version 2.6.1 - Feb 10, 2025 =
+* [Updated]: Freemius SDK 2.11.0
+
 = Version 2.6.0 - Jan 16, 2025 =
 * [Added]: Support For New Fields ( CC, BCC, Custom Page Link, Extra One, Extra Two, Extra Three, Extra Four, Extra Five ) In Bulk Import.
 
