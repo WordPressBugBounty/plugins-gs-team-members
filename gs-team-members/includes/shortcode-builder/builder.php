@@ -69,7 +69,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 $post->post_date = current_time( 'mysql' );
                 $post->post_date_gmt = current_time( 'mysql', 1 );
                 $post->post_title = __('Shortcode Preview', 'gsteam');
-                $post->post_content = '[gsteam preview="yes" id="' . esc_attr($_REQUEST['gsteam_shortcode_preview']) . '"]';
+                $post->post_content = '[gsteam preview="yes" id="' . esc_attr( sanitize_key( $_REQUEST['gsteam_shortcode_preview'] ) ) . '"]';
                 $post->post_status = 'publish';
                 $post->comment_status = 'closed';
                 $post->ping_status = 'closed';

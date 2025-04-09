@@ -11,8 +11,8 @@
  * @wordpress-plugin
  * Plugin Name:		GS Team Members
  * Plugin URI:		https://www.gsplugins.com/wordpress-plugins
- * Description:     Best Responsive Team member plugin for Wordpress to showcase member Image, Name, Designation, Social connectivity links. Display anywhere at your site using generated shortcode like [gsteam id=1] & widgets. Check more shortcode examples and documentation at <a href="https://team.gsplugins.com">GS Team PRO Demos & Docs</a>
- * Version:         2.6.2
+ * Description:     Best Team Member Plugin for WordPress – easily showcase your team’s photos, names, designations, and social media profiles. Display team members anywhere on your site using a generated shortcode like [gsteam id=1] or via widgets. Perfect for adding a professional touch to your "About" or "Meet the Team" pages. Check <a href="https://team.gsplugins.com">GS Team PRO Demo</a> and <a href="https://docs.gsplugins.com/gs-team-members">Documentation</a>.
+ * Version:         2.6.3
  * Author:       	GS Plugins
  * Author URI:      https://www.gsplugins.com
  * Text Domain:     gsteam
@@ -31,7 +31,7 @@ if ( !defined( 'ABSPATH' ) ) {
  * Defining constants
  */
 if ( !defined( 'GSTEAM_VERSION' ) ) {
-    define( 'GSTEAM_VERSION', '2.6.2' );
+    define( 'GSTEAM_VERSION', '2.6.3' );
 }
 if ( !defined( 'GSTEAM_MENU_POSITION' ) ) {
     define( 'GSTEAM_MENU_POSITION', 39 );
