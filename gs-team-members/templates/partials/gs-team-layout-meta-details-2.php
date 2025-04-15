@@ -24,11 +24,11 @@ $gs_team_language_label     = plugin()->builder->get_tax_option( 'language_tax_l
 $gs_team_specialty_label    = plugin()->builder->get_tax_option( 'specialty_tax_label' );
 $gs_team_gender_label       = plugin()->builder->get_tax_option( 'gender_tax_label' );
 
-$gs_team_extra_one_label   = 'Extra One';
-$gs_team_extra_two_label   = 'Extra Two';
-$gs_team_extra_three_label = 'Extra Three';
-$gs_team_extra_four_label  = 'Extra Four';
-$gs_team_extra_five_label  = 'Extra Five';
+$gs_team_extra_one_label   = plugin()->builder->get_tax_option( 'extra_one_tax_label' );
+$gs_team_extra_two_label   = plugin()->builder->get_tax_option( 'extra_two_tax_label' );
+$gs_team_extra_three_label = plugin()->builder->get_tax_option( 'extra_three_tax_label' );
+$gs_team_extra_four_label  = plugin()->builder->get_tax_option( 'extra_four_tax_label' );
+$gs_team_extra_five_label  = plugin()->builder->get_tax_option( 'extra_five_tax_label' );
 
 $address            = get_post_meta( get_the_id(), '_gs_address', true );
 $email              = get_post_meta( get_the_id(), '_gs_email', true );

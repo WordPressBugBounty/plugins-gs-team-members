@@ -492,12 +492,16 @@ class Import_Export {
 
             if ($thumbnail_id) {
                 $thumbnail_data = $this->get_attachment_export_data($thumbnail_id);
-                $json_data['attachments'][] = $thumbnail_data;
+                if ( !empty($thumbnail_data) ) {
+                    $json_data['attachments'][] = $thumbnail_data;
+                }
             }
 
             if ($secondary_thumbnail_id) {
                 $secondary_thumbnail_data = $this->get_attachment_export_data($secondary_thumbnail_id);
-                $json_data['attachments'][] = $secondary_thumbnail_data;
+                if ( !empty($secondary_thumbnail_data) ) {
+                    $json_data['attachments'][] = $secondary_thumbnail_data;
+                }
             }
         }
 
@@ -538,6 +542,11 @@ class Import_Export {
 
     public function get_attachment_export_data($attachment_id) {
         $attachment = get_post($attachment_id);
+        
+        if ( empty($attachment) || !is_object($attachment) ) return false;
+        if ( $attachment->post_type !== 'attachment' ) return false;
+        if ( empty( get_attached_file( $attachment_id ) ) ) return false;
+
         $attachment_data = array(
             'ID' => $attachment->ID,
             'title' => $attachment->post_title,
