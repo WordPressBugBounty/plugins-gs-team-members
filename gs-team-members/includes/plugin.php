@@ -11,7 +11,6 @@ class Plugin {
     public $cpt;
     public $shortcode;
     public $template_loader;
-    public $widget;
     public $scripts;
     public $hooks;
     public $sortable;
@@ -49,7 +48,7 @@ class Plugin {
         new Import_Export();
 
         if (gtm_fs()->is_paying_or_trial()) {
-            $this->widget = new Widgets();
+            include_once GSTEAM_PLUGIN_DIR . 'includes/widgets.php';
         }
 
         require_once GSTEAM_PLUGIN_DIR . 'includes/asset-generator/gs-load-asset-generator.php';

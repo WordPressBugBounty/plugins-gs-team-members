@@ -24,6 +24,9 @@ class Import_Export {
         // Check for valid nonce
         check_ajax_referer('_gsteam_admin_nonce_gs_');
 
+        // Check for valid user permissions
+        if (!current_user_can('manage_options')) wp_send_json_error(__('You do not have permission to perform this action', 'gsteam'), 403);
+
         // Check for required data
         if (empty($export_data = $_REQUEST['export_data'])) wp_send_json_error(__('No export data provided', 'gsteam'), 400);
 
@@ -113,6 +116,9 @@ class Import_Export {
 
         // Check for valid nonce
         check_ajax_referer('_gsteam_admin_nonce_gs_');
+
+        // Check for valid user permissions
+        if (!current_user_can('manage_options')) wp_send_json_error(__('You do not have permission to perform this action', 'gsteam'), 403);
 
         // Check for required data
         if (empty($_FILES['import_file'])) wp_send_json_error(__('No import file provided', 'gsteam'), 400);

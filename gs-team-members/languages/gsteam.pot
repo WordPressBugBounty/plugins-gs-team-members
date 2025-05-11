@@ -91,31 +91,35 @@ msgstr ""
 msgid "Recommended image size 400px X 400px for perfect view on various devices."
 msgstr ""
 
-#: ../includes/import-export.php:28, ../includes/import-export.php:36
+#: ../includes/import-export.php:28, ../includes/import-export.php:121
+msgid "You do not have permission to perform this action"
+msgstr ""
+
+#: ../includes/import-export.php:31, ../includes/import-export.php:39
 msgid "No export data provided"
 msgstr ""
 
-#: ../includes/import-export.php:86
+#: ../includes/import-export.php:89
 msgid "Invalid file type"
 msgstr ""
 
-#: ../includes/import-export.php:106, ../includes/import-export.php:103
+#: ../includes/import-export.php:109, ../includes/import-export.php:106
 msgid "File upload failed"
 msgstr ""
 
-#: ../includes/import-export.php:118
+#: ../includes/import-export.php:124
 msgid "No import file provided"
 msgstr ""
 
-#: ../includes/import-export.php:125
+#: ../includes/import-export.php:131
 msgid "Invalid file"
 msgstr ""
 
-#: ../includes/import-export.php:132
+#: ../includes/import-export.php:138
 msgid "Invalid file content"
 msgstr ""
 
-#: ../includes/import-export.php:141
+#: ../includes/import-export.php:147
 msgid "Data imported successfully"
 msgstr ""
 
