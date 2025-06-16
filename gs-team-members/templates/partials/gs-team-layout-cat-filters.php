@@ -48,7 +48,7 @@ if ( empty($_terms) || count($_terms) < 2 ) return;
 <ul class="<?php echo esc_attr($classes); ?>" style="text-align: <?php echo esc_attr($gs_tm_filter_cat_pos); ?>">
     
     <?php if ( $gs_filter_all_enabled == 'on' ) : ?>
-        <li class="filter"><a href="javascript:void(0)" data-filter="*"><?php echo esc_html($fitler_all_text); ?></a></li>
+        <li class="filter"><a href="#" data-filter="*"><?php echo esc_html($fitler_all_text); ?></a></li>
     <?php endif; ?>
 
     <?php foreach ( $_terms as $term ) :
@@ -58,7 +58,7 @@ if ( empty($_terms) || count($_terms) < 2 ) return;
         ?>
 
         <li class="filter <?php echo $has_child ? 'has-child' : ''; ?>">
-            <a href="javascript:void(0)" data-filter=".<?php echo esc_attr($term->slug); ?>">
+            <a href="#" data-filter=".<?php echo esc_attr($term->slug); ?>">
                 <span><?php echo esc_html($term->name); ?></span>
                 <?php if ( $has_child && 'on' === $enable_child_cats ) : ?>
                     <span class="sub-arrow fa fa-angle-down"></span>

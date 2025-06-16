@@ -41,7 +41,7 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
                             <?php do_action( 'gs_team_after_member_name' ); ?>
                             
                             <!-- Single member designation -->
-                            <p class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
+                            <p class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></p>
                             <?php do_action( 'gs_team_after_member_designation' ); ?>
 
                         </div>
@@ -50,11 +50,11 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
 
                             <div class="popup-navigation">
                             
-                                <a href="javascript:void(0)" class="popup-nav prev">
+                                <a href="#" class="popup-nav prev">
                                     <svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="20px"><path fill-rule="evenodd" fill="#c1c1c7" d="M11.414,18.485 L9.999,19.899 L0.100,9.999 L1.514,8.585 L1.514,8.585 L9.999,0.100 L11.414,1.514 L2.928,9.999 L11.414,18.485 Z"/></svg>
                                 </a>
 
-                                <a href="javascript:void(0)" class="popup-nav next">
+                                <a href="#" class="popup-nav next">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="20px"><path fill-rule="evenodd" fill="#c1c1c7" d="M11.899,9.999 L1.999,19.899 L0.585,18.485 L9.70,9.999 L0.585,1.514 L1.999,0.100 L10.485,8.585 L10.485,8.585 L11.899,9.999 Z"/><path fill="url(#PSgrad_0)" d="M11.899,9.999 L1.999,19.899 L0.585,18.485 L9.70,9.999 L0.585,1.514 L1.999,0.100 L10.485,8.585 L10.485,8.585 L11.899,9.999 Z"/></svg>
                                 </a>
 

@@ -50,7 +50,7 @@ global $gs_team_loop;
 
 					?>
 					
-					<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" itemscope itemtype="http://schema.org/Organization">
+					<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" itemscope itemtype="http://schema.org/Person">
 
 						<?php do_action( 'gs_team_before_member_content', $gs_team_theme ); ?>
 
@@ -98,7 +98,7 @@ global $gs_team_loop;
 
 						<!-- Single member designation -->
 						<?php if ( !empty( $designation ) && 'on' == $gs_member_role ): ?>
-							<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+							<div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
 							<?php do_action( 'gs_team_after_member_designation' ); ?>
 						<?php endif; ?>
 

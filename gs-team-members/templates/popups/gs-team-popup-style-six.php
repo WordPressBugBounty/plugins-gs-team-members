@@ -17,7 +17,7 @@ if ( $gs_teammembers_pop_clm == 'one' ) : ?>
 
         <!-- Member Designation -->
         <?php if ( !empty( $designation ) ): ?>
-            <div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+            <div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
             <?php do_action( 'gs_team_after_member_designation' ); ?>
         <?php endif; ?>
 
@@ -58,7 +58,7 @@ if ( $gs_teammembers_pop_clm == 'one' ) : ?>
 
                 <!-- Single member designation -->
                 <?php if ( !empty( $designation ) ): ?>
-                    <div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+                    <div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
                     <?php do_action( 'gs_team_after_member_designation' ); ?>
                 <?php endif; ?>
             </div>

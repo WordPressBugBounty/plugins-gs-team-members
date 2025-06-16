@@ -5,16 +5,16 @@
  * @package   GS_Team
  * @author    GS Plugins <hello@gsplugins.com>
  * @license   GPL-2.0+
- * @link      https://www.gsplugins.com
+ * @link      https://www.gsplugins.com/
  * @copyright 2016 GS Plugins
  *
  * @wordpress-plugin
  * Plugin Name:		GS Team Members
- * Plugin URI:		https://www.gsplugins.com/wordpress-plugins
- * Description:     Best Team Member Plugin for WordPress – easily showcase your team’s photos, names, designations, and social media profiles. Display team members anywhere on your site using a generated shortcode like [gsteam id=1] or via widgets. Perfect for adding a professional touch to your "About" or "Meet the Team" pages. Check <a href="https://team.gsplugins.com">GS Team PRO Demo</a> and <a href="https://docs.gsplugins.com/gs-team-members">Documentation</a>.
- * Version:         2.6.5
+ * Plugin URI:		https://www.gsplugins.com/wordpress-plugins/
+ * Description:     Best Team Member Plugin for WordPress – easily showcase your team’s photos, names, designations, and social media profiles. Display team members anywhere on your site using a generated shortcode like [gsteam id=1] or via widgets. Perfect for adding a professional touch to your "About" or "Meet the Team" pages. Check <a href="https://team.gsplugins.com/">GS Team PRO Demo</a> and <a href="https://docs.gsplugins.com/gs-team-members/">Documentation</a>.
+ * Version:         2.6.6
  * Author:       	GS Plugins
- * Author URI:      https://www.gsplugins.com
+ * Author URI:      https://www.gsplugins.com/
  * Text Domain:     gsteam
  * Domain Path:     /languages
  * License:         GPL-2.0+
@@ -31,7 +31,7 @@ if ( !defined( 'ABSPATH' ) ) {
  * Defining constants
  */
 if ( !defined( 'GSTEAM_VERSION' ) ) {
-    define( 'GSTEAM_VERSION', '2.6.5' );
+    define( 'GSTEAM_VERSION', '2.6.6' );
 }
 if ( !defined( 'GSTEAM_MENU_POSITION' ) ) {
     define( 'GSTEAM_MENU_POSITION', 39 );

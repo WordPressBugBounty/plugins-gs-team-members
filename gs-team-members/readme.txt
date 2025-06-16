@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 2.6.5
+Stable tag: 2.6.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -17,7 +17,7 @@ The **WordPress Team Showcase** plugin is your ultimate solution for displaying 
 
 With a user-friendly Shortcode Generator settings panel and live preview option, creating stunning showcases is easy. Fully responsive layouts and customizable styles ensure a seamless experience. Simple, flexible, and powerful, the ***WordPress Team Showcase*** plugin elevates your team presentation effortlessly.
 
-🎬 [Live Demo](https://team.gsplugins.com)  ⬆️ [Upgrade to PRO](https://www.gsplugins.com/product/gs-team-members/)  📚 [Documentation](https://docs.gsplugins.com/gs-team-members)  🙋‍♂️ [Support](https://www.gsplugins.com/contact)
+🎬 [Live Demo](https://team.gsplugins.com/)  ⬆️ [Upgrade to PRO](https://www.gsplugins.com/product/gs-team-members/)  📚 [Documentation](https://docs.gsplugins.com/gs-team-members/)  🙋‍♂️ [Support](https://www.gsplugins.com/contact/)
 
 https://www.youtube.com/watch?v=ZNwUHW4pDNE&list=PLLrT2alOaYX5dc7LNkIaXmLeB97dBXDkR
 
@@ -293,28 +293,28 @@ Choose a theme, view type, and other parameters to customize your display. The s
 `
 
 ### Documentation
-If you have any questions regarding the **WordPress Team Members** plugin and how to work with it, We recommend referring to our comprehensive online documentation. It provides detailed information and instructions to assist you in navigating and utilizing the plugin effectively. You can find the [Documentation](https://docs.gsplugins.com/gs-team-members) here.
+If you have any questions regarding the **WordPress Team Members** plugin and how to work with it, We recommend referring to our comprehensive online documentation. It provides detailed information and instructions to assist you in navigating and utilizing the plugin effectively. You can find the [Documentation](https://docs.gsplugins.com/gs-team-members/) here.
 
 ### Quick Support & Bug Reporting
-If you encounter any problems or discover bugs, please post them in our [Support](https://www.gsplugins.com/contact) channel. We aim to respond as soon as possible (excluding holidays). 
+If you encounter any problems or discover bugs, please post them in our [Support](https://www.gsplugins.com/contact/) channel. We aim to respond as soon as possible (excluding holidays). 
 
 ***Pro users are requested to contact our support channel for dedicated assistance.***
 
-🙋‍♂️ Alternatively, you can reach out to us through our [Support](https://www.gsplugins.com/contact) or [WordPress.org](https://wordpress.org/support/plugin/gs-team-members/) support forum.
+🙋‍♂️ Alternatively, you can reach out to us through our [Support](https://www.gsplugins.com/contact/) or [WordPress.org](https://wordpress.org/support/plugin/gs-team-members/) support forum.
 
 ### Development Team
-Crafted and Developed with Passion by [GS Plugins](https://www.gsplugins.com)
+Crafted and Developed with Passion by [GS Plugins](https://www.gsplugins.com/)
 
 ### Confused?
 
-🎬 [View live Demos &raquo;](https://team.gsplugins.com)
-📚 [Documentation &raquo;](https://docs.gsplugins.com/gs-team-members)
+🎬 [View live Demos &raquo;](https://team.gsplugins.com/)
+📚 [Documentation &raquo;](https://docs.gsplugins.com/gs-team-members/)
 
 == Installation ==
 
 Install the Plugin with Ease: Step-by-Step Guide:
 
-* Get visual assistance and a detailed usage guide by clicking on the **[Visual Installation & Usage Guide &raquo;](https://docs.gsplugins.com/gs-team-members)**
+* Get visual assistance and a detailed usage guide by clicking on the **[Visual Installation & Usage Guide &raquo;](https://docs.gsplugins.com/gs-team-members/)**
 
 = Install using the Search Plugin option: =
 - Go to the WordPress Admin panel
@@ -380,7 +380,7 @@ Yes, the plugin offers a shortcode and widget to display on your website. Genera
 
 You have a choice of 50+ different themes, including Grid, Circle, Horizontal, Drawer, Table, List, Slider, Popup, Filter, Panel, and Gray. 
 
-For more information on using the shortcode attributes, check out the [Shortcode Usage Guide](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/create-new-shortcode)
+For more information on using the shortcode attributes, check out the [Shortcode Usage Guide](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/create-new-shortcode/)
 
 = How many themes does the WordPress Team Showcase Plugin offer? =
 The WordPress Team Showcase Plugin offers 50+ different themes. Choose from a variety of layouts including Grid, Circle, Horizontal, Flip, Drawer, Table, List, Slider, Filter, and Panel.
@@ -410,7 +410,7 @@ This plugin offers a comprehensive list of information to showcase your team mem
 - 40 Social Icons with the option to add links (reorderable)
 - Skill fields to add as many as you want (reorderable)
 
-Learn more with the [Visual Guide](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/add-new-member)
+Learn more with the [Visual Guide](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/add-new-member/)
 
 = How many members can I add using the plugin? = 
 There is no limit to the number. You can easily add, edit, delete, organize, and even reorder them with a simple drag-and-drop feature.
@@ -440,11 +440,11 @@ After importing the dummy data, you can edit and personalize it for your needs. 
 = How to generate Shortcodes? =
 The plugin comes with 25+ pre-made shortcodes that can be edited for your specific needs. 
 - To create a new shortcode, go to **GS Team > Team Shortcode**, and click **Create New** at the top right corner.
-- Set your preferred settings for [General Settings](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/general-settings), [Style Settings](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/style-settings), and [Query Settings](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/query-settings).
+- Set your preferred settings for [General Settings](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/general-settings/), [Style Settings](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/style-settings/), and [Query Settings](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/query-settings/).
 - After giving the shortcode a name and save.
 - Simply copy the generated shortcode and paste it wherever you want to display it.
 
-Learn more with the [Visual Guide](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/create-new-shortcode).
+Learn more with the [Visual Guide](https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/create-new-shortcode/).
 
 = How can I edit, duplicate, or delete a shortcode? =
 After importing the dummy data, you can access over 25 premade shortcodes. To edit a shortcode, you can modify its fields, such as the member name, designation, images, categories, and other meta-field values. Remember to save your changes.
@@ -478,7 +478,7 @@ add_filter( 'gsteam_templates_folder', function() {
 
 The partial templates can be found in **gs-team-members/templates/partials**. You can similarly override these templates by copying them to **yourtheme/gs-team/partials**.
 
-By referring to the [Template Override Documentation](https://docs.gsplugins.com/gs-team-members/template-override), you can easily customize Team Members templates to suit your project’s needs.
+By referring to the [Template Override Documentation](https://docs.gsplugins.com/gs-team-members/template-override/), you can easily customize Team Members templates to suit your project’s needs.
 
 = Is there any Page Builder Support available? =
 Yes, the Team Plugin offers page builder support and is currently compatible with the following page builders:
@@ -561,7 +561,7 @@ The **GS Team Members** plugin is compatible with Beaver Builder. To use *GS Tea
 - Drag the *GS Team Members* inside the row.
 - Now select from premade shortcodes and save.
 
-[See Beaver Builder docs with visuals](https://docs.gsplugins.com/gs-team-members/page-builder-support/beaver-builder).
+[See Beaver Builder docs with visuals](https://docs.gsplugins.com/gs-team-members/page-builder-support/beaver-builder/).
 
 = How to use Team Members in Oxygen Builder? =
 
@@ -590,7 +590,7 @@ The **GS Team Members** plugin is fully compatible with UX Builder – Flatsome.
 - **Insert HTML**: Within the **Content** section, you’ll find the **HTML** element. Select this option.
 - **Paste Team Shortcode**: Now, simply paste the shortcode for your *Team Members* inside the HTML element.
 
-[Check UX Builder – Flatsome doc with visuals](https://docs.gsplugins.com/gs-team-members/page-builder-support/ux-builder-flatsome).
+[Check UX Builder – Flatsome doc with visuals](https://docs.gsplugins.com/gs-team-members/page-builder-support/ux-builder-flatsome/).
 
 = How to use Team Members in TagDiv – Newspaper? =
 
@@ -607,7 +607,7 @@ The **GS Team Members** plugin is fully compatible with UX Builder – Flatsome.
 - Click on the **Element Settings** and choose from available premade shortcodes.
 - Save your selections.
 
-[Check TagDiv – Newspaper doc with visuals](https://docs.gsplugins.com/gs-team-members/page-builder-support/tagdiv-newspaper).
+[Check TagDiv – Newspaper doc with visuals](https://docs.gsplugins.com/gs-team-members/page-builder-support/tagdiv-newspaper/).
 
 = How to display Team Members in Alphabetical Order? =
 
@@ -750,6 +750,10 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.6.6 [16th Jun 2025] =
+* [Fixed]: Javascript:void Links Issue.
+* [Fixed]: Scheme Error.
+
 = Version 2.6.5 [11th May 2025] =
 * [Fixed]: Widget Issue ( _load_textdomain_just_in_time ).
 * [Fixed]: Capability Issue.
@@ -1418,6 +1422,10 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade notice ==
+= Version 2.6.6 [16th Jun 2025] =
+* [Fixed]: Javascript:void Links Issue.
+* [Fixed]: Scheme Error.
+
 = Version 2.6.5 [11th May 2025] =
 * [Fixed]: Widget Issue ( _load_textdomain_just_in_time ).
 * [Fixed]: Capability Issue.

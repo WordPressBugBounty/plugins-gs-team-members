@@ -22,11 +22,11 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
 
             <div class="popup-navigation">
                 
-                <a href="javascript:void(0)" class="popup-nav prev">
+                <a href="#" class="popup-nav prev">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19.094" height="35.38" viewBox="0 0 19.094 35.38"><path fill="#c1c1c7" d="M307.236,2709.09l17.678,17.67-1.414,1.42-17.678-17.68Zm17.678-14.85-17.678,17.67-1.414-1.41,17.678-17.68Z" transform="translate(-305.812 -2692.81)"/></svg>
                 </a>
 
-                <a href="javascript:void(0)" class="popup-nav next">
+                <a href="#" class="popup-nav next">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19.1" height="35.38" viewBox="0 0 19.1 35.38"><path fill="#c1c1c7" d="M1612.76,2709.09l-17.67,17.67,1.41,1.42,17.68-17.68Zm-17.67-14.85,17.67,17.67,1.42-1.41-17.68-17.68Z" transform="translate(-1595.09 -2692.81)"/></svg>
                 </a>
 
@@ -67,7 +67,7 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
                 <?php do_action( 'gs_team_after_member_name' ); ?>
         
                 <!-- Member Designation -->
-                <div class="gs-sin-mem-desig" itemprop="jobtitle"><?php echo esc_html( $designation ); ?></div>
+                <div class="gs-sin-mem-desig" itemprop="jobTitle"><?php echo esc_html( $designation ); ?></div>
                 <?php do_action( 'gs_team_after_member_designation' ); ?>
         
                 <!-- Description -->

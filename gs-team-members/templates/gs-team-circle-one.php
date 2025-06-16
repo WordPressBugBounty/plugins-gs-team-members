@@ -93,7 +93,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 			<div class="<?php echo esc_attr( implode(' ', $classes) ); ?>" <?php echo wp_kses_post( $single_item_attr ); ?>>
 				
 				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
+				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Person">
 
 					<!-- Single member thumbnail and more -->
 					<div class="single-member">
@@ -117,7 +117,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 							<?php do_action( 'gs_team_after_member_name' ); ?>
 
 							<!-- Member Designation -->
-							<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+							<div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
 							<?php do_action( 'gs_team_after_member_designation' ); ?>
 
 							<!-- Description -->

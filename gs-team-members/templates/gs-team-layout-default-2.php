@@ -39,7 +39,7 @@ global $gs_team_loop;
 			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 			    
 				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
+				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Person">
 					<div class="single-member gs-roow">
 
 						<?php do_action( 'gs_team_before_member_content', $gs_team_theme ); ?>
@@ -71,7 +71,7 @@ global $gs_team_loop;
 
 							<!-- Single member designation -->
 							<?php if ( !empty( $designation ) && 'on' == $gs_member_role ): ?>
-								<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+								<div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
 								<?php do_action( 'gs_team_after_member_designation' ); ?>
 							<?php endif; ?>
 							

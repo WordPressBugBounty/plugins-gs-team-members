@@ -38,7 +38,7 @@ global $gs_team_loop;
 			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 			    
 				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
+				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Person">
 					<div class="single-member">
 
 						<?php
@@ -47,7 +47,7 @@ global $gs_team_loop;
 							if ( $gs_member_link_type == 'single_page' ) {
 								printf( '<a href="%s">', get_the_permalink() );
 							} else if ( $gs_member_link_type == 'popup' ) {
-								printf( '<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" href="javascript:void(0)">', get_the_ID(), $id );
+								printf( '<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" href="#">', get_the_ID(), $id );
 							}
 						}
 
@@ -77,7 +77,7 @@ global $gs_team_loop;
 								
 								<!-- Single member designation -->
 								<?php if ( !empty( $designation ) && 'on' == $gs_member_role ): ?>
-									<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+									<div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
 									<?php do_action( 'gs_team_after_member_designation' ); ?>
 								<?php endif; ?>
 

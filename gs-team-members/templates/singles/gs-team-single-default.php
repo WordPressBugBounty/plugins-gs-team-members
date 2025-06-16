@@ -41,7 +41,7 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
         <?php do_action( 'gs_team_after_member_name' ); ?>
 
         <!-- Member Designation -->
-        <div class="gs-sin-mem-desig" itemprop="jobtitle"><?php echo esc_html( $designation ); ?></div>
+        <div class="gs-sin-mem-desig" itemprop="jobTitle"><?php echo esc_html( $designation ); ?></div>
         <?php do_action( 'gs_team_after_member_designation' ); ?>
 
         <!-- Social Links -->

@@ -55,7 +55,7 @@ get_header(); ?>
 					<a href="<?php the_permalink(); ?>"><h3 class="gs-arc-mem-name" itemprop="name"><?php the_title(); ?></h3></a>
 					<?php do_action( 'gs_team_after_member_name' ); ?>
 					
-					<div class="gs-arc-mem-desig" itemprop="jobtitle"><?php echo esc_html( $designation ); ?></div>
+					<div class="gs-arc-mem-desig" itemprop="jobTitle"><?php echo esc_html( $designation ); ?></div>
 					<?php do_action( 'gs_team_after_member_designation' ); ?>
 
 					<!-- Social Links -->

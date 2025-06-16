@@ -26,7 +26,7 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
             </div>
             
             <!-- Member Designation -->
-            <div class="gstm-panel-info" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+            <div class="gstm-panel-info" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
             <?php do_action( 'gs_team_after_member_designation' ); ?>
 
             <!-- Team Image -->

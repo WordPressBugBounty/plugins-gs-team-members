@@ -24,16 +24,36 @@ function gs_wp_kses($content) {
 
     $allowed_tags = wp_kses_allowed_html('post');
 
-    $input_common_atts = ['class' => true, 'id' => true, 'style' => true, 'novalidate' => true, 'name' => true, 'width' => true, 'height' => true, 'data' => true, 'title' => true, 'placeholder' => true, 'value' => true];
+    $input_common_atts = [
+        'class'       => true,
+        'id'          => true,
+        'style'       => true,
+        'novalidate'  => true,
+        'name'        => true,
+        'width'       => true,
+        'height'      => true,
+        'data'        => true,
+        'title'       => true,
+        'placeholder' => true,
+        'value'       => true,
+        'itemprop'    => true,
+        'itemscope'   => true,
+        'itemtype'    => true
+    ];
 
     $allowed_tags = array_merge_recursive($allowed_tags, [
+        'div'    => ['itemprop' => true, 'itemscope' => true, 'itemtype' => true],
+        'span'   => ['itemprop' => true],
+        'a'      => array_merge($input_common_atts, ['href' => true, 'target' => true, 'rel' => true, 'itemprop' => true]),
+        'img'    => array_merge($input_common_atts, ['src' => true, 'alt' => true, 'srcset' => true, 'sizes' => true, 'decoding' => true, 'fetchpriority' => true]),
         'select' => $input_common_atts,
-        'input' => array_merge($input_common_atts, ['type' => true, 'checked' => true]),
+        'input'  => array_merge($input_common_atts, ['type' => true, 'checked' => true]),
         'option' => ['class' => true, 'id' => true, 'selected' => true, 'data' => true, 'value' => true]
     ]);
 
     return wp_kses(stripslashes_deep($content), $allowed_tags);
 }
+
 
 function get_shortcode_params($settings) {
 
@@ -108,7 +128,7 @@ function member_description($shortcode_id, $max_length = 100, $echo = false, $is
 
             $popup_style = empty($popup_style) ? 'default' : $popup_style;
 
-            $gs_more_link = sprintf('...<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" href="javascript:void(0)" data-theme="%s">%s</a>', $member_id, $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), esc_html($gs_team_more));
+            $gs_more_link = sprintf('...<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" href="#" data-theme="%s">%s</a>', $member_id, $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), esc_html($gs_team_more));
         } else if ($link_type == 'panel') {
 
             $gs_more_link = sprintf('...<a class="gs_team_pop gs_team_panelslide_link" id="gsteamlink_%1$s_%2$s" href="#gsteam_%1$s_%2$s">%3$s</a>', $member_id, $shortcode_id, esc_html($gs_team_more));
@@ -214,7 +234,7 @@ function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_t
 
                 $popup_style = empty($popup_style) ? 'default' : $popup_style;
 
-                $linked_thumb = sprintf('<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" data-theme="%s" href="javascript:void(0)">%s <div class="gs_team_image__overlay"></div></a>', get_the_ID(), $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), $thumbnail);
+                $linked_thumb = sprintf('<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" data-theme="%s" href="#">%s <div class="gs_team_image__overlay"></div></a>', get_the_ID(), $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), $thumbnail);
             } else if ($link_type == 'panel') {
 
                 $linked_thumb = sprintf('<a class="gs_team_pop gs_team_panelslide_link" id="gsteamlinkp_%1$s_%2$s" href="#gsteam_%1$s_%2$s">%3$s <div class="gs_team_image__overlay"></div></a>', get_the_ID(), $shortcode_id, $thumbnail);
@@ -273,7 +293,7 @@ function member_thumbnail_with_link($shortcode_id, $size, $has_link = false, $li
 
             $popup_style = empty($popup_style) ? 'default' : $popup_style;
 
-            $before = sprintf('<a class="gs_team_pop open-popup-link %s" data-mfp-src="#gs_team_popup_%s_%s" data-theme="%s" href="javascript:void(0);">', esc_attr($extra_link_class), $member_id, $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style));
+            $before = sprintf('<a class="gs_team_pop open-popup-link %s" data-mfp-src="#gs_team_popup_%s_%s" data-theme="%s" href="#">', esc_attr($extra_link_class), $member_id, $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style));
         } else if ($link_type == 'panel') {
 
             $before = sprintf('<a class="gs_team_pop gs_team_panelslide_link %1$s" id="gsteamlink_%2$s_%3$s" href="#gsteam_%2$s_%3$s">', esc_attr($extra_link_class), $member_id, $shortcode_id);
@@ -316,24 +336,24 @@ function member_name($shortcode_id, $echo = false, $has_link = true, $link_type 
 
         if ($link_type == 'single_page') {
 
-            $the_title = sprintf('<a href="%s">%s</a>', get_the_permalink(), $the_title);
+            $the_title = sprintf('<a itemprop="name" href="%s">%s</a>', get_the_permalink(), $the_title);
         } else if ($link_type == 'popup') {
 
             global $popup_style;
 
             $popup_style = empty($popup_style) ? 'default' : $popup_style;
 
-            $the_title = sprintf('<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" data-theme="%s" href="javascript:void(0)">%s</a>', get_the_ID(), $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), $the_title);
+            $the_title = sprintf('<a itemprop="name" class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" data-theme="%s" href="#">%s</a>', get_the_ID(), $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), $the_title);
         } else if ($link_type == 'panel') {
 
-            $the_title = sprintf('<a class="gs_team_pop gs_team_panelslide_link" id="gsteamlinkp_%1$s_%2$s" href="#gsteam_%1$s_%2$s">%3$s</a>', get_the_ID(), $shortcode_id, $the_title);
+            $the_title = sprintf('<a itemprop="name" class="gs_team_pop gs_team_panelslide_link" id="gsteamlinkp_%1$s_%2$s" href="#gsteam_%1$s_%2$s">%3$s</a>', get_the_ID(), $shortcode_id, $the_title);
         } else if ($link_type == 'drawer') {
 
-            $the_title = sprintf('<a href="%s">%s</a>', get_the_permalink(), $the_title);
+            $the_title = sprintf('<a itemprop="name" href="%s">%s</a>', get_the_permalink(), $the_title);
         } else if ($link_type == 'custom') {
 
             $target = is_internal_url($custom_page_link) ? '' : 'target="_blank"';
-            $the_title = sprintf('<a href="%s" %s>%s</a>', esc_url($custom_page_link), $target, $the_title);
+            $the_title = sprintf('<a itemprop="name" href="%s" %s>%s</a>', esc_url($custom_page_link), $target, $the_title);
         }
     }
 
@@ -341,7 +361,7 @@ function member_name($shortcode_id, $echo = false, $has_link = true, $link_type 
 
     $classes .= $extra_classes;
 
-    $name = sprintf('<%1$s class="%2$s" itemprop="name">%3$s</%1$s>', $tag, $classes, $the_title);
+    $name = sprintf('<%1$s class="%2$s" %4$s>%3$s</%1$s>', $tag, $classes, $the_title, $has_link ? '' : 'itemprop="name"');
 
     $name = apply_filters('gs_team_member_name_html', $name, $member_id);
 
@@ -740,7 +760,7 @@ function term_walker($term) {
             ?>
 
                 <li class="filter <?php echo $has_child ? 'has-child' : ''; ?>">
-                    <a href="javascript:void(0)" data-filter=".<?php echo esc_attr($_term->slug); ?>">
+                    <a href="#" data-filter=".<?php echo esc_attr($_term->slug); ?>">
                         <span><?php echo esc_html($_term->name); ?></span>
                         <?php if ($has_child) : ?>
                             <span class="sub-arrow fa fa-angle-right"></span>

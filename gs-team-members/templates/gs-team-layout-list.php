@@ -41,7 +41,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 				
 				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
+				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Person">
 					<div class="single-member fullcolumn">
 
 						<div class="gs-roow">
@@ -72,7 +72,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 										<?php do_action( 'gs_team_after_member_name' ); ?>
 
 										<!-- Single member designation -->
-										<span class="gs-team-profession" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></span>
+										<span class="gs-team-profession" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></span>
 										<?php do_action( 'gs_team_after_member_designation' ); ?>
 
 										<!-- Description -->

@@ -16,7 +16,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
         <?php do_action( 'gs_team_after_member_name' ); ?>
         
         <!-- Single member designation -->
-        <p class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
+        <p class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></p>
         <?php do_action( 'gs_team_after_member_designation' ); ?>
 
         <!-- Description -->
