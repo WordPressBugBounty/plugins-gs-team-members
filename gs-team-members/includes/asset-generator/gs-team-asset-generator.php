@@ -347,6 +347,12 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 		plugin()->scripts->wp_enqueue_script_all( 'public' );
 		$this->enqueue_prefs_custom_css();
 	}
+	
+	public function enqueue_localize_script(){
+		$ajax_url = admin_url('admin-ajax.php');
+		$nonce = wp_create_nonce('gsteam_user_action');
+		wp_localize_script( 'gs-team-public', 'GSTeamData', array( 'ajaxUrl' => $ajax_url, 'nonce' => $nonce ) );
+	}
 
 	public function maybe_force_enqueue_assets( Array $settings ) {
 
@@ -355,6 +361,8 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 		
 		plugin()->scripts->wp_enqueue_style_all( 'public', $exclude );
 		plugin()->scripts->wp_enqueue_script_all( 'public' );
+
+		$this->enqueue_localize_script();
 
 		add_fs_script( 'gs-team-public' );
 		
@@ -410,6 +418,9 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 
 		wp_enqueue_style( 'gs-team-public' );
 		wp_enqueue_script( 'gs-team-public' );
+
+		$this->enqueue_localize_script();
+		
 		add_fs_script( 'gs-team-public' );
 
 		$this->print_google_fonts();

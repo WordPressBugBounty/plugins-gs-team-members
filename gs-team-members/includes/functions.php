@@ -76,7 +76,7 @@ function echo_return($content, $echo = false) {
 
 function get_query($atts) {
 
-    $args = shortcode_atts([
+    $args = array_merge([
         'order'                => 'DESC',
         'orderby'              => 'date',
         'posts_per_page'       => -1,
@@ -906,4 +906,104 @@ function gs_get_post_type_archive_title() {
     $archive_title = getoption('archive_page_title', get_post_type_title());
     if ( empty($archive_title) ) return get_post_type_title();
     return $archive_title;
+}
+
+function get_current_full_url() {
+    $protocol = is_ssl() ? 'https://' : 'http://';
+    $host     = $_SERVER['HTTP_HOST'];
+    $request  = $_SERVER['REQUEST_URI'];
+    return $protocol . $host . $request;
+}
+
+function get_pagination( $shortcode_id, $items_per_page = 6 ) {
+
+    // Generate page parameter name
+    $param_name = 'paged' . $shortcode_id;
+    
+    // Current Page Number
+    $current = max( 1, $_GET[$param_name] ?? 1 );
+
+    // Calculate total pages
+    $total_pages = ceil( $GLOBALS['gs_team_loop']->found_posts / $items_per_page );
+
+    // Generate the current URL with the page placeholder
+    $current_url = get_current_full_url();
+    $current_url = remove_query_arg( $param_name, $current_url );
+    $current_url = add_query_arg( $param_name, '%#%', $current_url );
+    
+    // Print the pagination links
+    $pagination = "<div class='gs-team-pagination'>";
+    $pagination .= paginate_links( array(
+        'base' => $current_url,
+        'current' => $current,
+        'total' => $total_pages,
+        'prev_next' => true,
+        'next_text' => '<i class="fa fa-angle-right"></i>',
+        'prev_text' => '<i class="fa fa-angle-left"></i>',
+    ));
+    $pagination .= "</div>";
+
+    return $pagination;
+}
+
+function get_ajax_pagination( $shortcode_id, $items_per_page = 6, $paged = 1 ) {
+
+    // Generate page parameter name
+    $param_name = 'paged' . $shortcode_id;
+    
+    // Current Page Number
+    $current = max( 1, $paged ?? 1 );
+
+    // Calculate total pages
+    $total_pages = ceil( $GLOBALS['gs_team_loop']->found_posts / $items_per_page );
+
+    // Generate the current URL with the page placeholder
+    $current_url = get_current_full_url();
+    $current_url = remove_query_arg( $param_name, $current_url );
+    $current_url = add_query_arg( $param_name, '%#%', $current_url );
+    
+    // Print the pagination links
+    $pagination = "<div class='gs-team-pagination gs-team-ajax-pagination-link'>";
+    $pagination .= paginate_links( array(
+        'base' => $current_url,
+        'current' => $current,
+        'total' => $total_pages,
+        'prev_next' => true,
+        'next_text' => '<i class="fa fa-angle-right"></i>',
+        'prev_text' => '<i class="fa fa-angle-left"></i>',
+    ));
+    $pagination .= "</div>";
+
+    return $pagination;
+}
+
+function gs_filter_title_search_only( $search, $wp_query ) {
+    global $wpdb;
+
+    // Get the search term
+    $search_term = $wp_query->get('s');
+
+    if ( $search_term ) {
+        // Escape for SQL LIKE query
+        $like = '%' . $wpdb->esc_like( $search_term ) . '%';
+
+        // Modify the search to only apply to post_title
+        $search = $wpdb->prepare(" AND {$wpdb->posts}.post_title LIKE %s ", $like);
+    }
+
+    return $search;
+}
+
+function is_display_pagination( $carousel_enabled, $filter_enabled, $filter_type ) {
+
+    if( $carousel_enabled === 'on' ) {
+        return false;
+    }
+    
+    if( 'on' === $filter_enabled && $filter_type === 'normal-filter' ){
+        return false;
+    }
+
+    return true;
+    
 }

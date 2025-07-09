@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 2.6.6
+Stable tag: 2.6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -58,7 +58,7 @@ Experience the Power of GS Team Members with a Rich Array of Functionalities:
 * **Multi-Select Filter**: Choose multiple filter options simultaneously.
 * **Multi-Select Ellipsis**: Use ellipsis to represent multi-selected values.
 * **Show/Hide All Filter Button**: Toggle the ***All*** filter button visibility.
-* **Pagination**: Number pagination for smooth navigation.
+* **Pagination**: Numbered Pagination, AJAX Pagination, Load More Button, Infinite Scroll & AJAX Filter for smoother user experience.
 * **Social Media Integration**: Repeatable social media links meta boxes for each member's social profiles.
 * **Skills Meta Box**: Include a repeatable skills meta box.
 * **Ribbon Meta Box**: Add ribbon details with a dedicated meta box.
@@ -750,6 +750,10 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.6.7 [9th Jul 2025] =
+* [Added]: Numbered Pagination, AJAX Pagination, Load More Button, Infinite Scroll & AJAX Filter.
+* [Fixed]: Single Page Layout Broken Issue.
+
 = Version 2.6.6 [16th Jun 2025] =
 * [Fixed]: Javascript:void Links Issue.
 * [Fixed]: Scheme Error.
@@ -1422,6 +1426,10 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade notice ==
+= Version 2.6.7 [9th Jul 2025] =
+* [Added]: Numbered Pagination, AJAX Pagination, Load More Button, Infinite Scroll & AJAX Filter.
+* [Fixed]: Single Page Layout Broken Issue.
+
 = Version 2.6.6 [16th Jun 2025] =
 * [Fixed]: Javascript:void Links Issue.
 * [Fixed]: Scheme Error.

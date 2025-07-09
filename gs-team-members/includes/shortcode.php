@@ -10,12 +10,84 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class Shortcode {
 
 	public function __construct() {
+
+		// Ajax Filter
+		add_action('wp_ajax_gsteam_filter_members', [ $this, 'filter_team_members' ]);
+		add_action('wp_ajax_nopriv_gsteam_filter_members', [ $this, 'filter_team_members' ]);
+
+		// Load More Button and Infinite Scroll
+		add_action('wp_ajax_gsteam_load_more_members', [ $this, 'load_more_team_members' ]);
+		add_action('wp_ajax_nopriv_gsteam_load_more_members', [ $this, 'load_more_team_members' ]);
+
+		// Ajax Pagination
+		add_action('wp_ajax_gsteam_ajax_pagination', [ $this, 'ajax_pagination' ]);
+		add_action('wp_ajax_nopriv_gsteam_ajax_pagination', [ $this, 'ajax_pagination' ]);
+
 		add_filter( 'post_thumbnail_html', [ $this, 'gsteam_post_thumbnail_html' ], 999999 );
 		add_shortcode( 'gsteam', [ $this, 'shortcode' ] );		
 
 		if ( gtm_fs()->is_paying_or_trial() ) {
 			add_shortcode( 'gs_team_sidebar', [ $this, 'sidebar_shortcode' ] );		
 		}
+	}
+
+	
+	public function filter_team_members(){
+		if( ! check_ajax_referer('gsteam_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+
+		$shortcode_id = $_POST['shortcode_id'];
+		$is_preview = is_numeric($shortcode_id) ? false : true;
+		
+		$filters = $_POST['filters'];
+		$posts_per_page = $_POST['posts_per_page'];
+		
+		$team_members = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'posts_per_page' => $posts_per_page, 'paged' => '' ) );
+
+		$found_members = $GLOBALS['gs_team_loop']->found_posts;
+		
+		$pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, 1 );
+
+		wp_send_json_success(array( 'teamMembers' => $team_members, 'pagination' => $pagination, 'foundMembers' => $found_members ), 200 );
+		wp_die();
+	}
+
+	public function load_more_team_members(){
+		if( ! check_ajax_referer('gsteam_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+
+		$shortcode_id = $_POST['shortcodeId'];
+		$is_preview = is_numeric($shortcode_id) ? false : true;
+
+		$filters = isset( $_POST['filters'] ) ? $_POST['filters'] : array();
+		$load_per_action = $_POST['loadPerAction'];
+		$offset = $_POST['offset'];
+		
+		$team_members = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'load_per_action' => $load_per_action, 'offset' => $offset ) );
+
+		$found_members = $GLOBALS['gs_team_loop']->found_posts;
+
+		wp_send_json_success(array( 'teamMembers' => $team_members, 'foundMembers' => $found_members ), 200 );
+		wp_die();
+	}
+
+	public function ajax_pagination(){
+		if( ! check_ajax_referer('gsteam_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gsteam'), 401 );
+
+		$shortcode_id = $_POST['shortcode_id'];
+		$is_preview = is_numeric($shortcode_id) ? false : true;
+
+		$posts_per_page = $_POST['posts_per_page'];
+		$paged = $_POST['paged'];
+
+		$filters = isset( $_POST['filters'] ) ? $_POST['filters'] : array();
+		
+		$team_members = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'paged' => $paged, 'posts_per_page' => $posts_per_page ) );
+
+		$found_members = $GLOBALS['gs_team_loop']->found_posts;
+
+		$pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, $paged );
+
+		wp_send_json_success(array( 'teamMembers' => $team_members, 'pagination' => $pagination, 'foundMembers' => $found_members ), 200 );
+		wp_die();
 	}
 
 	function gsteam_post_thumbnail_html( $html ) {
@@ -45,7 +117,7 @@ class Shortcode {
 		printf( '<%1$s class="gs-team-member--tags" style="display:none!important">%2$s</%1$s>', $tag, $terms );
 	}
 	
-	function shortcode( $atts ) {
+	function shortcode( $atts, $ajax_datas = array() ) {
 
 		if ( empty($atts['id']) ) {
 			return __( 'No shortcode ID found', 'gsteam' );
@@ -250,8 +322,239 @@ class Shortcode {
 				'terms'    => explode( ',', $include_extra_five ),
 			];
 		}
+
+		// FILTER OFF
+		if ( 'off' === $filter_enabled ) {
+
+			if ( 'off' === $gs_member_pagination ) {
+				$args['posts_per_page'] = $num;
+
+			} elseif ( 'on' === $gs_member_pagination ) {
+
+				if ( wp_doing_ajax() ) {
+
+					if ( 'ajax-pagination' === $pagination_type ) {
+						$args["paged"] = (int) $ajax_datas['paged'];
+						$args['posts_per_page'] = (int) $ajax_datas['posts_per_page'];
+
+					} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+						$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
+						$args['offset'] = (int) $ajax_datas['offset'];
+					}
+
+				} else {
+
+					if ( 'normal-pagination' === $pagination_type ) {
+						$args['posts_per_page'] = $team_per_page;
+
+						$shortcode_id = $id;
+						$paged_var = 'paged' . $shortcode_id;
+						$paged = max( 1, $_GET[$paged_var] ?? 1 );
+						$args["paged"] = $paged;
+
+					} elseif( 'ajax-pagination' === $pagination_type ){
+						$args['posts_per_page'] = $team_per_page;
+					} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+						$args['posts_per_page'] = $initial_items;
+					}
+				}
+			}
+		}
+
+		// FILTER ON
+		elseif ( 'on' === $filter_enabled ) {
+
+			if ( 'normal-filter' === $gs_team_filter_type ) {
+				$args['posts_per_page'] = $num;
+
+			} elseif ( 'ajax-filter' === $gs_team_filter_type ) {
+
+				if ( 'off' === $gs_member_pagination ) {
+					$args['posts_per_page'] = $num;
+
+				} elseif ( 'on' === $gs_member_pagination ) {
+
+					if ( wp_doing_ajax() ) {
+
+						if ( 'ajax-pagination' === $pagination_type || 'normal-pagination' === $pagination_type ) {
+							$args["paged"] = (int) $ajax_datas['paged'];
+							$args['posts_per_page'] = (int) $ajax_datas['posts_per_page'];
+
+						} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) && ! empty($ajax_datas['load_per_action']) ) {
+							$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
+							$args['offset'] = (int) $ajax_datas['offset'];
+						}
+
+					} else {
+						if ( 'ajax-pagination' === $pagination_type || 'normal-pagination' === $pagination_type ) {
+							$args['posts_per_page'] = $team_per_page;
+
+						} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+							$args['posts_per_page'] = $initial_items;
+						}
+					}
+				}
+			}
+		}
+
+
+		if( ! empty($ajax_datas['filters']) ){
+
+			if( wp_doing_ajax() ){
+
+				if( 'on' === $gs_member_pagination && empty($ajax_datas['load_per_action']) ){
+					if ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+						$args['posts_per_page'] = $initial_items;
+					}
+				}
+
+				$filters = $ajax_datas['filters'];
+				
+				if( ! empty($filters['search']) ) {
+					// Search through title
 	
+					add_filter( 'posts_search', 'GSTEAM\gs_filter_title_search_only', 10, 2 );
+	
+					$args['s'] = $filters['search'];
+				}
+	
+				if( ! empty($filters['tagSearch']) ) {
+					// Search through tags
+	
+					$matched_terms = get_terms([
+						'taxonomy'   => 'gs_team_tag',
+						'hide_empty' => false,
+						'name__like' => $filters['tagSearch'],
+					]);
+	
+					$term_ids = wp_list_pluck($matched_terms, 'term_id');
+	
+					if( ! empty($term_ids) ) {
+						$args['tax_query'][] = [
+							'taxonomy' => 'gs_team_tag',
+							'field'    => 'term_id',
+							'terms'    => $term_ids
+						];
+					}
+				}
+
+				if( ! empty($filters['companySearch']) ) {
+					// Search through company
+					$args['meta_query'][] = [
+						'key'     => '_gs_com',
+						'value'   => $filters['companySearch']
+					];
+				}
+	
+				if( ! empty($filters['designation']) ) {
+					// Search through designation
+					$args['meta_query'][] = [
+						'key'     => '_gs_des',
+						'value'   => $filters['designation']
+					];
+				}
+								
+				if( ! empty($filters['group']) ) {
+					// Search through group
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_group',
+						'field'    => 'slug',
+						'terms'    => $filters['group']
+					];
+				}
+	
+				if( ! empty($filters['language']) ) {
+					// Search through language
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_language',
+						'field'    => 'slug',
+						'terms'    => $filters['language']
+					];
+				}
+				
+				if( ! empty($filters['location']) ) {
+					// Search through location
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_location',
+						'field'    => 'slug',
+						'terms'    => $filters['location']
+					];
+				}
+	
+				if( ! empty($filters['gender']) ) {
+					// Search through gender
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_gender',
+						'field'    => 'slug',
+						'terms'    => $filters['gender']
+					];
+				}
+	
+				if( ! empty($filters['specialty']) ) {
+					// Search through specialty
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_specialty',
+						'field'    => 'slug',
+						'terms'    => $filters['specialty']
+					];
+				}
+	
+				if( ! empty($filters['extra_one']) ) {
+					// Search through extra_one
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_extra_one',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_one']
+					];
+				}
+	
+				if( ! empty($filters['extra_two']) ) {
+					// Search through extra_two
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_extra_two',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_two']
+					];
+				}
+	
+				if( ! empty($filters['extra_three']) ) {
+					// Search through extra_three
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_extra_three',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_three']
+					];
+				}
+	
+				if( ! empty($filters['extra_four']) ) {
+					// Search through extra_four
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_extra_four',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_four']
+					];
+				}
+	
+				if( ! empty($filters['extra_five']) ) {
+					// Search through extra_five
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_team_extra_five',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_five']
+					];
+				}
+
+			} else{
+				if ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+					$args['posts_per_page'] = $initial_items;
+				}
+			}
+
+		}
+		
 		$GLOBALS['gs_team_loop'] = get_query( $args );
+
+		remove_filter( 'posts_search', 'GSTEAM\gs_filter_title_search_only', 10 );
 	
 		if ( ! gtm_fs()->is_paying_or_trial() ) {
 			
@@ -280,6 +583,16 @@ class Shortcode {
 			'next_txt' => $gs_team_next_txt,
 			'prev_txt' => $gs_team_prev_txt,
 		];
+
+		if( 'ajax-pagination' === $pagination_type || 'normal-pagination' === $pagination_type ){
+			$data_options['team_per_page'] = $team_per_page;
+		} elseif( 'load-more-button' === $pagination_type ){
+			$data_options['load_per_click'] = $load_per_click;
+			$data_options['initial_items'] = $initial_items;
+		} elseif( 'load-more-scroll' === $pagination_type ){
+			$data_options['per_load'] = $per_load;
+			$data_options['initial_items'] = $initial_items;
+		}
 	
 		$theme_class = $gs_team_theme;
 	
@@ -316,7 +629,7 @@ class Shortcode {
 	
 		ob_start(); ?>
 		
-		<div id="gs_team_area_<?php echo esc_attr($id); ?>" class="wrap gs_team_area gs_team_loading <?php echo esc_attr($theme_class); ?> <?php echo esc_attr($img_effect_class); ?>" data-options='<?php echo json_encode($data_options); ?>' style="visibility: hidden; opacity: 0;">
+		<div id="gs_team_area_<?php echo esc_attr($id); ?>" data-shortcode-id="<?php echo esc_attr($id); ?>" class="wrap gs_team_area gs_team_loading <?php echo esc_attr($theme_class); ?> <?php echo esc_attr($img_effect_class); ?>" data-options='<?php echo json_encode($data_options); ?>' style="visibility: hidden; opacity: 0;">
 	
 			<?php
 	

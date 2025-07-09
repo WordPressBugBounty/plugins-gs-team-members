@@ -22,7 +22,7 @@ if ( ! gtm_fs()->is_paying_or_trial() ) {
 
 			if ( ! gtm_fs()->is_paying_or_trial() ) {
 				include Template_Loader::locate_template( 'singles/gs-team-single-default.php' );
-				return;
+				break;
 			}
 
 			switch ( $single_page_style ) {

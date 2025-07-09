@@ -191,5 +191,6 @@ foreach ( $filters_order as $filter_order ) : ?>
 <?php $filters_html = ob_get_clean();
 
 if ( !empty(trim($filters_html)) ) : ?>
-    <div class="search-filter"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
+    <div class="search-filter <?php echo ( $gs_team_filter_type === 'ajax-filter' ) ? 'search-filter-ajax' : '' ?>"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
+    <div class="gs-team-filter-loader-spinner" style="display: none;"><img src="<?php echo GSTEAM_PLUGIN_URI . '/assets/img/loader.svg'; ?>" alt="Loader Image"></div>
 <?php endif; ?>

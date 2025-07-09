@@ -756,6 +756,33 @@ if ( ! class_exists( 'Builder' ) ) {
                 'next' => __('Next Text', 'gsteam'),
                 'next-details' => __('Replace with preferred text for carousel Next text', 'gsteam'),
 
+                'filter_enabled' => __('Enable Filter', 'gsteam'),
+                'filter_enabled__details' => __('Enable filter for this theme, it may not available for certain theme', 'gsteam'),
+
+                'filter_type' => __('Filter Type', 'gsteam'),
+                'filter_type__details' => __('Select filter type', 'gsteam'),
+
+                'gs_member_pagination' => __('Enable Pagination', 'gsteam'),
+                'gs_member_pagination__details' => __('Enable paginations like number pagination, load more button, On scroll load etc.', 'gsteam'),
+
+                'pagination_type' => __('Pagination Type', 'gsteam'),
+                'pagination_type__details' => __('Select pagination type.', 'gsteam'),
+
+                'initial_items'     => __('Initial Items', 'gsteam'),
+                'initial_items__details'    => __('Set initial number of items that shows on page load (before users interaction)', 'gsteam'),
+
+                'load_per_click' => __('Per Click', 'gsteam'),
+                'load_per_click__details' => __('Load members per button click', 'gsteam'),
+
+                'team_per_page' => __('Per Page', 'gsteam'),
+                'team_per_page__details' => __('Display members per page', 'gsteam'),
+
+                'per_load' => __('Per Load', 'gsteam'),
+                'per_load__details' => __('Display members per load', 'gsteam'),
+
+                'load_button_text' => __('Button Text', 'gsteam'),
+                'load_button_text__details' => __('Load more button text', 'gsteam'),
+
                 'carousel_enabled' => __('Enable Carousel', 'gsteam'),
                 'carousel_enabled__details' => __('Enable carousel for this theme, it may not available for certain theme', 'gsteam'),
 
@@ -1415,6 +1442,37 @@ if ( ! class_exists( 'Builder' ) ) {
             return self::get_formated_themes( self::_themes() );
         }
 
+        public function get_shortcode_options_paginations() {
+
+            $styles = [
+                [
+                    'label' => __( 'Normal Pagination', 'gsteam' ),
+                    'value' => 'normal-pagination'
+                ],
+                [
+                    'label' => __( 'Ajax Pagination', 'gsteam' ),
+                    'value' => 'ajax-pagination'
+                ],
+                [
+                    'label' => __( 'Load More Button', 'gsteam' ),
+                    'value' => 'load-more-button'
+                ],
+                [
+                    'label' => __( 'Load More on Scroll', 'gsteam' ),
+                    'value' => 'load-more-scroll'
+                ]
+
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $default = array_shift( $styles );
+                $styles = array_merge( [$default], self::add_pro_to_options($styles) );
+            }
+
+            return $styles;
+
+        }
+
         public function get_shortcode_options_link_types() {
 
             $free_options = [
@@ -1706,8 +1764,19 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_team_cols_mobile_portrait' => $this->get_columns(),
                 'gs_team_cols_mobile' => $this->get_columns(),
                 'gs_team_theme' => $this->get_shortcode_options_themes(),
+                'pagination_type' => $this->get_shortcode_options_paginations(),
                 'gs_member_link_type' => $this->get_shortcode_options_link_types(),
                 'acf_fields_position' => $this->get_acf_fields_position(),
+                'gs_team_filter_type' => [
+                    [
+                        'label' => __( 'Normal Filter', 'gsteam' ),
+                        'value' => 'normal-filter'
+                    ],
+                    [
+                        'label' => __( 'Ajax Filter', 'gsteam' ),
+                        'value' => 'ajax-filter'
+                    ]
+                ],
                 'gs_teammembers_pop_clm' => [
                     [
                         'label' => __( 'One', 'gsteam' ),
@@ -1956,18 +2025,25 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_member_name_is_linked'        => 'on',
                 'gs_member_link_type'             => 'default',
                 'gs_member_role'                  => 'on',
-                'gs_member_pagination'            => 'off',
                 'gs_member_details'               => 'on',
                 'gs_desc_scroll_contrl'           => 'on',
                 'gs_max_scroll_height'            => '',
                 'gs_details_area_height'          => 'off',
+                'filter_enabled'                  => 'off',
+                'gs_team_filter_type'             => 'normal-filter',
+                'gs_member_pagination'            => 'off',
+                'pagination_type'                 => 'load-more-button',
+                'initial_items'                   => '6',
+                'team_per_page'                   => '6',
+                'load_per_click'                  => '3',
+                'per_load'                        => '3',
+                'load_button_text'                => 'Load More',
                 'carousel_enabled'                => 'off',
                 'link_preview_image'              => 'off',
                 'carousel_navs_enabled'           => 'on',
                 'carousel_dots_enabled'           => 'on',
                 'carousel_navs_style'             => 'default',
                 'carousel_dots_style'             => 'default',
-                'filter_enabled'                  => 'off',
                 'drawer_style'                    => 'default',
                 'panel_style'                     => 'default',
                 'popup_style'                     => 'default',
