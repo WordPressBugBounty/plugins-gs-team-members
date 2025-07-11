@@ -148,7 +148,7 @@
 		 * @return bool
 		 */
 		function is_paying_or_trial() {
-			return true;
+			return ( $this->is_paying() || $this->is_trial() );
 		}
 
 		/**
