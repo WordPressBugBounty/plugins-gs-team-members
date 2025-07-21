@@ -21,7 +21,8 @@ $classmaps = [
 	'Builder'            => 'includes/shortcode-builder/builder.php',
 	'Integrations'       => 'includes/integrations/integrations.php',
 	'Shortcode'          => 'includes/shortcode.php',
-	'Import_Export' 	 => 'includes/import-export.php'
+	'Import_Export' 	 => 'includes/import-export.php',
+	'Term_Order'     	 => 'includes/term-order/term-order.php'
 ];
 
 return $classmaps;

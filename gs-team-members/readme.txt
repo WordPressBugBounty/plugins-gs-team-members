@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 2.6.8
+Stable tag: 2.6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -750,6 +750,13 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.6.9 [21st Jul 2025] =
+* [Added]: Term Sorting.
+* [Fixed]: Validation Issue.
+* [Fixed]: Filter Theme Prevent Default / Jumping to Top Issue.
+* [Fixed]: Script Loading Issue.
+* [Updated]: Freemius SDK 2.12.1
+
 = Version 2.6.8 [12th Jul 2025] =
 * [Fixed]: Freemius condition.
 
@@ -1429,6 +1436,13 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade notice ==
+= Version 2.6.9 [21st Jul 2025] =
+* [Added]: Term Sorting.
+* [Fixed]: Validation Issue.
+* [Fixed]: Filter Theme Prevent Default / Jumping to Top Issue.
+* [Fixed]: Script Loading Issue.
+* [Updated]: Freemius SDK 2.12.1
+
 = Version 2.6.8 [12th Jul 2025] =
 * [Fixed]: Freemius condition.
 

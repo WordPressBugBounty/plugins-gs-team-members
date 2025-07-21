@@ -618,7 +618,6 @@ function get_terms_for_filter($term_name, $hide_empty = false, $include = '', $o
         'orderby'   => $orderby,
         'order'     => $order,
         'hide_empty' => $hide_empty,
-        'ignore_term_order' => true,
         'include' => string_to_array($include)
     ];
 

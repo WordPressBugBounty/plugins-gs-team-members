@@ -39,7 +39,7 @@ class Shortcode {
 		$is_preview = is_numeric($shortcode_id) ? false : true;
 		
 		$filters = $_POST['filters'];
-		$posts_per_page = $_POST['posts_per_page'];
+		$posts_per_page = (int) $_POST['posts_per_page'];
 		
 		$team_members = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'posts_per_page' => $posts_per_page, 'paged' => '' ) );
 
@@ -75,7 +75,7 @@ class Shortcode {
 		$shortcode_id = $_POST['shortcode_id'];
 		$is_preview = is_numeric($shortcode_id) ? false : true;
 
-		$posts_per_page = $_POST['posts_per_page'];
+		$posts_per_page = (int) $_POST['posts_per_page'];
 		$paged = $_POST['paged'];
 
 		$filters = isset( $_POST['filters'] ) ? $_POST['filters'] : array();
@@ -191,7 +191,7 @@ class Shortcode {
 		// Extracting shortcode attributes.
 		extract( $settings );
 
-		$hide_empty = $group_hide_empty === 'on';
+		$hide_empty = $taxonomy_hide_empty === 'on';
 	
 		$_carousel_enabled 	= $carousel_enabled == 'on';
 		$_filter_enabled 	= ! $_carousel_enabled && $filter_enabled == 'on';
@@ -327,8 +327,7 @@ class Shortcode {
 		if ( 'off' === $filter_enabled ) {
 
 			if ( 'off' === $gs_member_pagination ) {
-				$args['posts_per_page'] = $num;
-
+				$args['posts_per_page'] = (int) $num;
 			} elseif ( 'on' === $gs_member_pagination ) {
 
 				if ( wp_doing_ajax() ) {
@@ -345,7 +344,7 @@ class Shortcode {
 				} else {
 
 					if ( 'normal-pagination' === $pagination_type ) {
-						$args['posts_per_page'] = $team_per_page;
+						$args['posts_per_page'] = (int) $team_per_page;
 
 						$shortcode_id = $id;
 						$paged_var = 'paged' . $shortcode_id;
@@ -353,9 +352,9 @@ class Shortcode {
 						$args["paged"] = $paged;
 
 					} elseif( 'ajax-pagination' === $pagination_type ){
-						$args['posts_per_page'] = $team_per_page;
+						$args['posts_per_page'] = (int) $team_per_page;
 					} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
-						$args['posts_per_page'] = $initial_items;
+						$args['posts_per_page'] = (int) $initial_items;
 					}
 				}
 			}
@@ -365,13 +364,11 @@ class Shortcode {
 		elseif ( 'on' === $filter_enabled ) {
 
 			if ( 'normal-filter' === $gs_team_filter_type ) {
-				$args['posts_per_page'] = $num;
-
+				$args['posts_per_page'] = (int) $num;
 			} elseif ( 'ajax-filter' === $gs_team_filter_type ) {
 
 				if ( 'off' === $gs_member_pagination ) {
-					$args['posts_per_page'] = $num;
-
+					$args['posts_per_page'] = (int) $num;
 				} elseif ( 'on' === $gs_member_pagination ) {
 
 					if ( wp_doing_ajax() ) {
@@ -387,10 +384,10 @@ class Shortcode {
 
 					} else {
 						if ( 'ajax-pagination' === $pagination_type || 'normal-pagination' === $pagination_type ) {
-							$args['posts_per_page'] = $team_per_page;
+							$args['posts_per_page'] = (int) $team_per_page;
 
 						} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
-							$args['posts_per_page'] = $initial_items;
+							$args['posts_per_page'] = (int) $initial_items;
 						}
 					}
 				}
@@ -404,7 +401,7 @@ class Shortcode {
 
 				if( 'on' === $gs_member_pagination && empty($ajax_datas['load_per_action']) ){
 					if ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
-						$args['posts_per_page'] = $initial_items;
+						$args['posts_per_page'] = (int) $initial_items;
 					}
 				}
 
@@ -546,7 +543,7 @@ class Shortcode {
 
 			} else{
 				if ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
-					$args['posts_per_page'] = $initial_items;
+					$args['posts_per_page'] = (int) $initial_items;
 				}
 			}
 

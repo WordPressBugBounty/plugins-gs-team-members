@@ -17,13 +17,6 @@ class Sortable {
 		// Set object_type if not set & Redirect to the correct page
 		add_action('admin_init', [$this, 'maybe_redirect']);
 		
-		// Add term_order column to terms table
-		add_filter('plugins_loaded', array($this, 'alter_terms_table'), 0);
-		
-		// Set custom order for terms
-		add_filter('get_terms_orderby', array($this, 'get_terms_orderby'), 1, 2);
-		add_filter('terms_clauses', array($this, 'terms_clauses'), 10, 3);
-		
 		// Update team members order via AJAX
 		add_action('wp_ajax_update_team_members_order', array($this, 'update_team_members_order'));
 		
@@ -152,73 +145,6 @@ class Sortable {
 	}
 
 	/**
-	 * Set custom order for terms
-	 */
-	public function terms_clauses($clauses, $taxonomies, $args) {
-
-		if (empty($args['taxonomy'])) return $clauses;
-
-		if (!$this->is_pro() || !in_array('gs_team_group', $args['taxonomy'])) return $clauses;
-
-		$options = [
-			'adminsort' => '1',
-			'autosort' => '1',
-		];
-
-		// if admin make sure use the admin setting
-		if (is_admin()) {
-			// return if use orderby columns
-			if (isset($_GET['orderby']) && $_GET['orderby'] != 'term_order') return $clauses;
-			if ($options['adminsort'] == "1") $clauses['orderby'] = 'ORDER BY t.term_order';
-			return $clauses;
-		}
-
-		// if autosort, then force the menu_order
-		if ($options['autosort'] == 1 && (!isset($args['ignore_term_order']) || (isset($args['ignore_term_order']) && $args['ignore_term_order'] !== TRUE))) {
-			$clauses['orderby'] = 'ORDER BY t.term_order';
-		}
-
-		return $clauses;
-	}
-
-	/**
-	 * Modify and Return terms orderby
-	 */
-	public function get_terms_orderby($orderby, $args) {
-
-		if (empty($args['taxonomy'])) return $orderby;
-
-		if ($this->is_pro() && in_array('gs_team_group', $args['taxonomy'])) {
-			if (isset($args['orderby']) && $args['orderby'] == "term_order" && $orderby != "term_order") return "t.term_order";
-		}
-
-		return $orderby;
-	}
-
-	/**
-	 * Alter terms table and add term_order column
-	 */
-	public function alter_terms_table() {
-
-		if (!$this->is_pro()) return;
-
-		if (get_site_option('gsp_terms_table_altered', false) !== false) return;
-
-		global $wpdb;
-
-		//check if the menu_order column exists;
-		$query = "SHOW COLUMNS FROM $wpdb->terms LIKE 'term_order'";
-		$result = $wpdb->query($query);
-
-		if ($result == 0) {
-			$query = "ALTER TABLE $wpdb->terms ADD `term_order` INT( 4 ) NULL DEFAULT '0'";
-			$result = $wpdb->query($query);
-
-			update_site_option('gsp_terms_table_altered', true);
-		}
-	}
-
-	/**
 	 * Check if PRO version is active
 	 */
 	public function is_pro() {
@@ -288,7 +214,6 @@ class Sortable {
 
 			<div class="gs-plugins--sort-links">
 				<a class="<?php echo $object_type === 'gs_team' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_team') ); ?>">Team Members</a>
-				<a class="<?php echo $object_type === 'gs_team_group' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_team_group') ); ?>">Groups</a>
 				<a class="<?php echo $object_type === 'gs_team_filters' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_team_filters') ); ?>">Team Filters</a>
 			</div>
 
@@ -303,10 +228,6 @@ class Sortable {
 				<?php elseif ($object_type === 'gs_team_filters') : ?>
 
 					<?php $this->sort_team_filters(); ?>
-
-				<?php else : ?>
-
-					<?php $this->sort_team_taxonomies(); ?>
 
 				<?php endif; ?>
 			</div>
@@ -502,88 +423,6 @@ class Sortable {
 						</ul>
 
 					<?php endif; ?>
-
-				</div>
-
-			</div>
-
-		</div><!-- #wrap -->
-
-		<?php
-	}
-
-	/**
-	 * Sort Team Taxonomies
-	 */
-	public function sort_team_taxonomies() {
-
-		if (!$this->is_pro()) : ?>
-
-			<div class="gs-team-disable--term-pages">
-				<div class="gs-team-disable--term-inner">
-					<div class="gs-team-disable--term-message"><a href="https://www.gsplugins.com/product/gs-team-members/#pricing">Upgrade to PRO</a></div>
-				</div>
-			</div>
-
-		<?php endif; ?>
-
-		<div class="gs-team--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
-
-			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
-
-				<div class="gsteam-sort--left-area" style="flex: 1 0 auto; width: 570px;">
-
-					<h3><?php esc_html_e('Step 1: Drag & Drop to rearrange Groups', 'gsteam'); ?><img src="<?php bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
-
-					<?php
-
-					$terms = get_terms('gs_team_group');
-
-					if (!empty($terms)) : ?>
-
-						<ul id="sortable-list" style="max-width: 600px;">
-							<?php foreach ($terms as $term) : ?>
-
-								<li id="<?php echo esc_attr($term->term_id); ?>">
-									<div class="sortable-content sortable-icon"><i class="fas fa-arrows-alt" aria-hidden="true"></i></div>
-									<div class="sortable-content sortable-title"><?php echo esc_html($term->name); ?></div>
-									<div class="sortable-content sortable-group"><span><?php echo absint($term->count) . ' ' . 'Members'; ?></span></div>
-								</li>
-
-							<?php endforeach; ?>
-						</ul>
-
-					<?php else : ?>
-
-						<div class="notice notice-warning" style="margin-top: 30px;">
-							<h3><?php _e('No Team Member Found!', 'gsteam'); ?></h3>
-							<p style="font-size: 14px;"><?php _e('We didn\'t find any team member.</br>Please add some team members to sort them.', 'gsteam'); ?></p>
-							<a href="<?php echo admin_url('post-new.php?post_type=gs_team'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add Member', 'gsteam'); ?></a>
-						</div>
-
-					<?php endif; ?>
-
-				</div>
-
-				<div class="gsteam-sort--right-area">
-					
-					<h3><?php esc_html_e('Step 2: Query Settings for Groups', 'gsteam'); ?></h3>
-
-					<div style="background: #fff; border-radius: 6px; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12); font-size: 1.3em; line-height: 1.6; margin-top: 30px">
-						
-						<ol style="list-style: numeric; padding-left: 20px; margin: 0">
-							<li>Create or Edit a Shortcode From <strong>GS Team > Team Shortcode</strong>.</li>
-							<li>Then proceed to the 3rd tab labeled <strong>Query Settings</strong>.</li>
-							<li>Set <strong>Group Order by</strong> to <strong>Custom Order</strong>.</li>
-							<li>Set <strong>Group Order</strong> to <strong>ASC</strong>.</li>
-						</ol>
-	
-						<ul style="list-style: circle; padding-left: 20px; margin-top: 20px">
-							<li>Follow <a href="https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/sort-order/#reordering-groups-categories" target="_blank">Documentation</a> to learn more.</li>
-							<li><a href="https://www.gsplugins.com/contact/" target="_blank">Contact us</a> for support.</li>
-						</ul>
-
-					</div>
 
 				</div>
 

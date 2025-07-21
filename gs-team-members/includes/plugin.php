@@ -46,6 +46,7 @@ class Plugin {
         new Meta_Fields();
         new Dummy_Data();
         new Import_Export();
+        new Term_Order();
 
         if (gtm_fs()->is_paying_or_trial()) {
             include_once GSTEAM_PLUGIN_DIR . 'includes/widgets.php';

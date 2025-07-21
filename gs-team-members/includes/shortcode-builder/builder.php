@@ -273,8 +273,27 @@ if ( ! class_exists( 'Builder' ) ) {
         }
 
         public function validate_shortcode_settings( $shortcode_settings ) {
+
             $shortcode_settings = shortcode_atts( $this->get_shortcode_default_settings(), $shortcode_settings );
-            return array_map( 'sanitize_text_field', $shortcode_settings );
+
+            $int_fields = [
+                'num',
+                'initial_items',
+                'team_per_page',
+                'load_per_click',
+                'per_load',
+                'gs_tm_details_contl'
+            ];
+
+            foreach ( $shortcode_settings as $key => $value ) {
+                if ( in_array( $key, $int_fields ) ) {
+                    $shortcode_settings[ $key ] = (int) $value;
+                } else {
+                    $shortcode_settings[ $key ] = sanitize_text_field( $value );
+                }
+            }
+
+            return $shortcode_settings;
         }
 
         protected function get_db_columns() {
@@ -693,6 +712,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'enable-multilingual--details' => __('Enable Multilingual mode to translate below strings using any Multilingual plugin like wpml or loco translate.', 'gsteam'),
                 
                 'pref-filter-designation-text' => __('Filter Designation Text', 'gsteam'),
+
                 'pref-serach-text' => __('Search Text', 'gsteam'),
                 'gs_teamfliter_company-text' => __('Company Search Text', 'gsteam'),
                 'gs_teamfliter_zip-text' => __('Zip Search Text', 'gsteam'),
@@ -928,10 +948,10 @@ if ( ! class_exists( 'Builder' ) ) {
                 'team-members' => __('Team Members', 'gsteam'),
                 'order' => __('Order', 'gsteam'),
                 'order-by' => __('Order By', 'gsteam'),
-                'group-order' => __('Group Order', 'gsteam'),
-                'group-order-by' => __('Group Order By', 'gsteam'),
-                'group_hide_empty' => __('Hide Empty Filters', 'gsteam'),
-                'group_hide_empty__details' => __('Enable to hide the empty filters', 'gsteam'),
+                'taxonomy-order' => __('Taxonomy Order', 'gsteam'),
+                'taxonomy-order-by' => __('Taxonomy Order By', 'gsteam'),
+                'taxonomy_hide_empty' => __('Hide Empty Filters', 'gsteam'),
+                'taxonomy_hide_empty__details' => __('Enable to hide the empty filters', 'gsteam'),
                 'group' => __('Group', 'gsteam'),
                 'exclude_group' => __('Exclude Group', 'gsteam'),
                 'exclude_group__help' => __('Select a specific team group to hide that specific group members', 'gsteam'),
@@ -964,7 +984,6 @@ if ( ! class_exists( 'Builder' ) ) {
                 'filter-by-extra-three--des' => __('Show or Hide Filter by Extra Three', 'gsteam'),
                 'filter-by-extra-four--des' => __('Show or Hide Filter by Extra Four', 'gsteam'),
                 'filter-by-extra-five--des' => __('Show or Hide Filter by Extra Five', 'gsteam'),
-                'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gsteam'),
                 'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gsteam'),
                 'define-maximum-number-of-characters' => __('Define the maximum number of characters in Member details. Default 100', 'gsteam'),
                 'set-column-for-popup' => __('Set column for popup', 'gsteam'),
@@ -1847,17 +1866,17 @@ if ( ! class_exists( 'Builder' ) ) {
                         'value' => 'rand'
                     ],
                 ],
-                'group_orderby' => [
+                'taxonomy_orderby' => [
                     [
                         'label' => __( 'Custom Order', 'gsteam' ),
-                        'value' => 'term_order'
+                        'value' => 'order'
                     ],
                     [
-                        'label' => __( 'Group ID', 'gsteam' ),
+                        'label' => __( 'Taxonomy ID', 'gsteam' ),
                         'value' => 'term_id'
                     ],
                     [
-                        'label' => __( 'Group Name', 'gsteam' ),
+                        'label' => __( 'Taxonomy Name', 'gsteam' ),
                         'value' => 'name'
                     ],
                 ],
@@ -1981,9 +2000,9 @@ if ( ! class_exists( 'Builder' ) ) {
                 'num'                             => -1,
                 'order'                           => 'DESC',
                 'orderby'                         => 'date',
-                'group_orderby'                   => 'term_order',
-                'group_order'                     => 'ASC',
-                'group_hide_empty'                => 'off',
+                'taxonomy_orderby'                => 'name',
+                'taxonomy_order'                  => 'ASC',
+                'taxonomy_hide_empty'             => 'off',
                 'gs_team_theme'                   => 'gs-grid-style-five',
                 'gs_team_cols'                    => '3',
                 'gs_team_cols_tablet'             => '4',
@@ -2033,10 +2052,10 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_team_filter_type'             => 'normal-filter',
                 'gs_member_pagination'            => 'off',
                 'pagination_type'                 => 'load-more-button',
-                'initial_items'                   => '6',
-                'team_per_page'                   => '6',
-                'load_per_click'                  => '3',
-                'per_load'                        => '3',
+                'initial_items'                   => 6,
+                'team_per_page'                   => 6,
+                'load_per_click'                  => 3,
+                'per_load'                        => 3,
                 'load_button_text'                => 'Load More',
                 'carousel_enabled'                => 'off',
                 'link_preview_image'              => 'off',

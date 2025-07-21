@@ -424,14 +424,14 @@ final class Scripts {
 		$this->wp_register_script_all('admin');
 
 		// Allow scripts loading in new gs_team member page
-		if ($hook == 'post-new.php' && $_GET['post_type'] == 'gs_team') $load_script = true;
+		if ($hook == 'post-new.php' && isset($_GET['post_type']) && $_GET['post_type'] == 'gs_team') $load_script = true;
 
 		// Allow scripts loading in gs_team member edit page
 		if ($hook == 'post.php' && $post->post_type == 'gs_team') $load_script = true;
 
 		// Allow scripts loading in gs_team member edit page
-		if ($hook == 'edit-tags.php' && $_GET['post_type'] == 'gs_team') $load_script = true;
-		if ($hook == 'term.php' && $_GET['post_type'] == 'gs_team') $load_script = true;
+		if ($hook == 'edit-tags.php' && isset($_GET['post_type']) && $_GET['post_type'] == 'gs_team') $load_script = true;
+		if ($hook == 'term.php' && isset($_GET['post_type']) && $_GET['post_type'] == 'gs_team') $load_script = true;
 
 		// Abort load script if not allowed
 		if (!$load_script) return;

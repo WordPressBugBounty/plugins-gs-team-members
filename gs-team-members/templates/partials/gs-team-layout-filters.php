@@ -63,7 +63,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_language' && plugin()->builder->get_tax_option('enable_language_tax') == 'on' && $gs_member_filter_by_language == 'on' ) : ?>
         <?php
             $gs_team_language_meta = plugin()->builder->get_tax_option( 'language_tax_label' );
-            $language_terms = get_terms_for_filter( 'gs_team_language', $hide_empty, $language );
+            $language_terms = get_terms_for_filter( 'gs_team_language', $hide_empty, $language, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_language_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -77,7 +77,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_location' && plugin()->builder->get_tax_option('enable_location_tax') == 'on' && $gs_member_filter_by_location == 'on' ) : ?>
         <?php
             $gs_team_location_meta = plugin()->builder->get_tax_option( 'location_tax_label' );
-            $location_terms = get_terms_for_filter( 'gs_team_location', $hide_empty, $location );
+            $location_terms = get_terms_for_filter( 'gs_team_location', $hide_empty, $location, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_location_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -91,7 +91,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_gender' && plugin()->builder->get_tax_option('enable_gender_tax') == 'on' && $gs_member_filter_by_gender == 'on' ) : ?>
         <?php
             $gs_team_gender_meta = plugin()->builder->get_tax_option( 'gender_tax_label' );
-            $gender_terms = get_terms_for_filter( 'gs_team_gender', $hide_empty, $gender, 'DESC' );
+            $gender_terms = get_terms_for_filter( 'gs_team_gender', $hide_empty, $gender, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_gender_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -105,7 +105,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_specialty' && plugin()->builder->get_tax_option('enable_specialty_tax') == 'on' && $gs_member_filter_by_speciality == 'on' ) : ?>
         <?php
             $gs_team_specialty_meta = plugin()->builder->get_tax_option( 'specialty_tax_label' );
-            $specialty_terms = get_terms_for_filter( 'gs_team_specialty', $hide_empty, $specialty, 'ASC' );
+            $specialty_terms = get_terms_for_filter( 'gs_team_specialty', $hide_empty, $specialty, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_speciality_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -119,7 +119,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_extra_one' && plugin()->builder->get_tax_option('enable_extra_one_tax') == 'on' && $gs_member_filter_by_extra_one == 'on' ) : ?>
         <?php
             $gs_team_extra_one_meta = plugin()->builder->get_tax_option( 'extra_one_tax_label' );
-            $extra_one_terms = get_terms_for_filter( 'gs_team_extra_one', $hide_empty, $include_extra_one, 'ASC' );
+            $extra_one_terms = get_terms_for_filter( 'gs_team_extra_one', $hide_empty, $include_extra_one, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_extra_one_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -133,7 +133,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_extra_two' && plugin()->builder->get_tax_option('enable_extra_two_tax') == 'on' && $gs_member_filter_by_extra_two == 'on' ) : ?>
         <?php
             $gs_team_extra_two_meta = plugin()->builder->get_tax_option( 'extra_two_tax_label' );
-            $extra_two_terms = get_terms_for_filter( 'gs_team_extra_two', $hide_empty, $include_extra_two, 'ASC' );
+            $extra_two_terms = get_terms_for_filter( 'gs_team_extra_two', $hide_empty, $include_extra_two, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_extra_two_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -147,7 +147,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_extra_three' && plugin()->builder->get_tax_option('enable_extra_three_tax') == 'on' && $gs_member_filter_by_extra_three == 'on' ) : ?>
         <?php
             $gs_team_extra_three_meta = plugin()->builder->get_tax_option( 'extra_three_tax_label' );
-            $extra_three_terms = get_terms_for_filter( 'gs_team_extra_three', $hide_empty, $include_extra_three, 'ASC' );
+            $extra_three_terms = get_terms_for_filter( 'gs_team_extra_three', $hide_empty, $include_extra_three, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_extra_three_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -161,7 +161,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_extra_four' && plugin()->builder->get_tax_option('enable_extra_four_tax') == 'on' && $gs_member_filter_by_extra_four == 'on' ) : ?>
         <?php
             $gs_team_extra_four_meta = plugin()->builder->get_tax_option( 'extra_four_tax_label' );
-            $extra_four_terms = get_terms_for_filter( 'gs_team_extra_four', $hide_empty, $include_extra_four, 'ASC' );
+            $extra_four_terms = get_terms_for_filter( 'gs_team_extra_four', $hide_empty, $include_extra_four, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_extra_four_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -175,7 +175,7 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'gs_team_extra_five' && plugin()->builder->get_tax_option('enable_extra_five_tax') == 'on' && $gs_member_filter_by_extra_five == 'on' ) : ?>
         <?php
             $gs_team_extra_five_meta = plugin()->builder->get_tax_option( 'extra_five_tax_label' );
-            $extra_five_terms = get_terms_for_filter( 'gs_team_extra_five', $hide_empty, $include_extra_five, 'ASC' );
+            $extra_five_terms = get_terms_for_filter( 'gs_team_extra_five', $hide_empty, $include_extra_five, $taxonomy_order, $taxonomy_orderby );
             do_action( 'gs_team_before_extra_five_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
