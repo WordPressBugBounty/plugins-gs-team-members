@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 2.6.9
+Stable tag: 2.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -50,7 +50,7 @@ Experience the Power of GS Team Members with a Rich Array of Functionalities:
 * **Flexible Query Options**: Filter members by location, specialty, language, and gender.
 * **Developer-Friendly Hooks**: Advanced customization with hooks.
 * **Page Builder Compatibility**: Integrates with popular page builders.
-* **Drag-and-Drop Order**: Easily arrange ***members*** and ***groups*** with drag-and-drop interface.
+* **Drag-and-Drop Order**: Easily arrange ***members***, ***taxonomies***, and ***terms*** with drag-and-drop interface.
 * **Group Display**: Showcase members by group or department.
 * **Instant Search**: Quick searches by name, company, or zip code.
 * **Filter Options**: Filter by designation, category, child Category, location, language, gender, and specialty.
@@ -750,6 +750,13 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.7.0 [26th Aug 2025] =
+* [Added]: Breadcrumb feature with on/off switcher.
+* [Fixed]: Conflict when using multiple shortcodes on the same page.
+* [Fixed]: Undefined variable errors.
+* [Fixed]: Popup column selector visibility issue in Popup Themes 1–5.
+* [Updated]: Pagination switcher now hidden for *Grid Filter with vCard* theme.
+
 = Version 2.6.9 [21st Jul 2025] =
 * [Added]: Term Sorting.
 * [Fixed]: Validation Issue.
@@ -1436,6 +1443,13 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade notice ==
+= Version 2.7.0 [26th Aug 2025] =
+* [Added]: Breadcrumb feature with on/off switcher.
+* [Fixed]: Conflict when using multiple shortcodes on the same page.
+* [Fixed]: Undefined variable errors.
+* [Fixed]: Popup column selector visibility issue in Popup Themes 1–5.
+* [Updated]: Pagination switcher now hidden for *Grid Filter with vCard* theme.
+
 = Version 2.6.9 [21st Jul 2025] =
 * [Added]: Term Sorting.
 * [Fixed]: Validation Issue.

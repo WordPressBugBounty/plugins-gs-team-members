@@ -134,8 +134,11 @@ class Hooks {
         if (GSTEAM_VERSION === $old_version) return;
     
         update_option('gs_team_plugin_version', GSTEAM_VERSION);
+
+        if ( ! empty($old_version) ) {
+            plugin()->builder->maybe_upgrade_data($old_version);
+        }
     
-        plugin()->builder->maybe_upgrade_data($old_version);
         GS_Team_Asset_Generator::getInstance()->assets_purge_all();
     }
     

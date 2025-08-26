@@ -758,6 +758,9 @@ if ( ! class_exists( 'Builder' ) ) {
                 'vcard-txt' => __('vCard Text', 'gsteam'),
                 'vcard-txt-details' => __('Replace with preferred text for vCard Text', 'gsteam'),
 
+                'enable-breadcumb' => __('Enable Breadcumb', 'gsteam'),
+                'enable-breadcumb--details' => __('Enable Breadcumb for Single page', 'gsteam'),
+
                 'land-phone-link' => __('Link Land Phone', 'gsteam'),
                 'land-phone-link--details' => __('Enable link for land phone number', 'gsteam'),
 
@@ -2169,6 +2172,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'show_acf_fields'               => 'off',
                 'disable_lazy_load'             => 'off',
 
+                'enable_breadcumb'              => 'off',
                 'land_phone_link'               => 'off',
                 'cell_phone_link'               => 'off',
                 'email_link'                    => 'off',
@@ -2915,7 +2919,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             // Set the Specialty Taxonomy Labels
             $taxonomy_settings['specialty_tax_label'] = $prefs['gs_teamspecialty_meta'];
-            $taxonomy_settings['specialty_tax_plural_label'] = $prefs['gs_teamspecialty_meta'];;
+            $taxonomy_settings['specialty_tax_plural_label'] = $prefs['gs_teamspecialty_meta'];
 
             // Set the Gender Taxonomy Labels
             $taxonomy_settings['gender_tax_label'] = $prefs['gs_teamgender_meta'];

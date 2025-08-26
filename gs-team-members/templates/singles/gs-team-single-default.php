@@ -14,6 +14,12 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
 
 ?>
 
+<div class="gs-team-breadcumb">
+    <?php $is_breadcumb_enabled = getoption('enable_breadcumb', 'off'); ?>
+    <?php include Template_Loader::locate_template( 'partials/gs-team-layout-breadcumb.php' ); ?>
+    <?php do_action( 'gs_team_after_breadcumb' ); ?>
+</div>
+
 <div class="gs-team-single-content" itemscope="" itemtype="http://schema.org/Person">
 
     <div class="gs_member_img">
