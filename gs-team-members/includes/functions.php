@@ -349,7 +349,7 @@ function member_name($shortcode_id, $echo = false, $has_link = true, $link_type 
             $the_title = sprintf('<a itemprop="name" class="gs_team_pop gs_team_panelslide_link" id="gsteamlinkp_%1$s_%2$s" href="#gsteam_%1$s_%2$s">%3$s</a>', get_the_ID(), $shortcode_id, $the_title);
         } else if ($link_type == 'drawer') {
 
-            $the_title = sprintf('<a itemprop="name" href="%s">%s</a>', get_the_permalink(), $the_title);
+            $the_title = sprintf('<a itemprop="name" class="gs_team_drawer" href="%s">%s</a>', get_the_permalink(), $the_title);
         } else if ($link_type == 'custom') {
 
             $target = is_internal_url($custom_page_link) ? '' : 'target="_blank"';
@@ -1005,4 +1005,50 @@ function is_display_pagination( $carousel_enabled, $filter_enabled, $filter_type
 
     return true;
     
+}
+
+function read_more_button_with_link($shortcode_id, $has_link = true, $link_type = 'single_page', $button_text = 'Learn More', $echo = false) {
+
+    $member_id = get_the_ID();
+
+    $button_link = '';
+
+    if ( $link_type == 'custom' ) {
+        $custom_page_link = get_post_meta( $member_id, '_gs_custom_page', true );
+        if ( empty($custom_page_link) ) {
+            $default_link_type = getoption('single_link_type', 'single_page');
+            if ( $default_link_type == 'none' ) {
+                $has_link = false;
+            } else {
+                $link_type = $default_link_type;
+            }
+        }
+    }
+
+    if ($has_link) {
+
+        if ($link_type == 'single_page') {
+
+            $button_link = sprintf('<a href="%s">%s</a>', get_the_permalink(), $button_text);
+        } else if ($link_type == 'popup') {
+
+            global $popup_style;
+
+            $popup_style = empty($popup_style) ? 'default' : $popup_style;
+
+            $button_link = sprintf('<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" href="#" data-theme="%s">%s</a>', $member_id, $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), $button_text);
+        } else if ($link_type == 'panel') {
+
+            $button_link = sprintf('<a class="gs_team_pop gs_team_panelslide_link" id="gsteamlink_%1$s_%2$s" href="#gsteam_%1$s_%2$s">%3$s</a>', $member_id, $shortcode_id, $button_text);
+        } else if ($link_type == 'drawer') {
+
+            $button_link = sprintf('<a href="%s">%s</a>', get_the_permalink(), $button_text);
+        } else if ($link_type == 'custom') {
+
+            $target = is_internal_url($custom_page_link) ? '' : 'target="_blank"';
+            $button_link = sprintf('<a href="%s" %s>%s</a>', esc_url($custom_page_link), $target, $button_text);
+        }
+    }
+
+    return echo_return($button_link, $echo);
 }

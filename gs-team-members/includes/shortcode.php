@@ -975,6 +975,14 @@ class Shortcode {
 					include Template_Loader::locate_template( 'pro/gs-team-layout-custom-ten.php' );
 				}
 				
+				if ( $gs_team_theme == 'gs_tm_theme_custom_11' ) {
+							
+					if ( $gs_member_link_type == 'default' ) $gs_member_link_type = 'single_page';
+					if ( $gs_member_name_is_linked != 'on' ) $gs_member_link_type = '';
+				
+					include Template_Loader::locate_template( 'pro/gs-team-layout-custom-eleven.php' );
+				}
+				
 				if ( $gs_team_theme == 'gs_tm_theme11' ) {
 				
 					if ( $gs_member_link_type == 'default' ) $gs_member_link_type = 'single_page';

@@ -1242,6 +1242,12 @@ if ( ! class_exists( 'Builder' ) ) {
                     'version' => 1
                 ],
                 [
+                    'label' => __( 'Grid 11', 'gsteam' ),
+                    'value' => 'gs_tm_theme_custom_11',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
                     'label' => __( 'Grid Popup', 'gsteam' ),
                     'value' => 'gs_tm_theme8',
                     'type' => 'free',
