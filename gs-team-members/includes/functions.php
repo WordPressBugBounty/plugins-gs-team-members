@@ -812,7 +812,14 @@ if (gtm_fs()->is_paying_or_trial()) {
 
         global $post;
 
-        $terms = get_the_terms($post->ID, $term_name);
+        $term_args = [
+            'orderby' => 'name',
+            'order' => 'ASC'
+        ];
+
+        $term_args = apply_filters('gs_team_get_post_terms_args', $term_args, $term_name, $post->ID);
+
+        $terms = wp_get_post_terms($post->ID, $term_name, $term_args);
 
         if (!empty($terms) && !is_wp_error($terms)) {
             $terms = implode($separator, wp_list_pluck($terms, 'name'));

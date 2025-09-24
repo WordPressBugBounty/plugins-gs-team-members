@@ -83,7 +83,7 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: ../includes/functions.php:901
+#: ../includes/functions.php:908
 msgid "Teams"
 msgstr ""
 
