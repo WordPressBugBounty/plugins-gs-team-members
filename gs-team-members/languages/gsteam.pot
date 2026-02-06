@@ -1,4 +1,4 @@
-# Copyright (C) 2025 GS_Team
+# Copyright (C) 2026 GS_Team
 # This file is distributed under the same license as the GS_Team package.
 msgid ""
 msgstr ""
@@ -1115,7 +1115,7 @@ msgstr ""
 msgid "Create New Shortcode"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:860, ../templates/pro/gs-team-layout-table-box.php:34, ../templates/pro/gs-team-layout-table-filter-dense.php:36, ../templates/pro/gs-team-layout-table-filter.php:36, ../templates/pro/gs-team-layout-table-odd-even.php:34, ../templates/pro/gs-team-layout-table.php:34
+#: ../includes/shortcode-builder/builder.php:860, ../templates/pro/gs-team-layout-table-box.php:34, ../templates/pro/gs-team-layout-table-filter-dense.php:36, ../templates/pro/gs-team-layout-table-filter.php:36, ../templates/pro/gs-team-layout-table-odd-even.php:34, ../templates/pro/gs-team-layout-table.php:34, ../templates/pro/gs-team-table-five.php:30
 msgid "Name"
 msgstr ""
 
@@ -2359,19 +2359,19 @@ msgstr ""
 msgid "No team member found"
 msgstr ""
 
-#: ../templates/pro/gs-team-layout-table-box.php:33, ../templates/pro/gs-team-layout-table-odd-even.php:33, ../templates/pro/gs-team-layout-table.php:33
+#: ../templates/pro/gs-team-layout-table-box.php:33, ../templates/pro/gs-team-layout-table-odd-even.php:33, ../templates/pro/gs-team-layout-table.php:33, ../templates/pro/gs-team-table-five.php:29
 msgid "Image"
 msgstr ""
 
-#: ../templates/pro/gs-team-layout-table-box.php:35, ../templates/pro/gs-team-layout-table-odd-even.php:35, ../templates/pro/gs-team-layout-table.php:35
+#: ../templates/pro/gs-team-layout-table-box.php:35, ../templates/pro/gs-team-layout-table-odd-even.php:35, ../templates/pro/gs-team-layout-table.php:35, ../templates/pro/gs-team-table-five.php:31
 msgid "Position"
 msgstr ""
 
-#: ../templates/pro/gs-team-layout-table-box.php:36, ../templates/pro/gs-team-layout-table-odd-even.php:36, ../templates/pro/gs-team-layout-table.php:36
+#: ../templates/pro/gs-team-layout-table-box.php:36, ../templates/pro/gs-team-layout-table-odd-even.php:36, ../templates/pro/gs-team-layout-table.php:36, ../templates/pro/gs-team-table-five.php:32
 msgid "Description"
 msgstr ""
 
-#: ../templates/pro/gs-team-layout-table-box.php:39, ../templates/pro/gs-team-layout-table-odd-even.php:39, ../templates/pro/gs-team-layout-table.php:39
+#: ../templates/pro/gs-team-layout-table-box.php:39, ../templates/pro/gs-team-layout-table-odd-even.php:39, ../templates/pro/gs-team-layout-table.php:39, ../templates/pro/gs-team-table-five.php:35
 msgid "Social Links"
 msgstr ""
 

@@ -97,19 +97,19 @@ class Shortcode {
 
 	function add_company_search_element( $theme ) {
 		if ( in_array( $theme, ['gs_tm_theme21_dense'] ) ) return;
-		$tag = 'div';
+		$tag = 'span';
 		printf( '<%1$s class="gs-team-member--company" style="display:none!important">%2$s</%1$s>', $tag, get_post_meta( get_the_ID(), '_gs_com', true ) );
 	}
 
 	function add_zip_codes_search_element( $theme ) {
 		if ( in_array( $theme, ['gs_tm_theme21_dense'] ) ) return;
-		$tag = 'div';
+		$tag = 'span';
 		printf( '<%1$s class="gs-team-member--zip-codes" style="display:none!important">%2$s</%1$s>', $tag, get_post_meta( get_the_ID(), '_gs_zip_code', true ) );
 	}
 
 	function add_tags_search_element( $theme ) {
 		if ( in_array( $theme, ['gs_tm_theme21_dense'] ) ) return;
-		$tag = 'div';
+		$tag = 'span';
 
         $terms = get_the_terms( get_the_ID(), 'gs_team_tag' );
         $terms = join( ' ', wp_list_pluck($terms, 'name') );
@@ -323,6 +323,21 @@ class Shortcode {
 			];
 		}
 
+		if ( in_array( $gs_team_theme, ['gs_tm_theme7', 'gs_tm_theme9', 'gs_tm_theme12', 'gs_tm_theme13', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme19', 'gs_tm_theme21', 'gs_tm_theme21_dense', 'gs_tm_theme22', 'gs_tm_theme23', 'gs_tm_theme24', 'gs_tm_theme25', 'gs_tm_drawer2'] ) ) {
+			$gs_member_pagination = 'off';
+		}
+		
+		if ( in_array( $gs_team_theme, ['gs_tm_theme9', 'gs_tm_theme22'] ) ) {
+			$gs_team_filter_type = 'normal-filter';
+		}
+
+		$table_themes = ['gs-team-table-one', 'gs-team-table-two', 'gs-team-table-three', 'gs-team-table-four', 'gs-team-table-five'];
+
+		if ( in_array( $gs_team_theme, $table_themes ) ) {
+			$filter_enabled = 'off';
+		}
+
+
 		// FILTER OFF
 		if ( 'off' === $filter_enabled ) {
 
@@ -330,7 +345,7 @@ class Shortcode {
 				$args['posts_per_page'] = (int) $num;
 			} elseif ( 'on' === $gs_member_pagination ) {
 
-				if ( wp_doing_ajax() ) {
+				if ( wp_doing_ajax() && ! empty($ajax_datas) ) {
 
 					if ( 'ajax-pagination' === $pagination_type ) {
 						$args["paged"] = (int) $ajax_datas['paged'];

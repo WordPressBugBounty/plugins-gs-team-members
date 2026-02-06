@@ -1,7 +1,7 @@
 <?php
 namespace GSTEAM;
+
 $ribon = get_post_meta( get_the_id(), '_gs_ribon', true );
-$designation = get_post_meta( get_the_id(), '_gs_des', true );
 
 ?>
 

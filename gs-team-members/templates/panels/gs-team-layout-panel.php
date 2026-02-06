@@ -13,6 +13,8 @@ if ( $gs_team_loop->have_posts() ) : ?>
 
         while ( $gs_team_loop->have_posts() ): $gs_team_loop->the_post();
 
+            $designation = get_post_meta( get_the_id(), '_gs_des', true );
+
             if ( ! gtm_fs()->is_paying_or_trial() ) {
                 include Template_Loader::locate_template( 'panels/gs-team-panel-default.php' );
                 return;

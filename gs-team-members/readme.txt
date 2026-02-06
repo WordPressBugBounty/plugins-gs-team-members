@@ -2,9 +2,9 @@
 Contributors: gsplugins, itszaman, samdani, itsariful, freemius
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 2.7.3
+Stable tag: 2.7.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -13,15 +13,16 @@ WordPress Team Plugin - Perfect for team gallery, team slider, team grid and pro
 
 == Description ==
 
-The **WordPress Team Showcase** plugin is your ultimate solution for displaying team members on your website. Enjoy extensive customization with over 50 elegant templates, including Grid, Circle, Horizontal, Drawer, Table, List, Slider, Popup, Filter, Panel, and Gray view. The plugin is SEO-friendly and features a re-order function for effortless organization.
+The **WordPress Team Showcase** plugin is your ultimate solution for displaying team members on your website. Enjoy extensive customization with over 50 elegant templates, including Grid, Circle, Horizontal, Drawer, Table, List, Slider, Popup, Filter, Panel, and Gray view. The plugin is SEO-friendly and features a re-order function for organization.
 
 With a user-friendly Shortcode Generator settings panel and live preview option, creating stunning showcases is easy. Fully responsive layouts and customizable styles ensure a seamless experience. Simple, flexible, and powerful, the ***WordPress Team Showcase*** plugin elevates your team presentation effortlessly.
 
 🎬 [Live Demo](https://team.gsplugins.com/)  ⬆️ [Upgrade to PRO](https://www.gsplugins.com/product/gs-team-members/)  📚 [Documentation](https://docs.gsplugins.com/gs-team-members/)  🙋‍♂️ [Support](https://www.gsplugins.com/contact/)
 
-https://www.youtube.com/watch?v=ZNwUHW4pDNE&list=PLLrT2alOaYX5dc7LNkIaXmLeB97dBXDkR
+[youtube https://www.youtube.com/watch?v=ZNwUHW4pDNE&list=PLLrT2alOaYX5dc7LNkIaXmLeB97dBXDkR]
 
-### Why are the Team Members crucial for your business? 
+== Why are the Team Members crucial for your business? ==
+
 Team members are the superheroes of your business, bringing diverse skills and ideas that strengthen creativity and success. Effective teamwork leads to satisfied customers and boosts business growth. A great team is crucial for your business to thrive.
 
 ### What makes GS Team Members stand out?
@@ -750,6 +751,30 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.7.9 [21st Jan 2026] =
+* [Fixed]: Single Template's Responsive Issue.
+* [Fixed]: Slider Theme's Overflow Issue.
+
+= Version 2.7.8 [1st Jan 2026] =
+* [Fixed]: Designation for Panel Template.
+* [Fixed]: Panel's Margin conflict with Elementor.
+
+= Version 2.7.7 [22nd Dec 2025] =
+* [Fixed]: Ajax Update Issue.
+
+= Version 2.7.6 [3rd Nov 2025] =
+* [Fixed]: Table Style 5 shadow.
+
+= Version 2.7.5 [9th Oct 2025] =
+* [Fixed]: Table Theme Bugs.
+* [Fixed]: Popup Content on Table Theme.
+* [Fixed]: Pagination Load More Offset.
+* [Updated]: Removed Pagination from Table unsupported Themes.
+* [Updated]: Freemius SDK 2.12.2
+
+= Version 2.7.4 [7th Oct 2025] =
+* [Added]: Style Support for the Table Themes.
+
 = Version 2.7.3 [24th Sep 2025] =
 * [Added]: Filter Hook to Modify Terms Order.
 
@@ -1452,7 +1477,31 @@ In this way, you can display Team Members based on specific criteria such as –
 = version 1.0 =
 * Initial release
 
-== Upgrade notice ==
+== Upgrade Notice ==
+= Version 2.7.9 [21st Jan 2026] =
+* [Fixed]: Single Template's Responsive Issue.
+* [Fixed]: Slider Theme's Overflow Issue.
+
+= Version 2.7.8 [1st Jan 2026] =
+* [Fixed]: Designation for Panel Template.
+* [Fixed]: Panel's Margin conflict with Elementor.
+
+= Version 2.7.7 [22nd Dec 2025] =
+* [Fixed]: Ajax Update Issue.
+
+= Version 2.7.6 [3rd Nov 2025] =
+* [Fixed]: Table Style 5 shadow.
+
+= Version 2.7.5 [9th Oct 2025] =
+* [Fixed]: Table Theme Bugs.
+* [Fixed]: Popup Content on Table Theme.
+* [Fixed]: Pagination Load More Offset.
+* [Updated]: Removed Pagination from Table unsupported Themes.
+* [Updated]: Freemius SDK 2.12.2
+
+= Version 2.7.4 [7th Oct 2025] =
+* [Added]: Style Support for the Table Themes.
+
 = Version 2.7.3 [24th Sep 2025] =
 * [Added]: Filter Hook to Modify Terms Order.
 

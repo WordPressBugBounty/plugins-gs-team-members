@@ -62,7 +62,7 @@ if ( ! class_exists( 'Builder' ) ) {
             if ( $this->is_preview() ) {
 
                 // Create our fake post
-                $post_id = rand( 1, 99999 ) - 9999999;
+                $post_id = 0;
                 $post = new \stdClass();
                 $post->ID = $post_id;
                 $post->post_author = 1;
