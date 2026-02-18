@@ -21,7 +21,7 @@ msgstr ""
 msgid "Member Image"
 msgstr ""
 
-#: ../includes/column.php:53, ../includes/meta-fields.php:74
+#: ../includes/column.php:53, ../includes/meta-fields.php:73
 msgid "Designation"
 msgstr ""
 
@@ -123,95 +123,95 @@ msgstr ""
 msgid "Data imported successfully"
 msgstr ""
 
-#: ../includes/meta-fields.php:81, ../includes/shortcode-builder/builder.php:724, ../includes/shortcode-builder/builder.php:2147
+#: ../includes/meta-fields.php:80, ../includes/shortcode-builder/builder.php:724, ../includes/shortcode-builder/builder.php:2147
 msgid "Company"
 msgstr ""
 
-#: ../includes/meta-fields.php:86
+#: ../includes/meta-fields.php:85
 msgid "Company Website"
 msgstr ""
 
-#: ../includes/meta-fields.php:91, ../includes/shortcode-builder/builder.php:726, ../includes/shortcode-builder/builder.php:2149
+#: ../includes/meta-fields.php:90, ../includes/shortcode-builder/builder.php:726, ../includes/shortcode-builder/builder.php:2149
 msgid "Land Phone"
 msgstr ""
 
-#: ../includes/meta-fields.php:96, ../includes/shortcode-builder/builder.php:727, ../includes/shortcode-builder/builder.php:2150
+#: ../includes/meta-fields.php:95, ../includes/shortcode-builder/builder.php:727, ../includes/shortcode-builder/builder.php:2150
 msgid "Cell Phone"
 msgstr ""
 
-#: ../includes/meta-fields.php:101, ../includes/shortcode-builder/builder.php:728, ../includes/shortcode-builder/builder.php:2151, ../templates/pro/gs-team-layout-table-filter-dense.php:38
+#: ../includes/meta-fields.php:100, ../includes/shortcode-builder/builder.php:728, ../includes/shortcode-builder/builder.php:2151, ../templates/pro/gs-team-layout-table-filter-dense.php:38
 msgid "Email"
 msgstr ""
 
-#: ../includes/meta-fields.php:106
+#: ../includes/meta-fields.php:105
 msgid "CC"
 msgstr ""
 
-#: ../includes/meta-fields.php:111
+#: ../includes/meta-fields.php:110
 msgid "BCC"
 msgstr ""
 
-#: ../includes/meta-fields.php:116, ../includes/shortcode-builder/builder.php:725, ../includes/shortcode-builder/builder.php:2148
+#: ../includes/meta-fields.php:115, ../includes/shortcode-builder/builder.php:725, ../includes/shortcode-builder/builder.php:2148
 msgid "Address"
 msgstr ""
 
-#: ../includes/meta-fields.php:121
+#: ../includes/meta-fields.php:120
 msgid "Ribbon"
 msgstr ""
 
-#: ../includes/meta-fields.php:126, ../includes/shortcode-builder/builder.php:720, ../includes/shortcode-builder/builder.php:2152
+#: ../includes/meta-fields.php:125, ../includes/shortcode-builder/builder.php:720, ../includes/shortcode-builder/builder.php:2152
 msgid "Zip Code"
 msgstr ""
 
-#: ../includes/meta-fields.php:131
+#: ../includes/meta-fields.php:130
 msgid "vCard"
 msgstr ""
 
-#: ../includes/meta-fields.php:132, ../includes/meta-fields.php:137
+#: ../includes/meta-fields.php:131, ../includes/meta-fields.php:136
 msgid "Add any external or internal link"
 msgstr ""
 
-#: ../includes/meta-fields.php:136
+#: ../includes/meta-fields.php:135
 msgid "Custom Page Link"
 msgstr ""
 
-#: ../includes/meta-fields.php:179
+#: ../includes/meta-fields.php:178
 msgid "Icon"
 msgstr ""
 
-#: ../includes/meta-fields.php:180
+#: ../includes/meta-fields.php:179
 msgid "Link"
 msgstr ""
 
-#: ../includes/meta-fields.php:203, ../includes/meta-fields.php:191, ../includes/meta-fields.php:214
+#: ../includes/meta-fields.php:202, ../includes/meta-fields.php:190, ../includes/meta-fields.php:213
 msgid "Select icon"
 msgstr ""
 
-#: ../includes/meta-fields.php:205, ../includes/meta-fields.php:193, ../includes/meta-fields.php:216
+#: ../includes/meta-fields.php:204, ../includes/meta-fields.php:192, ../includes/meta-fields.php:215
 msgid "ex: https://twitter.com/gsplugins"
 msgstr ""
 
-#: ../includes/meta-fields.php:206, ../includes/meta-fields.php:194, ../includes/meta-fields.php:217, ../includes/meta-fields.php:286, ../includes/meta-fields.php:274, ../includes/meta-fields.php:297
+#: ../includes/meta-fields.php:205, ../includes/meta-fields.php:193, ../includes/meta-fields.php:216, ../includes/meta-fields.php:285, ../includes/meta-fields.php:273, ../includes/meta-fields.php:296
 msgid "Remove"
 msgstr ""
 
-#: ../includes/meta-fields.php:223, ../includes/meta-fields.php:303
+#: ../includes/meta-fields.php:222, ../includes/meta-fields.php:302
 msgid "Add Row"
 msgstr ""
 
-#: ../includes/meta-fields.php:259
+#: ../includes/meta-fields.php:258
 msgid "Title"
 msgstr ""
 
-#: ../includes/meta-fields.php:260
+#: ../includes/meta-fields.php:259
 msgid "Percent"
 msgstr ""
 
-#: ../includes/meta-fields.php:294
+#: ../includes/meta-fields.php:293
 msgid "ex: Wordpress"
 msgstr ""
 
-#: ../includes/meta-fields.php:296
+#: ../includes/meta-fields.php:295
 msgid "ex: 90"
 msgstr ""
 

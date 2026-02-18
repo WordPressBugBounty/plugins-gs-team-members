@@ -10,13 +10,12 @@ if (!defined('ABSPATH')) exit;
 class Meta_Fields {
 
 	public function __construct() {
-
 		add_action('add_meta_boxes', [ $this, 'add_gs_team_metaboxes' ] );
 		add_action('save_post', [ $this, 'save_gs_team_metadata' ] );
 	}
 
 	function add_gs_team_metaboxes() {
-		add_meta_box('gsTeamSection', 'Member\'s Additioinal Info', [ $this, 'cmb_cb' ], 'gs_team', 'normal', 'high');
+		add_meta_box('gsTeamSection', 'Member\'s Additional Info', [ $this, 'cmb_cb' ], 'gs_team', 'normal', 'high');
 		add_meta_box('gsTeamSectionSocial', 'Member\'s Social Links', [ $this, 'cmb_social_cb' ], 'gs_team', 'normal', 'high');
 		add_meta_box('gsTeamSectionSkill', 'Member\'s Skills', [ $this, 'cmb_skill_cb' ], 'gs_team', 'normal', 'high');
 	}

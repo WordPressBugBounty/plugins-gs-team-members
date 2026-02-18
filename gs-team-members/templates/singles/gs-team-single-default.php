@@ -55,7 +55,7 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
         <?php include Template_Loader::locate_template( 'partials/gs-team-layout-social-links.php' ); ?>
 
         <!-- Description -->
-        <div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+        <div class="gs-member-desc" itemprop="description"><?php echo do_shortcode( shortcode_unautop( wpautop( get_the_content() ) ) ); ?></div>
         <?php do_action( 'gs_team_after_member_details' ); ?>
         
         <!-- Skills -->

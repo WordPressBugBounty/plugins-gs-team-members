@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 2.7.9
+Stable tag: 2.7.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -751,6 +751,11 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.7.10 [18th Feb 2026] =
+* [Added]: Event plugin's shortcode support.
+* [Fixed]: Autop Issue.
+* [Fixed]: Spelling Mistake.
+
 = Version 2.7.9 [21st Jan 2026] =
 * [Fixed]: Single Template's Responsive Issue.
 * [Fixed]: Slider Theme's Overflow Issue.
@@ -1478,6 +1483,11 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade Notice ==
+= Version 2.7.10 [18th Feb 2026] =
+* [Added]: Event plugin's shortcode support.
+* [Fixed]: Autop Issue.
+* [Fixed]: Spelling Mistake.
+
 = Version 2.7.9 [21st Jan 2026] =
 * [Fixed]: Single Template's Responsive Issue.
 * [Fixed]: Slider Theme's Overflow Issue.
