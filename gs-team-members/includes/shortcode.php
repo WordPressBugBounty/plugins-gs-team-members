@@ -24,6 +24,7 @@ class Shortcode {
 		add_action('wp_ajax_nopriv_gsteam_ajax_pagination', [ $this, 'ajax_pagination' ]);
 
 		add_filter( 'post_thumbnail_html', [ $this, 'gsteam_post_thumbnail_html' ], 999999 );
+		add_filter( 'posts_clauses', [ $this, 'gsteam_featured_priority_posts_clauses' ], 20, 2 );
 		add_shortcode( 'gsteam', [ $this, 'shortcode' ] );		
 
 		if ( gtm_fs()->is_paying_or_trial() ) {
@@ -93,6 +94,34 @@ class Shortcode {
 	function gsteam_post_thumbnail_html( $html ) {
 		remove_all_filters( 'post_thumbnail_html' );
 		return $html;
+	}
+
+	function gsteam_featured_priority_posts_clauses( $clauses, $query ) {
+		if ( ! $query->get( 'gs_team_featured_priority_sort' ) ) {
+			return $clauses;
+		}
+
+		global $wpdb;
+
+		if ( false === strpos( $clauses['join'], 'gs_team_featured_meta' ) ) {
+			$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS gs_team_featured_meta ON ({$wpdb->posts}.ID = gs_team_featured_meta.post_id AND gs_team_featured_meta.meta_key = '_gs_team_featured')";
+		}
+
+		$existing_orderby = trim( $clauses['orderby'] );
+
+		if ( empty( $existing_orderby ) ) {
+			$existing_orderby = "{$wpdb->posts}.post_date DESC";
+		}
+
+		$clauses['orderby'] = "
+			CASE
+				WHEN gs_team_featured_meta.meta_value = '1' THEN 0
+				ELSE 1
+			END ASC,
+			{$existing_orderby}
+		";
+
+		return $clauses;
 	}
 
 	function add_company_search_element( $theme ) {
@@ -233,6 +262,10 @@ class Shortcode {
 			'paged'          => (int) $gs_tm_paged,
 			'tax_query' 	=> [],
 		];
+
+		if( $enable_featuring === 'on' ){
+		    $args['gs_team_featured_priority_sort'] = true;
+		}
 	
 		if ( !empty($group) ) {
 			$args['tax_query'][] = [

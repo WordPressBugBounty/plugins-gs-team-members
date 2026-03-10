@@ -62,6 +62,7 @@ class Meta_Fields {
 		$gs_zip_code    = get_post_meta($post->ID, '_gs_zip_code', true);
 		$gs_vcard       = get_post_meta($post->ID, '_gs_vcard', true);
 		$gs_custom_page = get_post_meta($post->ID, '_gs_custom_page', true);
+		$gs_featured       = get_post_meta( $post->ID, '_gs_team_featured', true );
 
 		?>
 
@@ -134,6 +135,11 @@ class Meta_Fields {
 				<div class="form-group">
 					<label for="gs_custom_page"><?php _e('Custom Page Link', 'gsteam'); ?></label>
 					<input type="url" id="gs_custom_page" class="form-control" name="gs_custom_page" placeholder="<?php _e('Add any external or internal link', 'gsteam'); ?>" value="<?php echo isset($gs_custom_page) ? esc_url($gs_custom_page) : ''; ?>">
+				</div>
+
+				<div class="form-group gs_team_featured" style="justify-content: left;">
+					<label for="gs_team_featured" class="gs_team_featured_label"><?php _e('Featured?', 'gsteam'); ?></label>
+					<input style="width:unset;" type="checkbox" id="gs_team_featured" name="gs_team_featured" value="1" <?php checked( $gs_featured, 1 ); ?>>
 				</div>
 
 				<?php
@@ -418,6 +424,12 @@ class Meta_Fields {
 			update_post_meta($post_id, '_gs_zip_code', sanitize_text_field($_POST['gs_zip_code']));
 			update_post_meta($post_id, '_gs_vcard', esc_url_raw($_POST['gs_vcard'], array('http', 'https', 'ftp', 'ftps')));
 			update_post_meta($post_id, '_gs_custom_page', esc_url_raw($_POST['gs_custom_page'], array('http', 'https')));
+			
+			if ( isset( $_POST['gs_team_featured'] ) ) {
+				update_post_meta( $post_id, '_gs_team_featured', 1 );
+			} else {
+				delete_post_meta( $post_id, '_gs_team_featured' );
+			}
 
 			$meta_key = 'second_featured_img';
 			update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$meta_key]));
