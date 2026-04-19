@@ -2,8 +2,6 @@
 
 namespace GSTEAM;
 
-if ( $display_ribbon !== 'on' ) return;
-
 $is_featured      = get_post_meta( get_the_id(), '_gs_team_featured', true );
 $ribon            = get_post_meta( get_the_id(), '_gs_ribon', true );
 
@@ -15,7 +13,7 @@ if ( $featured_badge === 'on' && $enable_featuring === 'on' && $is_featured ): ?
     <?php do_action( 'gs_team_after_member_featured_badge' ); ?>
 <?php endif; ?>
 
-<?php if ( !empty($ribon) ): ?>
+<?php if ( !empty($ribon) && $display_ribbon === 'on' ): ?>
     <div class="gs_team_ribbon"><?php echo esc_html( $ribon ); ?></div>
     <?php do_action( 'gs_team_after_member_ribbon' ); ?>
 <?php endif; ?>
