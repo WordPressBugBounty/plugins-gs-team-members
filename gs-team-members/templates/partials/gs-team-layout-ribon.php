@@ -5,6 +5,10 @@ namespace GSTEAM;
 $is_featured      = get_post_meta( get_the_id(), '_gs_team_featured', true );
 $ribon            = get_post_meta( get_the_id(), '_gs_ribon', true );
 
+$featured_badge  = isset( $featured_badge ) ? $featured_badge : 'off';
+$enable_featuring = isset( $enable_featuring ) ? $enable_featuring : 'off';
+$display_ribbon  = isset( $display_ribbon ) ? $display_ribbon : 'off';
+
 
 if ( $featured_badge === 'on' && $enable_featuring === 'on' && $is_featured ): ?>
     <div class="gs_team_featured_badge">

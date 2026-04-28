@@ -457,9 +457,14 @@ class Shortcode {
 				
 				if( ! empty($filters['search']) ) {
 					// Search through title
-	
-					add_filter( 'posts_search', 'GSTEAM\gs_filter_title_search_only', 10, 2 );
-	
+
+					if ( 'on' === $gs_member_search_all_fields ) {
+						$args['gs_team_search_all_fields'] = true;
+						add_filter( 'posts_search', 'GSTEAM\gs_filter_search_all_fields', 10, 2 );
+					} else {
+						add_filter( 'posts_search', 'GSTEAM\gs_filter_title_search_only', 10, 2 );
+					}
+
 					$args['s'] = $filters['search'];
 				}
 	
@@ -600,6 +605,7 @@ class Shortcode {
 		$GLOBALS['gs_team_loop'] = get_query( $args );
 
 		remove_filter( 'posts_search', 'GSTEAM\gs_filter_title_search_only', 10 );
+		remove_filter( 'posts_search', 'GSTEAM\gs_filter_search_all_fields', 10 );
 	
 		if ( ! gtm_fs()->is_paying_or_trial() ) {
 			

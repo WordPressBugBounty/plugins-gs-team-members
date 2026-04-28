@@ -1000,6 +1000,71 @@ function gs_filter_title_search_only( $search, $wp_query ) {
     return $search;
 }
 
+function gs_filter_search_all_fields( $search, $wp_query ) {
+    global $wpdb;
+
+    if ( ! $wp_query->get('gs_team_search_all_fields') ) {
+        return $search;
+    }
+
+    $search_term = $wp_query->get('s');
+
+    if ( ! $search_term ) {
+        return $search;
+    }
+
+    $like = '%' . $wpdb->esc_like( $search_term ) . '%';
+
+    $taxonomies = implode( "','", [
+        'gs_team_group',
+        'gs_team_tag',
+        'gs_team_location',
+        'gs_team_language',
+        'gs_team_gender',
+        'gs_team_specialty',
+        'gs_team_extra_one',
+        'gs_team_extra_two',
+        'gs_team_extra_three',
+        'gs_team_extra_four',
+        'gs_team_extra_five',
+    ] );
+
+    $search = $wpdb->prepare(
+        " AND (
+            {$wpdb->posts}.post_title LIKE %s
+            OR {$wpdb->posts}.post_name LIKE %s
+            OR EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} gsteam_pm
+                WHERE gsteam_pm.post_id = {$wpdb->posts}.ID
+                  AND gsteam_pm.meta_key = '_gs_des'
+                  AND gsteam_pm.meta_value LIKE %s
+            )
+            OR EXISTS (
+                SELECT 1
+                FROM {$wpdb->term_relationships} gsteam_tr
+                INNER JOIN {$wpdb->term_taxonomy} gsteam_tt
+                    ON gsteam_tt.term_taxonomy_id = gsteam_tr.term_taxonomy_id
+                INNER JOIN {$wpdb->terms} gsteam_t
+                    ON gsteam_t.term_id = gsteam_tt.term_id
+                WHERE gsteam_tr.object_id = {$wpdb->posts}.ID
+                  AND gsteam_tt.taxonomy IN ('{$taxonomies}')
+                  AND (
+                    gsteam_t.name LIKE %s
+                    OR gsteam_t.slug LIKE %s
+                  )
+            )
+        ) ",
+        $like,
+        $like,
+        $like,
+        $like,
+        $like
+    );
+
+    return $search;
+}
+
 function is_display_pagination( $carousel_enabled, $filter_enabled, $filter_type ) {
 
     if( $carousel_enabled === 'on' ) {

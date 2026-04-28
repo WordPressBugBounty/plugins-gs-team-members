@@ -166,7 +166,14 @@ class Hooks {
     public function excerpt_length($length) {
     
         global $post;
-        if ($post->post_type == 'gs_team') $length = 150;
+        if ( empty( $post ) || ! isset( $post->post_type ) ) {
+            return $length;
+        }
+
+        if ( $post->post_type == 'gs_team' ) {
+            $length = 150;
+        }
+
         return $length;
     }
     
