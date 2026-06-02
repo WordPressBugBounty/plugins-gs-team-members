@@ -2,9 +2,9 @@
 Contributors: gsplugins, itszaman, samdani, itsariful, freemius
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 2.7.13
+Stable tag: 2.7.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -751,6 +751,10 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.7.14 [2nd Jun 2026] =
+* [Added]: Support for searching by designation, company name/website, phone number, land phone & email address in AJAX filter.
+* [Fixed]: Masonry ($.fn.masonry) conflict with WordPress core and other plugins.
+
 = Version 2.7.13 [28th Apr 2026] =
 * [Added]: Taxonomy and designation search support by name in AJAX filter.
 * [Added]: Extra condition layer to prevent undefined/null warnings.
@@ -1497,6 +1501,10 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade Notice ==
+= Version 2.7.14 [2nd Jun 2026] =
+* [Added]: Support for searching by designation, company name/website, phone number, land phone & email address in AJAX filter.
+* [Fixed]: Masonry ($.fn.masonry) conflict with WordPress core and other plugins.
+
 = Version 2.7.13 [28th Apr 2026] =
 * [Added]: Taxonomy and designation search support by name in AJAX filter.
 * [Added]: Extra condition layer to prevent undefined/null warnings.

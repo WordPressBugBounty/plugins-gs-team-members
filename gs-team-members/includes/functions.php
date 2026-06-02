@@ -1029,6 +1029,15 @@ function gs_filter_search_all_fields( $search, $wp_query ) {
         'gs_team_extra_five',
     ] );
 
+    $meta_keys = implode( "','", [
+        '_gs_des',
+        '_gs_com',
+        '_gs_com_website',
+        '_gs_land',
+        '_gs_cell',
+        '_gs_email',
+    ] );
+
     $search = $wpdb->prepare(
         " AND (
             {$wpdb->posts}.post_title LIKE %s
@@ -1037,7 +1046,7 @@ function gs_filter_search_all_fields( $search, $wp_query ) {
                 SELECT 1
                 FROM {$wpdb->postmeta} gsteam_pm
                 WHERE gsteam_pm.post_id = {$wpdb->posts}.ID
-                  AND gsteam_pm.meta_key = '_gs_des'
+                  AND gsteam_pm.meta_key IN ('{$meta_keys}')
                   AND gsteam_pm.meta_value LIKE %s
             )
             OR EXISTS (
