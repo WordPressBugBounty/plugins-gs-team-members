@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 2.7.15
+Stable tag: 2.7.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -751,6 +751,12 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.7.16 [14th Jul 2026] =
+* [Added]: Dropdown device selector for column settings.
+* [Improved]: Drawer behavior with filter and link type conditions.
+* [Improved]: Code cleanup and performance optimizations.
+* [Updated]: Freemius SDK to the latest version 2.13.4
+
 = Version 2.7.15 [24th Jun 2026] =
 * [Fixed]: Panel and drawer issues in AJAX filter, AJAX scroll load, AJAX load more (button) & AJAX numbered pagination.
 
@@ -1504,6 +1510,12 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade Notice ==
+= Version 2.7.16 [14th Jul 2026] =
+* [Added]: Dropdown device selector for column settings.
+* [Improved]: Drawer behavior with filter and link type conditions.
+* [Improved]: Code cleanup and performance optimizations.
+* [Updated]: Freemius SDK to the latest version 2.13.4
+
 = Version 2.7.15 [24th Jun 2026] =
 * [Fixed]: Panel and drawer issues in AJAX filter, AJAX scroll load, AJAX load more (button) & AJAX numbered pagination.
 
