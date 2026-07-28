@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 2.7.16
+Stable tag: 2.7.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -751,6 +751,20 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.7.17 [28th Jul 2026] =
+* [Added]: Advanced visibility controls for panels, drawers, popups, and taxonomies.
+* [Added]: Conditional visibility options with checkboxes and switchers.
+* [Added]: Improved popup controls (ribbon, featured badge, and element toggles).
+* [Fixed]: Divi fatal error.
+* [Fixed]: List layouts (06 & 07) visibility issues.
+* [Fixed]: Table template width and column visibility issues.
+* [Fixed]: Module icon issue.
+* [Improved]: Divi module rewritten with Divi 5 structure.
+* [Improved]: Block icon, title, and description.
+* [Improved]: Table layouts, filters, and dense view visibility.
+* [Updated]: Removed Divi 4 scripts.
+* [Updated]: Temporarily disabled single team block.
+
 = Version 2.7.16 [14th Jul 2026] =
 * [Added]: Dropdown device selector for column settings.
 * [Improved]: Drawer behavior with filter and link type conditions.
@@ -1510,6 +1524,20 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade Notice ==
+= Version 2.7.17 [28th Jul 2026] =
+* [Added]: Advanced visibility controls for panels, drawers, popups, and taxonomies.
+* [Added]: Conditional visibility options with checkboxes and switchers.
+* [Added]: Improved popup controls (ribbon, featured badge, and element toggles).
+* [Fixed]: Divi fatal error.
+* [Fixed]: List layouts (06 & 07) visibility issues.
+* [Fixed]: Table template width and column visibility issues.
+* [Fixed]: Module icon issue.
+* [Improved]: Divi module rewritten with Divi 5 structure.
+* [Improved]: Block icon, title, and description.
+* [Improved]: Table layouts, filters, and dense view visibility.
+* [Updated]: Removed Divi 4 scripts.
+* [Updated]: Temporarily disabled single team block.
+
 = Version 2.7.16 [14th Jul 2026] =
 * [Added]: Dropdown device selector for column settings.
 * [Improved]: Drawer behavior with filter and link type conditions.

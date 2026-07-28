@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "gsteam/shortcodes",
+	"title": "GS Team Shortcodes",
+	"category": "layout",
+	"icon": "admin-users",
+	"description": "Display team members using a GS Team shortcode.",
+	"keywords": [ "team", "members", "shortcode" ],
+	"textdomain": "gsteam",
+	"supports": {
+		"align": [ "wide", "full" ]
+	},
+	"attributes": {
+		"shortcode": {
+			"type": "string",
+			"default": ""
+		},
+		"align": {
+			"type": "string",
+			"default": "wide"
+		}
+	},
+	"editorScript": "gs-team-block",
+	"editorStyle": "gs-team-block-editor"
+}

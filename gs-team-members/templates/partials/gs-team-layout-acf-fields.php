@@ -13,6 +13,11 @@ namespace GSTEAM;
 
 if ( ! function_exists('acf_get_field_groups') ) return;
 
+$vg = empty( $visibility_group ) ? 'popup' : $visibility_group;
+$visibility_field = get_member_visibility_field( $vg, 'member_acf_fields' );
+
+if ( ! is_visible( $visibility_field ) ) return;
+
 $field_groups = acf_get_field_groups([
     'post_id'	=> get_the_ID(),
     'post_type'	=> get_post_type()
@@ -35,7 +40,7 @@ foreach( $field_groups as $field_group ) {
 
     ?>
 
-    <div class="gs-team--acf_group">
+    <div class="<?php print_visible_classes( $visibility_field, 'gs-team--acf_group' ); ?>">
 
         <?php if ( !empty($title) ) printf( '<h3 class="gs-team--acf_group-title">%s</h3>', esc_html($title) ); ?>
         

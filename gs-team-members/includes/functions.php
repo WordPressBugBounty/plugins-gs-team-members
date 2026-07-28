@@ -13,7 +13,25 @@ function is_divi_active() {
 }
 
 function is_divi_editor() {
-    if (!empty($_POST['action']) && $_POST['action'] == 'et_pb_process_computed_property' && !empty($_POST['module_type']) && $_POST['module_type'] == 'gs_team_members') return true;
+    // Divi 4 computed property (legacy layouts during migration).
+    if (!empty($_POST['action']) && $_POST['action'] == 'et_pb_process_computed_property' && !empty($_POST['module_type']) && $_POST['module_type'] == 'gs_team_members') {
+        return true;
+    }
+
+    // Divi 5 Visual Builder / Theme Builder.
+    if (function_exists('et_core_is_fb_enabled') && et_core_is_fb_enabled() && function_exists('et_builder_d5_enabled') && et_builder_d5_enabled()) {
+        return true;
+    }
+
+    // Divi 5 REST preview for GS Team module.
+    if (defined('REST_REQUEST') && REST_REQUEST) {
+        $rest_route = isset($GLOBALS['wp']->query_vars['rest_route']) ? (string) $GLOBALS['wp']->query_vars['rest_route'] : '';
+        if ($rest_route && false !== strpos($rest_route, '/gs-team/v1/divi')) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 function is_pro_active() {
@@ -152,10 +170,15 @@ function member_description($shortcode_id, $max_length = 100, $echo = false, $is
 
 function member_thumbnail($size, $echo = false) {
 
+    if ( ! member_visibility_should_show( 'member_thumbnail' ) ) {
+        return echo_return( '', $echo );
+    }
+
     $disable_lazy_load = getoption('disable_lazy_load', 'off');
     $lazy_load_class   = getoption('lazy_load_class', 'skip-lazy');
 
     $member_id = get_the_ID();
+    $visibility_classes = member_visibility_classes( 'member_thumbnail' );
 
     if (has_post_thumbnail()) {
 
@@ -163,6 +186,10 @@ function member_thumbnail($size, $echo = false) {
         if (empty($size)) $size = 'large';
 
         $classes = ['gs_team_member--image'];
+
+        if ( ! empty( $visibility_classes ) ) {
+            $classes = array_merge( $classes, explode( ' ', $visibility_classes ) );
+        }
 
         if ($disable_lazy_load == 'on' && !empty($lazy_load_class)) {
             $classes[] = $lazy_load_class;
@@ -177,7 +204,7 @@ function member_thumbnail($size, $echo = false) {
         ]);
     } else {
 
-        $thumbnail = sprintf('<img src="%s" alt="%s" itemprop="image"/>', GSTEAM_PLUGIN_URI . '/assets/img/no_img.jpg', get_the_title());
+        $thumbnail = sprintf('<img class="%s" src="%s" alt="%s" itemprop="image"/>', esc_attr( $visibility_classes ), GSTEAM_PLUGIN_URI . '/assets/img/no_img.jpg', get_the_title());
     }
 
     $thumbnail = apply_filters('gs_team_member_thumbnail_html', $thumbnail, $member_id);
@@ -187,10 +214,15 @@ function member_thumbnail($size, $echo = false) {
 
 function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_type = 'single_page', $echo = false) {
 
+    if ( ! member_visibility_should_show( 'member_thumbnail' ) ) {
+        return echo_return( '', $echo );
+    }
+
     $disable_lazy_load = getoption('disable_lazy_load', 'off');
     $lazy_load_class   = getoption('lazy_load_class', 'skip-lazy');
 
     $member_id = get_the_ID();
+    $visibility_classes = member_visibility_classes( 'member_thumbnail' );
 
     if (has_post_thumbnail()) {
 
@@ -198,6 +230,10 @@ function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_t
         if (empty($size)) $size = 'large';
 
         $classes = ['gs_team_member--image'];
+
+        if ( ! empty( $visibility_classes ) ) {
+            $classes = array_merge( $classes, explode( ' ', $visibility_classes ) );
+        }
 
         if ($disable_lazy_load == 'on' && !empty($lazy_load_class)) {
             $classes[] = $lazy_load_class;
@@ -250,7 +286,7 @@ function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_t
             return echo_return($linked_thumb, $echo);
         }
     } else {
-        $thumbnail = sprintf('<img src="%s" alt="%s" itemprop="image"/>', GSTEAM_PLUGIN_URI . '/assets/img/no_img.jpg', get_the_title());
+        $thumbnail = sprintf('<img class="%s" src="%s" alt="%s" itemprop="image"/>', esc_attr( $visibility_classes ), GSTEAM_PLUGIN_URI . '/assets/img/no_img.jpg', get_the_title());
     }
 
     $thumbnail = apply_filters('gs_team_member_thumbnail_html', $thumbnail, $member_id);
@@ -260,8 +296,16 @@ function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_t
 
 function member_thumbnail_with_link($shortcode_id, $size, $has_link = false, $link_type = 'single_page', $overlay = false, $extra_link_class = '') {
 
+    if ( ! member_visibility_should_show( 'member_thumbnail' ) ) {
+        return '';
+    }
+
     $member_id = get_the_ID();
     $image_html = member_thumbnail($size, false);
+
+    if ( empty( $image_html ) ) {
+        return '';
+    }
 
     $img_overlay = '';
     if ($overlay) {
@@ -314,6 +358,10 @@ function member_thumbnail_with_link($shortcode_id, $size, $has_link = false, $li
 
 function member_name($shortcode_id, $echo = false, $has_link = true, $link_type = 'single_page', $tag = 'div', $extra_classes = '', $no_default_class = false, $custom_title = '') {
 
+    if ( ! member_visibility_should_show( 'member_name' ) ) {
+        return echo_return( '', $echo );
+    }
+
     $member_id = get_the_ID();
 
     if (empty($tag) || !in_array($tag, ['div', 'p', 'span', 'td', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'])) $tag = 'div';
@@ -360,8 +408,12 @@ function member_name($shortcode_id, $echo = false, $has_link = true, $link_type 
     $classes = $no_default_class ? '' : 'gs-member-name ';
 
     $classes .= $extra_classes;
+    $visibility_classes = member_visibility_classes( 'member_name' );
+    if ( ! empty( $visibility_classes ) ) {
+        $classes = trim( $classes . ' ' . $visibility_classes );
+    }
 
-    $name = sprintf('<%1$s class="%2$s" %4$s>%3$s</%1$s>', $tag, $classes, $the_title, $has_link ? '' : 'itemprop="name"');
+    $name = sprintf('<%1$s class="%2$s" %4$s>%3$s</%1$s>', $tag, esc_attr( trim( $classes ) ), $the_title, $has_link ? '' : 'itemprop="name"');
 
     $name = apply_filters('gs_team_member_name_html', $name, $member_id);
 
@@ -1132,4 +1184,216 @@ function read_more_button_with_link($shortcode_id, $has_link = true, $link_type 
     }
 
     return echo_return($button_link, $echo);
+}
+
+function get_member_visibility_field( $group, $field_key ) {
+
+	$defaults = [
+		'desktop'          => true,
+		'tablet'           => true,
+		'mobile_landscape' => true,
+		'mobile'           => true,
+	];
+
+	$visibility_settings = isset( $GLOBALS['gs_team_visibility_settings'] ) ? $GLOBALS['gs_team_visibility_settings'] : null;
+
+	if ( empty( $visibility_settings ) && isset( $GLOBALS['gs_team_shortcode_settings']['visibility_settings'] ) ) {
+		$visibility_settings = $GLOBALS['gs_team_shortcode_settings']['visibility_settings'];
+	}
+
+	if ( empty( $visibility_settings ) || ! is_array( $visibility_settings ) ) {
+		return $defaults;
+	}
+
+	if ( ! isset( $visibility_settings[ $group ][ $field_key ] ) || ! is_array( $visibility_settings[ $group ][ $field_key ] ) ) {
+		return $defaults;
+	}
+
+	return wp_parse_args( $visibility_settings[ $group ][ $field_key ], $defaults );
+}
+
+function get_current_visibility_group() {
+
+	if ( ! empty( $GLOBALS['gs_team_visibility_group'] ) ) {
+		return $GLOBALS['gs_team_visibility_group'];
+	}
+
+	return 'initial';
+}
+
+function is_visible( $field, $device = '' ) {
+
+	if ( ! is_array( $field ) ) {
+		return true;
+	}
+
+	if ( empty( $device ) ) {
+		return wp_validate_boolean( $field['desktop'] ?? false )
+			|| wp_validate_boolean( $field['tablet'] ?? false )
+			|| wp_validate_boolean( $field['mobile_landscape'] ?? false )
+			|| wp_validate_boolean( $field['mobile'] ?? false );
+	}
+
+	if ( in_array( $device, [ 'desktop', 'tablet', 'mobile_landscape', 'mobile' ], true ) ) {
+		return isset( $field[ $device ] ) ? wp_validate_boolean( $field[ $device ] ) : false;
+	}
+
+	return false;
+}
+
+function get_visible_classes( $field, $additional_class = '' ) {
+
+	$devices = [
+		'desktop'          => 'gs-team--hide-md',
+		'tablet'           => 'gs-team--hide-sm',
+		'mobile_landscape' => 'gs-team--hide-xs',
+		'mobile'           => 'gs-team--hide-xxs',
+	];
+
+	$classes = [];
+
+	if ( ! empty( $additional_class ) ) {
+		$classes[] = $additional_class;
+	}
+
+	if ( ! is_array( $field ) ) {
+		return $classes;
+	}
+
+	foreach ( $devices as $device => $class ) {
+		if ( ! is_visible( $field, $device ) ) {
+			$classes[] = $class;
+		}
+	}
+
+	return $classes;
+}
+
+function print_visible_classes( $field, $additional_class = '' ) {
+	$classes = get_visible_classes( $field, $additional_class );
+	echo esc_attr( implode( ' ', $classes ) );
+}
+
+function member_visibility_should_show( $field_key, $group = null ) {
+
+	if ( empty( $group ) ) {
+		$group = get_current_visibility_group();
+	}
+
+	return is_visible( get_member_visibility_field( $group, $field_key ) );
+}
+
+function member_visibility_classes( $field_key, $additional_class = '', $group = null ) {
+
+	if ( empty( $group ) ) {
+		$group = get_current_visibility_group();
+	}
+
+	return implode( ' ', get_visible_classes( get_member_visibility_field( $group, $field_key ), $additional_class ) );
+}
+
+/**
+ * Visibility classes for a table column that represents multiple fields.
+ * A device hide class is added only when every field is hidden on that device.
+ */
+function member_visibility_classes_any( $field_keys, $additional_class = '', $group = null ) {
+
+	if ( empty( $group ) ) {
+		$group = get_current_visibility_group();
+	}
+
+	$devices = [
+		'desktop'          => 'gs-team--hide-md',
+		'tablet'           => 'gs-team--hide-sm',
+		'mobile_landscape' => 'gs-team--hide-xs',
+		'mobile'           => 'gs-team--hide-xxs',
+	];
+
+	$classes = [];
+
+	if ( ! empty( $additional_class ) ) {
+		$classes[] = $additional_class;
+	}
+
+	foreach ( $devices as $device => $class ) {
+		$any_visible = false;
+
+		foreach ( (array) $field_keys as $field_key ) {
+			if ( is_visible( get_member_visibility_field( $group, $field_key ), $device ) ) {
+				$any_visible = true;
+				break;
+			}
+		}
+
+		if ( ! $any_visible ) {
+			$classes[] = $class;
+		}
+	}
+
+	return implode( ' ', $classes );
+}
+
+function member_designation( $designation, $echo = true, $tag = 'div', $extra_class = 'gs-member-desig' ) {
+
+	if ( empty( $designation ) || ! member_visibility_should_show( 'member_designation' ) ) {
+		return echo_return( '', $echo );
+	}
+
+	if ( empty( $tag ) || ! in_array( $tag, [ 'div', 'p', 'span', 'td', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ], true ) ) {
+		$tag = 'div';
+	}
+
+	$html = sprintf(
+		'<%1$s class="%2$s" itemprop="jobTitle">%3$s</%1$s>',
+		$tag,
+		esc_attr( member_visibility_classes( 'member_designation', $extra_class ) ),
+		wp_kses_post( $designation )
+	);
+
+	return echo_return( $html, $echo );
+}
+
+function member_cell_phone( $cell, $echo = true, $extra_class = 'gs-member-contact' ) {
+
+	if ( empty( $cell ) || ! member_visibility_should_show( 'member_cell_phone' ) ) {
+		return echo_return( '', $echo );
+	}
+
+	$html = sprintf(
+		'<div class="%1$s"><i class="fas fa-phone"></i>%2$s</div>',
+		esc_attr( member_visibility_classes( 'member_cell_phone', $extra_class ) ),
+		esc_html( $cell )
+	);
+
+	return echo_return( $html, $echo );
+}
+
+function member_address( $address, $echo = true, $extra_class = 'gs-member-address' ) {
+
+	if ( empty( $address ) || ! member_visibility_should_show( 'member_address' ) ) {
+		return echo_return( '', $echo );
+	}
+
+	$html = sprintf(
+		'<div class="%1$s"><i class="fas fa-map-marker"></i>%2$s</div>',
+		esc_attr( member_visibility_classes( 'member_address', $extra_class ) ),
+		wp_kses_post( $address )
+	);
+
+	return echo_return( $html, $echo );
+}
+
+function member_email( $email, $echo = true, $extra_class = 'gs-member-contact' ) {
+
+	if ( empty( $email ) || ! member_visibility_should_show( 'member_email' ) ) {
+		return echo_return( '', $echo );
+	}
+
+	$html = sprintf(
+		'<div class="%1$s"><i class="fas fa-envelope"></i>%2$s</div>',
+		esc_attr( member_visibility_classes( 'member_email', $extra_class ) ),
+		sanitize_email( $email )
+	);
+
+	return echo_return( $html, $echo );
 }

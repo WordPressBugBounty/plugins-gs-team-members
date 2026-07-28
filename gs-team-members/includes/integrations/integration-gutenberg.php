@@ -43,9 +43,25 @@ class Integration_Gutenberg {
 
     public function load_block_script() {
 
-        wp_add_inline_style( 'wp-block-editor', $this->get_block_css() );
+        wp_register_style( 'gs-team-block-editor', false, [], GSTEAM_VERSION );
+        wp_add_inline_style( 'gs-team-block-editor', $this->get_block_css() );
 
-        wp_register_script( 'gs-team-block', GSTEAM_PLUGIN_URI . '/includes/integrations/assets/gutenberg/gutenberg-widget.min.js', ['wp-blocks', 'wp-editor'], GSTEAM_VERSION );
+        wp_register_script(
+            'gs-team-block',
+            GSTEAM_PLUGIN_URI . '/includes/integrations/assets/gutenberg/gutenberg-widget.min.js',
+            [
+                'wp-blocks',
+                'wp-element',
+                'wp-block-editor',
+                'wp-components',
+                'wp-i18n',
+                'wp-data',
+                'wp-server-side-render',
+                'jquery',
+            ],
+            GSTEAM_VERSION,
+            true
+        );
 
         $gs_team_block = array(
             'select_shortcode' => __( 'GS Team Shortcode', 'gsteam' ),
@@ -55,12 +71,13 @@ class Integration_Gutenberg {
             'create_link_text' => __( 'Create', 'gsteam' ),
             'edit_link' => admin_url( "edit.php?post_type=gs_team&page=gs-team-shortcode#/shortcode/" ),
             'create_link' => admin_url( 'edit.php?post_type=gs_team&page=gs-team-shortcode#/shortcode' ),
-            'gs_team_shortcodes' => $this->get_shortcode_list()
+            'gs_team_shortcodes' => array_values( (array) $this->get_shortcode_list() ),
+            'plugin_icon' => GSTEAM_PLUGIN_URI . '/assets/img/icon.svg',
 		);
 		wp_localize_script( 'gs-team-block', 'gs_team_block', $gs_team_block );
 
-        register_block_type( 'gsteam/shortcodes', array(
-            'editor_script' => 'gs-team-block',
+        register_block_type( GSTEAM_PLUGIN_DIR . 'includes/integrations/assets/gutenberg/blocks/shortcodes', array(
+            'editor_style' => 'gs-team-block-editor',
             'attributes' => [
                 'shortcode' => [
                     'type'    => 'string',
@@ -74,10 +91,11 @@ class Integration_Gutenberg {
             'render_callback' => [$this, 'shortcodes_dynamic_render_callback']
         ));
 
-        register_block_type( 'gsteam/single-team-block', array(
-            'editor_script' => 'gs-team-single-block',
-            'render_callback' => [$this, 'single_page_render_callback']
-        ));
+        // Temporarily disabled — single team block.
+        // register_block_type( GSTEAM_PLUGIN_DIR . 'includes/integrations/assets/gutenberg/blocks/single-team', array(
+        //     'editor_style' => 'gs-team-block-editor',
+        //     'render_callback' => [$this, 'single_page_render_callback']
+        // ));
 
     }
 
@@ -141,6 +159,15 @@ class Integration_Gutenberg {
         }
 
         .gsteam-members--toolbar p.gs-team-block--des a {
+            margin-left: 4px;
+        }
+
+        .gs-team-block--des span {
+            display: block;
+            margin-top: 8px;
+        }
+
+        .gs-team-block--des a {
             margin-left: 4px;
         }
     

@@ -1,6 +1,11 @@
 <?php
 namespace GSTEAM;
 
+$vg = empty( $visibility_group ) ? 'popup' : $visibility_group;
+
+$role_field = get_member_visibility_field( $vg, 'member_designation' );
+$desc_field = get_member_visibility_field( $vg, 'member_details' );
+
 if ( $gs_teammembers_pop_clm == 'one' ) : ?>
 
     <div class="gs_team_popup_details gs-tm-sicons popup-one-column">
@@ -16,8 +21,8 @@ if ( $gs_teammembers_pop_clm == 'one' ) : ?>
         <?php do_action( 'gs_team_after_member_name' ); ?>
 
         <!-- Member Designation -->
-        <?php if ( !empty( $designation ) ): ?>
-            <div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
+        <?php if ( ! empty( $designation ) && is_visible( $role_field ) ): ?>
+            <div class="<?php print_visible_classes( $role_field, 'gs-member-desig' ); ?>" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
             <?php do_action( 'gs_team_after_member_designation' ); ?>
         <?php endif; ?>
 
@@ -25,8 +30,10 @@ if ( $gs_teammembers_pop_clm == 'one' ) : ?>
         <?php include Template_Loader::locate_template( 'partials/gs-team-layout-social-links.php' ); ?>
 
         <!-- Description -->
-        <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-team--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-        <?php do_action( 'gs_team_after_member_details' ); ?>
+        <?php if ( is_visible( $desc_field ) ) : ?>
+            <div class="<?php print_visible_classes( $desc_field, 'gs-member-desc' . ( $gs_desc_scroll_contrl == 'on' ? ' gs-team--scrollbar' : '' ) ); ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+            <?php do_action( 'gs_team_after_member_details' ); ?>
+        <?php endif; ?>
         
         <!-- Meta Details -->
         <?php include Template_Loader::locate_template( 'partials/gs-team-layout-meta-details.php' ); ?>
@@ -57,8 +64,8 @@ if ( $gs_teammembers_pop_clm == 'one' ) : ?>
                 <?php do_action( 'gs_team_after_member_name' ); ?>
 
                 <!-- Single member designation -->
-                <?php if ( !empty( $designation ) ): ?>
-                    <div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
+                <?php if ( ! empty( $designation ) && is_visible( $role_field ) ): ?>
+                    <div class="<?php print_visible_classes( $role_field, 'gs-member-desig' ); ?>" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
                     <?php do_action( 'gs_team_after_member_designation' ); ?>
                 <?php endif; ?>
             </div>
@@ -74,8 +81,10 @@ if ( $gs_teammembers_pop_clm == 'one' ) : ?>
         </div>
         
         <!-- Description -->
-        <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-team--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-        <?php do_action( 'gs_team_after_member_details' ); ?>
+        <?php if ( is_visible( $desc_field ) ) : ?>
+            <div class="<?php print_visible_classes( $desc_field, 'gs-member-desc' . ( $gs_desc_scroll_contrl == 'on' ? ' gs-team--scrollbar' : '' ) ); ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+            <?php do_action( 'gs_team_after_member_details' ); ?>
+        <?php endif; ?>
         
         <!-- Social Links -->
         <?php include Template_Loader::locate_template( 'partials/gs-team-layout-social-links.php' ); ?>

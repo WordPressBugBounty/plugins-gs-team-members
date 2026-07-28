@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "gsteam/single-team-block",
+	"title": "GS Team Single Team Block",
+	"category": "layout",
+	"icon": "admin-users",
+	"description": "Display a single team member profile on the page.",
+	"keywords": [ "team", "member", "single", "profile" ],
+	"textdomain": "gsteam",
+	"editorScript": "gs-team-block",
+	"editorStyle": "gs-team-block-editor"
+}

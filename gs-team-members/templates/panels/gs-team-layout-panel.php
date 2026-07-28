@@ -2,6 +2,9 @@
 namespace GSTEAM;
 if ( ! $_panel_enabled ) return;
 
+$visibility_group = 'panel';
+$GLOBALS['gs_team_visibility_group'] = 'panel';
+
 if ( $gs_team_loop->have_posts() ) : ?>
 
     <!-- Panel -->

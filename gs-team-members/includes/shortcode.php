@@ -220,6 +220,14 @@ class Shortcode {
 		// Extracting shortcode attributes.
 		extract( $settings );
 
+		if ( empty( $visibility_settings ) || ! is_array( $visibility_settings ) ) {
+			$visibility_settings = plugin()->builder->get_visibility_defaults( $gs_team_theme, $settings );
+		}
+
+		$GLOBALS['gs_team_visibility_settings'] = $visibility_settings;
+		$GLOBALS['gs_team_shortcode_settings']  = $settings;
+		$GLOBALS['gs_team_visibility_group']    = 'initial';
+
 		$hide_empty = $taxonomy_hide_empty === 'on';
 	
 		$_carousel_enabled 	= $carousel_enabled == 'on';
@@ -618,6 +626,21 @@ class Shortcode {
 				$gs_member_name                  = 'on';
 				$gs_member_role                  = 'on';
 				$gs_member_details               = 'on';
+
+				if ( ! isset( $visibility_settings['initial'] ) || ! is_array( $visibility_settings['initial'] ) ) {
+					$visibility_settings['initial'] = [];
+				}
+
+				foreach ( [ 'member_name', 'member_designation', 'member_details', 'member_social' ] as $force_field ) {
+					$visibility_settings['initial'][ $force_field ] = [
+						'desktop'          => true,
+						'tablet'           => true,
+						'mobile_landscape' => true,
+						'mobile'           => true,
+					];
+				}
+
+				$GLOBALS['gs_team_visibility_settings'] = $visibility_settings;
 			}
 	
 			$carousel_navs_style = 'default';
@@ -1176,11 +1199,24 @@ class Shortcode {
 
 		if ( $is_preview ) {
 			$preview_settings = plugin()->builder->validate_shortcode_settings( get_transient($id) );
-			return shortcode_atts( $default_settings, $preview_settings );
+			return array_merge( $default_settings, (array) $preview_settings, [
+				'id'         => $id,
+				'is_preview' => $is_preview,
+			] );
 		}
-	
-		$shortcode = plugin()->builder->_get_shortcode($id);
-		return shortcode_atts( $default_settings, (array) $shortcode['shortcode_settings'] );
+
+		$shortcode = plugin()->builder->_get_shortcode( $id );
+
+		if ( empty( $shortcode ) || empty( $shortcode['shortcode_settings'] ) ) {
+			return $default_settings;
+		}
+
+		$settings = array_merge( $default_settings, (array) $shortcode['shortcode_settings'], [
+			'id'         => $id,
+			'is_preview' => $is_preview,
+		] );
+
+		return plugin()->builder->validate_shortcode_settings( $settings );
 
 	}
 	

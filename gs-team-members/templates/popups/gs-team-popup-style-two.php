@@ -12,6 +12,12 @@ namespace GSTEAM;
 
 $designation = get_post_meta( get_the_id(), '_gs_des', true );
 
+$vg = empty( $visibility_group ) ? 'popup' : $visibility_group;
+
+$name_field = get_member_visibility_field( $vg, 'member_name' );
+$role_field = get_member_visibility_field( $vg, 'member_designation' );
+$desc_field = get_member_visibility_field( $vg, 'member_details' );
+
 ?>
 
 <div class="gs-containeer-f" itemscope="" itemtype="http://schema.org/Person">
@@ -63,25 +69,30 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
             <div class="gs_member_details">
         
                 <!-- Member Name -->
-                <h2 class="gs-sin-mem-name" itemprop="name"><?php the_title(); ?></h2>
-                <?php do_action( 'gs_team_after_member_name' ); ?>
+                <?php if ( is_visible( $name_field ) ) : ?>
+                    <h2 class="<?php print_visible_classes( $name_field, 'gs-sin-mem-name' ); ?>" itemprop="name"><?php the_title(); ?></h2>
+                    <?php do_action( 'gs_team_after_member_name' ); ?>
+                <?php endif; ?>
         
                 <!-- Member Designation -->
-                <div class="gs-sin-mem-desig" itemprop="jobTitle"><?php echo esc_html( $designation ); ?></div>
-                <?php do_action( 'gs_team_after_member_designation' ); ?>
+                <?php if ( is_visible( $role_field ) ) : ?>
+                    <div class="<?php print_visible_classes( $role_field, 'gs-sin-mem-desig' ); ?>" itemprop="jobTitle"><?php echo esc_html( $designation ); ?></div>
+                    <?php do_action( 'gs_team_after_member_designation' ); ?>
+                <?php endif; ?>
         
                 <!-- Description -->
-                <div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-                <?php do_action( 'gs_team_after_member_details' ); ?>
+                <?php if ( is_visible( $desc_field ) ) : ?>
+                    <div class="<?php print_visible_classes( $desc_field, 'gs-member-desc' ); ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+                    <?php do_action( 'gs_team_after_member_details' ); ?>
+                <?php endif; ?>
                 
                 <!-- Meta Details -->
                 <?php include Template_Loader::locate_template( 'partials/gs-team-layout-meta-details-2.php' ); ?>
 
                 <!-- Social Links -->
-                <?php if ( ! empty( get_social_links( get_the_id() ) ) ) : ?>
+                <?php if ( ! empty( get_social_links( get_the_id() ) ) && member_visibility_should_show( 'member_social' ) ) : ?>
                     <div class="gs-tm-sicons">
                         <div class="gs-tm-sicons-lable"><?php echo esc_html($gs_team_follow_me_on); ?></div>
-                        <?php $gs_member_connect = 'on'; ?>
                         <?php include Template_Loader::locate_template( 'partials/gs-team-layout-social-links.php' ); ?>
                     </div>
                 <?php endif; ?>

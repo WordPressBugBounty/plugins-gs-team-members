@@ -12,6 +12,9 @@ namespace GSTEAM;
 
 if ( ! $_popup_enabled ) return;
 
+$visibility_group = 'popup';
+$GLOBALS['gs_team_visibility_group'] = 'popup';
+
 plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 ?>
@@ -58,3 +61,6 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
         ?>
     </div>
 </div>
+<?php
+$visibility_group = 'initial';
+$GLOBALS['gs_team_visibility_group'] = 'initial';

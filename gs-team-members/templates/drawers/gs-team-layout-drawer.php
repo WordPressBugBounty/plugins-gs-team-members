@@ -3,6 +3,9 @@ namespace GSTEAM;
 
 if ( ! $_drawer_enabled ) return;
 
+$visibility_group = 'drawer';
+$GLOBALS['gs_team_visibility_group'] = 'drawer';
+
 if ( $gs_team_loop->have_posts() ) : while ( $gs_team_loop->have_posts() ): $gs_team_loop->the_post();
 
     ?>

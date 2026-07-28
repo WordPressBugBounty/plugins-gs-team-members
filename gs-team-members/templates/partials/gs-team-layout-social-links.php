@@ -13,9 +13,18 @@ namespace GSTEAM;
 
 $social_links = get_social_links( get_the_id() );
 
-if ( 'on' == $gs_member_connect && !empty($social_links) ): ?>
+$visibility_group = empty( $visibility_group ) ? 'initial' : $visibility_group;
+$visibility_field = get_member_visibility_field( $visibility_group, 'member_social' );
 
-    <ul class="gs-team-social">
+$can_show_social = is_visible( $visibility_field ) && ! empty( $social_links );
+
+if ( $visibility_group === 'initial' ) {
+	$can_show_social = $can_show_social && ( 'on' == $gs_member_connect );
+}
+
+if ( $can_show_social ) : ?>
+
+    <ul class="<?php print_visible_classes( $visibility_field, 'gs-team-social' ); ?>">
 
     <?php foreach ( $social_links as $social ) :
 

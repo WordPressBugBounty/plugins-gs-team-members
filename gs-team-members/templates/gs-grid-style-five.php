@@ -119,7 +119,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 						<?php do_action( 'gs_team_after_member_name' ); ?>
 
 						<!-- Member Designation -->
-						<div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
+						<?php member_designation( $designation ); ?>
 						<?php do_action( 'gs_team_after_member_designation' ); ?>
 
 						<!-- Social Links -->

@@ -98,7 +98,7 @@ global $gs_team_loop;
 
 						<!-- Single member designation -->
 						<?php if ( !empty( $designation ) && 'on' == $gs_member_role ): ?>
-							<div class="gs-member-desig" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></div>
+							<?php member_designation( $designation ); ?>
 							<?php do_action( 'gs_team_after_member_designation' ); ?>
 						<?php endif; ?>
 

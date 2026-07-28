@@ -72,17 +72,19 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 										<?php do_action( 'gs_team_after_member_name' ); ?>
 
 										<!-- Single member designation -->
-										<span class="gs-team-profession" itemprop="jobTitle"><?php echo wp_kses_post($designation); ?></span>
+										<?php member_designation( $designation, true, 'span', 'gs-team-profession' ); ?>
 										<?php do_action( 'gs_team_after_member_designation' ); ?>
 
 										<!-- Description -->
-										<?php if ( 'on' === $gs_desc_allow_html ) : ?>
-											<div class="gs-team-details justify" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-										<?php else : ?>
-											<div class="gs-team-details justify" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, false ); ?></div>
-										<?php endif; ?>
+										<?php if ( member_visibility_should_show( 'member_details' ) ) : ?>
+											<?php if ( 'on' === $gs_desc_allow_html ) : ?>
+												<div class="<?php echo esc_attr( member_visibility_classes( 'member_details', 'gs-team-details justify' ) ); ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+											<?php else : ?>
+												<div class="<?php echo esc_attr( member_visibility_classes( 'member_details', 'gs-team-details justify' ) ); ?>" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, false ); ?></div>
+											<?php endif; ?>
 
-										<?php do_action( 'gs_team_after_member_details' ); ?>
+											<?php do_action( 'gs_team_after_member_details' ); ?>
+										<?php endif; ?>
 
 										<!-- Social Links -->
 										<div class="socialicon">

@@ -7,9 +7,13 @@ namespace GSTEAM;
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+require_once GSTEAM_PLUGIN_DIR . 'includes/visibility.php';
+
 if ( ! class_exists( 'Builder' ) ) {
 
     final class Builder {
+
+        use Visibility_Settings;
 
         private $option_name = 'gs_team_shortcode_prefs';
         private $taxonomy_option_name = 'gs_team_taxonomy_settings';
@@ -44,6 +48,24 @@ if ( ! class_exists( 'Builder' ) ) {
         public function is_preview() {
 
             return isset( $_REQUEST['gsteam_shortcode_preview'] ) && !empty($_REQUEST['gsteam_shortcode_preview']);
+
+        }
+
+        /**
+         * Whether the Divi theme (or child) or Divi Builder plugin is active.
+         *
+         * @return bool
+         */
+        public function is_divi_active() {
+
+            $template = get_template();
+
+            // Divi theme (including local Divi 5 copies named Divi_).
+            if ( 'Divi' === $template || 'Divi_' === $template ) {
+                return true;
+            }
+
+            return defined( 'ET_BUILDER_PLUGIN_ACTIVE' ) && ET_BUILDER_PLUGIN_ACTIVE;
 
         }
 
@@ -127,8 +149,15 @@ if ( ! class_exists( 'Builder' ) ) {
                 $GLOBALS['wp_query'] = $wp_query;
                 $wp->register_globals();
 
+                $preview_template = GSTEAM_PLUGIN_DIR . 'includes/shortcode-builder/preview.php';
 
-                include GSTEAM_PLUGIN_DIR . 'includes/shortcode-builder/preview.php';
+                // Divi's et_builder_wc_template_include() requires a string; returning null
+                // from this filter fatals under PHP 8+. Hand the preview path through instead.
+                if ( $this->is_divi_active() ) {
+                    return $preview_template;
+                }
+
+                include $preview_template;
 
                 return;
 
@@ -202,14 +231,19 @@ if ( ! class_exists( 'Builder' ) ) {
                 "siteurl"  => home_url()
             );
 
-            $data['shortcode_settings'] = $this->get_shortcode_default_settings();
-            $data['shortcode_options']  = $this->get_shortcode_default_options();
-            $data['translations']       = $this->get_translation_srtings();
-            $data['preference']         = $this->get_shortcode_default_prefs();
-            $data['preference_options'] = $this->get_shortcode_prefs_options();
-            $data['taxonomy_settings']  = $this->get_taxonomy_default_settings();
-            $data['enabled_plugins']    = $this->get_enabled_plugins();
-            $data['is_multilingual']    = $this->is_multilingual_enabled();
+            $data['shortcode_settings']       = $this->get_shortcode_default_settings();
+            $data['shortcode_options']        = $this->get_shortcode_default_options();
+            $data['translations']             = $this->get_translation_srtings();
+            $data['preference']               = $this->get_shortcode_default_prefs();
+            $data['preference_options']       = $this->get_shortcode_prefs_options();
+            $data['taxonomy_settings']        = $this->_get_taxonomy_settings( false );
+            $data['enabled_plugins']          = $this->get_enabled_plugins();
+            $data['is_multilingual']          = $this->is_multilingual_enabled();
+            $data['theme_visibility_fields']        = $this->get_theme_visibility_fields();
+            $data['overlay_visibility_fields']      = $this->get_overlay_visibility_fields();
+            $data['popup_style_visibility_fields']  = $this->get_popup_style_visibility_fields();
+            $data['panel_style_visibility_fields']  = $this->get_panel_style_visibility_fields();
+            $data['drawer_style_visibility_fields'] = $this->get_drawer_style_visibility_fields();
 
             $data['demo_data'] = [
                 'team_data'      => wp_validate_boolean( get_option('gsteam_dummy_team_data_created') ),
@@ -274,7 +308,27 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function validate_shortcode_settings( $shortcode_settings ) {
 
-            $shortcode_settings = shortcode_atts( $this->get_shortcode_default_settings(), $shortcode_settings );
+            if ( ! is_array( $shortcode_settings ) ) {
+                $shortcode_settings = [];
+            }
+
+            $defaults = $this->get_shortcode_default_settings();
+            $theme    = isset( $shortcode_settings['gs_team_theme'] ) ? $shortcode_settings['gs_team_theme'] : $defaults['gs_team_theme'];
+
+            // Preserve runtime-only keys that are not part of saved shortcode defaults.
+            $runtime_settings = [];
+            foreach ( [ 'id', 'is_preview' ] as $runtime_key ) {
+                if ( array_key_exists( $runtime_key, $shortcode_settings ) ) {
+                    $runtime_settings[ $runtime_key ] = $shortcode_settings[ $runtime_key ];
+                }
+            }
+
+            // Migrate missing visibility from legacy toggles before shortcode_atts.
+            if ( empty( $shortcode_settings['visibility_settings'] ) || ! is_array( $shortcode_settings['visibility_settings'] ) ) {
+                $shortcode_settings['visibility_settings'] = $this->get_visibility_defaults( $theme, $shortcode_settings );
+            }
+
+            $shortcode_settings = shortcode_atts( $defaults, $shortcode_settings );
 
             $int_fields = [
                 'num',
@@ -285,15 +339,29 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_tm_details_contl'
             ];
 
+            $array_fields = [ 'visibility_settings' ];
+
             foreach ( $shortcode_settings as $key => $value ) {
-                if ( in_array( $key, $int_fields ) ) {
+                if ( in_array( $key, $array_fields, true ) ) {
+                    continue;
+                }
+
+                if ( in_array( $key, $int_fields, true ) ) {
                     $shortcode_settings[ $key ] = (int) $value;
                 } else {
                     $shortcode_settings[ $key ] = sanitize_text_field( $value );
                 }
             }
 
-            return $shortcode_settings;
+            $shortcode_settings['visibility_settings'] = $this->validate_visibility_settings(
+                $shortcode_settings['visibility_settings'],
+                $shortcode_settings['gs_team_theme'],
+                $shortcode_settings
+            );
+
+            $shortcode_settings = $this->sync_legacy_visibility_keys( $shortcode_settings );
+
+            return array_merge( $shortcode_settings, $runtime_settings );
         }
 
         protected function get_db_columns() {
@@ -866,12 +934,48 @@ if ( ! class_exists( 'Builder' ) ) {
                 'delete-all' => __('Delete All', 'gsteam'),
                 'create-a-new-shortcode-and' => __('Create a new shortcode & save it to use globally in anywhere', 'gsteam'),
                 'edit-shortcode' => __('Edit Shortcode', 'gsteam'),
-                'general-settings' => __('General Settings', 'gsteam'),
-                'style-settings' => __('Style Settings', 'gsteam'),
-                'query-settings' => __('Query Settings', 'gsteam'),
+                'general-settings' => __('General', 'gsteam'),
+                'style-settings' => __('Style', 'gsteam'),
+                'query-settings' => __('Query', 'gsteam'),
+                'visibility-settings' => __('Visibility', 'gsteam'),
                 'general-settings-short' => __('General', 'gsteam'),
                 'style-settings-short' => __('Style', 'gsteam'),
                 'query-settings-short' => __('Query', 'gsteam'),
+                'visibility-settings-short' => __('Visibility', 'gsteam'),
+                'visibility-initial-view' => __('Initial View', 'gsteam'),
+                'visibility-popup' => __('Popup Visibility', 'gsteam'),
+                'visibility-panel' => __('Panel Visibility', 'gsteam'),
+                'visibility-drawer' => __('Drawer Visibility', 'gsteam'),
+                'visibility-field' => __('Field', 'gsteam'),
+                'visibility-desktop' => __('Desktop', 'gsteam'),
+                'visibility-tablet' => __('Tablet', 'gsteam'),
+                'visibility-large-mobile' => __('Large Mobile', 'gsteam'),
+                'visibility-mobile' => __('Mobile', 'gsteam'),
+                'visibility-member-thumbnail' => __('Thumbnail', 'gsteam'),
+                'visibility-member-name' => __('Name', 'gsteam'),
+                'visibility-member-designation' => __('Designation', 'gsteam'),
+                'visibility-member-details' => __('Details', 'gsteam'),
+                'visibility-member-social' => __('Socials', 'gsteam'),
+                'visibility-member-ribbon' => __('Ribbon', 'gsteam'),
+                'visibility-member-featured-badge' => __('Featured Badge', 'gsteam'),
+                'visibility-member-skills' => __('Skills', 'gsteam'),
+                'visibility-member-company' => __('Company', 'gsteam'),
+                'visibility-member-address' => __('Address', 'gsteam'),
+                'visibility-member-land-phone' => __('Land Phone', 'gsteam'),
+                'visibility-member-cell-phone' => __('Cell Phone', 'gsteam'),
+                'visibility-member-email' => __('Email', 'gsteam'),
+                'visibility-member-location' => __('Location', 'gsteam'),
+                'visibility-member-language' => __('Language', 'gsteam'),
+                'visibility-member-specialty' => __('Specialty', 'gsteam'),
+                'visibility-member-gender' => __('Gender', 'gsteam'),
+                'visibility-member-zip' => __('Zip Code', 'gsteam'),
+                'visibility-member-extra-one' => __('Extra One', 'gsteam'),
+                'visibility-member-extra-two' => __('Extra Two', 'gsteam'),
+                'visibility-member-extra-three' => __('Extra Three', 'gsteam'),
+                'visibility-member-extra-four' => __('Extra Four', 'gsteam'),
+                'visibility-member-extra-five' => __('Extra Five', 'gsteam'),
+                'visibility-member-acf-fields' => __('ACF Fields', 'gsteam'),
+                'visibility-member-vcard' => __('vCard', 'gsteam'),
                 'link_preview_image'   => __( 'Link Image', 'gsteam' ),
                 'preview_enabled__details'   => __( 'Link Image', 'gsteam' ),
                 'enable_featuring'   => __( 'Enable Featuring', 'gsteam' ),
@@ -2127,6 +2231,14 @@ if ( ! class_exists( 'Builder' ) ) {
                 'include_extra_three'             => '',
                 'include_extra_four'              => '',
                 'include_extra_five'              => '',
+                'visibility_settings'             => $this->get_visibility_defaults( 'gs-grid-style-five', [
+                    'gs_member_name'    => 'on',
+                    'gs_member_role'    => 'on',
+                    'gs_member_details' => 'on',
+                    'gs_member_connect' => 'on',
+                    'display_ribbon'    => 'on',
+                    'featured_badge'    => 'off',
+                ] ),
             ];
         }
 
@@ -2566,6 +2678,7 @@ if ( ! class_exists( 'Builder' ) ) {
             if ( empty($settings) ) {
                 $settings = $defaults;
             } else {
+                $settings = array_merge( $defaults, $settings );
                 foreach ( $settings as $setting_key => $setting_val ) {
                     if ( str_contains($setting_key, '_label') && empty($setting_val) ) {
                         $settings[$setting_key] = $defaults[$setting_key];
