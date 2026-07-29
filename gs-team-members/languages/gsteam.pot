@@ -361,15 +361,15 @@ msgstr ""
 msgid "Select Shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-divi.php:158
+#: ../includes/integrations/integration-divi.php:164
 msgid "Loading team members…"
 msgstr ""
 
-#: ../includes/integrations/integration-divi.php:159, ../includes/integrations/divi/TeamMembersModule.php:131
+#: ../includes/integrations/integration-divi.php:165, ../includes/integrations/divi/TeamMembersModule.php:131
 msgid "Please select a GS Team shortcode."
 msgstr ""
 
-#: ../includes/integrations/integration-divi.php:160, ../includes/integrations/divi/TeamMembersController.php:125
+#: ../includes/integrations/integration-divi.php:166, ../includes/integrations/divi/TeamMembersController.php:125
 msgid "No shortcodes found. Create one in GS Team first."
 msgstr ""
 
