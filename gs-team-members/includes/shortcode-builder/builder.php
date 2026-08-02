@@ -336,7 +336,10 @@ if ( ! class_exists( 'Builder' ) ) {
                 'team_per_page',
                 'load_per_click',
                 'per_load',
-                'gs_tm_details_contl'
+                'gs_tm_details_contl',
+                'carousel_autoplay_speed',
+                'carousel_autoplay_timeout',
+                'carousel_items_to_scroll'
             ];
 
             $array_fields = [ 'visibility_settings' ];
@@ -876,6 +879,24 @@ if ( ! class_exists( 'Builder' ) ) {
 
                 'carousel_enabled' => __('Enable Carousel', 'gsteam'),
                 'carousel_enabled__details' => __('Enable carousel for this theme, it may not available for certain theme', 'gsteam'),
+
+                'carousel_autoplay' => __('Autoplay', 'gsteam'),
+                'carousel_autoplay__details' => __('Enable automatic sliding of carousel items', 'gsteam'),
+
+                'carousel_autoplay_hover_pause' => __('Pause on Hover', 'gsteam'),
+                'carousel_autoplay_hover_pause__details' => __('Pause autoplay when mouse hovers over the carousel', 'gsteam'),
+
+                'carousel_loop' => __('Infinite Loop', 'gsteam'),
+                'carousel_loop__details' => __('Enable infinite loop for the carousel', 'gsteam'),
+
+                'carousel_autoplay_speed' => __('Autoplay Speed', 'gsteam'),
+                'carousel_autoplay_speed__details' => __('Slide transition speed in milliseconds', 'gsteam'),
+
+                'carousel_autoplay_timeout' => __('Autoplay Timeout', 'gsteam'),
+                'carousel_autoplay_timeout__details' => __('Delay between automatic slides in milliseconds', 'gsteam'),
+
+                'carousel_items_to_scroll' => __('Items to Scroll', 'gsteam'),
+                'carousel_items_to_scroll__details' => __('Number of members to move forward or backward on each slide', 'gsteam'),
 
                 'carousel_navs_enabled' => __('Enable Carousel Navs', 'gsteam'),
                 'carousel_navs_enabled__details' => __('Enable carousel navs for this theme, it may not available for certain theme', 'gsteam'),
@@ -2175,6 +2196,12 @@ if ( ! class_exists( 'Builder' ) ) {
                 'per_load'                        => 3,
                 'load_button_text'                => 'Load More',
                 'carousel_enabled'                => 'off',
+                'carousel_autoplay'               => 'on',
+                'carousel_autoplay_hover_pause'   => 'on',
+                'carousel_loop'                   => 'on',
+                'carousel_autoplay_speed'         => 1000,
+                'carousel_autoplay_timeout'       => 2500,
+                'carousel_items_to_scroll'        => 1,
                 'link_preview_image'              => 'off',
                 'enable_featuring'                => 'off',
                 'featured_badge'                  => 'off',
