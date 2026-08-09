@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 2.7.19
+Stable tag: 2.7.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -751,6 +751,9 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.7.20 [9th Aug 2026] =
+* [Improved]: Divi module rewritten with Divi 5 structure.
+
 = Version 2.7.19 [2nd Aug 2026] =
 * [Added]: Carousel controls (Autoplay, Pause on Hover, Infinite Loop, Autoplay Speed, Autoplay Timeout, Items to Scroll).
 
@@ -765,7 +768,6 @@ In this way, you can display Team Members based on specific criteria such as –
 * [Fixed]: List layouts (06 & 07) visibility issues.
 * [Fixed]: Table template width and column visibility issues.
 * [Fixed]: Module icon issue.
-* [Improved]: Divi module rewritten with Divi 5 structure.
 * [Improved]: Block icon, title, and description.
 * [Improved]: Table layouts, filters, and dense view visibility.
 * [Updated]: Removed Divi 4 scripts.
@@ -1530,6 +1532,9 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade Notice ==
+= Version 2.7.20 [9th Aug 2026] =
+* [Improved]: Divi module rewritten with Divi 5 structure.
+
 = Version 2.7.19 [2nd Aug 2026] =
 * [Added]: Carousel controls (Autoplay, Pause on Hover, Infinite Loop, Autoplay Speed, Autoplay Timeout, Items to Scroll).
 
@@ -1544,7 +1549,6 @@ In this way, you can display Team Members based on specific criteria such as –
 * [Fixed]: List layouts (06 & 07) visibility issues.
 * [Fixed]: Table template width and column visibility issues.
 * [Fixed]: Module icon issue.
-* [Improved]: Divi module rewritten with Divi 5 structure.
 * [Improved]: Block icon, title, and description.
 * [Improved]: Table layouts, filters, and dense view visibility.
 * [Updated]: Removed Divi 4 scripts.
