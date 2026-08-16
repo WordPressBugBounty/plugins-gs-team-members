@@ -13,2513 +13,2517 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../includes/column.php:51, ../includes/shortcode-builder/builder.php:1016
+#: ../build/gs-team-members/includes/column.php:51, ../build/gs-team-members/includes/shortcode-builder/builder.php:1016, ../includes/column.php:51, ../includes/shortcode-builder/builder.php:1016
 msgid "Member Name"
 msgstr ""
 
-#: ../includes/column.php:52
+#: ../build/gs-team-members/includes/column.php:52, ../includes/column.php:52
 msgid "Member Image"
 msgstr ""
 
-#: ../includes/column.php:53, ../includes/meta-fields.php:74, ../includes/shortcode-builder/builder.php:977
+#: ../build/gs-team-members/includes/column.php:53, ../build/gs-team-members/includes/meta-fields.php:74, ../build/gs-team-members/includes/shortcode-builder/builder.php:977, ../includes/column.php:53, ../includes/meta-fields.php:74, ../includes/shortcode-builder/builder.php:977
 msgid "Designation"
 msgstr ""
 
-#: ../includes/column.php:67, ../includes/shortcode-builder/builder.php:1999
+#: ../build/gs-team-members/includes/column.php:67, ../build/gs-team-members/includes/shortcode-builder/builder.php:1999, ../includes/column.php:67, ../includes/shortcode-builder/builder.php:1999
 msgid "Date"
 msgstr ""
 
-#: ../includes/cpt.php:29, ../includes/integrations/beaver/beaver-widget-team.php:10
+#: ../build/gs-team-members/includes/cpt.php:29, ../build/gs-team-members/includes/integrations/beaver/beaver-widget-team.php:10, ../includes/cpt.php:29, ../includes/integrations/beaver/beaver-widget-team.php:10
 msgid "Team"
 msgstr ""
 
-#: ../includes/cpt.php:30
+#: ../build/gs-team-members/includes/cpt.php:30, ../includes/cpt.php:30
 msgctxt "admin menu"
 msgid "GS Team"
 msgstr ""
 
-#: ../includes/cpt.php:31
+#: ../build/gs-team-members/includes/cpt.php:31, ../includes/cpt.php:31
 msgctxt "add new on admin bar"
 msgid "GS Team"
 msgstr ""
 
-#: ../includes/cpt.php:32, ../includes/cpt.php:33
+#: ../build/gs-team-members/includes/cpt.php:32, ../build/gs-team-members/includes/cpt.php:33, ../includes/cpt.php:32, ../includes/cpt.php:33
 msgid "Add New Member"
 msgstr ""
 
-#: ../includes/cpt.php:34
+#: ../build/gs-team-members/includes/cpt.php:34, ../includes/cpt.php:34
 msgid "New Team"
 msgstr ""
 
-#: ../includes/cpt.php:35
+#: ../build/gs-team-members/includes/cpt.php:35, ../includes/cpt.php:35
 msgid "Edit Team"
 msgstr ""
 
-#: ../includes/cpt.php:36
+#: ../build/gs-team-members/includes/cpt.php:36, ../includes/cpt.php:36
 msgid "View Team"
 msgstr ""
 
-#: ../includes/cpt.php:37
+#: ../build/gs-team-members/includes/cpt.php:37, ../includes/cpt.php:37
 msgid "All Members"
 msgstr ""
 
-#: ../includes/cpt.php:38
+#: ../build/gs-team-members/includes/cpt.php:38, ../includes/cpt.php:38
 msgid "Search Members"
 msgstr ""
 
-#: ../includes/cpt.php:39
+#: ../build/gs-team-members/includes/cpt.php:39, ../includes/cpt.php:39
 msgid "Parent Teams:"
 msgstr ""
 
-#: ../includes/cpt.php:40
+#: ../build/gs-team-members/includes/cpt.php:40, ../includes/cpt.php:40
 msgid "No Teams found."
 msgstr ""
 
-#: ../includes/cpt.php:41
+#: ../build/gs-team-members/includes/cpt.php:41, ../includes/cpt.php:41
 msgid "No Teams found in Trash."
 msgstr ""
 
-#: ../includes/cpt.php:109, ../includes/cpt.php:152, ../includes/cpt.php:195, ../includes/cpt.php:238, ../includes/cpt.php:281, ../includes/cpt.php:324, ../includes/cpt.php:367, ../includes/cpt.php:410, ../includes/cpt.php:453, ../includes/cpt.php:496, ../includes/cpt.php:539
+#: ../build/gs-team-members/includes/cpt.php:109, ../build/gs-team-members/includes/cpt.php:152, ../build/gs-team-members/includes/cpt.php:195, ../build/gs-team-members/includes/cpt.php:238, ../build/gs-team-members/includes/cpt.php:281, ../build/gs-team-members/includes/cpt.php:324, ../build/gs-team-members/includes/cpt.php:367, ../build/gs-team-members/includes/cpt.php:410, ../build/gs-team-members/includes/cpt.php:453, ../build/gs-team-members/includes/cpt.php:496, ../build/gs-team-members/includes/cpt.php:539, ../includes/cpt.php:109, ../includes/cpt.php:152, ../includes/cpt.php:195, ../includes/cpt.php:238, ../includes/cpt.php:281, ../includes/cpt.php:324, ../includes/cpt.php:367, ../includes/cpt.php:410, ../includes/cpt.php:453, ../includes/cpt.php:496, ../includes/cpt.php:539
 msgid "Not Found"
 msgstr ""
 
-#: ../includes/functions.php:960
+#: ../build/gs-team-members/includes/functions.php:960, ../includes/functions.php:960
 msgid "Teams"
 msgstr ""
 
-#: ../includes/hooks.php:68
+#: ../build/gs-team-members/includes/hooks.php:68, ../includes/hooks.php:68
 msgid "Recommended image size 400px X 400px for perfect view on various devices."
 msgstr ""
 
-#: ../includes/import-export.php:28, ../includes/import-export.php:121
+#: ../build/gs-team-members/includes/import-export.php:28, ../build/gs-team-members/includes/import-export.php:121, ../includes/import-export.php:28, ../includes/import-export.php:121
 msgid "You do not have permission to perform this action"
 msgstr ""
 
-#: ../includes/import-export.php:31, ../includes/import-export.php:39
+#: ../build/gs-team-members/includes/import-export.php:31, ../build/gs-team-members/includes/import-export.php:39, ../includes/import-export.php:31, ../includes/import-export.php:39
 msgid "No export data provided"
 msgstr ""
 
-#: ../includes/import-export.php:89
+#: ../build/gs-team-members/includes/import-export.php:89, ../includes/import-export.php:89
 msgid "Invalid file type"
 msgstr ""
 
-#: ../includes/import-export.php:109, ../includes/import-export.php:106
+#: ../build/gs-team-members/includes/import-export.php:109, ../build/gs-team-members/includes/import-export.php:106, ../includes/import-export.php:109, ../includes/import-export.php:106
 msgid "File upload failed"
 msgstr ""
 
-#: ../includes/import-export.php:124
+#: ../build/gs-team-members/includes/import-export.php:124, ../includes/import-export.php:124
 msgid "No import file provided"
 msgstr ""
 
-#: ../includes/import-export.php:131
+#: ../build/gs-team-members/includes/import-export.php:131, ../includes/import-export.php:131
 msgid "Invalid file"
 msgstr ""
 
-#: ../includes/import-export.php:138
+#: ../build/gs-team-members/includes/import-export.php:138, ../includes/import-export.php:138
 msgid "Invalid file content"
 msgstr ""
 
-#: ../includes/import-export.php:147
+#: ../build/gs-team-members/includes/import-export.php:147, ../includes/import-export.php:147
 msgid "Data imported successfully"
 msgstr ""
 
-#: ../includes/meta-fields.php:81, ../includes/shortcode-builder/builder.php:795, ../includes/shortcode-builder/builder.php:983, ../includes/shortcode-builder/builder.php:2292
+#: ../build/gs-team-members/includes/meta-fields.php:81, ../build/gs-team-members/includes/shortcode-builder/builder.php:795, ../build/gs-team-members/includes/shortcode-builder/builder.php:983, ../build/gs-team-members/includes/shortcode-builder/builder.php:2292, ../includes/meta-fields.php:81, ../includes/shortcode-builder/builder.php:795, ../includes/shortcode-builder/builder.php:983, ../includes/shortcode-builder/builder.php:2292
 msgid "Company"
 msgstr ""
 
-#: ../includes/meta-fields.php:86
+#: ../build/gs-team-members/includes/meta-fields.php:86, ../includes/meta-fields.php:86
 msgid "Company Website"
 msgstr ""
 
-#: ../includes/meta-fields.php:91, ../includes/shortcode-builder/builder.php:797, ../includes/shortcode-builder/builder.php:985, ../includes/shortcode-builder/builder.php:2294
+#: ../build/gs-team-members/includes/meta-fields.php:91, ../build/gs-team-members/includes/shortcode-builder/builder.php:797, ../build/gs-team-members/includes/shortcode-builder/builder.php:985, ../build/gs-team-members/includes/shortcode-builder/builder.php:2294, ../includes/meta-fields.php:91, ../includes/shortcode-builder/builder.php:797, ../includes/shortcode-builder/builder.php:985, ../includes/shortcode-builder/builder.php:2294
 msgid "Land Phone"
 msgstr ""
 
-#: ../includes/meta-fields.php:96, ../includes/shortcode-builder/builder.php:798, ../includes/shortcode-builder/builder.php:986, ../includes/shortcode-builder/builder.php:2295
+#: ../build/gs-team-members/includes/meta-fields.php:96, ../build/gs-team-members/includes/shortcode-builder/builder.php:798, ../build/gs-team-members/includes/shortcode-builder/builder.php:986, ../build/gs-team-members/includes/shortcode-builder/builder.php:2295, ../includes/meta-fields.php:96, ../includes/shortcode-builder/builder.php:798, ../includes/shortcode-builder/builder.php:986, ../includes/shortcode-builder/builder.php:2295
 msgid "Cell Phone"
 msgstr ""
 
-#: ../includes/meta-fields.php:101, ../includes/shortcode-builder/builder.php:799, ../includes/shortcode-builder/builder.php:987, ../includes/shortcode-builder/builder.php:2296, ../templates/pro/gs-team-layout-table-filter-dense.php:49
+#: ../build/gs-team-members/includes/meta-fields.php:101, ../build/gs-team-members/includes/shortcode-builder/builder.php:799, ../build/gs-team-members/includes/shortcode-builder/builder.php:987, ../build/gs-team-members/includes/shortcode-builder/builder.php:2296, ../build/gs-team-members/templates/pro/gs-team-layout-table-filter-dense.php:49, ../includes/meta-fields.php:101, ../includes/shortcode-builder/builder.php:799, ../includes/shortcode-builder/builder.php:987, ../includes/shortcode-builder/builder.php:2296, ../templates/pro/gs-team-layout-table-filter-dense.php:49
 msgid "Email"
 msgstr ""
 
-#: ../includes/meta-fields.php:106
+#: ../build/gs-team-members/includes/meta-fields.php:106, ../includes/meta-fields.php:106
 msgid "CC"
 msgstr ""
 
-#: ../includes/meta-fields.php:111
+#: ../build/gs-team-members/includes/meta-fields.php:111, ../includes/meta-fields.php:111
 msgid "BCC"
 msgstr ""
 
-#: ../includes/meta-fields.php:116, ../includes/shortcode-builder/builder.php:796, ../includes/shortcode-builder/builder.php:984, ../includes/shortcode-builder/builder.php:2293
+#: ../build/gs-team-members/includes/meta-fields.php:116, ../build/gs-team-members/includes/shortcode-builder/builder.php:796, ../build/gs-team-members/includes/shortcode-builder/builder.php:984, ../build/gs-team-members/includes/shortcode-builder/builder.php:2293, ../includes/meta-fields.php:116, ../includes/shortcode-builder/builder.php:796, ../includes/shortcode-builder/builder.php:984, ../includes/shortcode-builder/builder.php:2293
 msgid "Address"
 msgstr ""
 
-#: ../includes/meta-fields.php:121, ../includes/shortcode-builder/builder.php:980
+#: ../build/gs-team-members/includes/meta-fields.php:121, ../build/gs-team-members/includes/shortcode-builder/builder.php:980, ../includes/meta-fields.php:121, ../includes/shortcode-builder/builder.php:980
 msgid "Ribbon"
 msgstr ""
 
-#: ../includes/meta-fields.php:126, ../includes/shortcode-builder/builder.php:791, ../includes/shortcode-builder/builder.php:992, ../includes/shortcode-builder/builder.php:2297
+#: ../build/gs-team-members/includes/meta-fields.php:126, ../build/gs-team-members/includes/shortcode-builder/builder.php:791, ../build/gs-team-members/includes/shortcode-builder/builder.php:992, ../build/gs-team-members/includes/shortcode-builder/builder.php:2297, ../includes/meta-fields.php:126, ../includes/shortcode-builder/builder.php:791, ../includes/shortcode-builder/builder.php:992, ../includes/shortcode-builder/builder.php:2297
 msgid "Zip Code"
 msgstr ""
 
-#: ../includes/meta-fields.php:131, ../includes/shortcode-builder/builder.php:999
+#: ../build/gs-team-members/includes/meta-fields.php:131, ../build/gs-team-members/includes/shortcode-builder/builder.php:999, ../includes/meta-fields.php:131, ../includes/shortcode-builder/builder.php:999
 msgid "vCard"
 msgstr ""
 
-#: ../includes/meta-fields.php:132, ../includes/meta-fields.php:137
+#: ../build/gs-team-members/includes/meta-fields.php:132, ../build/gs-team-members/includes/meta-fields.php:137, ../includes/meta-fields.php:132, ../includes/meta-fields.php:137
 msgid "Add any external or internal link"
 msgstr ""
 
-#: ../includes/meta-fields.php:136
+#: ../build/gs-team-members/includes/meta-fields.php:136, ../includes/meta-fields.php:136
 msgid "Custom Page Link"
 msgstr ""
 
-#: ../includes/meta-fields.php:141
+#: ../build/gs-team-members/includes/meta-fields.php:141, ../includes/meta-fields.php:141
 msgid "Featured?"
 msgstr ""
 
-#: ../includes/meta-fields.php:184
+#: ../build/gs-team-members/includes/meta-fields.php:184, ../includes/meta-fields.php:184
 msgid "Icon"
 msgstr ""
 
-#: ../includes/meta-fields.php:185
+#: ../build/gs-team-members/includes/meta-fields.php:185, ../includes/meta-fields.php:185
 msgid "Link"
 msgstr ""
 
-#: ../includes/meta-fields.php:208, ../includes/meta-fields.php:196, ../includes/meta-fields.php:219
+#: ../build/gs-team-members/includes/meta-fields.php:208, ../build/gs-team-members/includes/meta-fields.php:196, ../build/gs-team-members/includes/meta-fields.php:219, ../includes/meta-fields.php:208, ../includes/meta-fields.php:196, ../includes/meta-fields.php:219
 msgid "Select icon"
 msgstr ""
 
-#: ../includes/meta-fields.php:210, ../includes/meta-fields.php:198, ../includes/meta-fields.php:221
+#: ../build/gs-team-members/includes/meta-fields.php:210, ../build/gs-team-members/includes/meta-fields.php:198, ../build/gs-team-members/includes/meta-fields.php:221, ../includes/meta-fields.php:210, ../includes/meta-fields.php:198, ../includes/meta-fields.php:221
 msgid "ex: https://twitter.com/gsplugins"
 msgstr ""
 
-#: ../includes/meta-fields.php:211, ../includes/meta-fields.php:199, ../includes/meta-fields.php:222, ../includes/meta-fields.php:291, ../includes/meta-fields.php:279, ../includes/meta-fields.php:302
+#: ../build/gs-team-members/includes/meta-fields.php:211, ../build/gs-team-members/includes/meta-fields.php:199, ../build/gs-team-members/includes/meta-fields.php:222, ../build/gs-team-members/includes/meta-fields.php:291, ../build/gs-team-members/includes/meta-fields.php:279, ../build/gs-team-members/includes/meta-fields.php:302, ../includes/meta-fields.php:211, ../includes/meta-fields.php:199, ../includes/meta-fields.php:222, ../includes/meta-fields.php:291, ../includes/meta-fields.php:279, ../includes/meta-fields.php:302
 msgid "Remove"
 msgstr ""
 
-#: ../includes/meta-fields.php:228, ../includes/meta-fields.php:308
+#: ../build/gs-team-members/includes/meta-fields.php:228, ../build/gs-team-members/includes/meta-fields.php:308, ../includes/meta-fields.php:228, ../includes/meta-fields.php:308
 msgid "Add Row"
 msgstr ""
 
-#: ../includes/meta-fields.php:264
+#: ../build/gs-team-members/includes/meta-fields.php:264, ../includes/meta-fields.php:264
 msgid "Title"
 msgstr ""
 
-#: ../includes/meta-fields.php:265
+#: ../build/gs-team-members/includes/meta-fields.php:265, ../includes/meta-fields.php:265
 msgid "Percent"
 msgstr ""
 
-#: ../includes/meta-fields.php:299
+#: ../build/gs-team-members/includes/meta-fields.php:299, ../includes/meta-fields.php:299
 msgid "ex: Wordpress"
 msgstr ""
 
-#: ../includes/meta-fields.php:301
+#: ../build/gs-team-members/includes/meta-fields.php:301, ../includes/meta-fields.php:301
 msgid "ex: 90"
 msgstr ""
 
-#: ../includes/restrict-template.php:15
+#: ../build/gs-team-members/includes/restrict-template.php:15, ../includes/restrict-template.php:15
 msgid "Sorry!"
 msgstr ""
 
-#: ../includes/restrict-template.php:17
+#: ../build/gs-team-members/includes/restrict-template.php:17, ../includes/restrict-template.php:17
 msgid "This theme is not available in free version.<br>Please upgrade the plan to use this theme. Thanks!"
 msgstr ""
 
-#: ../includes/restrict-template.php:19
+#: ../build/gs-team-members/includes/restrict-template.php:19, ../includes/restrict-template.php:19
 msgid "Learn more details"
 msgstr ""
 
-#: ../includes/restrict-template.php:21
+#: ../build/gs-team-members/includes/restrict-template.php:21, ../includes/restrict-template.php:21
 msgid "Only Admin & Editor will see this message, visitor will see <strong>Grid 1 (Hover)</strong> template."
 msgstr ""
 
-#: ../includes/restrict-template.php:23
+#: ../build/gs-team-members/includes/restrict-template.php:23, ../includes/restrict-template.php:23
 msgid "This message is generated by <strong>GS Team</strong> plugin."
 msgstr ""
 
-#: ../includes/shortcode.php:37, ../includes/shortcode.php:56, ../includes/shortcode.php:74, ../includes/sortable.php:44, ../includes/sortable.php:68, ../includes/sortable.php:131, ../includes/demo-data/dummy-data.php:159, ../includes/demo-data/dummy-data.php:175, ../includes/demo-data/dummy-data.php:191, ../includes/demo-data/dummy-data.php:201, ../includes/demo-data/dummy-data.php:211, ../includes/demo-data/dummy-data.php:221, ../includes/shortcode-builder/builder.php:422, ../includes/shortcode-builder/builder.php:515, ../includes/shortcode-builder/builder.php:556, ../includes/shortcode-builder/builder.php:624, ../includes/shortcode-builder/builder.php:662
+#: ../build/gs-team-members/includes/shortcode.php:37, ../build/gs-team-members/includes/shortcode.php:56, ../build/gs-team-members/includes/shortcode.php:74, ../build/gs-team-members/includes/sortable.php:44, ../build/gs-team-members/includes/sortable.php:68, ../build/gs-team-members/includes/sortable.php:131, ../build/gs-team-members/includes/demo-data/dummy-data.php:159, ../build/gs-team-members/includes/demo-data/dummy-data.php:175, ../build/gs-team-members/includes/demo-data/dummy-data.php:191, ../build/gs-team-members/includes/demo-data/dummy-data.php:201, ../build/gs-team-members/includes/demo-data/dummy-data.php:211, ../build/gs-team-members/includes/demo-data/dummy-data.php:221, ../build/gs-team-members/includes/shortcode-builder/builder.php:422, ../build/gs-team-members/includes/shortcode-builder/builder.php:515, ../build/gs-team-members/includes/shortcode-builder/builder.php:556, ../build/gs-team-members/includes/shortcode-builder/builder.php:624, ../build/gs-team-members/includes/shortcode-builder/builder.php:662, ../includes/shortcode.php:37, ../includes/shortcode.php:56, ../includes/shortcode.php:74, ../includes/sortable.php:44, ../includes/sortable.php:68, ../includes/sortable.php:131, ../includes/demo-data/dummy-data.php:159, ../includes/demo-data/dummy-data.php:175, ../includes/demo-data/dummy-data.php:191, ../includes/demo-data/dummy-data.php:201, ../includes/demo-data/dummy-data.php:211, ../includes/demo-data/dummy-data.php:221, ../includes/shortcode-builder/builder.php:422, ../includes/shortcode-builder/builder.php:515, ../includes/shortcode-builder/builder.php:556, ../includes/shortcode-builder/builder.php:624, ../includes/shortcode-builder/builder.php:662
 msgid "Unauthorised Request"
 msgstr ""
 
-#: ../includes/shortcode.php:152
+#: ../build/gs-team-members/includes/shortcode.php:152, ../includes/shortcode.php:152
 msgid "No shortcode ID found"
 msgstr ""
 
-#: ../includes/sortable.php:265
+#: ../build/gs-team-members/includes/sortable.php:265, ../includes/sortable.php:265
 msgid "Step 1: Drag & Drop to rearrange Members"
 msgstr ""
 
-#: ../includes/sortable.php:297
+#: ../build/gs-team-members/includes/sortable.php:297, ../includes/sortable.php:297
 msgid "No Team Member Found!"
 msgstr ""
 
-#: ../includes/sortable.php:298
+#: ../build/gs-team-members/includes/sortable.php:298, ../includes/sortable.php:298
 msgid "We didn't find any team member.</br>Please add some team members to sort them."
 msgstr ""
 
-#: ../includes/sortable.php:299
+#: ../build/gs-team-members/includes/sortable.php:299, ../includes/sortable.php:299
 msgid "Add Member"
 msgstr ""
 
-#: ../includes/sortable.php:308
+#: ../build/gs-team-members/includes/sortable.php:308, ../includes/sortable.php:308
 msgid "Step 2: Query Settings for Members"
 msgstr ""
 
-#: ../includes/sortable.php:410
+#: ../build/gs-team-members/includes/sortable.php:410, ../includes/sortable.php:410
 msgid "Filter Orders"
 msgstr ""
 
-#: ../includes/template-loader.php:49
+#: ../build/gs-team-members/includes/template-loader.php:49, ../includes/template-loader.php:49
 msgid "Template file not found - GS Plugins"
 msgstr ""
 
-#: ../includes/widgets.php:21, ../includes/integrations/integration-elementor.php:140, ../includes/integrations/integration-tagdiv.php:63, ../includes/integrations/integration-wpb-vc.php:34
+#: ../build/gs-team-members/includes/widgets.php:21, ../build/gs-team-members/includes/integrations/integration-elementor.php:140, ../build/gs-team-members/includes/integrations/integration-tagdiv.php:63, ../build/gs-team-members/includes/integrations/integration-wpb-vc.php:34, ../includes/widgets.php:21, ../includes/integrations/integration-elementor.php:140, ../includes/integrations/integration-tagdiv.php:63, ../includes/integrations/integration-wpb-vc.php:34
 msgid "GS Team Members"
 msgstr ""
 
-#: ../includes/widgets.php:22
+#: ../build/gs-team-members/includes/widgets.php:22, ../includes/widgets.php:22
 msgid "Display Team Members at widget area."
 msgstr ""
 
-#: ../includes/widgets.php:29
+#: ../build/gs-team-members/includes/widgets.php:29, ../includes/widgets.php:29
 msgid "Meet Our Team"
 msgstr ""
 
-#: ../includes/widgets.php:61
+#: ../build/gs-team-members/includes/widgets.php:61, ../includes/widgets.php:61
 msgid "Total Members to display"
 msgstr ""
 
-#: ../includes/widgets.php:72
+#: ../build/gs-team-members/includes/widgets.php:72, ../includes/widgets.php:72
 msgid "All Groups"
 msgstr ""
 
-#: ../includes/bulk-importer/bulk-importer.php:233, ../includes/bulk-importer/bulk-importer.php:238
+#: ../build/gs-team-members/includes/bulk-importer/bulk-importer.php:233, ../build/gs-team-members/includes/bulk-importer/bulk-importer.php:238, ../includes/bulk-importer/bulk-importer.php:233, ../includes/bulk-importer/bulk-importer.php:238
 msgid "File is not valid"
 msgstr ""
 
-#: ../includes/demo-data/dummy-data.php:235
+#: ../build/gs-team-members/includes/demo-data/dummy-data.php:235, ../includes/demo-data/dummy-data.php:235
 msgid "Dummy Team members already imported"
 msgstr ""
 
-#: ../includes/demo-data/dummy-data.php:249
+#: ../build/gs-team-members/includes/demo-data/dummy-data.php:249, ../includes/demo-data/dummy-data.php:249
 msgid "Dummy Team members imported"
 msgstr ""
 
-#: ../includes/demo-data/dummy-data.php:271
+#: ../build/gs-team-members/includes/demo-data/dummy-data.php:271, ../includes/demo-data/dummy-data.php:271
 msgid "Dummy Team members deleted"
 msgstr ""
 
-#: ../includes/demo-data/dummy-data.php:289
+#: ../build/gs-team-members/includes/demo-data/dummy-data.php:289, ../includes/demo-data/dummy-data.php:289
 msgid "Dummy Shortcodes already imported"
 msgstr ""
 
-#: ../includes/demo-data/dummy-data.php:303
+#: ../build/gs-team-members/includes/demo-data/dummy-data.php:303, ../includes/demo-data/dummy-data.php:303
 msgid "Dummy Shortcodes imported"
 msgstr ""
 
-#: ../includes/demo-data/dummy-data.php:323
+#: ../build/gs-team-members/includes/demo-data/dummy-data.php:323, ../includes/demo-data/dummy-data.php:323
 msgid "Dummy Shortcodes deleted"
 msgstr ""
 
 #. translators: 1: The rating
-#: ../includes/gs-common-pages/gs-plugins-common-pages.php:106
+#. translators: 1: The rating
+#: ../build/gs-team-members/includes/gs-common-pages/gs-plugins-common-pages.php:106, ../includes/gs-common-pages/gs-plugins-common-pages.php:106
 msgid "%s rating"
 msgstr ""
 
-#: ../includes/gs-common-pages/gs-plugins-common-pages.php:102
+#: ../build/gs-team-members/includes/gs-common-pages/gs-plugins-common-pages.php:102, ../includes/gs-common-pages/gs-plugins-common-pages.php:102
 msgid "%1$s rating based on %2$s rating"
 msgid_plural "%1$s rating based on %2$s ratings"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: Plugin name and version.
-#: ../includes/gs-common-pages/gs-plugins-common-pages.php:139
+#. translators: 1: Plugin name and version.
+#: ../build/gs-team-members/includes/gs-common-pages/gs-plugins-common-pages.php:139, ../includes/gs-common-pages/gs-plugins-common-pages.php:139
 msgid "Install Now"
 msgstr ""
 
 #. translators: 1: Plugin name and version
-#: ../includes/gs-common-pages/gs-plugins-common-pages.php:145
+#. translators: 1: Plugin name and version
+#: ../build/gs-team-members/includes/gs-common-pages/gs-plugins-common-pages.php:145, ../includes/gs-common-pages/gs-plugins-common-pages.php:145
 msgid "Update Now"
 msgstr ""
 
-#: ../includes/gs-common-pages/gs-plugins-common-pages.php:150
+#: ../build/gs-team-members/includes/gs-common-pages/gs-plugins-common-pages.php:150, ../includes/gs-common-pages/gs-plugins-common-pages.php:150
 msgctxt "plugin"
 msgid "Installed"
 msgstr ""
 
-#: ../includes/integrations/integration-beaver.php:33
+#: ../build/gs-team-members/includes/integrations/integration-beaver.php:33, ../includes/integrations/integration-beaver.php:33
 msgid "Tab 1"
 msgstr ""
 
-#: ../includes/integrations/integration-beaver.php:36, ../includes/shortcode-builder/builder.php:944
+#: ../build/gs-team-members/includes/integrations/integration-beaver.php:36, ../build/gs-team-members/includes/shortcode-builder/builder.php:944, ../includes/integrations/integration-beaver.php:36, ../includes/shortcode-builder/builder.php:944
 msgid "Shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-beaver.php:40, ../includes/integrations/integration-wpb-vc.php:42
+#: ../build/gs-team-members/includes/integrations/integration-beaver.php:40, ../build/gs-team-members/includes/integrations/integration-wpb-vc.php:42, ../includes/integrations/integration-beaver.php:40, ../includes/integrations/integration-wpb-vc.php:42
 msgid "Select Shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-divi.php:164
+#: ../build/gs-team-members/includes/integrations/integration-divi.php:164, ../includes/integrations/integration-divi.php:164
 msgid "Loading team members…"
 msgstr ""
 
-#: ../includes/integrations/integration-divi.php:165, ../includes/integrations/divi/TeamMembersModule.php:131
+#: ../build/gs-team-members/includes/integrations/integration-divi.php:165, ../build/gs-team-members/includes/integrations/divi/TeamMembersModule.php:131, ../includes/integrations/integration-divi.php:165, ../includes/integrations/divi/TeamMembersModule.php:131
 msgid "Please select a GS Team shortcode."
 msgstr ""
 
-#: ../includes/integrations/integration-divi.php:166, ../includes/integrations/divi/TeamMembersController.php:125
+#: ../build/gs-team-members/includes/integrations/integration-divi.php:166, ../build/gs-team-members/includes/integrations/divi/TeamMembersController.php:125, ../includes/integrations/integration-divi.php:166, ../includes/integrations/divi/TeamMembersController.php:125
 msgid "No shortcodes found. Create one in GS Team first."
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:156
+#: ../build/gs-team-members/includes/integrations/integration-elementor.php:156, ../includes/integrations/integration-elementor.php:156
 msgid "Content"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:164, ../includes/integrations/integration-tagdiv.php:76
+#: ../build/gs-team-members/includes/integrations/integration-elementor.php:164, ../build/gs-team-members/includes/integrations/integration-tagdiv.php:76, ../includes/integrations/integration-elementor.php:164, ../includes/integrations/integration-tagdiv.php:76
 msgid "Team Shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:179, ../includes/integrations/integration-gutenberg.php:68, ../includes/integrations/integration-wpb-vc.php:112
+#: ../build/gs-team-members/includes/integrations/integration-elementor.php:179, ../build/gs-team-members/includes/integrations/integration-gutenberg.php:68, ../build/gs-team-members/includes/integrations/integration-wpb-vc.php:112, ../includes/integrations/integration-elementor.php:179, ../includes/integrations/integration-gutenberg.php:68, ../includes/integrations/integration-wpb-vc.php:112
 msgid "Edit this shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:181, ../includes/integrations/integration-gutenberg.php:69, ../includes/integrations/integration-wpb-vc.php:114, ../includes/shortcode-builder/builder.php:952
+#: ../build/gs-team-members/includes/integrations/integration-elementor.php:181, ../build/gs-team-members/includes/integrations/integration-gutenberg.php:69, ../build/gs-team-members/includes/integrations/integration-wpb-vc.php:114, ../build/gs-team-members/includes/shortcode-builder/builder.php:952, ../includes/integrations/integration-elementor.php:181, ../includes/integrations/integration-gutenberg.php:69, ../includes/integrations/integration-wpb-vc.php:114, ../includes/shortcode-builder/builder.php:952
 msgid "Edit"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:185, ../includes/integrations/integration-gutenberg.php:70, ../includes/integrations/integration-wpb-vc.php:118
+#: ../build/gs-team-members/includes/integrations/integration-elementor.php:185, ../build/gs-team-members/includes/integrations/integration-gutenberg.php:70, ../build/gs-team-members/includes/integrations/integration-wpb-vc.php:118, ../includes/integrations/integration-elementor.php:185, ../includes/integrations/integration-gutenberg.php:70, ../includes/integrations/integration-wpb-vc.php:118
 msgid "Create new shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:187, ../includes/integrations/integration-gutenberg.php:71, ../includes/integrations/integration-wpb-vc.php:120
+#: ../build/gs-team-members/includes/integrations/integration-elementor.php:187, ../build/gs-team-members/includes/integrations/integration-gutenberg.php:71, ../build/gs-team-members/includes/integrations/integration-wpb-vc.php:120, ../includes/integrations/integration-elementor.php:187, ../includes/integrations/integration-gutenberg.php:71, ../includes/integrations/integration-wpb-vc.php:120
 msgid "Create"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:224
+#: ../build/gs-team-members/includes/integrations/integration-elementor.php:224, ../includes/integrations/integration-elementor.php:224
 msgid "GS Team Members: Please select a shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg.php:67
+#: ../build/gs-team-members/includes/integrations/integration-gutenberg.php:67, ../includes/integrations/integration-gutenberg.php:67
 msgid "GS Team Shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg.php:119
+#: ../build/gs-team-members/includes/integrations/integration-gutenberg.php:119, ../includes/integrations/integration-gutenberg.php:119
 msgid "GS Single Team Member Page"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:93
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:93, ../includes/shortcode-builder/builder.php:93
 msgid "Shortcode Preview"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:384, ../includes/shortcode-builder/builder.php:427
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:384, ../build/gs-team-members/includes/shortcode-builder/builder.php:427, ../includes/shortcode-builder/builder.php:384, ../includes/shortcode-builder/builder.php:427
 msgid "Shortcode ID missing"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:413
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:413, ../includes/shortcode-builder/builder.php:413
 msgid "No shortcode found"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:434
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:434, ../includes/shortcode-builder/builder.php:434
 msgid "No shortcode found to update"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:457
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:457, ../includes/shortcode-builder/builder.php:457
 msgid "Database Error: %1$s"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:469
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:469, ../includes/shortcode-builder/builder.php:469
 msgid "Shortcode updated"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:518
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:518, ../includes/shortcode-builder/builder.php:518
 msgid "Undefined"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:521
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:521, ../includes/shortcode-builder/builder.php:521
 msgid "Please configure the settings properly"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:548
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:548, ../includes/shortcode-builder/builder.php:548
 msgid "Shortcode created successfully"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:560
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:560, ../includes/shortcode-builder/builder.php:560
 msgid "Clone Id not provided"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:564
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:564, ../includes/shortcode-builder/builder.php:564
 msgid "Clone shortcode not found"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:568
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:568, ../includes/shortcode-builder/builder.php:568
 msgid "- Cloned"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:594
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:594, ../includes/shortcode-builder/builder.php:594
 msgid "Shortcode cloned successfully"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:629
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:629, ../includes/shortcode-builder/builder.php:629
 msgid "No shortcode ids provided"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:647
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:647, ../includes/shortcode-builder/builder.php:647
 msgid "Shortcode has been deleted"
 msgid_plural "Shortcodes have been deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/shortcode-builder/builder.php:667
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:667, ../includes/shortcode-builder/builder.php:667
 msgid "No temp key provided"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:668
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:668, ../includes/shortcode-builder/builder.php:668
 msgid "No temp settings provided"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:676
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:676, ../includes/shortcode-builder/builder.php:676
 msgid "Temp data saved"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:684
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:684, ../includes/shortcode-builder/builder.php:684
 msgid "Image Filter"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:685
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:685, ../includes/shortcode-builder/builder.php:685
 msgid "Image Filter on Hover"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:687, ../includes/shortcode-builder/builder.php:800, ../includes/shortcode-builder/builder.php:988, ../includes/shortcode-builder/builder.php:2370
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:687, ../build/gs-team-members/includes/shortcode-builder/builder.php:800, ../build/gs-team-members/includes/shortcode-builder/builder.php:988, ../build/gs-team-members/includes/shortcode-builder/builder.php:2370, ../includes/shortcode-builder/builder.php:687, ../includes/shortcode-builder/builder.php:800, ../includes/shortcode-builder/builder.php:988, ../includes/shortcode-builder/builder.php:2370
 msgid "Location"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:688
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:688, ../includes/shortcode-builder/builder.php:688
 msgid "Select specific team location to show that specific location members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:690, ../includes/shortcode-builder/builder.php:802, ../includes/shortcode-builder/builder.php:990, ../includes/shortcode-builder/builder.php:2384
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:690, ../build/gs-team-members/includes/shortcode-builder/builder.php:802, ../build/gs-team-members/includes/shortcode-builder/builder.php:990, ../build/gs-team-members/includes/shortcode-builder/builder.php:2384, ../includes/shortcode-builder/builder.php:690, ../includes/shortcode-builder/builder.php:802, ../includes/shortcode-builder/builder.php:990, ../includes/shortcode-builder/builder.php:2384
 msgid "Specialty"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:691
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:691, ../includes/shortcode-builder/builder.php:691
 msgid "Select specific team specialty to show that specific specialty members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:693, ../includes/shortcode-builder/builder.php:801, ../includes/shortcode-builder/builder.php:989, ../includes/shortcode-builder/builder.php:2363
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:693, ../build/gs-team-members/includes/shortcode-builder/builder.php:801, ../build/gs-team-members/includes/shortcode-builder/builder.php:989, ../build/gs-team-members/includes/shortcode-builder/builder.php:2363, ../includes/shortcode-builder/builder.php:693, ../includes/shortcode-builder/builder.php:801, ../includes/shortcode-builder/builder.php:989, ../includes/shortcode-builder/builder.php:2363
 msgid "Language"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:694
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:694, ../includes/shortcode-builder/builder.php:694
 msgid "Select specific team language to show that specific language members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:696, ../includes/shortcode-builder/builder.php:803, ../includes/shortcode-builder/builder.php:991, ../includes/shortcode-builder/builder.php:2377
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:696, ../build/gs-team-members/includes/shortcode-builder/builder.php:803, ../build/gs-team-members/includes/shortcode-builder/builder.php:991, ../build/gs-team-members/includes/shortcode-builder/builder.php:2377, ../includes/shortcode-builder/builder.php:696, ../includes/shortcode-builder/builder.php:803, ../includes/shortcode-builder/builder.php:991, ../includes/shortcode-builder/builder.php:2377
 msgid "Gender"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:697
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:697, ../includes/shortcode-builder/builder.php:697
 msgid "Select specific team gender to show that specific gender members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:699, ../includes/shortcode-builder/builder.php:993
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:699, ../build/gs-team-members/includes/shortcode-builder/builder.php:993, ../includes/shortcode-builder/builder.php:699, ../includes/shortcode-builder/builder.php:993
 msgid "Extra One"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:700
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:700, ../includes/shortcode-builder/builder.php:700
 msgid "Select specific team extra one to show that specific extra one members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:702, ../includes/shortcode-builder/builder.php:994
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:702, ../build/gs-team-members/includes/shortcode-builder/builder.php:994, ../includes/shortcode-builder/builder.php:702, ../includes/shortcode-builder/builder.php:994
 msgid "Extra Two"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:703
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:703, ../includes/shortcode-builder/builder.php:703
 msgid "Select specific team extra two to show that specific extra two members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:705, ../includes/shortcode-builder/builder.php:995
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:705, ../build/gs-team-members/includes/shortcode-builder/builder.php:995, ../includes/shortcode-builder/builder.php:705, ../includes/shortcode-builder/builder.php:995
 msgid "Extra Three"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:706
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:706, ../includes/shortcode-builder/builder.php:706
 msgid "Select specific team extra three to show that specific extra three members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:708, ../includes/shortcode-builder/builder.php:996
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:708, ../build/gs-team-members/includes/shortcode-builder/builder.php:996, ../includes/shortcode-builder/builder.php:708, ../includes/shortcode-builder/builder.php:996
 msgid "Extra Four"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:709
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:709, ../includes/shortcode-builder/builder.php:709
 msgid "Select specific team extra four to show that specific extra four members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:711, ../includes/shortcode-builder/builder.php:997
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:711, ../build/gs-team-members/includes/shortcode-builder/builder.php:997, ../includes/shortcode-builder/builder.php:711, ../includes/shortcode-builder/builder.php:997
 msgid "Extra Five"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:712
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:712, ../includes/shortcode-builder/builder.php:712
 msgid "Select specific team extra five to show that specific extra five members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:714
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:714, ../includes/shortcode-builder/builder.php:714
 msgid "Install Demo Data"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:715
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:715, ../includes/shortcode-builder/builder.php:715
 msgid "Quick start with GS Plugins by installing the demo data"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:717
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:717, ../includes/shortcode-builder/builder.php:717
 msgid "Export Data"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:718
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:718, ../includes/shortcode-builder/builder.php:718
 msgid "Export GS Team Plugins data"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:720
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:720, ../includes/shortcode-builder/builder.php:720
 msgid "Import Data"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:721
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:721, ../includes/shortcode-builder/builder.php:721
 msgid "Import GS Team Plugins data"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:723, ../includes/shortcode-builder/page.php:22
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:723, ../build/gs-team-members/includes/shortcode-builder/page.php:22, ../includes/shortcode-builder/builder.php:723, ../includes/shortcode-builder/page.php:22
 msgid "Bulk Import"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:724
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:724, ../includes/shortcode-builder/builder.php:724
 msgid "Add team members faster by GS Bulk Import feature"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:726
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:726, ../includes/shortcode-builder/builder.php:726
 msgid "Preference"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:727
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:727, ../includes/shortcode-builder/builder.php:727
 msgid "Save Preference"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:728
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:728, ../includes/shortcode-builder/builder.php:728
 msgid "Save Settings"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:729
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:729, ../includes/shortcode-builder/builder.php:729
 msgid "Team Members Slug"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:730
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:730, ../includes/shortcode-builder/builder.php:730
 msgid "Customize Team Members Post Type Slug, by default it is set to team-members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:731
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:731, ../includes/shortcode-builder/builder.php:731
 msgid "Ignore Base Permalink Prefix"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:732
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:732, ../includes/shortcode-builder/builder.php:732
 msgid "Enable this option to use a custom structure without the base prefix."
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:734
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:734, ../includes/shortcode-builder/builder.php:734
 msgid "Archive Page Slug"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:735
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:735, ../includes/shortcode-builder/builder.php:735
 msgid "Set Custom Archive Page Slug, now it is set to"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:737
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:737, ../includes/shortcode-builder/builder.php:737
 msgid "Archive Page Title"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:738
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:738, ../includes/shortcode-builder/builder.php:738
 msgid "Set Custom Archive Page Title, now it is set to"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:740, ../includes/shortcode-builder/page.php:18
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:740, ../build/gs-team-members/includes/shortcode-builder/page.php:18, ../includes/shortcode-builder/builder.php:740, ../includes/shortcode-builder/page.php:18
 msgid "Taxonomies"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:741
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:741, ../includes/shortcode-builder/builder.php:741
 msgid "Global settings for Taxonomies"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:756
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:756, ../includes/shortcode-builder/builder.php:756
 msgid "Enable Taxonomy"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:757
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:757, ../includes/shortcode-builder/builder.php:757
 msgid "Enable Taxonomy for team members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:758
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:758, ../includes/shortcode-builder/builder.php:758
 msgid "Taxonomy Label"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:759
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:759, ../includes/shortcode-builder/builder.php:759
 msgid "Set Taxonomy Label"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:760
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:760, ../includes/shortcode-builder/builder.php:760
 msgid "Taxonomy Plural Label"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:761
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:761, ../includes/shortcode-builder/builder.php:761
 msgid "Set Taxonomy Plural Label"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:762, ../includes/shortcode-builder/builder.php:763
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:762, ../build/gs-team-members/includes/shortcode-builder/builder.php:763, ../includes/shortcode-builder/builder.php:762, ../includes/shortcode-builder/builder.php:763
 msgid "Enable Taxonomy Archive"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:764
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:764, ../includes/shortcode-builder/builder.php:764
 msgid "Taxonomy Archive Slug"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:765
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:765, ../includes/shortcode-builder/builder.php:765
 msgid "Set Taxonomy Archive Slug"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:767
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:767, ../includes/shortcode-builder/builder.php:767
 msgid "Disable Google Fonts"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:768
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:768, ../includes/shortcode-builder/builder.php:768
 msgid "Disable Google Fonts Loading"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:770
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:770, ../includes/shortcode-builder/builder.php:770
 msgid "Display ACF Fields"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:771
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:771, ../includes/shortcode-builder/builder.php:771
 msgid "Display ACF fields in the single pages"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:773
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:773, ../includes/shortcode-builder/builder.php:773
 msgid "Disable Lazy Load"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:774
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:774, ../includes/shortcode-builder/builder.php:774
 msgid "Disable Lazy Load for team member images"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:776
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:776, ../includes/shortcode-builder/builder.php:776
 msgid "Lazy Load Class"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:777
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:777, ../includes/shortcode-builder/builder.php:777
 msgid "Add class to disable lazy loading, multiple classes should be separated by space"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:779
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:779, ../includes/shortcode-builder/builder.php:779
 msgid "ACF Fields Position"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:780
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:780, ../includes/shortcode-builder/builder.php:780
 msgid "Position to display ACF fields"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:782
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:782, ../includes/shortcode-builder/builder.php:782
 msgid "Enable Multilingual"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:783
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:783, ../includes/shortcode-builder/builder.php:783
 msgid "Enable Multilingual mode to translate below strings using any Multilingual plugin like wpml or loco translate."
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:785
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:785, ../includes/shortcode-builder/builder.php:785
 msgid "Filter Designation Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:787
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:787, ../includes/shortcode-builder/builder.php:787
 msgid "Search Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:788
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:788, ../includes/shortcode-builder/builder.php:788
 msgid "Company Search Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:789
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:789, ../includes/shortcode-builder/builder.php:789
 msgid "Zip Search Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:790
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:790, ../includes/shortcode-builder/builder.php:790
 msgid "Tag Search Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:792, ../includes/shortcode-builder/builder.php:2298
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:792, ../build/gs-team-members/includes/shortcode-builder/builder.php:2298, ../includes/shortcode-builder/builder.php:792, ../includes/shortcode-builder/builder.php:2298
 msgid "Follow Me On"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:793, ../includes/shortcode-builder/builder.php:982, ../includes/shortcode-builder/builder.php:2299
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:793, ../build/gs-team-members/includes/shortcode-builder/builder.php:982, ../build/gs-team-members/includes/shortcode-builder/builder.php:2299, ../includes/shortcode-builder/builder.php:793, ../includes/shortcode-builder/builder.php:982, ../includes/shortcode-builder/builder.php:2299
 msgid "Skills"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:794
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:794, ../includes/shortcode-builder/builder.php:794
 msgid "Include fields when search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:804, ../includes/shortcode-builder/builder.php:2300
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:804, ../build/gs-team-members/includes/shortcode-builder/builder.php:2300, ../includes/shortcode-builder/builder.php:804, ../includes/shortcode-builder/builder.php:2300
 msgid "Read On"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:805, ../includes/shortcode-builder/builder.php:2301
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:805, ../build/gs-team-members/includes/shortcode-builder/builder.php:2301, ../includes/shortcode-builder/builder.php:805, ../includes/shortcode-builder/builder.php:2301
 msgid "More"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:806
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:806, ../includes/shortcode-builder/builder.php:806
 msgid "Custom CSS"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:808
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:808, ../includes/shortcode-builder/builder.php:808
 msgid "Replace with preferred text for Designation"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:809
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:809, ../includes/shortcode-builder/builder.php:809
 msgid "Replace with preferred text for Search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:810
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:810, ../includes/shortcode-builder/builder.php:810
 msgid "Replace with preferred text for Company Search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:811
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:811, ../includes/shortcode-builder/builder.php:811
 msgid "Replace with preferred text for Zip Search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:812
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:812, ../includes/shortcode-builder/builder.php:812
 msgid "Replace with preferred text for Tag Search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:813
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:813, ../includes/shortcode-builder/builder.php:813
 msgid "Replace with preferred text for Company"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:814
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:814, ../includes/shortcode-builder/builder.php:814
 msgid "Replace with preferred text for Address"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:815
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:815, ../includes/shortcode-builder/builder.php:815
 msgid "Replace with preferred text for Land Phone"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:816
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:816, ../includes/shortcode-builder/builder.php:816
 msgid "Replace with preferred text for Cell Phone"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:817
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:817, ../includes/shortcode-builder/builder.php:817
 msgid "Replace with preferred text for Email"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:818
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:818, ../includes/shortcode-builder/builder.php:818
 msgid "Replace with preferred text for Location"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:819
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:819, ../includes/shortcode-builder/builder.php:819
 msgid "Replace with preferred text for Language"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:820
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:820, ../includes/shortcode-builder/builder.php:820
 msgid "Replace with preferred text for Specialty"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:821
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:821, ../includes/shortcode-builder/builder.php:821
 msgid "Replace with preferred text for Gender"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:822
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:822, ../includes/shortcode-builder/builder.php:822
 msgid "Replace with preferred text for Read On"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:823
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:823, ../includes/shortcode-builder/builder.php:823
 msgid "Replace with preferred text for Zip Code"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:824
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:824, ../includes/shortcode-builder/builder.php:824
 msgid "Replace with preferred text for Follow Me On"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:825
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:825, ../includes/shortcode-builder/builder.php:825
 msgid "Replace with preferred text for Skills"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:826
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:826, ../includes/shortcode-builder/builder.php:826
 msgid "Replace with preferred text for More"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:827
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:827, ../includes/shortcode-builder/builder.php:827
 msgid "Enable searching through all fields"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:829
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:829, ../includes/shortcode-builder/builder.php:829
 msgid "vCard Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:830
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:830, ../includes/shortcode-builder/builder.php:830
 msgid "Replace with preferred text for vCard Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:832
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:832, ../includes/shortcode-builder/builder.php:832
 msgid "Enable Breadcumb"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:833
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:833, ../includes/shortcode-builder/builder.php:833
 msgid "Enable Breadcumb for Single page"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:835
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:835, ../includes/shortcode-builder/builder.php:835
 msgid "Link Land Phone"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:836
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:836, ../includes/shortcode-builder/builder.php:836
 msgid "Enable link for land phone number"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:838
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:838, ../includes/shortcode-builder/builder.php:838
 msgid "Link Cell Phone"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:839
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:839, ../includes/shortcode-builder/builder.php:839
 msgid "Enable link for cell phone number"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:841
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:841, ../includes/shortcode-builder/builder.php:841
 msgid "Link Email"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:842
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:842, ../includes/shortcode-builder/builder.php:842
 msgid "Enable link for Email"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:844
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:844, ../includes/shortcode-builder/builder.php:844
 msgid "Reset Filters Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:845
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:845, ../includes/shortcode-builder/builder.php:845
 msgid "Replace with preferred text for Reset Filters button text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:847
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:847, ../includes/shortcode-builder/builder.php:847
 msgid "Prev Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:848
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:848, ../includes/shortcode-builder/builder.php:848
 msgid "Replace with preferred text for carousel Prev text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:850
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:850, ../includes/shortcode-builder/builder.php:850
 msgid "Next Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:851
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:851, ../includes/shortcode-builder/builder.php:851
 msgid "Replace with preferred text for carousel Next text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:853, ../includes/shortcode-builder/builder.php:923
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:853, ../build/gs-team-members/includes/shortcode-builder/builder.php:923, ../includes/shortcode-builder/builder.php:853, ../includes/shortcode-builder/builder.php:923
 msgid "Enable Filter"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:854, ../includes/shortcode-builder/builder.php:924
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:854, ../build/gs-team-members/includes/shortcode-builder/builder.php:924, ../includes/shortcode-builder/builder.php:854, ../includes/shortcode-builder/builder.php:924
 msgid "Enable filter for this theme, it may not available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:856
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:856, ../includes/shortcode-builder/builder.php:856
 msgid "Filter Type"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:857
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:857, ../includes/shortcode-builder/builder.php:857
 msgid "Select filter type"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:859
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:859, ../includes/shortcode-builder/builder.php:859
 msgid "Enable Pagination"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:860
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:860, ../includes/shortcode-builder/builder.php:860
 msgid "Enable paginations like number pagination, load more button, On scroll load etc."
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:862
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:862, ../includes/shortcode-builder/builder.php:862
 msgid "Pagination Type"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:863
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:863, ../includes/shortcode-builder/builder.php:863
 msgid "Select pagination type."
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:865
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:865, ../includes/shortcode-builder/builder.php:865
 msgid "Initial Items"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:866
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:866, ../includes/shortcode-builder/builder.php:866
 msgid "Set initial number of items that shows on page load (before users interaction)"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:868
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:868, ../includes/shortcode-builder/builder.php:868
 msgid "Per Click"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:869
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:869, ../includes/shortcode-builder/builder.php:869
 msgid "Load members per button click"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:871
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:871, ../includes/shortcode-builder/builder.php:871
 msgid "Per Page"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:872
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:872, ../includes/shortcode-builder/builder.php:872
 msgid "Display members per page"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:874
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:874, ../includes/shortcode-builder/builder.php:874
 msgid "Per Load"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:875
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:875, ../includes/shortcode-builder/builder.php:875
 msgid "Display members per load"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:877
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:877, ../includes/shortcode-builder/builder.php:877
 msgid "Button Text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:878
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:878, ../includes/shortcode-builder/builder.php:878
 msgid "Load more button text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:880
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:880, ../includes/shortcode-builder/builder.php:880
 msgid "Enable Carousel"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:881
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:881, ../includes/shortcode-builder/builder.php:881
 msgid "Enable carousel for this theme, it may not available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:883
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:883, ../includes/shortcode-builder/builder.php:883
 msgid "Autoplay"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:884
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:884, ../includes/shortcode-builder/builder.php:884
 msgid "Enable automatic sliding of carousel items"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:886
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:886, ../includes/shortcode-builder/builder.php:886
 msgid "Pause on Hover"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:887
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:887, ../includes/shortcode-builder/builder.php:887
 msgid "Pause autoplay when mouse hovers over the carousel"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:889
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:889, ../includes/shortcode-builder/builder.php:889
 msgid "Infinite Loop"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:890
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:890, ../includes/shortcode-builder/builder.php:890
 msgid "Enable infinite loop for the carousel"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:892
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:892, ../includes/shortcode-builder/builder.php:892
 msgid "Autoplay Speed"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:893
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:893, ../includes/shortcode-builder/builder.php:893
 msgid "Slide transition speed in milliseconds"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:895
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:895, ../includes/shortcode-builder/builder.php:895
 msgid "Autoplay Timeout"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:896
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:896, ../includes/shortcode-builder/builder.php:896
 msgid "Delay between automatic slides in milliseconds"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:898
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:898, ../includes/shortcode-builder/builder.php:898
 msgid "Items to Scroll"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:899
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:899, ../includes/shortcode-builder/builder.php:899
 msgid "Number of members to move forward or backward on each slide"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:901
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:901, ../includes/shortcode-builder/builder.php:901
 msgid "Enable Carousel Navs"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:902
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:902, ../includes/shortcode-builder/builder.php:902
 msgid "Enable carousel navs for this theme, it may not available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:904
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:904, ../includes/shortcode-builder/builder.php:904
 msgid "Nav BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:905
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:905, ../includes/shortcode-builder/builder.php:905
 msgid "Nav Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:906
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:906, ../includes/shortcode-builder/builder.php:906
 msgid "Nav Hover BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:907
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:907, ../includes/shortcode-builder/builder.php:907
 msgid "Nav Hover Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:908
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:908, ../includes/shortcode-builder/builder.php:908
 msgid "Dots Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:909
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:909, ../includes/shortcode-builder/builder.php:909
 msgid "Dots Active Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:911
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:911, ../includes/shortcode-builder/builder.php:911
 msgid "Enable Carousel Dots"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:912
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:912, ../includes/shortcode-builder/builder.php:912
 msgid "Enable carousel dots for this theme, it may not available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:914, ../includes/shortcode-builder/builder.php:920
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:914, ../build/gs-team-members/includes/shortcode-builder/builder.php:920, ../includes/shortcode-builder/builder.php:914, ../includes/shortcode-builder/builder.php:920
 msgid "Carousel Navs Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:915, ../includes/shortcode-builder/builder.php:921
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:915, ../build/gs-team-members/includes/shortcode-builder/builder.php:921, ../includes/shortcode-builder/builder.php:915, ../includes/shortcode-builder/builder.php:921
 msgid "Select carousel navs style, this is available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:917
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:917, ../includes/shortcode-builder/builder.php:917
 msgid "Carousel Dots Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:918
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:918, ../includes/shortcode-builder/builder.php:918
 msgid "Select carousel dots style, this is available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:926
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:926, ../includes/shortcode-builder/builder.php:926
 msgid "Drawer Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:927
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:927, ../includes/shortcode-builder/builder.php:927
 msgid "Select drawer style, this is available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:929
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:929, ../includes/shortcode-builder/builder.php:929
 msgid "Panel Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:930
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:930, ../includes/shortcode-builder/builder.php:930
 msgid "Select panel style, this is available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:932
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:932, ../includes/shortcode-builder/builder.php:932
 msgid "Popup Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:933
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:933, ../includes/shortcode-builder/builder.php:933
 msgid "Select popup style, this is available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:935
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:935, ../includes/shortcode-builder/builder.php:935
 msgid "Filter Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:936
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:936, ../includes/shortcode-builder/builder.php:936
 msgid "Filter Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:937
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:937, ../includes/shortcode-builder/builder.php:937
 msgid "Filter BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:938
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:938, ../includes/shortcode-builder/builder.php:938
 msgid "Filter Border Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:939
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:939, ../includes/shortcode-builder/builder.php:939
 msgid "Filter Active Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:940
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:940, ../includes/shortcode-builder/builder.php:940
 msgid "Filter Active BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:941
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:941, ../includes/shortcode-builder/builder.php:941
 msgid "Filter Active Border Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:943, ../includes/shortcode-builder/page.php:6
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:943, ../build/gs-team-members/includes/shortcode-builder/page.php:6, ../includes/shortcode-builder/builder.php:943, ../includes/shortcode-builder/page.php:6
 msgid "Shortcodes"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:945
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:945, ../includes/shortcode-builder/builder.php:945
 msgid "Global Settings for GS Team Members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:946
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:946, ../includes/shortcode-builder/builder.php:946
 msgid "All shortcodes for GS Team Member"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:947
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:947, ../includes/shortcode-builder/builder.php:947
 msgid "Create Shortcode"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:948
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:948, ../includes/shortcode-builder/builder.php:948
 msgid "Create New Shortcode"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:949, ../includes/shortcode-builder/builder.php:976, ../templates/pro/gs-team-layout-table-box.php:34, ../templates/pro/gs-team-layout-table-filter-dense.php:41, ../templates/pro/gs-team-layout-table-filter.php:43, ../templates/pro/gs-team-layout-table-odd-even.php:34, ../templates/pro/gs-team-layout-table.php:34, ../templates/pro/gs-team-table-five.php:30
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:949, ../build/gs-team-members/includes/shortcode-builder/builder.php:976, ../build/gs-team-members/templates/pro/gs-team-layout-table-box.php:34, ../build/gs-team-members/templates/pro/gs-team-layout-table-filter-dense.php:41, ../build/gs-team-members/templates/pro/gs-team-layout-table-filter.php:43, ../build/gs-team-members/templates/pro/gs-team-layout-table-odd-even.php:34, ../build/gs-team-members/templates/pro/gs-team-layout-table.php:34, ../build/gs-team-members/templates/pro/gs-team-table-five.php:30, ../includes/shortcode-builder/builder.php:949, ../includes/shortcode-builder/builder.php:976, ../templates/pro/gs-team-layout-table-box.php:34, ../templates/pro/gs-team-layout-table-filter-dense.php:41, ../templates/pro/gs-team-layout-table-filter.php:43, ../templates/pro/gs-team-layout-table-odd-even.php:34, ../templates/pro/gs-team-layout-table.php:34, ../templates/pro/gs-team-table-five.php:30
 msgid "Name"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:950
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:950, ../includes/shortcode-builder/builder.php:950
 msgid "Action"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:951
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:951, ../includes/shortcode-builder/builder.php:951
 msgid "Actions"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:953
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:953, ../includes/shortcode-builder/builder.php:953
 msgid "Clone"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:954
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:954, ../includes/shortcode-builder/builder.php:954
 msgid "Delete"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:955
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:955, ../includes/shortcode-builder/builder.php:955
 msgid "Delete All"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:956
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:956, ../includes/shortcode-builder/builder.php:956
 msgid "Create a new shortcode & save it to use globally in anywhere"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:957
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:957, ../includes/shortcode-builder/builder.php:957
 msgid "Edit Shortcode"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:958, ../includes/shortcode-builder/builder.php:962
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:958, ../build/gs-team-members/includes/shortcode-builder/builder.php:962, ../includes/shortcode-builder/builder.php:958, ../includes/shortcode-builder/builder.php:962
 msgid "General"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:959, ../includes/shortcode-builder/builder.php:963
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:959, ../build/gs-team-members/includes/shortcode-builder/builder.php:963, ../includes/shortcode-builder/builder.php:959, ../includes/shortcode-builder/builder.php:963
 msgid "Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:960, ../includes/shortcode-builder/builder.php:964
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:960, ../build/gs-team-members/includes/shortcode-builder/builder.php:964, ../includes/shortcode-builder/builder.php:960, ../includes/shortcode-builder/builder.php:964
 msgid "Query"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:961, ../includes/shortcode-builder/builder.php:965
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:961, ../build/gs-team-members/includes/shortcode-builder/builder.php:965, ../includes/shortcode-builder/builder.php:961, ../includes/shortcode-builder/builder.php:965
 msgid "Visibility"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:966
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:966, ../includes/shortcode-builder/builder.php:966
 msgid "Initial View"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:967
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:967, ../includes/shortcode-builder/builder.php:967
 msgid "Popup Visibility"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:968
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:968, ../includes/shortcode-builder/builder.php:968
 msgid "Panel Visibility"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:969
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:969, ../includes/shortcode-builder/builder.php:969
 msgid "Drawer Visibility"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:970
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:970, ../includes/shortcode-builder/builder.php:970
 msgid "Field"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:971
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:971, ../includes/shortcode-builder/builder.php:971
 msgid "Desktop"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:972
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:972, ../includes/shortcode-builder/builder.php:972
 msgid "Tablet"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:973
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:973, ../includes/shortcode-builder/builder.php:973
 msgid "Large Mobile"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:974
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:974, ../includes/shortcode-builder/builder.php:974
 msgid "Mobile"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:975
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:975, ../includes/shortcode-builder/builder.php:975
 msgid "Thumbnail"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:978
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:978, ../includes/shortcode-builder/builder.php:978
 msgid "Details"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:979
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:979, ../includes/shortcode-builder/builder.php:979
 msgid "Socials"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:981, ../includes/shortcode-builder/builder.php:1004
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:981, ../build/gs-team-members/includes/shortcode-builder/builder.php:1004, ../includes/shortcode-builder/builder.php:981, ../includes/shortcode-builder/builder.php:1004
 msgid "Featured Badge"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:998
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:998, ../includes/shortcode-builder/builder.php:998
 msgid "ACF Fields"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1000, ../includes/shortcode-builder/builder.php:1001
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1000, ../build/gs-team-members/includes/shortcode-builder/builder.php:1001, ../includes/shortcode-builder/builder.php:1000, ../includes/shortcode-builder/builder.php:1001
 msgid "Link Image"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1002
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1002, ../includes/shortcode-builder/builder.php:1002
 msgid "Enable Featuring"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1003
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1003, ../includes/shortcode-builder/builder.php:1003
 msgid "Enable to prioritize featured members on the top"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1005
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1005, ../includes/shortcode-builder/builder.php:1005
 msgid "Enable to display a badge for the featured members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1006
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1006, ../includes/shortcode-builder/builder.php:1006
 msgid "Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1007
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1007, ../includes/shortcode-builder/builder.php:1007
 msgid "Desktop Slides"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1008
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1008, ../includes/shortcode-builder/builder.php:1008
 msgid "Enter the slides number for desktop"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1009
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1009, ../includes/shortcode-builder/builder.php:1009
 msgid "Tablet Slides"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1010
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1010, ../includes/shortcode-builder/builder.php:1010
 msgid "Enter the slides number for tablet"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1011
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1011, ../includes/shortcode-builder/builder.php:1011
 msgid "Portrait Mobile Slides"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1012
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1012, ../includes/shortcode-builder/builder.php:1012
 msgid "Enter the slides number for portrait or large display mobile"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1013
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1013, ../includes/shortcode-builder/builder.php:1013
 msgid "Mobile Slides"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1014
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1014, ../includes/shortcode-builder/builder.php:1014
 msgid "Enter the slides number for mobile"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1015
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1015, ../includes/shortcode-builder/builder.php:1015
 msgid "Style & Theming"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1017
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1017, ../includes/shortcode-builder/builder.php:1017
 msgid "Link Team Members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1018
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1018, ../includes/shortcode-builder/builder.php:1018
 msgid "Add links to the Member's name, description & image to display popup or to single member page"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1019
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1019, ../includes/shortcode-builder/builder.php:1019
 msgid "Thumbnail Sizes"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1020
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1020, ../includes/shortcode-builder/builder.php:1020
 msgid "Select a thumbnail size"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1021
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1021, ../includes/shortcode-builder/builder.php:1021
 msgid "Link Type"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1022
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1022, ../includes/shortcode-builder/builder.php:1022
 msgid "Choose the link type of team members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1024
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1024, ../includes/shortcode-builder/builder.php:1024
 msgid "Member Designation"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1025
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1025, ../includes/shortcode-builder/builder.php:1025
 msgid "Member Details"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1026
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1026, ../includes/shortcode-builder/builder.php:1026
 msgid "Social Connection"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1027
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1027, ../includes/shortcode-builder/builder.php:1027
 msgid "Display Ribbon"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1028
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1028, ../includes/shortcode-builder/builder.php:1028
 msgid "Pagination"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1029
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1029, ../includes/shortcode-builder/builder.php:1029
 msgid "Single Page Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1030
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1030, ../includes/shortcode-builder/builder.php:1030
 msgid "Single Link Type"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1031
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1031, ../includes/shortcode-builder/builder.php:1031
 msgid "Style for all single page"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1032
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1032, ../includes/shortcode-builder/builder.php:1032
 msgid "Set the default link type for link behaviour"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1033
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1033, ../includes/shortcode-builder/builder.php:1033
 msgid "Next / Prev Member"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1034
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1034, ../includes/shortcode-builder/builder.php:1034
 msgid "Search by Name"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1035
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1035, ../includes/shortcode-builder/builder.php:1035
 msgid "Search by Zip"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1036
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1036, ../includes/shortcode-builder/builder.php:1036
 msgid "Search by Tag"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1037
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1037, ../includes/shortcode-builder/builder.php:1037
 msgid "Search by Company"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1038
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1038, ../includes/shortcode-builder/builder.php:1038
 msgid "Filter by Designation"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1039
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1039, ../includes/shortcode-builder/builder.php:1039
 msgid "Filter by Location"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1040
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1040, ../includes/shortcode-builder/builder.php:1040
 msgid "Filter by Language"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1041
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1041, ../includes/shortcode-builder/builder.php:1041
 msgid "Filter by Gender"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1042
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1042, ../includes/shortcode-builder/builder.php:1042
 msgid "Filter by Specialty"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1043
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1043, ../includes/shortcode-builder/builder.php:1043
 msgid "Filter by Extra One"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1044
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1044, ../includes/shortcode-builder/builder.php:1044
 msgid "Filter by Extra Two"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1045
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1045, ../includes/shortcode-builder/builder.php:1045
 msgid "Filter by Extra Three"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1046
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1046, ../includes/shortcode-builder/builder.php:1046
 msgid "Filter by Extra Four"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1047
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1047, ../includes/shortcode-builder/builder.php:1047
 msgid "Filter by Extra Five"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1048
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1048, ../includes/shortcode-builder/builder.php:1048
 msgid "Filter Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1049
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1049, ../includes/shortcode-builder/builder.php:1049
 msgid "Social Link Target"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1050
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1050, ../includes/shortcode-builder/builder.php:1050
 msgid "Allow HTML for Details"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1051
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1051, ../includes/shortcode-builder/builder.php:1051
 msgid "Enable/Disable HTML content for the single team member descript, this will load whole content from the post type."
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1052
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1052, ../includes/shortcode-builder/builder.php:1052
 msgid "Details Control"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1053
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1053, ../includes/shortcode-builder/builder.php:1053
 msgid "Description Scroll Control"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1054
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1054, ../includes/shortcode-builder/builder.php:1054
 msgid "Enable/Disable scrollbar for description on popup, drawer & panel, useful when description has large content."
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1055
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1055, ../includes/shortcode-builder/builder.php:1055
 msgid "Scroll Height"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1056
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1056, ../includes/shortcode-builder/builder.php:1056
 msgid "Set the maximum height of the description, if content exceds the height, scrollbar will appear."
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1057
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1057, ../includes/shortcode-builder/builder.php:1057
 msgid "Popup Column"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1058
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1058, ../includes/shortcode-builder/builder.php:1058
 msgid "Filter Category Position"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1059, ../includes/shortcode-builder/builder.php:1652
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1059, ../build/gs-team-members/includes/shortcode-builder/builder.php:1652, ../includes/shortcode-builder/builder.php:1059, ../includes/shortcode-builder/builder.php:1652
 msgid "Panel"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1060
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1060, ../includes/shortcode-builder/builder.php:1060
 msgid "Name Font Size"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1061
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1061, ../includes/shortcode-builder/builder.php:1061
 msgid "Name Font Weight"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1062
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1062, ../includes/shortcode-builder/builder.php:1062
 msgid "Name Font Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1063
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1063, ../includes/shortcode-builder/builder.php:1063
 msgid "Name Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1064
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1064, ../includes/shortcode-builder/builder.php:1064
 msgid "Name BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1065
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1065, ../includes/shortcode-builder/builder.php:1065
 msgid "Item BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1066
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1066, ../includes/shortcode-builder/builder.php:1066
 msgid "Item Hover BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1067
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1067, ../includes/shortcode-builder/builder.php:1067
 msgid "Description Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1068
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1068, ../includes/shortcode-builder/builder.php:1068
 msgid "Description Link Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1069
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1069, ../includes/shortcode-builder/builder.php:1069
 msgid "Info Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1070
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1070, ../includes/shortcode-builder/builder.php:1070
 msgid "Info Icon Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1071
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1071, ../includes/shortcode-builder/builder.php:1071
 msgid "Tooltip BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1072
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1072, ../includes/shortcode-builder/builder.php:1072
 msgid "Info BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1073
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1073, ../includes/shortcode-builder/builder.php:1073
 msgid "Hover Icon BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1074
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1074, ../includes/shortcode-builder/builder.php:1074
 msgid "Ribbon BG Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1075
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1075, ../includes/shortcode-builder/builder.php:1075
 msgid "Role Font Size"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1076
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1076, ../includes/shortcode-builder/builder.php:1076
 msgid "Role Font Weight"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1077
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1077, ../includes/shortcode-builder/builder.php:1077
 msgid "Role Font Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1078
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1078, ../includes/shortcode-builder/builder.php:1078
 msgid "Role Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1079
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1079, ../includes/shortcode-builder/builder.php:1079
 msgid "Popup Arrow Color"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1080, ../includes/integrations/beaver/beaver-widget-team.php:11
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1080, ../build/gs-team-members/includes/integrations/beaver/beaver-widget-team.php:11, ../includes/shortcode-builder/builder.php:1080, ../includes/integrations/beaver/beaver-widget-team.php:11
 msgid "Team Members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1081, ../includes/term-order/term-order.php:340, ../includes/term-order/term-order.php:545, ../includes/term-order/term-order.php:583, ../includes/term-order/term-order.php:631
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1081, ../build/gs-team-members/includes/term-order/term-order.php:340, ../build/gs-team-members/includes/term-order/term-order.php:545, ../build/gs-team-members/includes/term-order/term-order.php:583, ../build/gs-team-members/includes/term-order/term-order.php:631, ../includes/shortcode-builder/builder.php:1081, ../includes/term-order/term-order.php:340, ../includes/term-order/term-order.php:545, ../includes/term-order/term-order.php:583, ../includes/term-order/term-order.php:631
 msgid "Order"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1082
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1082, ../includes/shortcode-builder/builder.php:1082
 msgid "Order By"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1083
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1083, ../includes/shortcode-builder/builder.php:1083
 msgid "Taxonomy Order"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1084
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1084, ../includes/shortcode-builder/builder.php:1084
 msgid "Taxonomy Order By"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1085
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1085, ../includes/shortcode-builder/builder.php:1085
 msgid "Hide Empty Filters"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1086
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1086, ../includes/shortcode-builder/builder.php:1086
 msgid "Enable to hide the empty filters"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1087, ../includes/shortcode-builder/builder.php:2349
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1087, ../build/gs-team-members/includes/shortcode-builder/builder.php:2349, ../includes/shortcode-builder/builder.php:1087, ../includes/shortcode-builder/builder.php:2349
 msgid "Group"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1088
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1088, ../includes/shortcode-builder/builder.php:1088
 msgid "Exclude Group"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1089
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1089, ../includes/shortcode-builder/builder.php:1089
 msgid "Select a specific team group to hide that specific group members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1091
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1091, ../includes/shortcode-builder/builder.php:1091
 msgid "Theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1092
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1092, ../includes/shortcode-builder/builder.php:1092
 msgid "Font Size"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1093
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1093, ../includes/shortcode-builder/builder.php:1093
 msgid "Font Weight"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1094
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1094, ../includes/shortcode-builder/builder.php:1094
 msgid "Font Style"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1095, ../includes/shortcode-builder/builder.php:1149
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1095, ../build/gs-team-members/includes/shortcode-builder/builder.php:1149, ../includes/shortcode-builder/builder.php:1095, ../includes/shortcode-builder/builder.php:1149
 msgid "Shortcode Name"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1097
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1097, ../includes/shortcode-builder/builder.php:1097
 msgid "Select the number of Team columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1098
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1098, ../includes/shortcode-builder/builder.php:1098
 msgid "Select the preferred Style & Theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1099
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1099, ../includes/shortcode-builder/builder.php:1099
 msgid "Show or Hide Team Member Name"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1100
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1100, ../includes/shortcode-builder/builder.php:1100
 msgid "Show or Hide Team Member Designation"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1101
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1101, ../includes/shortcode-builder/builder.php:1101
 msgid "Show or Hide Team Member Details"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1102
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1102, ../includes/shortcode-builder/builder.php:1102
 msgid "Show or Hide Team Member Social Connections"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1103
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1103, ../includes/shortcode-builder/builder.php:1103
 msgid "Show or Hide Team Member Paginations"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1104
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1104, ../includes/shortcode-builder/builder.php:1104
 msgid "Show or Hide Next / Prev Member link at Single Team Template"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1105
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1105, ../includes/shortcode-builder/builder.php:1105
 msgid "Show or Hide Instant Search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1106
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1106, ../includes/shortcode-builder/builder.php:1106
 msgid "Show or Hide by Instant Zip Search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1107
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1107, ../includes/shortcode-builder/builder.php:1107
 msgid "Show or Hide by Instant Tag Search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1108
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1108, ../includes/shortcode-builder/builder.php:1108
 msgid "Show or Hide Instant Company Search"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1109
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1109, ../includes/shortcode-builder/builder.php:1109
 msgid "Show or Hide Filter by Designation"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1110
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1110, ../includes/shortcode-builder/builder.php:1110
 msgid "Show or Hide Filter by Location"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1111
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1111, ../includes/shortcode-builder/builder.php:1111
 msgid "Show or Hide Filter by Language"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1112
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1112, ../includes/shortcode-builder/builder.php:1112
 msgid "Show or Hide Filter by Gender"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1113
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1113, ../includes/shortcode-builder/builder.php:1113
 msgid "Show or Hide Filter by Specialty"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1114
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1114, ../includes/shortcode-builder/builder.php:1114
 msgid "Show or Hide Filter by Extra One"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1115
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1115, ../includes/shortcode-builder/builder.php:1115
 msgid "Show or Hide Filter by Extra Two"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1116
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1116, ../includes/shortcode-builder/builder.php:1116
 msgid "Show or Hide Filter by Extra Three"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1117
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1117, ../includes/shortcode-builder/builder.php:1117
 msgid "Show or Hide Filter by Extra Four"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1118
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1118, ../includes/shortcode-builder/builder.php:1118
 msgid "Show or Hide Filter by Extra Five"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1119
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1119, ../includes/shortcode-builder/builder.php:1119
 msgid "Specify the target to load the Links, Default New Tab"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1120
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1120, ../includes/shortcode-builder/builder.php:1120
 msgid "Define the maximum number of characters in Member details. Default 100"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1121
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1121, ../includes/shortcode-builder/builder.php:1121
 msgid "Set column for popup"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1122
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1122, ../includes/shortcode-builder/builder.php:1122
 msgid "Set max team numbers you want to show, set -1 for all members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1123
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1123, ../includes/shortcode-builder/builder.php:1123
 msgid "Select a specific team group to show that specific group members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1125
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1125, ../includes/shortcode-builder/builder.php:1125
 msgid "Export Team Members"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1126
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1126, ../includes/shortcode-builder/builder.php:1126
 msgid "Export Shortcodes"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1127
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1127, ../includes/shortcode-builder/builder.php:1127
 msgid "Export Settings"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1129
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1129, ../includes/shortcode-builder/builder.php:1129
 msgid "Enable Multi Select"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1130
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1130, ../includes/shortcode-builder/builder.php:1130
 msgid "Enable multi-selection on the filters, Default is Off"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1131
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1131, ../includes/shortcode-builder/builder.php:1131
 msgid "Multi Select Ellipsis"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1132
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1132, ../includes/shortcode-builder/builder.php:1132
 msgid "Show multi-selected values in ellipsis mode, Default is Off"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1134
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1134, ../includes/shortcode-builder/builder.php:1134
 msgid "Enable All Filter"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1135
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1135, ../includes/shortcode-builder/builder.php:1135
 msgid "Enable All filter in the filter templates, Default is On"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1137
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1137, ../includes/shortcode-builder/builder.php:1137
 msgid "Enable Child Filters"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1138
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1138, ../includes/shortcode-builder/builder.php:1138
 msgid "Enable child group filters, Default is Off"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1140
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1140, ../includes/shortcode-builder/builder.php:1140
 msgid "Enable Scroll Animation"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1141
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1141, ../includes/shortcode-builder/builder.php:1141
 msgid "Enable scroll animation, Default is On"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1143
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1143, ../includes/shortcode-builder/builder.php:1143
 msgid "All filter text"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1144
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1144, ../includes/shortcode-builder/builder.php:1144
 msgid "All filter text for filter templates, Default is All"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1146
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1146, ../includes/shortcode-builder/builder.php:1146
 msgid "Reset Filters Button"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1147
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1147, ../includes/shortcode-builder/builder.php:1147
 msgid "Enable Reset all filters button in filter themes, Default is Off "
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1150
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1150, ../includes/shortcode-builder/builder.php:1150
 msgid "Save Shortcode"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1151
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1151, ../includes/shortcode-builder/builder.php:1151
 msgid "Preview Shortcode"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1158
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1158, ../includes/shortcode-builder/builder.php:1158
 msgid "Grid 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1164
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1164, ../includes/shortcode-builder/builder.php:1164
 msgid "Grid 2"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1170
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1170, ../includes/shortcode-builder/builder.php:1170
 msgid "Grid 3"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1176
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1176, ../includes/shortcode-builder/builder.php:1176
 msgid "Grid 4"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1182
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1182, ../includes/shortcode-builder/builder.php:1182
 msgid "Grid 5"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1188, ../includes/shortcode-builder/builder.php:1344
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1188, ../build/gs-team-members/includes/shortcode-builder/builder.php:1344, ../includes/shortcode-builder/builder.php:1188, ../includes/shortcode-builder/builder.php:1344
 msgid "Grid 6"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1194
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1194, ../includes/shortcode-builder/builder.php:1194
 msgid "Circle 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1200
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1200, ../includes/shortcode-builder/builder.php:1200
 msgid "Circle 2"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1206
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1206, ../includes/shortcode-builder/builder.php:1206
 msgid "Circle 3"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1212
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1212, ../includes/shortcode-builder/builder.php:1212
 msgid "Circle 4"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1218
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1218, ../includes/shortcode-builder/builder.php:1218
 msgid "Circle 5"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1224
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1224, ../includes/shortcode-builder/builder.php:1224
 msgid "Horizontal 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1230
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1230, ../includes/shortcode-builder/builder.php:1230
 msgid "Horizontal 2"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1236
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1236, ../includes/shortcode-builder/builder.php:1236
 msgid "Horizontal 3"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1242
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1242, ../includes/shortcode-builder/builder.php:1242
 msgid "Horizontal 4"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1248
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1248, ../includes/shortcode-builder/builder.php:1248
 msgid "Horizontal 5"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1254
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1254, ../includes/shortcode-builder/builder.php:1254
 msgid "Flip 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1260
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1260, ../includes/shortcode-builder/builder.php:1260
 msgid "Flip 2"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1266
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1266, ../includes/shortcode-builder/builder.php:1266
 msgid "Flip 3"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1272
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1272, ../includes/shortcode-builder/builder.php:1272
 msgid "Flip 4"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1278
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1278, ../includes/shortcode-builder/builder.php:1278
 msgid "Flip 5"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1284
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1284, ../includes/shortcode-builder/builder.php:1284
 msgid "Table 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1290
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1290, ../includes/shortcode-builder/builder.php:1290
 msgid "Table 2"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1296
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1296, ../includes/shortcode-builder/builder.php:1296
 msgid "Table 3"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1302
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1302, ../includes/shortcode-builder/builder.php:1302
 msgid "Table 4"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1308
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1308, ../includes/shortcode-builder/builder.php:1308
 msgid "Table 5"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1314
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1314, ../includes/shortcode-builder/builder.php:1314
 msgid "List 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1320
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1320, ../includes/shortcode-builder/builder.php:1320
 msgid "List 2"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1326
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1326, ../includes/shortcode-builder/builder.php:1326
 msgid "List 3"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1332
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1332, ../includes/shortcode-builder/builder.php:1332
 msgid "List 4"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1338
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1338, ../includes/shortcode-builder/builder.php:1338
 msgid "List 5"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1350
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1350, ../includes/shortcode-builder/builder.php:1350
 msgid "Grid 7"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1356
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1356, ../includes/shortcode-builder/builder.php:1356
 msgid "Grid 8"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1362
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1362, ../includes/shortcode-builder/builder.php:1362
 msgid "Grid 9"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1368
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1368, ../includes/shortcode-builder/builder.php:1368
 msgid "Grid 10"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1374
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1374, ../includes/shortcode-builder/builder.php:1374
 msgid "Grid 11"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1380
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1380, ../includes/shortcode-builder/builder.php:1380
 msgid "Grid Popup"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1386
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1386, ../includes/shortcode-builder/builder.php:1386
 msgid "Grid Single"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1392
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1392, ../includes/shortcode-builder/builder.php:1392
 msgid "Grid Filter Single"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1398
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1398, ../includes/shortcode-builder/builder.php:1398
 msgid "Grid Filter Popup"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1404
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1404, ../includes/shortcode-builder/builder.php:1404
 msgid "Grid Slider"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1410
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1410, ../includes/shortcode-builder/builder.php:1410
 msgid "Grid Filter - Selected Cats"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1416
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1416, ../includes/shortcode-builder/builder.php:1416
 msgid "Grid Filter with vcard"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1422
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1422, ../includes/shortcode-builder/builder.php:1422
 msgid "Grid Panel Slide"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1428
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1428, ../includes/shortcode-builder/builder.php:1428
 msgid "Grid Drawer 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1434
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1434, ../includes/shortcode-builder/builder.php:1434
 msgid "Grid Drawer 2"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1440
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1440, ../includes/shortcode-builder/builder.php:1440
 msgid "Circle 6"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1446
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1446, ../includes/shortcode-builder/builder.php:1446
 msgid "Horizontal 6"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1452
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1452, ../includes/shortcode-builder/builder.php:1452
 msgid "Horizontal 7"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1458
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1458, ../includes/shortcode-builder/builder.php:1458
 msgid "Horizontal 8"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1464
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1464, ../includes/shortcode-builder/builder.php:1464
 msgid "Horizontal 9"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1470
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1470, ../includes/shortcode-builder/builder.php:1470
 msgid "Flip"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1476
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1476, ../includes/shortcode-builder/builder.php:1476
 msgid "Table 6 - Underline"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1482
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1482, ../includes/shortcode-builder/builder.php:1482
 msgid "Table 7 - Box Border"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1488
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1488, ../includes/shortcode-builder/builder.php:1488
 msgid "Table 8 - Odd Even"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1494
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1494, ../includes/shortcode-builder/builder.php:1494
 msgid "Table 9 Filter"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1500
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1500, ../includes/shortcode-builder/builder.php:1500
 msgid "Table 10 Filter Dense"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1506
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1506, ../includes/shortcode-builder/builder.php:1506
 msgid "List 6"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1512
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1512, ../includes/shortcode-builder/builder.php:1512
 msgid "List 7"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1518
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1518, ../includes/shortcode-builder/builder.php:1518
 msgid "Group Filter 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1581
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1581, ../includes/shortcode-builder/builder.php:1581
 msgid " (New)"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1561
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1561, ../includes/shortcode-builder/builder.php:1561
 msgid " (Pro)"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1567
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1567, ../includes/shortcode-builder/builder.php:1567
 msgid " (New - Pro)"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1606
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1606, ../includes/shortcode-builder/builder.php:1606
 msgid "Normal Pagination"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1610
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1610, ../includes/shortcode-builder/builder.php:1610
 msgid "Ajax Pagination"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1614
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1614, ../includes/shortcode-builder/builder.php:1614
 msgid "Load More Button"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1618
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1618, ../includes/shortcode-builder/builder.php:1618
 msgid "Load More on Scroll"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1637, ../includes/shortcode-builder/builder.php:1677, ../includes/shortcode-builder/builder.php:1708, ../includes/shortcode-builder/builder.php:1739, ../includes/shortcode-builder/builder.php:1784, ../includes/shortcode-builder/builder.php:1822, ../includes/shortcode-builder/builder.php:1865, ../includes/shortcode-builder/builder.php:2552
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1637, ../build/gs-team-members/includes/shortcode-builder/builder.php:1677, ../build/gs-team-members/includes/shortcode-builder/builder.php:1708, ../build/gs-team-members/includes/shortcode-builder/builder.php:1739, ../build/gs-team-members/includes/shortcode-builder/builder.php:1784, ../build/gs-team-members/includes/shortcode-builder/builder.php:1822, ../build/gs-team-members/includes/shortcode-builder/builder.php:1865, ../build/gs-team-members/includes/shortcode-builder/builder.php:2552, ../includes/shortcode-builder/builder.php:1637, ../includes/shortcode-builder/builder.php:1677, ../includes/shortcode-builder/builder.php:1708, ../includes/shortcode-builder/builder.php:1739, ../includes/shortcode-builder/builder.php:1784, ../includes/shortcode-builder/builder.php:1822, ../includes/shortcode-builder/builder.php:1865, ../includes/shortcode-builder/builder.php:2552
 msgid "Default"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1641
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1641, ../includes/shortcode-builder/builder.php:1641
 msgid "Single Page"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1645
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1645, ../includes/shortcode-builder/builder.php:1645
 msgid "Popup"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1656
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1656, ../includes/shortcode-builder/builder.php:1656
 msgid "Drawer"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1660
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1660, ../includes/shortcode-builder/builder.php:1660
 msgid "Custom URL"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1681, ../includes/shortcode-builder/builder.php:1712, ../includes/shortcode-builder/builder.php:1743, ../includes/shortcode-builder/builder.php:1788, ../includes/shortcode-builder/builder.php:1826, ../includes/shortcode-builder/builder.php:1869, ../includes/shortcode-builder/builder.php:2556
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1681, ../build/gs-team-members/includes/shortcode-builder/builder.php:1712, ../build/gs-team-members/includes/shortcode-builder/builder.php:1743, ../build/gs-team-members/includes/shortcode-builder/builder.php:1788, ../build/gs-team-members/includes/shortcode-builder/builder.php:1826, ../build/gs-team-members/includes/shortcode-builder/builder.php:1869, ../build/gs-team-members/includes/shortcode-builder/builder.php:2556, ../includes/shortcode-builder/builder.php:1681, ../includes/shortcode-builder/builder.php:1712, ../includes/shortcode-builder/builder.php:1743, ../includes/shortcode-builder/builder.php:1788, ../includes/shortcode-builder/builder.php:1826, ../includes/shortcode-builder/builder.php:1869, ../includes/shortcode-builder/builder.php:2556
 msgid "Style One"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1685, ../includes/shortcode-builder/builder.php:1716, ../includes/shortcode-builder/builder.php:1747, ../includes/shortcode-builder/builder.php:1792, ../includes/shortcode-builder/builder.php:1830, ../includes/shortcode-builder/builder.php:1873, ../includes/shortcode-builder/builder.php:2560
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1685, ../build/gs-team-members/includes/shortcode-builder/builder.php:1716, ../build/gs-team-members/includes/shortcode-builder/builder.php:1747, ../build/gs-team-members/includes/shortcode-builder/builder.php:1792, ../build/gs-team-members/includes/shortcode-builder/builder.php:1830, ../build/gs-team-members/includes/shortcode-builder/builder.php:1873, ../build/gs-team-members/includes/shortcode-builder/builder.php:2560, ../includes/shortcode-builder/builder.php:1685, ../includes/shortcode-builder/builder.php:1716, ../includes/shortcode-builder/builder.php:1747, ../includes/shortcode-builder/builder.php:1792, ../includes/shortcode-builder/builder.php:1830, ../includes/shortcode-builder/builder.php:1873, ../includes/shortcode-builder/builder.php:2560
 msgid "Style Two"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1689, ../includes/shortcode-builder/builder.php:1720, ../includes/shortcode-builder/builder.php:1751, ../includes/shortcode-builder/builder.php:1796, ../includes/shortcode-builder/builder.php:1834, ../includes/shortcode-builder/builder.php:1877, ../includes/shortcode-builder/builder.php:2564
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1689, ../build/gs-team-members/includes/shortcode-builder/builder.php:1720, ../build/gs-team-members/includes/shortcode-builder/builder.php:1751, ../build/gs-team-members/includes/shortcode-builder/builder.php:1796, ../build/gs-team-members/includes/shortcode-builder/builder.php:1834, ../build/gs-team-members/includes/shortcode-builder/builder.php:1877, ../build/gs-team-members/includes/shortcode-builder/builder.php:2564, ../includes/shortcode-builder/builder.php:1689, ../includes/shortcode-builder/builder.php:1720, ../includes/shortcode-builder/builder.php:1751, ../includes/shortcode-builder/builder.php:1796, ../includes/shortcode-builder/builder.php:1834, ../includes/shortcode-builder/builder.php:1877, ../includes/shortcode-builder/builder.php:2564
 msgid "Style Three"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1755, ../includes/shortcode-builder/builder.php:1800, ../includes/shortcode-builder/builder.php:1838, ../includes/shortcode-builder/builder.php:1881, ../includes/shortcode-builder/builder.php:2568
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1755, ../build/gs-team-members/includes/shortcode-builder/builder.php:1800, ../build/gs-team-members/includes/shortcode-builder/builder.php:1838, ../build/gs-team-members/includes/shortcode-builder/builder.php:1881, ../build/gs-team-members/includes/shortcode-builder/builder.php:2568, ../includes/shortcode-builder/builder.php:1755, ../includes/shortcode-builder/builder.php:1800, ../includes/shortcode-builder/builder.php:1838, ../includes/shortcode-builder/builder.php:1881, ../includes/shortcode-builder/builder.php:2568
 msgid "Style Four"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1759, ../includes/shortcode-builder/builder.php:1804, ../includes/shortcode-builder/builder.php:1842, ../includes/shortcode-builder/builder.php:1885, ../includes/shortcode-builder/builder.php:2572
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1759, ../build/gs-team-members/includes/shortcode-builder/builder.php:1804, ../build/gs-team-members/includes/shortcode-builder/builder.php:1842, ../build/gs-team-members/includes/shortcode-builder/builder.php:1885, ../build/gs-team-members/includes/shortcode-builder/builder.php:2572, ../includes/shortcode-builder/builder.php:1759, ../includes/shortcode-builder/builder.php:1804, ../includes/shortcode-builder/builder.php:1842, ../includes/shortcode-builder/builder.php:1885, ../includes/shortcode-builder/builder.php:2572
 msgid "Style Five"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1846
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1846, ../includes/shortcode-builder/builder.php:1846
 msgid "Style Six"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1929
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1929, ../includes/shortcode-builder/builder.php:1929
 msgid "Normal Filter"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1933
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1933, ../includes/shortcode-builder/builder.php:1933
 msgid "Ajax Filter"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1939
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1939, ../includes/shortcode-builder/builder.php:1939
 msgid "One"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1943, ../includes/shortcode-builder/builder.php:1949
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1943, ../build/gs-team-members/includes/shortcode-builder/builder.php:1949, ../includes/shortcode-builder/builder.php:1943, ../includes/shortcode-builder/builder.php:1949
 msgid "Two"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1953
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1953, ../includes/shortcode-builder/builder.php:1953
 msgid "Three"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1959, ../includes/shortcode-builder/builder.php:1973
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1959, ../build/gs-team-members/includes/shortcode-builder/builder.php:1973, ../includes/shortcode-builder/builder.php:1959, ../includes/shortcode-builder/builder.php:1973
 msgid "Left"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1963, ../includes/shortcode-builder/builder.php:1977
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1963, ../build/gs-team-members/includes/shortcode-builder/builder.php:1977, ../includes/shortcode-builder/builder.php:1963, ../includes/shortcode-builder/builder.php:1977
 msgid "Center"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1967, ../includes/shortcode-builder/builder.php:1981
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1967, ../build/gs-team-members/includes/shortcode-builder/builder.php:1981, ../includes/shortcode-builder/builder.php:1967, ../includes/shortcode-builder/builder.php:1981
 msgid "Right"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1987, ../includes/shortcode-builder/builder.php:2009
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1987, ../build/gs-team-members/includes/shortcode-builder/builder.php:2009, ../includes/shortcode-builder/builder.php:1987, ../includes/shortcode-builder/builder.php:2009
 msgid "Custom Order"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1991
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1991, ../includes/shortcode-builder/builder.php:1991
 msgid "Team ID"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1995
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:1995, ../includes/shortcode-builder/builder.php:1995
 msgid "Team Name"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2003
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2003, ../includes/shortcode-builder/builder.php:2003
 msgid "Random"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2013
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2013, ../includes/shortcode-builder/builder.php:2013
 msgid "Taxonomy ID"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2017
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2017, ../includes/shortcode-builder/builder.php:2017
 msgid "Taxonomy Name"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2023
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2023, ../includes/shortcode-builder/builder.php:2023
 msgid "DESC"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2027
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2027, ../includes/shortcode-builder/builder.php:2027
 msgid "ASC"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2039, ../includes/shortcode-builder/builder.php:2087
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2039, ../build/gs-team-members/includes/shortcode-builder/builder.php:2087, ../includes/shortcode-builder/builder.php:2039, ../includes/shortcode-builder/builder.php:2087
 msgid "100 - Thin"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2043, ../includes/shortcode-builder/builder.php:2091
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2043, ../build/gs-team-members/includes/shortcode-builder/builder.php:2091, ../includes/shortcode-builder/builder.php:2043, ../includes/shortcode-builder/builder.php:2091
 msgid "200 - Extra Light"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2047, ../includes/shortcode-builder/builder.php:2095
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2047, ../build/gs-team-members/includes/shortcode-builder/builder.php:2095, ../includes/shortcode-builder/builder.php:2047, ../includes/shortcode-builder/builder.php:2095
 msgid "300 - Light"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2051, ../includes/shortcode-builder/builder.php:2099
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2051, ../build/gs-team-members/includes/shortcode-builder/builder.php:2099, ../includes/shortcode-builder/builder.php:2051, ../includes/shortcode-builder/builder.php:2099
 msgid "400 - Regular"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2055, ../includes/shortcode-builder/builder.php:2103
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2055, ../build/gs-team-members/includes/shortcode-builder/builder.php:2103, ../includes/shortcode-builder/builder.php:2055, ../includes/shortcode-builder/builder.php:2103
 msgid "500 - Medium"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2059, ../includes/shortcode-builder/builder.php:2107
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2059, ../build/gs-team-members/includes/shortcode-builder/builder.php:2107, ../includes/shortcode-builder/builder.php:2059, ../includes/shortcode-builder/builder.php:2107
 msgid "600 - Semi-Bold"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2063, ../includes/shortcode-builder/builder.php:2111
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2063, ../build/gs-team-members/includes/shortcode-builder/builder.php:2111, ../includes/shortcode-builder/builder.php:2063, ../includes/shortcode-builder/builder.php:2111
 msgid "700 - Bold"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2067, ../includes/shortcode-builder/builder.php:2115
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2067, ../build/gs-team-members/includes/shortcode-builder/builder.php:2115, ../includes/shortcode-builder/builder.php:2067, ../includes/shortcode-builder/builder.php:2115
 msgid "800 - Extra Bold"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2071, ../includes/shortcode-builder/builder.php:2119
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2071, ../build/gs-team-members/includes/shortcode-builder/builder.php:2119, ../includes/shortcode-builder/builder.php:2071, ../includes/shortcode-builder/builder.php:2119
 msgid "900 - Black"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2077, ../includes/shortcode-builder/builder.php:2125
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2077, ../build/gs-team-members/includes/shortcode-builder/builder.php:2125, ../includes/shortcode-builder/builder.php:2077, ../includes/shortcode-builder/builder.php:2125
 msgid "Normal"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2081, ../includes/shortcode-builder/builder.php:2129
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2081, ../build/gs-team-members/includes/shortcode-builder/builder.php:2129, ../includes/shortcode-builder/builder.php:2081, ../includes/shortcode-builder/builder.php:2129
 msgid "Italic"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2287
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2287, ../includes/shortcode-builder/builder.php:2287
 msgid "Show All Designation"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2288
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2288, ../includes/shortcode-builder/builder.php:2288
 msgid "Search By Name"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2289
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2289, ../includes/shortcode-builder/builder.php:2289
 msgid "Search By Company"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2290
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2290, ../includes/shortcode-builder/builder.php:2290
 msgid "Search By Zip"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2291
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2291, ../includes/shortcode-builder/builder.php:2291
 msgid "Search By Tag"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2302
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2302, ../includes/shortcode-builder/builder.php:2302
 msgid "Download vCard"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2303
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2303, ../includes/shortcode-builder/builder.php:2303
 msgid "Reset Filters"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2304
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2304, ../includes/shortcode-builder/builder.php:2304
 msgid "Prev"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2305
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2305, ../includes/shortcode-builder/builder.php:2305
 msgid "Next"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2350
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2350, ../includes/shortcode-builder/builder.php:2350
 msgid "Groups"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2356
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2356, ../includes/shortcode-builder/builder.php:2356
 msgid "Tag"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2357
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2357, ../includes/shortcode-builder/builder.php:2357
 msgid "Tags"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2364
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2364, ../includes/shortcode-builder/builder.php:2364
 msgid "Languages"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2371
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2371, ../includes/shortcode-builder/builder.php:2371
 msgid "Locations"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2378
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2378, ../includes/shortcode-builder/builder.php:2378
 msgid "Genders"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2385
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2385, ../includes/shortcode-builder/builder.php:2385
 msgid "Specialties"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2391, ../includes/shortcode-builder/builder.php:2392
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2391, ../build/gs-team-members/includes/shortcode-builder/builder.php:2392, ../includes/shortcode-builder/builder.php:2391, ../includes/shortcode-builder/builder.php:2392
 msgid "Extra 1"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2398, ../includes/shortcode-builder/builder.php:2399
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2398, ../build/gs-team-members/includes/shortcode-builder/builder.php:2399, ../includes/shortcode-builder/builder.php:2398, ../includes/shortcode-builder/builder.php:2399
 msgid "Extra 2"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2405, ../includes/shortcode-builder/builder.php:2406
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2405, ../build/gs-team-members/includes/shortcode-builder/builder.php:2406, ../includes/shortcode-builder/builder.php:2405, ../includes/shortcode-builder/builder.php:2406
 msgid "Extra 3"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2412, ../includes/shortcode-builder/builder.php:2413
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2412, ../build/gs-team-members/includes/shortcode-builder/builder.php:2413, ../includes/shortcode-builder/builder.php:2412, ../includes/shortcode-builder/builder.php:2413
 msgid "Extra 4"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2419, ../includes/shortcode-builder/builder.php:2420
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2419, ../build/gs-team-members/includes/shortcode-builder/builder.php:2420, ../includes/shortcode-builder/builder.php:2419, ../includes/shortcode-builder/builder.php:2420
 msgid "Extra 5"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2449
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2449, ../includes/shortcode-builder/builder.php:2449
 msgid "1 Column"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2453
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2453, ../includes/shortcode-builder/builder.php:2453
 msgid "2 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2457
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2457, ../includes/shortcode-builder/builder.php:2457
 msgid "3 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2461
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2461, ../includes/shortcode-builder/builder.php:2461
 msgid "4 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2465
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2465, ../includes/shortcode-builder/builder.php:2465
 msgid "5 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2469
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2469, ../includes/shortcode-builder/builder.php:2469
 msgid "6 Columns"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2480
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2480, ../includes/shortcode-builder/builder.php:2480
 msgid "After Skills"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2484
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2484, ../includes/shortcode-builder/builder.php:2484
 msgid "After Description"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2488
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2488, ../includes/shortcode-builder/builder.php:2488
 msgid "After Meta Details"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2499, ../includes/shortcode-builder/builder.php:2609
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2499, ../build/gs-team-members/includes/shortcode-builder/builder.php:2609, ../includes/shortcode-builder/builder.php:2499, ../includes/shortcode-builder/builder.php:2609
 msgid "None"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2503
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2503, ../includes/shortcode-builder/builder.php:2503
 msgid "Blur"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2507
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2507, ../includes/shortcode-builder/builder.php:2507
 msgid "Brightness"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2511
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2511, ../includes/shortcode-builder/builder.php:2511
 msgid "Contrast"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2515
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2515, ../includes/shortcode-builder/builder.php:2515
 msgid "Grayscale"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2519
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2519, ../includes/shortcode-builder/builder.php:2519
 msgid "Hue Rotate"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2523
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2523, ../includes/shortcode-builder/builder.php:2523
 msgid "Invert"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2527
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2527, ../includes/shortcode-builder/builder.php:2527
 msgid "Opacity"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2531
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2531, ../includes/shortcode-builder/builder.php:2531
 msgid "Saturate"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2535
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2535, ../includes/shortcode-builder/builder.php:2535
 msgid "Sepia"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2656
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2656, ../includes/shortcode-builder/builder.php:2656
 msgid "Preference saved"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2665
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2665, ../includes/shortcode-builder/builder.php:2665
 msgid "No preference provided"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2736
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2736, ../includes/shortcode-builder/builder.php:2736
 msgid "Taxonomy settings saved"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2744
+#: ../build/gs-team-members/includes/shortcode-builder/builder.php:2744, ../includes/shortcode-builder/builder.php:2744
 msgid "No settings provided"
 msgstr ""
 
-#: ../includes/shortcode-builder/page.php:10
+#: ../build/gs-team-members/includes/shortcode-builder/page.php:10, ../includes/shortcode-builder/page.php:10
 msgid "Create New"
 msgstr ""
 
-#: ../includes/shortcode-builder/page.php:14
+#: ../build/gs-team-members/includes/shortcode-builder/page.php:14, ../includes/shortcode-builder/page.php:14
 msgid "Preferences"
 msgstr ""
 
-#: ../includes/shortcode-builder/page.php:26
+#: ../build/gs-team-members/includes/shortcode-builder/page.php:26, ../includes/shortcode-builder/page.php:26
 msgid "Demo Data"
 msgstr ""
 
-#: ../includes/shortcode-builder/page.php:30
+#: ../build/gs-team-members/includes/shortcode-builder/page.php:30, ../includes/shortcode-builder/page.php:30
 msgid "Import Export"
 msgstr ""
 
-#: ../includes/shortcode-builder/preview.php:28
+#: ../build/gs-team-members/includes/shortcode-builder/preview.php:28, ../includes/shortcode-builder/preview.php:28
 msgid "Something went wrong!"
 msgstr ""
 
-#: ../includes/shortcode-builder/preview.php:29
+#: ../build/gs-team-members/includes/shortcode-builder/preview.php:29, ../includes/shortcode-builder/preview.php:29
 msgid "Data not found for preview, probably it's a bug, contact with plugin author"
 msgstr ""
 
-#: ../includes/term-order/term-order.php:226, ../includes/term-order/term-order.php:218
+#: ../build/gs-team-members/includes/term-order/term-order.php:226, ../build/gs-team-members/includes/term-order/term-order.php:218, ../includes/term-order/term-order.php:226, ../includes/term-order/term-order.php:218
 msgid "Term Order"
 msgstr ""
 
-#: ../includes/term-order/term-order.php:227
+#: ../build/gs-team-members/includes/term-order/term-order.php:227, ../includes/term-order/term-order.php:227
 msgid "To position an item, Quick Edit the row and change the order value to a more suitable number."
 msgstr ""
 
-#: ../includes/term-order/term-order.php:219
+#: ../build/gs-team-members/includes/term-order/term-order.php:219, ../includes/term-order/term-order.php:219
 msgid "To reposition an item, drag and drop the row by \"clicking and holding\" it anywhere and moving it to its new position."
 msgstr ""
 
-#: ../includes/term-order/term-order.php:549
+#: ../build/gs-team-members/includes/term-order/term-order.php:549, ../includes/term-order/term-order.php:549
 msgid "Set a specific order by entering a number (1 for first, etc.) in this field."
 msgstr ""
 
-#: ../includes/term-order/term-order.php:589
+#: ../build/gs-team-members/includes/term-order/term-order.php:589, ../includes/term-order/term-order.php:589
 msgid "Terms are usually ordered alphabetically, but you can choose your own order by entering a number (1 for first, etc.) in this field."
 msgstr ""
 
-#: ../includes/integrations/beaver/beaver-widget-team.php:12
+#: ../build/gs-team-members/templates/partials/gs-team-layout-no-team-member.php:17, ../templates/partials/gs-team-layout-no-team-member.php:17
+msgid "No team member found"
+msgstr ""
+
+#: ../build/gs-team-members/templates/pro/gs-team-layout-table-box.php:33, ../build/gs-team-members/templates/pro/gs-team-layout-table-odd-even.php:33, ../build/gs-team-members/templates/pro/gs-team-layout-table.php:33, ../build/gs-team-members/templates/pro/gs-team-table-five.php:29, ../templates/pro/gs-team-layout-table-box.php:33, ../templates/pro/gs-team-layout-table-odd-even.php:33, ../templates/pro/gs-team-layout-table.php:33, ../templates/pro/gs-team-table-five.php:29
+msgid "Image"
+msgstr ""
+
+#: ../build/gs-team-members/templates/pro/gs-team-layout-table-box.php:35, ../build/gs-team-members/templates/pro/gs-team-layout-table-odd-even.php:35, ../build/gs-team-members/templates/pro/gs-team-layout-table.php:35, ../build/gs-team-members/templates/pro/gs-team-table-five.php:31, ../templates/pro/gs-team-layout-table-box.php:35, ../templates/pro/gs-team-layout-table-odd-even.php:35, ../templates/pro/gs-team-layout-table.php:35, ../templates/pro/gs-team-table-five.php:31
+msgid "Position"
+msgstr ""
+
+#: ../build/gs-team-members/templates/pro/gs-team-layout-table-box.php:36, ../build/gs-team-members/templates/pro/gs-team-layout-table-odd-even.php:36, ../build/gs-team-members/templates/pro/gs-team-layout-table.php:36, ../build/gs-team-members/templates/pro/gs-team-table-five.php:32, ../templates/pro/gs-team-layout-table-box.php:36, ../templates/pro/gs-team-layout-table-odd-even.php:36, ../templates/pro/gs-team-layout-table.php:36, ../templates/pro/gs-team-table-five.php:32
+msgid "Description"
+msgstr ""
+
+#: ../build/gs-team-members/templates/pro/gs-team-layout-table-box.php:39, ../build/gs-team-members/templates/pro/gs-team-layout-table-odd-even.php:39, ../build/gs-team-members/templates/pro/gs-team-layout-table.php:39, ../build/gs-team-members/templates/pro/gs-team-table-five.php:35, ../templates/pro/gs-team-layout-table-box.php:39, ../templates/pro/gs-team-layout-table-odd-even.php:39, ../templates/pro/gs-team-layout-table.php:39, ../templates/pro/gs-team-table-five.php:35
+msgid "Social Links"
+msgstr ""
+
+#: ../build/gs-team-members/templates/pro/gs-team-layout-table-filter-dense.php:45, ../templates/pro/gs-team-layout-table-filter-dense.php:45
+msgid "Phone"
+msgstr ""
+
+#: ../build/gs-team-members/templates/pro/gs-team-layout-table-filter.php:47, ../templates/pro/gs-team-layout-table-filter.php:47
+msgid "Department"
+msgstr ""
+
+#: ../build/gs-team-members/templates/pro/gs-team-layout-table-filter.php:51, ../templates/pro/gs-team-layout-table-filter.php:51
+msgid "Contact"
+msgstr ""
+
+#: ../build/gs-team-members/templates/pro/gs-team-layout-table-filter.php:101, ../templates/pro/gs-team-layout-table-filter.php:101
+msgid "SEND EMAIL"
+msgstr ""
+
+#: ../build/gs-team-members/includes/integrations/beaver/beaver-widget-team.php:12, ../includes/integrations/beaver/beaver-widget-team.php:12
 msgid "GS Plugins"
 msgstr ""
 
-#: ../includes/integrations/beaver/beaver-widget-team.php:13
+#: ../build/gs-team-members/includes/integrations/beaver/beaver-widget-team.php:13, ../includes/integrations/beaver/beaver-widget-team.php:13
 msgid "Basic"
 msgstr ""
 
-#: ../includes/integrations/divi/TeamMembersController.php:84
+#: ../build/gs-team-members/includes/integrations/divi/TeamMembersController.php:84, ../includes/integrations/divi/TeamMembersController.php:84
 msgid "You must be logged in to preview GS Team shortcodes."
 msgstr ""
 
-#: ../includes/integrations/divi/TeamMembersController.php:102
+#: ../build/gs-team-members/includes/integrations/divi/TeamMembersController.php:102, ../includes/integrations/divi/TeamMembersController.php:102
 msgid "Sorry, you are not allowed to preview GS Team shortcodes."
 msgstr ""
 
 #. translators: %s: error message
-#: ../includes/integrations/divi/TeamMembersController.php:139
+#. translators: %s: error message
+#: ../build/gs-team-members/includes/integrations/divi/TeamMembersController.php:139, ../includes/integrations/divi/TeamMembersController.php:139
 msgid "Failed to render shortcode: %s"
-msgstr ""
-
-#: ../templates/partials/gs-team-layout-no-team-member.php:17
-msgid "No team member found"
-msgstr ""
-
-#: ../templates/pro/gs-team-layout-table-box.php:33, ../templates/pro/gs-team-layout-table-odd-even.php:33, ../templates/pro/gs-team-layout-table.php:33, ../templates/pro/gs-team-table-five.php:29
-msgid "Image"
-msgstr ""
-
-#: ../templates/pro/gs-team-layout-table-box.php:35, ../templates/pro/gs-team-layout-table-odd-even.php:35, ../templates/pro/gs-team-layout-table.php:35, ../templates/pro/gs-team-table-five.php:31
-msgid "Position"
-msgstr ""
-
-#: ../templates/pro/gs-team-layout-table-box.php:36, ../templates/pro/gs-team-layout-table-odd-even.php:36, ../templates/pro/gs-team-layout-table.php:36, ../templates/pro/gs-team-table-five.php:32
-msgid "Description"
-msgstr ""
-
-#: ../templates/pro/gs-team-layout-table-box.php:39, ../templates/pro/gs-team-layout-table-odd-even.php:39, ../templates/pro/gs-team-layout-table.php:39, ../templates/pro/gs-team-table-five.php:35
-msgid "Social Links"
-msgstr ""
-
-#: ../templates/pro/gs-team-layout-table-filter-dense.php:45
-msgid "Phone"
-msgstr ""
-
-#: ../templates/pro/gs-team-layout-table-filter.php:47
-msgid "Department"
-msgstr ""
-
-#: ../templates/pro/gs-team-layout-table-filter.php:51
-msgid "Contact"
-msgstr ""
-
-#: ../templates/pro/gs-team-layout-table-filter.php:101
-msgid "SEND EMAIL"
 msgstr ""
