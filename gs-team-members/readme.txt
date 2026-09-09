@@ -2,9 +2,9 @@
 Contributors: gsplugins, itszaman, samdani, itsariful, freemius
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Requires at least: 4.3
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 2.7.21
+Stable tag: 2.7.22
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: team member, team plugin, wordpress team plugin, team showcase, team gallery
@@ -751,6 +751,10 @@ In this way, you can display Team Members based on specific criteria such as –
 28. Bulk Importer from CSV. Check details doc - https://docs.gsplugins.com/gs-team-members/bulk-import/
 
 == Changelog ==
+= Version 2.7.22 [9th Sep 2026] =
+* [Added]: Grid 11 to the Themes V2 list to enable theme option access.
+* [Fixed]: Removed image wrapper height (Grid 11) for improved layout consistency.
+
 = Version 2.7.21 [16th Aug 2026] =
 * [Fixed]: Divi 5 module for GS Team Members.
 
@@ -1535,6 +1539,10 @@ In this way, you can display Team Members based on specific criteria such as –
 * Initial release
 
 == Upgrade Notice ==
+= Version 2.7.22 [9th Sep 2026] =
+* [Added]: Grid 11 to the Themes V2 list to enable theme option access.
+* [Fixed]: Removed image wrapper height (Grid 11) for improved layout consistency.
+
 = Version 2.7.21 [16th Aug 2026] =
 * [Fixed]: Divi 5 module for GS Team Members.
 
