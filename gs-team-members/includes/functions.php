@@ -139,24 +139,24 @@ function member_description($shortcode_id, $max_length = 100, $echo = false, $is
 
         if ($link_type == 'single_page') {
 
-            $gs_more_link = sprintf('...<a href="%s">%s</a>', get_the_permalink(), $gs_team_more);
+            $gs_more_link = sprintf('...<a class="gs-member-read-more" href="%s">%s</a>', get_the_permalink(), $gs_team_more);
         } else if ($link_type == 'popup') {
 
             global $popup_style;
 
             $popup_style = empty($popup_style) ? 'default' : $popup_style;
 
-            $gs_more_link = sprintf('...<a class="gs_team_pop open-popup-link" data-mfp-src="#gs_team_popup_%s_%s" href="#" data-theme="%s">%s</a>', $member_id, $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), esc_html($gs_team_more));
+            $gs_more_link = sprintf('...<a class="gs_team_pop open-popup-link gs-member-read-more" data-mfp-src="#gs_team_popup_%s_%s" href="#" data-theme="%s">%s</a>', $member_id, $shortcode_id, 'gs-team-popup--' . esc_attr($popup_style), esc_html($gs_team_more));
         } else if ($link_type == 'panel') {
 
-            $gs_more_link = sprintf('...<a class="gs_team_pop gs_team_panelslide_link" id="gsteamlink_%1$s_%2$s" href="#gsteam_%1$s_%2$s">%3$s</a>', $member_id, $shortcode_id, esc_html($gs_team_more));
+            $gs_more_link = sprintf('...<a class="gs_team_pop gs_team_panelslide_link gs-member-read-more" id="gsteamlink_%1$s_%2$s" href="#gsteam_%1$s_%2$s">%3$s</a>', $member_id, $shortcode_id, esc_html($gs_team_more));
         } else if ($link_type == 'drawer') {
 
-            $gs_more_link = sprintf('...<a href="%s">%s</a>', get_the_permalink(), esc_html($gs_team_more));
+            $gs_more_link = sprintf('...<a class="gs-member-read-more" href="%s">%s</a>', get_the_permalink(), esc_html($gs_team_more));
         } else if ($link_type == 'custom') {
 
             $target = is_internal_url($custom_page_link) ? '' : 'target="_blank"';
-            $gs_more_link = sprintf('...<a href="%s" %s>%s</a>', esc_url($custom_page_link), $target, esc_html($gs_team_more));
+            $gs_more_link = sprintf('...<a class="gs-member-read-more" href="%s" %s>%s</a>', esc_url($custom_page_link), $target, esc_html($gs_team_more));
         }
     }
 

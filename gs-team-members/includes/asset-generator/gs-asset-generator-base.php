@@ -38,7 +38,8 @@ if ( ! class_exists('GSPLUGINS\GS_Asset_Generator_Base') ) {
         public function get_assets_model() {
             return [
                 'styles' => [],
-                'scripts' => []
+                'scripts' => [],
+                'fonts' => []
             ];
         }
     
@@ -124,6 +125,10 @@ if ( ! class_exists('GSPLUGINS\GS_Asset_Generator_Base') ) {
         public function add_item_in_asset_list( $type, $item, $item_data = [] ) {
     
             if ( empty($this->assets) ) $this->assets = $this->get_assets_model();
+
+            if ( ! isset( $this->assets[$type] ) || ! is_array( $this->assets[$type] ) ) {
+                $this->assets[$type] = [];
+            }
     
             if ( ! array_key_exists($item, $this->assets[$type]) ) {
     

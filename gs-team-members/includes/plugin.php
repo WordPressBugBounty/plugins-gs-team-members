@@ -16,6 +16,7 @@ class Plugin {
     public $sortable;
     public $builder;
     public $integrations;
+    public $fonts;
 
     public static function get_instance() {
         
@@ -40,6 +41,7 @@ class Plugin {
         $this->sortable          = new Sortable();
         $this->builder           = new Builder();
         $this->integrations      = new Integrations();
+        $this->fonts             = new Fonts();
 
         new Bulk_Importer();
         new Column();

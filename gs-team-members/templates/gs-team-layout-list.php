@@ -72,15 +72,15 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 										<?php do_action( 'gs_team_after_member_name' ); ?>
 
 										<!-- Single member designation -->
-										<?php member_designation( $designation, true, 'span', 'gs-team-profession' ); ?>
+										<?php member_designation( $designation, true, 'span', 'gs-member-desig gs-team-profession' ); ?>
 										<?php do_action( 'gs_team_after_member_designation' ); ?>
 
 										<!-- Description -->
 										<?php if ( member_visibility_should_show( 'member_details' ) ) : ?>
 											<?php if ( 'on' === $gs_desc_allow_html ) : ?>
-												<div class="<?php echo esc_attr( member_visibility_classes( 'member_details', 'gs-team-details justify' ) ); ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+												<div class="<?php echo esc_attr( member_visibility_classes( 'member_details', 'gs-member-desc gs-team-details justify' ) ); ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
 											<?php else : ?>
-												<div class="<?php echo esc_attr( member_visibility_classes( 'member_details', 'gs-team-details justify' ) ); ?>" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, false ); ?></div>
+												<div class="<?php echo esc_attr( member_visibility_classes( 'member_details', 'gs-member-desc gs-team-details justify' ) ); ?>" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, false ); ?></div>
 											<?php endif; ?>
 
 											<?php do_action( 'gs_team_after_member_details' ); ?>

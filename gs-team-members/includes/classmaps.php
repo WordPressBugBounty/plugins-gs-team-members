@@ -22,7 +22,8 @@ $classmaps = [
 	'Integrations'       => 'includes/integrations/integrations.php',
 	'Shortcode'          => 'includes/shortcode.php',
 	'Import_Export' 	 => 'includes/import-export.php',
-	'Term_Order'     	 => 'includes/term-order/term-order.php'
+	'Term_Order'     	 => 'includes/term-order/term-order.php',
+	'Fonts'              => 'includes/fonts.php'
 ];
 
 return $classmaps;

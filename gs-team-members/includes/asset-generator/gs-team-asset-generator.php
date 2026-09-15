@@ -26,7 +26,7 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 		
 		$selectors = [];
 
-		if ( empty($targets) ) return;
+		if ( $targets === null ) return;
 
 		if ( gettype($targets) !== 'array' ) $targets = [$targets];
 
@@ -47,20 +47,21 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 		$selector = '#gs_team_area_' . $shortcodeID;
 		$selector_divi = '#et-boc .et-l div ' . $selector;
 
+		// Legacy name/role font settings (kept for backward compatibility)
 		if ( !empty($settings['gs_tm_m_fz']) ) {
-			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a'], 'font-size', $settings['gs_tm_m_fz'] . 'px' );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a', ' .gstm-panel-title'], 'font-size', $settings['gs_tm_m_fz'] . 'px' );
 		}
 
 		if ( !empty($settings['gs_tm_m_fntw']) ) {
-			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a'], 'font-weight', $settings['gs_tm_m_fntw'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a', ' .gstm-panel-title'], 'font-weight', $settings['gs_tm_m_fntw'] );
 		}
 
 		if ( !empty($settings['gs_tm_m_fnstyl']) ) {
-			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a'], 'font-style', $settings['gs_tm_m_fnstyl'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a', ' .gstm-panel-title'], 'font-style', $settings['gs_tm_m_fnstyl'] );
 		}
 
 		if ( !empty($settings['gs_tm_mname_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a'], 'color', $settings['gs_tm_mname_color'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a', ' .gstm-panel-title'], 'color', $settings['gs_tm_mname_color'] );
 		}
 
 		if ( !empty($settings['tm_bg_color']) ) {
@@ -113,21 +114,25 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 			$this->generateStyle( $selector, $selector_divi, ' .single-member .gs_team_overlay i', 'background-color', $settings['gs_tm_hover_icon_background'] );
 		}
 
+		// Legacy role font settings (kept for backward compatibility)
 		if ( !empty($settings['gs_tm_role_fz']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .gs-member-desig', 'font-size', $settings['gs_tm_role_fz'] . 'px' );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-member-desig', ' .gstm-panel-desig'], 'font-size', $settings['gs_tm_role_fz'] . 'px' );
 		}
 
 		if ( !empty($settings['gs_tm_role_fntw']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .gs-member-desig', 'font-weight', $settings['gs_tm_role_fntw'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-member-desig', ' .gstm-panel-desig'], 'font-weight', $settings['gs_tm_role_fntw'] );
 		}
 
 		if ( !empty($settings['gs_tm_role_fnstyl']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .gs-member-desig', 'font-style', $settings['gs_tm_role_fnstyl'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-member-desig', ' .gstm-panel-desig'], 'font-style', $settings['gs_tm_role_fnstyl'] );
 		}
 
 		if ( !empty($settings['gs_tm_role_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .gs-member-desig', 'color', $settings['gs_tm_role_color'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-member-desig', ' .gstm-panel-desig'], 'color', $settings['gs_tm_role_color'] );
 		}
+
+		// Apply typography settings (CSS variables)
+		$this->apply_all_typography( $settings, $selector, $selector_divi );
 		
 		if ( !empty($settings['gs_slider_nav_color']) ) {
 			$this->generateStyle( $selector, $selector_divi, ' .owl-carousel .owl-nav [class*=owl-]', 'color', $settings['gs_slider_nav_color'] );
@@ -213,6 +218,290 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 		}
 
 		return ob_get_clean();
+	}
+
+	/**
+	 * Normalize a value with unit only when appropriate.
+	 */
+	private function unitize( $value, $unit ) {
+		if ( ! $unit ) return $value;
+
+		if ( preg_match( '/[a-z%]+$/i', (string) $value ) ) {
+			return $value;
+		}
+
+		if ( is_numeric( $value ) ) {
+			return $value . $unit;
+		}
+
+		return $value;
+	}
+
+	/**
+	 * Generic writer for typography settings (CSS variables + element properties).
+	 */
+	private function apply_typography_map( array $settings, $selector, $selector_divi, array $map ) {
+		foreach ( $map as $block ) {
+			$setting_key = $block['setting'];
+			$values = isset( $settings[ $setting_key ] ) ? (array) $settings[ $setting_key ] : [];
+			if ( empty( $values ) ) continue;
+
+			$prefix          = $block['prefix'];
+			$var_targets     = (array) ( $block['targets'] ?? [ '' ] );
+			$element_targets = (array) ( $block['elements'] ?? [] );
+			$color_elements  = (array) ( $block['color_elements'] ?? [] );
+			$props           = (array) ( $block['props'] ?? [] );
+
+			foreach ( $props as $sourceKey => $def ) {
+				if ( ! array_key_exists( $sourceKey, $values ) || $values[ $sourceKey ] === '' || $values[ $sourceKey ] === null ) {
+					continue;
+				}
+				[ $suffix, $unit, $css_prop ] = array_pad( $def, 3, null );
+				$val = $this->unitize( $values[ $sourceKey ], $unit );
+
+				// Write CSS variable on the shortcode container
+				foreach ( $var_targets as $tgt ) {
+					$this->generateStyle(
+						$selector,
+						$selector_divi,
+						$tgt,
+						$prefix . $suffix,
+						$val
+					);
+				}
+
+				// Apply property directly to elements so theme hardcoded styles are overridden
+				if ( ! empty( $element_targets ) && $css_prop ) {
+					$this->generateStyle(
+						$selector,
+						$selector_divi,
+						$element_targets,
+						$css_prop,
+						$val
+					);
+				}
+
+				// Color-only targets (e.g. Font Awesome icons with theme-hardcoded colors)
+				if ( ! empty( $color_elements ) && 'color' === $css_prop ) {
+					$this->generateStyle(
+						$selector,
+						$selector_divi,
+						$color_elements,
+						'color',
+						$val
+					);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Apply all typography settings as CSS variables + element styles.
+	 * Scoped to main theme cards (.single-member-div) — excludes popups, panels, drawers.
+	 */
+	private function apply_all_typography( array $settings, $selector, $selector_divi ) {
+		$common_props = [
+			'color'          => [ '-color', '', 'color' ],
+			'hover_color'    => [ '-hover-color', '', null ], // hover handled separately below
+			'style'          => [ '-style', '', 'font-style' ],
+			'decoration'     => [ '-text-decoration', '', 'text-decoration' ],
+			'line_height'    => [ '-line-height', '', 'line-height' ],
+			'letter_spacing' => [ '-letter-spacing', 'px', 'letter-spacing' ],
+			'font_family'    => [ '-font-family', '', 'font-family' ],
+			'weight'         => [ '-font-weight', '', 'font-weight' ],
+			'transform'      => [ '-text-transform', '', 'text-transform' ],
+			'size'           => [ '-font-size', 'px', 'font-size' ],
+		];
+
+		$map = [
+			[
+				'setting'  => 'gs_tm_name_typography',
+				'prefix'   => '--gstm-name',
+				'targets'  => [ '' ],
+				'elements' => [ ' .single-member-div .gs-member-name', ' .single-member-div .gs-member-name a' ],
+				'props'    => $common_props,
+			],
+		];
+
+		if ( gtm_fs()->is_paying_or_trial() ) {
+			$map = array_merge( $map, [
+				[
+					'setting'  => 'gs_tm_role_typography',
+					'prefix'   => '--gstm-desig',
+					'targets'  => [ '' ],
+					'elements' => [ ' .single-member-div .gs-member-desig' ],
+					'props'    => $common_props,
+				],
+				[
+					'setting'  => 'gs_tm_details_typography',
+					'prefix'   => '--gstm-desc',
+					'targets'  => [ '' ],
+					'elements' => [ ' .single-member-div .gs-member-desc' ],
+					'props'    => $common_props,
+				],
+				[
+					'setting'         => 'gs_tm_info_typography',
+					'prefix'          => '--gstm-info',
+					'targets'         => [ '' ],
+					'elements'        => [
+						' .single-member-div .gs-member-contact',
+						' .single-member-div .gs-member-contact a',
+						' .single-member-div .gs-member-address',
+						' .single-member-div .gs-member-address a',
+					],
+					'color_elements'  => [
+						' .single-member-div .gs-member-contact i',
+						' .single-member-div .gs-member-address i',
+					],
+					'props'           => $common_props,
+				],
+				[
+					'setting'  => 'gs_tm_ribbon_typography',
+					'prefix'   => '--gstm-ribbon',
+					'targets'  => [ '' ],
+					'elements' => [ ' .single-member-div .gs_team_ribbon' ],
+					'props'    => $common_props,
+				],
+				[
+					'setting'  => 'gs_tm_readmore_typography',
+					'prefix'   => '--gstm-readmore',
+					'targets'  => [ '' ],
+					'elements' => [ ' .single-member-div .gs-member-desc .gs-member-read-more' ],
+					'props'    => $common_props,
+				],
+			] );
+		}
+
+		$this->apply_typography_map( $settings, $selector, $selector_divi, $map );
+
+		// Hover colors
+		$this->apply_typography_hover_colors( $settings, $selector, $selector_divi );
+	}
+
+	private function apply_typography_hover_colors( array $settings, $selector, $selector_divi ) {
+		$hover_map = [
+			'gs_tm_name_typography' => [
+				'elements' => [
+					' .single-member-div .gs-member-name:hover',
+					' .single-member-div .gs-member-name a:hover',
+					' .single-member-div .single-member:hover .gs-member-name',
+					' .single-member-div .single-member:hover .gs-member-name a',
+				],
+			],
+		];
+
+		if ( gtm_fs()->is_paying_or_trial() ) {
+			$hover_map['gs_tm_role_typography'] = [
+				'elements' => [
+					' .single-member-div .gs-member-desig:hover',
+					' .single-member-div .single-member:hover .gs-member-desig',
+				],
+			];
+			$hover_map['gs_tm_details_typography'] = [
+				'elements' => [
+					' .single-member-div .gs-member-desc:hover',
+					' .single-member-div .single-member:hover .gs-member-desc',
+				],
+			];
+			$hover_map['gs_tm_info_typography'] = [
+				'elements' => [
+					' .single-member-div .gs-member-contact:hover',
+					' .single-member-div .gs-member-contact:hover a',
+					' .single-member-div .gs-member-contact:hover i',
+					' .single-member-div .gs-member-address:hover',
+					' .single-member-div .gs-member-address:hover a',
+					' .single-member-div .gs-member-address:hover i',
+					' .single-member-div .single-member:hover .gs-member-contact',
+					' .single-member-div .single-member:hover .gs-member-contact a',
+					' .single-member-div .single-member:hover .gs-member-contact i',
+					' .single-member-div .single-member:hover .gs-member-address',
+					' .single-member-div .single-member:hover .gs-member-address a',
+					' .single-member-div .single-member:hover .gs-member-address i',
+				],
+			];
+			$hover_map['gs_tm_ribbon_typography'] = [
+				'elements' => [
+					' .single-member-div .gs_team_ribbon:hover',
+					' .single-member-div .single-member:hover .gs_team_ribbon',
+				],
+			];
+			$hover_map['gs_tm_readmore_typography'] = [
+				'elements' => [
+					' .single-member-div .gs-member-desc .gs-member-read-more:hover',
+					' .single-member-div .single-member:hover .gs-member-desc .gs-member-read-more',
+				],
+			];
+		}
+
+		foreach ( $hover_map as $setting_key => $block ) {
+			$values = isset( $settings[ $setting_key ] ) ? (array) $settings[ $setting_key ] : [];
+			if ( empty( $values['hover_color'] ) ) continue;
+
+			$this->generateStyle(
+				$selector,
+				$selector_divi,
+				$block['elements'],
+				'color',
+				$values['hover_color']
+			);
+		}
+	}
+
+	public function get_fonts_from_settings( $settings ) {
+
+		$typography_keys = [
+			'gs_tm_name_typography',
+			'gs_tm_role_typography',
+			'gs_tm_details_typography',
+			'gs_tm_info_typography',
+			'gs_tm_ribbon_typography',
+			'gs_tm_readmore_typography',
+		];
+
+		$fonts = [];
+
+		foreach ( $typography_keys as $key ) {
+			if ( empty( $settings[ $key ] ) ) continue;
+			$setting = (array) $settings[ $key ];
+			if ( ! empty( $setting['font_family'] ) ) {
+				$fonts[] = $setting['font_family'];
+			}
+		}
+
+		return array_unique( $fonts );
+	}
+
+	private function build_google_fonts_url( array $fonts ): string {
+		$families = array_unique(
+			array_filter(
+				array_map(
+					static function ( $f ) {
+						$f = trim( (string) $f );
+						return $f === '' ? '' : preg_replace( '/\s+/', '+', $f );
+					},
+					$fonts
+				)
+			)
+		);
+
+		$system_fonts = [ 'Arial', 'Georgia', 'Helvetica', 'Tahoma', 'Times+New+Roman', 'Trebuchet+MS', 'Verdana' ];
+		$families = array_diff( $families, $system_fonts );
+
+		if ( empty( $families ) ) {
+			return '';
+		}
+
+		$query = implode( '&', array_map( static function( $f ) { return "family={$f}"; }, $families ) );
+		$url   = "https://fonts.googleapis.com/css2?{$query}&display=swap";
+
+		return set_url_scheme( $url, 'https' );
+	}
+
+	public function load_typography_fonts( $fonts ) : void {
+		$url = $this->build_google_fonts_url( (array) $fonts );
+		if ( $url ) {
+			wp_enqueue_style( 'gs-team-typography-fonts-' . md5( $url ), $url, [], null );
+		}
 	}
 
 	public function generate_assets_data( Array $settings ) {
@@ -330,6 +619,12 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 			$this->add_item_in_asset_list( 'styles', 'gs-team-divi-public', ['gs-team-public'] );
 		}
 
+		$fonts = $this->get_fonts_from_settings( $settings );
+
+		if ( ! empty( $fonts ) ) {
+			$this->add_item_in_asset_list( 'fonts', 'google-fonts', $fonts );
+		}
+
 		$css = $this->get_shortcode_custom_css( $settings );
 
 		if ( !empty($css) ) {
@@ -367,6 +662,12 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 		add_fs_script( 'gs-team-public' );
 		
 		$this->print_google_fonts();
+
+		// Typography fonts from shortcode settings
+		$fonts = $this->get_fonts_from_settings( $settings );
+		if ( ! empty( $fonts ) ) {
+			$this->load_typography_fonts( $fonts );
+		}
 
 		// Shortcode Generated CSS
 		$css = $this->get_shortcode_custom_css( $settings );
@@ -424,6 +725,12 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 		add_fs_script( 'gs-team-public' );
 
 		$this->print_google_fonts();
+
+		if ( ! empty( $assets['fonts'] ) ) {
+			foreach ( (array) $assets['fonts'] as $fonts ) {
+				$this->load_typography_fonts( (array) $fonts );
+			}
+		}
 
 		if ( is_divi_active() ) {
 			wp_enqueue_style( 'gs-team-divi-public' );

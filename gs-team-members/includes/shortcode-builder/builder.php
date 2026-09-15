@@ -244,6 +244,7 @@ if ( ! class_exists( 'Builder' ) ) {
             $data['popup_style_visibility_fields']  = $this->get_popup_style_visibility_fields();
             $data['panel_style_visibility_fields']  = $this->get_panel_style_visibility_fields();
             $data['drawer_style_visibility_fields'] = $this->get_drawer_style_visibility_fields();
+            $data['fonts_data']                     = $this->get_fonts_list();
 
             $data['demo_data'] = [
                 'team_data'      => wp_validate_boolean( get_option('gsteam_dummy_team_data_created') ),
@@ -283,6 +284,7 @@ if ( ! class_exists( 'Builder' ) ) {
             if ( ! $this->is_preview() ) return;
 
             wp_enqueue_style( 'gs-team-shortcode-preview', GSTEAM_PLUGIN_URI . '/assets/css/preview.min.css', '', GSTEAM_VERSION );
+            wp_enqueue_script( 'gs-team-shortcode-preview', GSTEAM_PLUGIN_URI . '/assets/admin/js/preview.min.js', ['jquery'], GSTEAM_VERSION, true );
             
         }
 
@@ -343,9 +345,13 @@ if ( ! class_exists( 'Builder' ) ) {
             ];
 
             $array_fields = [ 'visibility_settings' ];
+            $typography_fields = array_merge(
+                $this->get_typography_settings_config()['free'],
+                $this->get_typography_settings_config()['pro']
+            );
 
             foreach ( $shortcode_settings as $key => $value ) {
-                if ( in_array( $key, $array_fields, true ) ) {
+                if ( in_array( $key, $array_fields, true ) || in_array( $key, $typography_fields, true ) ) {
                     continue;
                 }
 
@@ -363,8 +369,95 @@ if ( ! class_exists( 'Builder' ) ) {
             );
 
             $shortcode_settings = $this->sync_legacy_visibility_keys( $shortcode_settings );
+            $shortcode_settings = $this->validate_typography_settings( $shortcode_settings );
 
             return array_merge( $shortcode_settings, $runtime_settings );
+        }
+
+        public function get_typography_settings_config() {
+            return array(
+                'free' => array(
+                    'gs_tm_name_typography',
+                ),
+                'pro'  => array(
+                    'gs_tm_role_typography',
+                    'gs_tm_details_typography',
+                    'gs_tm_info_typography',
+                    'gs_tm_ribbon_typography',
+                    'gs_tm_readmore_typography',
+                ),
+            );
+        }
+
+        public function validate_typography_settings( $shortcode_settings ) {
+
+            $config = $this->get_typography_settings_config();
+            $all_keys = array_merge( $config['free'], $config['pro'] );
+
+            foreach ( $all_keys as $setting_key ) {
+                $value = isset( $shortcode_settings[ $setting_key ] ) ? $shortcode_settings[ $setting_key ] : [];
+
+                if ( is_object( $value ) ) {
+                    $value = (array) $value;
+                }
+
+                if ( ! is_array( $value ) ) {
+                    $value = [];
+                }
+
+                $allowed = [
+                    'font_family',
+                    'size',
+                    'color',
+                    'hover_color',
+                    'weight',
+                    'transform',
+                    'style',
+                    'decoration',
+                    'line_height',
+                    'letter_spacing',
+                ];
+
+                $sanitized = [];
+
+                foreach ( $allowed as $prop ) {
+                    if ( ! array_key_exists( $prop, $value ) || $value[ $prop ] === '' || $value[ $prop ] === null ) {
+                        continue;
+                    }
+                    $sanitized[ $prop ] = sanitize_text_field( $value[ $prop ] );
+                }
+
+                $shortcode_settings[ $setting_key ] = (object) $sanitized;
+            }
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                foreach ( $config['pro'] as $setting_key ) {
+                    $shortcode_settings[ $setting_key ] = (object) [];
+                }
+            }
+
+            return $shortcode_settings;
+        }
+
+        public function get_fonts_list( $include_empty_one = true ) {
+
+            $fonts = Fonts::get_fonts();
+            $fonts = array_keys( $fonts );
+            $fonts = array_map( function( $item ) {
+                return [
+                    'label' => $item,
+                    'value' => $item,
+                ];
+            }, $fonts );
+
+            if ( $include_empty_one ) {
+                array_unshift( $fonts, [
+                    'label' => __( 'Default', 'gsteam' ),
+                    'value' => '',
+                ] );
+            }
+
+            return $fonts;
         }
 
         protected function get_db_columns() {
@@ -1062,6 +1155,18 @@ if ( ! class_exists( 'Builder' ) ) {
                 'name-font-style' => __('Name Font Style', 'gsteam'),
                 'name-color' => __('Name Color', 'gsteam'),
                 'name-bg-color' => __('Name BG Color', 'gsteam'),
+                'gs-tm-name-typography' => __('Name Typography', 'gsteam'),
+                'gs-tm-name-typography--help' => __('Set the typography of member name.', 'gsteam'),
+                'gs-tm-role-typography' => __('Role Typography', 'gsteam'),
+                'gs-tm-role-typography--help' => __('Set the typography of member role / designation.', 'gsteam'),
+                'gs-tm-details-typography' => __('Details Typography', 'gsteam'),
+                'gs-tm-details-typography--help' => __('Set the typography of member details / description.', 'gsteam'),
+                'gs-tm-info-typography' => __('Info Typography', 'gsteam'),
+                'gs-tm-info-typography--help' => __('Set the typography of member info / contact.', 'gsteam'),
+                'gs-tm-ribbon-typography' => __('Ribbon Typography', 'gsteam'),
+                'gs-tm-ribbon-typography--help' => __('Set the typography of member ribbon.', 'gsteam'),
+                'gs-tm-readmore-typography' => __('Read More Typography', 'gsteam'),
+                'gs-tm-readmore-typography--help' => __('Set the typography of the More / Read More link in member details.', 'gsteam'),
                 'tm-bg-color' => __('Item BG Color', 'gsteam'),
                 'tm-bg-color-hover' => __('Item Hover BG Color', 'gsteam'),
                 'description-color' => __('Description Color', 'gsteam'),
@@ -2245,6 +2350,12 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_tm_role_fz'                   => '',
                 'gs_tm_role_fntw'                 => '',
                 'gs_tm_role_fnstyl'               => '',
+                'gs_tm_name_typography'           => (object) [],
+                'gs_tm_role_typography'           => (object) [],
+                'gs_tm_details_typography'        => (object) [],
+                'gs_tm_info_typography'           => (object) [],
+                'gs_tm_ribbon_typography'         => (object) [],
+                'gs_tm_readmore_typography'       => (object) [],
                 'gs_tm_filter_cat_pos'            => 'center',
                 'gs_member_thumbnail_sizes'       => 'large',
                 'show_acf_fields'                 => 'off',
