@@ -243,7 +243,7 @@ msgstr ""
 msgid "Unauthorised Request"
 msgstr ""
 
-#: ../includes/shortcode.php:152
+#: ../includes/shortcode.php:179
 msgid "No shortcode ID found"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "Template file not found - GS Plugins"
 msgstr ""
 
-#: ../includes/widgets.php:21, ../includes/integrations/integration-elementor.php:140, ../includes/integrations/integration-tagdiv.php:63, ../includes/integrations/integration-wpb-vc.php:34
+#: ../includes/widgets.php:21, ../includes/integrations/integration-tagdiv.php:63, ../includes/integrations/integration-wpb-vc.php:34
 msgid "GS Team Members"
 msgstr ""
 
@@ -373,40 +373,116 @@ msgstr ""
 msgid "No shortcodes found. Create one in GS Team first."
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:156
+#: ../includes/integrations/integration-elementor.php:165
+msgid "GS Team Shortcodes"
+msgstr ""
+
+#: ../includes/integrations/integration-elementor.php:181
 msgid "Content"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:164, ../includes/integrations/integration-tagdiv.php:76
+#: ../includes/integrations/integration-elementor.php:189, ../includes/integrations/integration-tagdiv.php:76
 msgid "Team Shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:179, ../includes/integrations/integration-gutenberg.php:68, ../includes/integrations/integration-wpb-vc.php:112
+#: ../includes/integrations/integration-elementor.php:204, ../includes/integrations/integration-gutenberg.php:71, ../includes/integrations/integration-wpb-vc.php:112
 msgid "Edit this shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:181, ../includes/integrations/integration-gutenberg.php:69, ../includes/integrations/integration-wpb-vc.php:114, ../includes/shortcode-builder/builder.php:1045
+#: ../includes/integrations/integration-elementor.php:206, ../includes/integrations/integration-gutenberg.php:72, ../includes/integrations/integration-wpb-vc.php:114, ../includes/shortcode-builder/builder.php:1045
 msgid "Edit"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:185, ../includes/integrations/integration-gutenberg.php:70, ../includes/integrations/integration-wpb-vc.php:118
+#: ../includes/integrations/integration-elementor.php:210, ../includes/integrations/integration-gutenberg.php:73, ../includes/integrations/integration-wpb-vc.php:118
 msgid "Create new shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:187, ../includes/integrations/integration-gutenberg.php:71, ../includes/integrations/integration-wpb-vc.php:120
+#: ../includes/integrations/integration-elementor.php:212, ../includes/integrations/integration-gutenberg.php:74, ../includes/integrations/integration-wpb-vc.php:120
 msgid "Create"
 msgstr ""
 
-#: ../includes/integrations/integration-elementor.php:224
+#: ../includes/integrations/integration-elementor.php:249
 msgid "GS Team Members: Please select a shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg.php:67
-msgid "GS Team Shortcode"
+#: ../includes/integrations/integration-gutenberg-builder.php:252, ../includes/integrations/elementor/widget-builder.php:29
+msgid "GS Team Builder"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg.php:119
-msgid "GS Single Team Member Page"
+#: ../includes/integrations/integration-gutenberg-builder.php:253
+msgid "Build a team members section with all layout and style options."
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:254
+msgid "Available in the premium version."
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:255
+msgid "This is a premium feature. Please upgrade the plan."
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:256
+msgid "Include"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:257
+msgid "Exclude"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:258
+msgid "Filter & Pagination"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:259
+msgid "Carousel & Autoplay"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:260
+msgid "Description & Content"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:261
+msgid "Layout"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:262
+msgid "Linking"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:263, ../includes/shortcode-builder/builder.php:1068
+msgid "Thumbnail"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:264
+msgid "Featuring"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:265, ../includes/shortcode-builder/builder.php:1091
+msgid "ACF Fields"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:266
+msgid "Typography"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:267
+msgid "Carousel Navs & Dots"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:268, ../includes/shortcode-builder/builder.php:1028
+msgid "Filter Style"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:269
+msgid "Colors"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg-builder.php:270, ../includes/shortcode-builder/builder.php:777
+msgid "Image Filter"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg.php:70
+msgid "GS Team Shortcode"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:93
@@ -485,10 +561,6 @@ msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:769
 msgid "Temp data saved"
-msgstr ""
-
-#: ../includes/shortcode-builder/builder.php:777
-msgid "Image Filter"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:778
@@ -719,7 +791,7 @@ msgstr ""
 msgid "Add class to disable lazy loading, multiple classes should be separated by space"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:872
+#: ../includes/shortcode-builder/builder.php:872, ../includes/integrations/elementor/widget-builder.php:521
 msgid "ACF Fields Position"
 msgstr ""
 
@@ -1131,10 +1203,6 @@ msgstr ""
 msgid "Select popup style, this is available for certain theme"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1028
-msgid "Filter Style"
-msgstr ""
-
 #: ../includes/shortcode-builder/builder.php:1029
 msgid "Filter Color"
 msgstr ""
@@ -1263,10 +1331,6 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:1068
-msgid "Thumbnail"
-msgstr ""
-
 #: ../includes/shortcode-builder/builder.php:1071
 msgid "Details"
 msgstr ""
@@ -1277,10 +1341,6 @@ msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:1074, ../includes/shortcode-builder/builder.php:1097
 msgid "Featured Badge"
-msgstr ""
-
-#: ../includes/shortcode-builder/builder.php:1091
-msgid "ACF Fields"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:1093, ../includes/shortcode-builder/builder.php:1094
@@ -2207,15 +2267,15 @@ msgstr ""
 msgid "Three"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2064, ../includes/shortcode-builder/builder.php:2078
+#: ../includes/shortcode-builder/builder.php:2064, ../includes/shortcode-builder/builder.php:2078, ../includes/integrations/elementor/widget-builder.php:466, ../includes/integrations/elementor/widget-builder.php:491
 msgid "Left"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2068, ../includes/shortcode-builder/builder.php:2082
+#: ../includes/shortcode-builder/builder.php:2068, ../includes/shortcode-builder/builder.php:2082, ../includes/integrations/elementor/widget-builder.php:470, ../includes/integrations/elementor/widget-builder.php:495
 msgid "Center"
 msgstr ""
 
-#: ../includes/shortcode-builder/builder.php:2072, ../includes/shortcode-builder/builder.php:2086
+#: ../includes/shortcode-builder/builder.php:2072, ../includes/shortcode-builder/builder.php:2086, ../includes/integrations/elementor/widget-builder.php:474, ../includes/integrations/elementor/widget-builder.php:499
 msgid "Right"
 msgstr ""
 
@@ -2534,6 +2594,22 @@ msgstr ""
 #. translators: %s: error message
 #: ../includes/integrations/divi/TeamMembersController.php:139
 msgid "Failed to render shortcode: %s"
+msgstr ""
+
+#: ../includes/integrations/elementor/widget-builder.php:982
+msgid "Color"
+msgstr ""
+
+#: ../includes/integrations/elementor/widget-builder.php:997
+msgid "Hover Color"
+msgstr ""
+
+#: ../includes/integrations/elementor/widget-builder.php:1270
+msgid "On"
+msgstr ""
+
+#: ../includes/integrations/elementor/widget-builder.php:1271
+msgid "Off"
 msgstr ""
 
 #: ../templates/partials/gs-team-layout-no-team-member.php:17

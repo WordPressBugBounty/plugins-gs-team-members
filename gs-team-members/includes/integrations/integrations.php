@@ -45,6 +45,9 @@ final class Integrations {
     public function integration_with_gutenberg() {
         require_once GSTEAM_PLUGIN_DIR . 'includes/integrations/integration-gutenberg.php';
         Integration_Gutenberg::get_instance();
+
+        require_once GSTEAM_PLUGIN_DIR . 'includes/integrations/integration-gutenberg-builder.php';
+        Integration_Gutenberg_Builder::get_instance();
     }
 
     public function integration_with_divi() {

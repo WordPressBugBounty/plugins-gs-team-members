@@ -31,6 +31,8 @@ class Integration_Elementor {
 
         add_action( 'elementor/preview/enqueue_styles', [ $this, 'print_elementor_preview_styles' ] );
         add_action( 'elementor/preview/enqueue_scripts', [ $this, 'print_elementor_preview_scripts' ] );
+
+        add_filter( 'gs_team_external_shortcode_settings', [ $this, 'get_builder_widget_shortcode_settings' ], 10, 3 );
         
     }
 
@@ -39,6 +41,29 @@ class Integration_Elementor {
         load_elementor_widget_class();
 
         $widgets_manager->register( new Elementor_Widget() );
+
+        require_once GSTEAM_PLUGIN_DIR . 'includes/integrations/elementor/widget-builder.php';
+        $widgets_manager->register( new Elementor_Widget_Builder() );
+
+    }
+
+    public static function store_builder_widget_settings( $id, $settings ) {
+        update_option( 'gs_team_el_builder_' . sanitize_key( $id ), $settings, false );
+    }
+
+    public function get_builder_widget_shortcode_settings( $settings, $id, $is_preview ) {
+
+        if ( 0 !== strpos( (string) $id, 'gste_' ) ) {
+            return $settings;
+        }
+
+        $stored = get_option( 'gs_team_el_builder_' . sanitize_key( $id ), false );
+
+        if ( ! is_array( $stored ) ) {
+            return $settings;
+        }
+
+        return $stored;
 
     }
 
@@ -137,7 +162,7 @@ function load_elementor_widget_class() {
         }
 
         public function get_title() {
-            return __( 'GS Team Members', 'gsteam' );
+            return __( 'GS Team Shortcodes', 'gsteam' );
         }
 
         public function get_icon() {

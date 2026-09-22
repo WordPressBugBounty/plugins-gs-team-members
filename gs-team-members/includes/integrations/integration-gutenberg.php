@@ -7,6 +7,11 @@ namespace GSTEAM;
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/**
+ * Gutenberg shortcode-picker block (select a saved shortcode by ID).
+ *
+ * For the full inline builder, see Integration_Gutenberg_Builder.
+ */
 class Integration_Gutenberg {
 
 	private static $_instance = null;
@@ -31,10 +36,8 @@ class Integration_Gutenberg {
 
     public function enqueue_block_editor_assets() {
 		
-		// Register Styles
 		plugin()->scripts->wp_enqueue_style_all( 'public', ['gs-team-divi-public'] );
 		
-		// Register Scripts
         plugin()->scripts->wp_enqueue_script_all( 'public', ['gs-cpb-scroller'] );
 
         add_fs_script( 'gs-team-public' );
@@ -91,12 +94,6 @@ class Integration_Gutenberg {
             'render_callback' => [$this, 'shortcodes_dynamic_render_callback']
         ));
 
-        // Temporarily disabled — single team block.
-        // register_block_type( GSTEAM_PLUGIN_DIR . 'includes/integrations/assets/gutenberg/blocks/single-team', array(
-        //     'editor_style' => 'gs-team-block-editor',
-        //     'render_callback' => [$this, 'single_page_render_callback']
-        // ));
-
     }
 
     public function shortcodes_dynamic_render_callback( $block_attributes ) {
@@ -104,26 +101,6 @@ class Integration_Gutenberg {
         $shortcode_id = ( ! empty($block_attributes) && ! empty($block_attributes['shortcode']) ) ? absint( $block_attributes['shortcode'] ) : $this->get_default_item();
 
         return do_shortcode( sprintf( '[gsteam id="%u"]', esc_attr($shortcode_id) ) );
-
-    }
-
-    public function single_page_render_callback() {
-
-        global $post;
-        
-        ob_start();
-
-        if ( empty($post) ) {
-            ?>
-            <div class="container gs-single-container" style="padding:3em 2em;background: rgba(126, 126, 126, 0.35);">
-                <h4><?php echo __( 'GS Single Team Member Page', 'gsteam' ) ?></h4>
-            </div>
-            <?php
-        } else {
-            include Template_Loader::locate_template( 'partials/gs-team-layout-single.php' );
-        }
-
-        return ob_get_clean();
 
     }
 

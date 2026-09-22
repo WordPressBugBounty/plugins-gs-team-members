@@ -2294,7 +2294,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'filter_enabled'                  => 'off',
                 'gs_team_filter_type'             => 'normal-filter',
                 'gs_member_pagination'            => 'off',
-                'pagination_type'                 => 'load-more-button',
+                'pagination_type'                 => gtm_fs()->is_paying_or_trial() ? 'load-more-button' : 'normal-pagination',
                 'initial_items'                   => 6,
                 'team_per_page'                   => 6,
                 'load_per_click'                  => 3,

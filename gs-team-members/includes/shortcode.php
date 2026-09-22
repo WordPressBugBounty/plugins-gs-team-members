@@ -148,13 +148,40 @@ class Shortcode {
 	
 	function shortcode( $atts, $ajax_datas = array() ) {
 
-		if ( empty($atts['id']) ) {
+		$inline_settings = null;
+
+		// Self-contained render path (Gutenberg block settings — no shortcode DB).
+		if ( ! empty( $atts['settings'] ) ) {
+			$inline_settings = $atts['settings'];
+
+			if ( is_string( $inline_settings ) ) {
+				$decoded = json_decode( wp_unslash( $inline_settings ), true );
+				$inline_settings = is_array( $decoded ) ? $decoded : [];
+			}
+
+			if ( ! is_array( $inline_settings ) ) {
+				$inline_settings = [];
+			}
+
+			if ( empty( $atts['id'] ) ) {
+				$atts['id'] = 'gstb_' . substr( md5( wp_json_encode( $inline_settings ) ), 0, 20 );
+			}
+
+			// Persist for ajax filter / pagination / load-more (non-numeric IDs use transient path).
+			set_transient(
+				$atts['id'],
+				plugin()->builder->validate_shortcode_settings( $inline_settings ),
+				0
+			);
+		}
+
+		if ( empty( $atts['id'] ) ) {
 			return __( 'No shortcode ID found', 'gsteam' );
 		}
 	
-		$is_preview = ! empty($atts['preview']);
+		$is_preview = ! empty( $atts['preview'] );
 	
-		$settings = (array) $this->get_shortcode_settings( $atts['id'], $is_preview );
+		$settings = (array) $this->get_shortcode_settings( $atts['id'], $is_preview, $inline_settings );
 	
 		// By default force mode
 		$force_asset_load = true;
@@ -1199,16 +1226,47 @@ class Shortcode {
 	
 	}
 
-	public function get_shortcode_settings($id, $is_preview = false) {
+	public function get_shortcode_settings( $id, $is_preview = false, $inline_settings = null ) {
 
-		$default_settings = array_merge( ['id' => $id, 'is_preview' => $is_preview], plugin()->builder->get_shortcode_default_settings() );
+		$default_settings = array_merge( [ 'id' => $id, 'is_preview' => $is_preview ], plugin()->builder->get_shortcode_default_settings() );
+
+		// Inline settings from Gutenberg (or other builders) — no shortcode table.
+		if ( is_array( $inline_settings ) ) {
+			$settings = array_merge( $default_settings, $inline_settings, [
+				'id'         => $id,
+				'is_preview' => false,
+			] );
+
+			return plugin()->builder->validate_shortcode_settings( $settings );
+		}
+
+		$external_settings = apply_filters( 'gs_team_external_shortcode_settings', null, $id, $is_preview );
+
+		if ( is_array( $external_settings ) ) {
+			return plugin()->builder->validate_shortcode_settings( array_merge( $default_settings, $external_settings, [
+				'id'         => $id,
+				'is_preview' => $is_preview,
+			] ) );
+		}
 
 		if ( $is_preview ) {
-			$preview_settings = plugin()->builder->validate_shortcode_settings( get_transient($id) );
+			$preview_settings = plugin()->builder->validate_shortcode_settings( get_transient( $id ) );
 			return array_merge( $default_settings, (array) $preview_settings, [
 				'id'         => $id,
 				'is_preview' => $is_preview,
 			] );
+		}
+
+		// Block settings recovered for ajax (gstb_* IDs stored as transients).
+		if ( is_string( $id ) && strpos( $id, 'gstb_' ) === 0 ) {
+			$stored = get_transient( $id );
+
+			if ( ! empty( $stored ) && is_array( $stored ) ) {
+				return array_merge( $default_settings, plugin()->builder->validate_shortcode_settings( $stored ), [
+					'id'         => $id,
+					'is_preview' => false,
+				] );
+			}
 		}
 
 		$shortcode = plugin()->builder->_get_shortcode( $id );

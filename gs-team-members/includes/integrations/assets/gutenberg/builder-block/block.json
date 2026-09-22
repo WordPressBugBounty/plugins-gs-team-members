@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "gsteam/team-members",
+	"title": "GS Team Builder",
+	"category": "widgets",
+	"icon": "groups",
+	"description": "Build a team members section with all layout and style options.",
+	"editorStyle": "gs-team-builder-block-editor",
+	"keywords": [ "team", "members", "staff", "builder", "gsteam" ],
+	"textdomain": "gsteam",
+	"editorScript": "gs-team-builder-block",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false
+	}
+}

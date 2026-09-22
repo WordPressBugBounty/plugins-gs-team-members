@@ -300,6 +300,10 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 	 * Scoped to main theme cards (.single-member-div) — excludes popups, panels, drawers.
 	 */
 	private function apply_all_typography( array $settings, $selector, $selector_divi ) {
+		if ( $this->should_skip_elementor_live_typography( $settings ) ) {
+			return;
+		}
+
 		$common_props = [
 			'color'          => [ '-color', '', 'color' ],
 			'hover_color'    => [ '-hover-color', '', null ], // hover handled separately below
@@ -631,6 +635,16 @@ class GS_Team_Asset_Generator extends GS_Asset_Generator_Base {
 			$this->add_item_in_asset_list( 'styles', 'inline', minimize_css_simple($css) );
 		}
 
+	}
+
+	private function should_skip_elementor_live_typography( array $settings ) {
+		if ( ! $this->is_builder_preview() ) {
+			return false;
+		}
+
+		$id = isset( $settings['id'] ) ? (string) $settings['id'] : '';
+
+		return 0 === strpos( $id, 'gste_' );
 	}
 
 	public function is_builder_preview() {
