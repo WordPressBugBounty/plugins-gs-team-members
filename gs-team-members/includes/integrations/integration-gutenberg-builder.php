@@ -192,6 +192,16 @@ class Integration_Gutenberg_Builder {
      */
     public function render_block( $block_attributes ) {
 
+        // Divi shortcode modules saved before the block name was split still use
+        // this block. Their selected id lives in Divi's attribute shape.
+        if ( is_array( $block_attributes ) ) {
+            $divi_shortcode_id = absint( $block_attributes['shortcode']['innerContent']['desktop']['value'] ?? 0 );
+
+            if ( $divi_shortcode_id ) {
+                return do_shortcode( sprintf( '[gsteam id="%u"]', $divi_shortcode_id ) );
+            }
+        }
+
         $settings = plugin()->builder->validate_shortcode_settings( (array) $block_attributes );
 
         $instance_key = $this->get_instance_key( $block_attributes );
@@ -248,6 +258,7 @@ class Integration_Gutenberg_Builder {
             'enabled_plugins'                => $builder->get_enabled_plugins(),
             'is_pro_active'                  => wp_validate_boolean( gtm_fs()->is_paying_or_trial() ),
             'instance_prefix'                => self::INSTANCE_PREFIX,
+            'premium_url'                    => 'https://www.gsplugins.com/product/gs-team-members/#pricing',
             'labels'                         => [
                 'block_title'          => __( 'GS Team Builder', 'gsteam' ),
                 'block_description'    => __( 'Build a team members section with all layout and style options.', 'gsteam' ),
@@ -349,10 +360,96 @@ class Integration_Gutenberg_Builder {
             color: #b26b00;
         }
 
-        /* Premium select choices when Pro is locked (still clickable for alert). */
         .gsteam-builder-block--tabs select option.gsteam-builder-block--premium-option {
             background-color: #e2e4e7;
             color: #757575;
+        }
+
+        .gsteam-builder-block--select-menu {
+            position: relative;
+        }
+
+        .gsteam-builder-block--select-menu select.components-select-control__input {
+            display: block;
+            width: 100%;
+        }
+
+        .gsteam-builder-block--select-list {
+            position: absolute;
+            z-index: 30;
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 220px;
+            margin: 4px 0 0;
+            padding: 4px 0;
+            overflow: auto;
+            list-style: none;
+            background: #fff;
+            border: 1px solid #8c8f94;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+        }
+
+        .gsteam-builder-block--select-list li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .gsteam-builder-block--select-list .gsteam-builder-block--select-row,
+        .gsteam-builder-block--select-list button.gsteam-builder-block--select-row {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            min-height: 0;
+            margin: 0;
+            padding: 6px 12px;
+            border: 0;
+            border-radius: 0;
+            background: #fff;
+            box-shadow: none;
+            color: #2c3338;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: left;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        button.gsteam-builder-block--select-row.is-selected,
+        button.gsteam-builder-block--select-row:hover {
+            background: #007cba;
+            color: #fff;
+        }
+
+        button.gsteam-builder-block--select-row:disabled {
+            background: #e2e4e7;
+            color: #757575;
+            cursor: default;
+        }
+
+        li.gsteam-builder-block--select-row.is-pro {
+            background: #fff;
+            color: #2c3338;
+            cursor: pointer;
+        }
+
+        li.gsteam-builder-block--select-row.is-pro:hover {
+            background: #007cba;
+            color: #fff;
+        }
+
+        li.gsteam-builder-block--select-row.is-pro .gsteam-builder-block--pro-text {
+            color: #2271b1;
+            font-weight: 400;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        li.gsteam-builder-block--select-row.is-pro:hover .gsteam-builder-block--pro-text {
+            color: #fff;
         }
 
         .gsteam-builder-block--locked > *:first-child {
@@ -360,29 +457,111 @@ class Integration_Gutenberg_Builder {
             opacity: 0.6;
         }
 
-        .gsteam-builder-block--devices {
+        .gsteam-builder-block--visibility {
+            overflow: hidden;
+            border: 1px solid #e6e8ee;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .gsteam-builder-block--visibility-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) repeat(4, 32px);
+            align-items: center;
+            column-gap: 6px;
+            min-height: 40px;
+            margin: 0;
+            padding: 6px 10px;
+            border-top: 1px solid #eceef2;
+        }
+
+        .gsteam-builder-block--visibility-head {
+            min-height: 44px;
+            border-top: 0;
+            background: #f4f5f7;
+        }
+
+        .gsteam-builder-block--visibility-label {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+            color: #1d2327;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.3;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        button.gsteam-builder-block--visibility-label {
+            height: auto;
+            min-height: 0;
+            font-weight: 400;
+        }
+
+        button.gsteam-builder-block--visibility-label:hover,
+        button.gsteam-builder-block--visibility-label:focus {
+            color: #1d2327;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .gsteam-builder-block--visibility-device {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0 16px;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 28px;
+            border-radius: 6px;
+            background: #e8eaef;
+            color: #5c6370;
         }
 
-        .gsteam-builder-block--devices .components-base-control {
-            margin-bottom: 4px;
+        .gsteam-builder-block--visibility-device svg {
+            display: block;
         }
 
-        .gsteam-builder-block--group {
-            padding-bottom: 12px;
-            margin-bottom: 12px;
-            border-bottom: 1px solid #e0e0e0;
+        .gsteam-builder-block--visibility-check {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 28px;
+            margin: 0;
+            cursor: pointer;
         }
 
-        .gsteam-builder-block--group:last-child {
-            border-bottom: 0;
+        .gsteam-builder-block--visibility-check input {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
         }
 
-        .gsteam-builder-block--group-title {
-            margin: 0 0 8px;
-            font-weight: 600;
+        .gsteam-builder-block--visibility-check span {
+            display: block;
+            box-sizing: border-box;
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid #c5c8d0;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .gsteam-builder-block--visibility-check input:checked + span {
+            border-color: #2563eb;
+            background: #2563eb url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M3.2 8.2l3 3.1 6.6-6.6'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
+        }
+
+        .gsteam-builder-block--visibility-check input:focus-visible + span {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
         }
 
         .gsteam-builder-block--typography {

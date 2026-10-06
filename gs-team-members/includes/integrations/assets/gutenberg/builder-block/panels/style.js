@@ -132,12 +132,12 @@ export default function StylePanels( { attributes, setAttributes } ) {
 
 					<ToggleField { ...field } settingKey="carousel_navs_enabled" label={ translate( 'carousel_navs_enabled', 'Show Navs' ) } />
 					{ isOn( attributes.carousel_navs_enabled ) && (
-						<SelectField { ...field } settingKey="carousel_navs_style" label={ translate( 'carousel_navs_style' ) } premium={ premium } />
+						<SelectField { ...field } settingKey="carousel_navs_style" label={ translate( 'carousel_navs_style' ) } />
 					) }
 
 					<ToggleField { ...field } settingKey="carousel_dots_enabled" label={ translate( 'carousel_dots_enabled', 'Show Dots' ) } />
 					{ isOn( attributes.carousel_dots_enabled ) && (
-						<SelectField { ...field } settingKey="carousel_dots_style" label={ translate( 'carousel_dots_style' ) } premium={ premium } />
+						<SelectField { ...field } settingKey="carousel_dots_style" label={ translate( 'carousel_dots_style' ) } />
 					) }
 
 					<ColorFieldsPanel

@@ -18,7 +18,7 @@ import {
 	isPremiumOption,
 	isProActive,
 	label as uiLabel,
-	premiumAlertMessage,
+	premiumPageUrl,
 	rawOptions,
 	settingDefault,
 	toOnOff,
@@ -27,12 +27,13 @@ import {
 
 const React = window.React;
 
+const { useEffect, useRef, useState } = wp.element;
+
 const {
 	ToggleControl,
 	SelectControl,
 	TextControl,
 	RangeControl,
-	CheckboxControl,
 	FormTokenField,
 	BaseControl
 } = wp.components;
@@ -93,16 +94,23 @@ export function ToggleField( { attributes, setAttributes, settingKey, label, hel
 	) );
 }
 
-export function SelectField( { attributes, setAttributes, settingKey, label, help, options, optionsKey, onChange } ) {
+export function SelectField( { attributes, setAttributes, settingKey, label, help, options, optionsKey, premium, onChange } ) {
 
 	const lookupKey = optionsKey || settingKey;
 	const list = options || fieldOptions( lookupKey );
 
 	const handleChange = function( value ) {
 
-		// Match the shortcode builder: refuse Pro options and tell the user why.
+		const selected = list.find( function( option ) {
+			return String( option.value ) === String( value );
+		} );
+
+		if ( selected && selected.disabled ) {
+			return;
+		}
+
 		if ( isPremiumOption( lookupKey, value ) && ! isProActive() ) {
-			window.alert( premiumAlertMessage() );
+			window.open( premiumPageUrl(), '_blank', 'noopener,noreferrer' );
 			return;
 		}
 
@@ -114,9 +122,33 @@ export function SelectField( { attributes, setAttributes, settingKey, label, hel
 		setAttributes( { [ settingKey ]: value } );
 	};
 
-	// Native SelectControl cannot style individual options; render our own
-	// <select> so premium rows stay visible (and clickable for the alert).
-	return (
+	const rows = list.map( function( option ) {
+
+		const premiumLocked = typeof option.premiumLocked !== 'undefined'
+			? !! option.premiumLocked
+			: ( isPremiumOption( lookupKey, option.value ) && ! isProActive() );
+
+		return {
+			value: String( option.value ),
+			text: option.text || String( option.label ).replace( /\s-?\s?\[PRO\]$/, '' ),
+			disabled: !! option.disabled,
+			premiumLocked: premiumLocked
+		};
+	} );
+
+	if ( ! premium && rows.some( function( option ) { return option.premiumLocked; } ) ) {
+		return (
+			<PremiumSelect
+				label={ label }
+				help={ help }
+				value={ String( attributes[ settingKey ] ?? '' ) }
+				rows={ rows }
+				onSelect={ handleChange }
+			/>
+		);
+	}
+
+	return withPremium( premium, (
 		<BaseControl
 			label={ label }
 			help={ help }
@@ -125,6 +157,7 @@ export function SelectField( { attributes, setAttributes, settingKey, label, hel
 			<select
 				className="components-select-control__input"
 				value={ String( attributes[ settingKey ] ?? '' ) }
+				disabled={ !! premium }
 				onChange={ ( event ) => handleChange( event.target.value ) }
 			>
 				{ list.map( function( option ) {
@@ -132,18 +165,129 @@ export function SelectField( { attributes, setAttributes, settingKey, label, hel
 					const premiumLocked = typeof option.premiumLocked !== 'undefined'
 						? !! option.premiumLocked
 						: ( isPremiumOption( lookupKey, option.value ) && ! isProActive() );
+					const locked = !! option.disabled || premiumLocked;
+					const optionLabel = premiumLocked && option.label.indexOf( '[PRO]' ) === -1
+						? option.label + ' - [PRO]'
+						: option.label;
 
 					return (
 						<option
 							key={ String( option.value ) }
 							value={ String( option.value ) }
-							className={ premiumLocked ? 'gsteam-builder-block--premium-option' : undefined }
+							disabled={ !! option.disabled }
+							className={ locked ? 'gsteam-builder-block--premium-option' : undefined }
 						>
-							{ option.label }
+							{ optionLabel }
 						</option>
 					);
 				} ) }
 			</select>
+		</BaseControl>
+	) );
+}
+
+function PremiumSelect( { label, help, value, rows, onSelect } ) {
+
+	const [ open, setOpen ] = useState( false );
+	const menuRef = useRef( null );
+
+	useEffect( function() {
+
+		if ( ! open ) {
+			return;
+		}
+
+		function onPointerDown( event ) {
+			if ( menuRef.current && ! menuRef.current.contains( event.target ) ) {
+				setOpen( false );
+			}
+		}
+
+		document.addEventListener( 'mousedown', onPointerDown );
+
+		return function() {
+			document.removeEventListener( 'mousedown', onPointerDown );
+		};
+
+	}, [ open ] );
+
+	return (
+		<BaseControl
+			label={ label }
+			help={ help }
+			className="components-select-control gsteam-builder-block--select"
+		>
+			<div className="gsteam-builder-block--select-menu" ref={ menuRef }>
+				<select
+					className="components-select-control__input"
+					value={ value }
+					onMouseDown={ function( event ) {
+						event.preventDefault();
+						setOpen( function( current ) {
+							return ! current;
+						} );
+					} }
+					onChange={ function() {} }
+				>
+					{ rows.map( function( option ) {
+						return (
+							<option key={ option.value } value={ option.value }>
+								{ option.text }
+							</option>
+						);
+					} ) }
+				</select>
+				{ open ? (
+					<ul className="gsteam-builder-block--select-list" role="listbox">
+						{ rows.map( function( option ) {
+
+							if ( option.premiumLocked ) {
+								return (
+									<li
+										key={ option.value }
+										className="gsteam-builder-block--select-row is-pro"
+										role="option"
+										onClick={ function() {
+											setOpen( false );
+										} }
+									>
+										{ option.text + ' - ' }
+										<a
+											className="gsteam-builder-block--pro-text"
+											href={ premiumPageUrl() }
+											target="_blank"
+											rel="noopener noreferrer"
+											onClick={ function() {
+												setOpen( false );
+											} }
+										>
+											[PRO]
+										</a>
+									</li>
+								);
+							}
+
+							return (
+								<li key={ option.value } role="presentation">
+									<button
+										type="button"
+										className={ 'gsteam-builder-block--select-row' + ( option.value === value ? ' is-selected' : '' ) }
+										role="option"
+										aria-selected={ option.value === value }
+										disabled={ option.disabled }
+										onClick={ function() {
+											onSelect( option.value );
+											setOpen( false );
+										} }
+									>
+										{ option.text }
+									</button>
+								</li>
+							);
+						} ) }
+					</ul>
+				) : null }
+			</div>
 		</BaseControl>
 	);
 }
@@ -261,17 +405,6 @@ export function TermsField( { attributes, setAttributes, settingKey, optionsKey,
 				} ) }
 			/>
 		</BaseControl>
-	);
-}
-
-export function DeviceCheckbox( { label, checked, onChange } ) {
-
-	return (
-		<CheckboxControl
-			label={ label }
-			checked={ !! checked }
-			onChange={ onChange }
-		/>
 	);
 }
 

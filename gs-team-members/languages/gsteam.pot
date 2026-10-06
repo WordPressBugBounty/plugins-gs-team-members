@@ -405,79 +405,79 @@ msgstr ""
 msgid "GS Team Members: Please select a shortcode"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:252, ../includes/integrations/elementor/widget-builder.php:29
+#: ../includes/integrations/integration-gutenberg-builder.php:263, ../includes/integrations/elementor/widget-builder.php:29
 msgid "GS Team Builder"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:253
+#: ../includes/integrations/integration-gutenberg-builder.php:264
 msgid "Build a team members section with all layout and style options."
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:254
+#: ../includes/integrations/integration-gutenberg-builder.php:265
 msgid "Available in the premium version."
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:255
+#: ../includes/integrations/integration-gutenberg-builder.php:266
 msgid "This is a premium feature. Please upgrade the plan."
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:256
+#: ../includes/integrations/integration-gutenberg-builder.php:267
 msgid "Include"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:257
+#: ../includes/integrations/integration-gutenberg-builder.php:268
 msgid "Exclude"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:258
+#: ../includes/integrations/integration-gutenberg-builder.php:269
 msgid "Filter & Pagination"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:259
+#: ../includes/integrations/integration-gutenberg-builder.php:270
 msgid "Carousel & Autoplay"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:260
+#: ../includes/integrations/integration-gutenberg-builder.php:271
 msgid "Description & Content"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:261
+#: ../includes/integrations/integration-gutenberg-builder.php:272
 msgid "Layout"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:262
+#: ../includes/integrations/integration-gutenberg-builder.php:273
 msgid "Linking"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:263, ../includes/shortcode-builder/builder.php:1068
+#: ../includes/integrations/integration-gutenberg-builder.php:274, ../includes/shortcode-builder/builder.php:1068
 msgid "Thumbnail"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:264
+#: ../includes/integrations/integration-gutenberg-builder.php:275
 msgid "Featuring"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:265, ../includes/shortcode-builder/builder.php:1091
+#: ../includes/integrations/integration-gutenberg-builder.php:276, ../includes/shortcode-builder/builder.php:1091
 msgid "ACF Fields"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:266
+#: ../includes/integrations/integration-gutenberg-builder.php:277
 msgid "Typography"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:267
+#: ../includes/integrations/integration-gutenberg-builder.php:278
 msgid "Carousel Navs & Dots"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:268, ../includes/shortcode-builder/builder.php:1028
+#: ../includes/integrations/integration-gutenberg-builder.php:279, ../includes/shortcode-builder/builder.php:1028
 msgid "Filter Style"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:269
+#: ../includes/integrations/integration-gutenberg-builder.php:280
 msgid "Colors"
 msgstr ""
 
-#: ../includes/integrations/integration-gutenberg-builder.php:270, ../includes/shortcode-builder/builder.php:777
+#: ../includes/integrations/integration-gutenberg-builder.php:281, ../includes/shortcode-builder/builder.php:777
 msgid "Image Filter"
 msgstr ""
 

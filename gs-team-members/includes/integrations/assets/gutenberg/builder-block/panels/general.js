@@ -17,7 +17,6 @@ import {
 	hasAcf,
 	isOn,
 	isOneOf,
-	isProActive,
 	label as uiLabel,
 	translate
 } from '../data';
@@ -40,7 +39,6 @@ const { PanelBody } = wp.components;
 export default function GeneralPanels( { attributes, setAttributes } ) {
 
 	const field = { attributes, setAttributes };
-	const premium = ! isProActive();
 
 	const theme = attributes.gs_team_theme;
 	const carouselOn = isCarouselActive( attributes );
@@ -50,6 +48,11 @@ export default function GeneralPanels( { attributes, setAttributes } ) {
 	const paginationOn = showPagination && isOn( attributes.gs_member_pagination );
 	const linkingOn = canShowLinking( theme ) && isOn( attributes.gs_member_name_is_linked );
 	const linkType = attributes.gs_member_link_type;
+	const popupEnabled = linkingOn && (
+		'popup' === linkType
+		|| ( 'single_page' !== linkType && isOneOf( theme, [ 'gs_tm_theme8', 'gs_tm_theme9', 'gs_tm_theme12' ] ) )
+	);
+	const showPopupColumns = popupEnabled && isOneOf( attributes.popup_style || 'default', [ 'default', 'style-six' ] );
 
 	const changeTheme = ( nextTheme ) => setAttributes( Object.assign(
 		{ gs_team_theme: nextTheme },
@@ -190,20 +193,20 @@ export default function GeneralPanels( { attributes, setAttributes } ) {
 								settingKey="gs_member_link_type"
 								label={ translate( 'gs_member_link_type' ) }
 							/>
-							{ isOneOf( linkType, [ 'popup', 'default' ] ) && (
-								<React.Fragment>
-									<SelectField { ...field } settingKey="popup_style" label={ translate( 'popup_style' ) } />
-									<SelectField { ...field } settingKey="gs_teammembers_pop_clm" label={ translate( 'gs_teammembers_pop_clm', 'Popup Columns' ) } />
-								</React.Fragment>
+							{ 'popup' === linkType && (
+								<SelectField { ...field } settingKey="popup_style" label={ translate( 'popup_style' ) } />
+							) }
+							{ showPopupColumns && (
+								<SelectField { ...field } settingKey="gs_teammembers_pop_clm" label={ translate( 'gs_teammembers_pop_clm', 'Popup Columns' ) } />
 							) }
 							{ 'panel' === linkType && (
 								<React.Fragment>
-									<SelectField { ...field } settingKey="panel_style" label={ translate( 'panel_style' ) } premium={ premium } />
+									<SelectField { ...field } settingKey="panel_style" label={ translate( 'panel_style' ) } />
 									<SelectField { ...field } settingKey="panel" label={ translate( 'panel', 'Panel Side' ) } />
 								</React.Fragment>
 							) }
 							{ 'drawer' === linkType && (
-								<SelectField { ...field } settingKey="drawer_style" label={ translate( 'drawer_style' ) } premium={ premium } />
+								<SelectField { ...field } settingKey="drawer_style" label={ translate( 'drawer_style' ) } />
 							) }
 						</React.Fragment>
 					) }
@@ -258,7 +261,7 @@ export default function GeneralPanels( { attributes, setAttributes } ) {
 
 					<ToggleField { ...field } settingKey="show_acf_fields" label={ translate( 'show-acf-fields' ) } />
 					{ isOn( attributes.show_acf_fields ) && (
-						<SelectField { ...field } settingKey="acf_fields_position" label={ translate( 'acf_fields_position', 'ACF Fields Position' ) } premium={ premium } />
+						<SelectField { ...field } settingKey="acf_fields_position" label={ translate( 'acf_fields_position', 'ACF Fields Position' ) } />
 					) }
 
 				</PanelBody>
